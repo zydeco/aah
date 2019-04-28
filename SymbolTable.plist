@@ -1,0 +1,27 @@
+{
+	"/usr/lib/libobjc.A.dylib" = {
+		// ARC runtime support
+		"objc_autorelease" = "@@";
+		"objc_autoreleasePoolPop" = "v?";
+		"objc_autoreleasePoolPush" = "?v";
+		"objc_autoreleaseReturnValue" = "@@";
+		"objc_copyWeak" = "v??";
+		"objc_destroyWeak" = "v?";
+		"objc_initWeak" = "@?@";
+		"objc_loadWeak" = "@?";
+		"objc_loadWeakRetained" = "@?";
+		"objc_moveWeak" = "v??";
+		"objc_release" = "v@";
+		"objc_retain" = "@@";
+		"objc_retainAutorelease" = "@@";
+		"objc_retainAutoreleaseReturnValue" = "@@";
+		"objc_retainAutoreleasedReturnValue" = "@@";
+		"objc_retainBlock" = "@@";
+		"objc_storeStrong" = "v?@";
+		"objc_storeWeak" = "@?@";
+		// from headers
+	};
+	"/System/Library/Frameworks/Foundation.framework/Foundation" = {
+		"NSLog" = "$NSLog";
+	};
+}
