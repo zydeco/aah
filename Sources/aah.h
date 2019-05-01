@@ -61,6 +61,7 @@ hidden void call_native(uc_engine *uc, uint64_t pc);
 hidden void call_native_with_context(uc_engine *uc, struct native_call_context *ctx);
 hidden void call_emulated_function (ffi_cif *cif, void *ret, void **args, void *address);
 hidden const char * lookup_method_signature(const char *lib_name, const char *sym_name);
+// fixed_args is # of fixed args in variadic functions, -1 otherwise
 hidden int prep_cifs(ffi_cif *cif, ffi_cif_arm64 *cif_arm64, const char *method_signature, int fixed_args);
 
 #define SHIMDEF(name) __attribute__((visibility("default"))) void aah_shim_ ## name (uc_engine *uc, struct native_call_context *ctx)
