@@ -63,4 +63,4 @@ hidden void call_emulated_function (ffi_cif *cif, void *ret, void **args, void *
 hidden const char * lookup_method_signature(const char *lib_name, const char *sym_name);
 hidden int prep_cifs(ffi_cif *cif, ffi_cif_arm64 *cif_arm64, const char *method_signature, int fixed_args);
 
-#define SHIMDEF(name) __attribute__((visibility("default"))) void oah_shim_ ## name (uc_engine *uc, struct native_call_context *ctx)
+#define SHIMDEF(name) __attribute__((visibility("default"))) void aah_shim_ ## name (uc_engine *uc, struct native_call_context *ctx)

@@ -35,7 +35,7 @@ hidden void init_cif() {
         }
     }
     intptr_t vmaddr_slide = _dyld_get_image_vmaddr_slide(image_index);
-    const struct section_64 *sig_table = getsectbynamefromheader_64(info.dli_fbase, SEG_DATA, "__oah_meth_sigs");
+    const struct section_64 *sig_table = getsectbynamefromheader_64(info.dli_fbase, SEG_DATA, "__aah_meth_sigs");
     void *sig_bytes = (void *)((uintptr_t)vmaddr_slide + sig_table->addr);
     size_t sig_length = sig_table->size;
     CFDataRef sig_data = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, sig_bytes, sig_length, kCFAllocatorNull);
@@ -212,7 +212,7 @@ hidden void cif_cache_add(void *address, const char *method_signature) {
         os_unfair_lock_lock(&cif_cache_lock);
         CFDictionarySetValue(cif_cache_native, address, 0); // shim marker
         char shim_name[128];
-        snprintf(shim_name, 128, "oah_shim_%s", method_signature+1);
+        snprintf(shim_name, 128, "aah_shim_%s", method_signature+1);
         void *shim = dlsym(RTLD_SELF, shim_name);
         if (shim == NULL) {
             printf("shim not found: %s, might crash later\n", shim_name);

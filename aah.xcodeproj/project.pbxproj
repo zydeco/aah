@@ -497,7 +497,7 @@
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__DATA,
-					__oah_meth_sigs,
+					__aah_meth_sigs,
 					"\"$(DERIVED_FILE_DIR)/SymbolTable.plist.bin\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -526,7 +526,7 @@
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__DATA,
-					__oah_meth_sigs,
+					__aah_meth_sigs,
 					"\"$(DERIVED_FILE_DIR)/SymbolTable.plist.bin\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";

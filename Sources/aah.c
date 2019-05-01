@@ -4,7 +4,7 @@
 #include <pthread.h>
 #include <signal.h>
 
-__attribute__((constructor)) static void init_oah(void) {
+__attribute__((constructor)) static void init_aah(void) {
     // initialize unicorn
     unsigned int maj, min;
     uc_version(&maj, &min);
