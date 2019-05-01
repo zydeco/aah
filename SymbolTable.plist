@@ -1,25 +1,273 @@
 {
 	"/usr/lib/libobjc.A.dylib" = {
-		// ARC runtime support
+		"_objc_getClassForTag" = "#S";
+		"_objc_registerTaggedPointerClass" = "vS#";
+		"NXCompareHashTables" = "B^{?}^{?}";
+		"NXCompareMapTables" = "B^{?}^{?}";
+		"NXCopyHashTable" = "^{?}^{?}";
+		"NXCountHashTable" = "I^{?}";
+		"NXCountMapTable" = "I^{?}";
+		"NXCreateHashTable" = "^{?}{?=???i}I^v";
+		"NXCreateHashTableFromZone" = "^{?}{?=???i}I^v^v";
+		"NXCreateMapTable" = "^{?}{?=???i}I";
+		"NXCreateMapTableFromZone" = "^{?}{?=???i}I^v";
+		"NXEmptyHashTable" = "v^{?}";
+		"NXFreeHashTable" = "v^{?}";
+		"NXFreeMapTable" = "v^v";
+		"NXHashGet" = "^v^{?}^v";
+		"NXHashInsert" = "^v^{?}^v";
+		"NXHashInsertIfAbsent" = "^v^{?}^v";
+		"NXHashMember" = "i^{?}^v";
+		"NXHashRemove" = "^v^{?}^v";
+		"NXInitHashState" = "{?=ii}^{?}";
+		"NXInitMapState" = "{i}^v";
+		"NXMapGet" = "^v^v^v";
+		"NXMapInsert" = "^v^v^v^v";
+		"NXMapMember" = "^v^v^v?";
+		"NXMapRemove" = "^v^v^v";
+		"NXNextHashState" = "i^{?}^{?}?";
+		"NXNextMapState" = "i^v^v^v?";
+		"NXNoEffectFree" = "v^v^v";
+		"NXPtrHash" = "L^v^v";
+		"NXPtrIsEqual" = "i^v^v^v";
+		"NXReallyFree" = "v^v^v";
+		"NXResetHashTable" = "v^{?}";
+		"NXResetMapTable" = "v^v";
+		"NXStrHash" = "L^v^v";
+		"NXStrIsEqual" = "i^v^v^v";
+		"__objc_personality_v0" = "iiiQ??";
+		"_class_getIvarMemoryManagement" = "i#?";
+		"_class_isFutureClass" = "B#";
+		"_objcInit" = "v";
+		"_objc_atfork_child" = "v";
+		"_objc_atfork_parent" = "v";
+		"_objc_atfork_prepare" = "v";
+		"_objc_autoreleasePoolPop" = "v?";
+		"_objc_autoreleasePoolPrint" = "v";
+		"_objc_autoreleasePoolPush" = "?";
+		"_objc_deallocOnMainThreadHelper" = "v?";
+		"_objc_flush_caches" = "v#";
+		"_objc_getFreedObjectClass" = "#";
+		"_objc_init" = "v";
+		"_objc_msgForward" = "$objc_msgForward";
+		"_objc_realizeClassFromSwift" = "##^v";
+		"_objc_rootAlloc" = "@#";
+		"_objc_rootAllocWithZone" = "@#?";
+		"_objc_rootAutorelease" = "@@";
+		"_objc_rootDealloc" = "v@";
+		"_objc_rootFinalize" = "v@";
+		"_objc_rootHash" = "Q@";
+		"_objc_rootInit" = "@@";
+		"_objc_rootIsDeallocating" = "B@";
+		"_objc_rootRelease" = "v@";
+		"_objc_rootReleaseWasZero" = "B@";
+		"_objc_rootRetain" = "@@";
+		"_objc_rootRetainCount" = "Q@";
+		"_objc_rootTryRetain" = "B@";
+		"_objc_rootZone" = "?@";
+		"_objc_setBadAllocHandler" = "v?";
+		"_objc_setClassCopyFixupHandler" = "v?";
+		"_protocol_getMethodTypeEncoding" = "*@:BB";
+		"class_addIvar" = "B#*LC*";
+		"class_addMethod" = "B#:?*";
+		"class_addMethodsBulk" = "?#???I?";
+		"class_addProperty" = "B#*^{?}I";
+		"class_addProtocol" = "B#@";
+		"class_conformsToProtocol" = "B#@";
+		"class_copyIvarList" = "^^{objc_ivar=}#^I";
+		"class_copyMethodList" = "^^{objc_method=}#^I";
+		"class_copyPropertyList" = "^^{objc_property=}#^I";
+		"class_copyProtocolList" = "?#^I";
+		"class_createInstance" = "@#L";
+		"class_createInstances" = "I#Q?I";
+		"class_getClassMethod" = "^{objc_method=}#:";
+		"class_getClassVariable" = "^{objc_ivar=}#*";
+		"class_getImageName" = "*#";
+		"class_getInstanceMethod" = "^{objc_method=}#:";
+		"class_getInstanceSize" = "L#";
+		"class_getInstanceVariable" = "^{objc_ivar=}#*";
+		"class_getIvarLayout" = "^C#";
+		"class_getMethodImplementation" = "?#:";
+		"class_getName" = "*#";
+		"class_getProperty" = "^{objc_property=}#*";
+		"class_getSuperclass" = "##";
+		"class_getVersion" = "i#";
+		"class_getWeakIvarLayout" = "^C#";
+		"class_isMetaClass" = "B#";
+		"class_lookupMethod" = "?#:";
+		"class_replaceMethod" = "?#:?*";
+		"class_replaceMethodsBulk" = "v#???I";
+		"class_replaceProperty" = "v#*^{?}I";
+		"class_respondsToMethod" = "B#:";
+		"class_respondsToSelector" = "B#:";
+		"class_setIvarLayout" = "v#^C";
+		"class_setSuperclass" = "###";
+		"class_setVersion" = "v#i";
+		"class_setWeakIvarLayout" = "v#^C";
+		"gdb_class_getClass" = "##";
+		"gdb_object_getClass" = "#@";
+		"imp_getBlock" = "@?";
+		"imp_implementationWithBlock" = "?@";
+		"imp_removeBlock" = "B?";
+		"instrumentObjcMessageSends" = "vB";
+		"ivar_getName" = "*^{objc_ivar=}";
+		"ivar_getOffset" = "l^{objc_ivar=}";
+		"ivar_getTypeEncoding" = "*^{objc_ivar=}";
+		"method_copyArgumentType" = "*^{objc_method=}I";
+		"method_copyReturnType" = "*^{objc_method=}";
+		"method_exchangeImplementations" = "v^{objc_method=}^{objc_method=}";
+		"method_getArgumentType" = "v^{objc_method=}I*L";
+		"method_getDescription" = "^{objc_method_description=}^{objc_method=}";
+		"method_getImplementation" = "?^{objc_method=}";
+		"method_getName" = ":^{objc_method=}";
+		"method_getNumberOfArguments" = "I^{objc_method=}";
+		"method_getReturnType" = "v^{objc_method=}*L";
+		"method_getTypeEncoding" = "*^{objc_method=}";
+		"method_invoke" = "$method_invoke";
+		"method_setImplementation" = "?^{objc_method=}?";
+		"objc_alloc" = "@#";
+		"objc_allocWithZone" = "@#";
+		"objc_alloc_init" = "@#"; // clang says it's "v@"?
+		"objc_allocateClassPair" = "##*L";
+		"objc_allocateProtocol" = "@*";
 		"objc_autorelease" = "@@";
 		"objc_autoreleasePoolPop" = "v?";
-		"objc_autoreleasePoolPush" = "?v";
+		"objc_autoreleasePoolPush" = "?";
 		"objc_autoreleaseReturnValue" = "@@";
+		"objc_begin_catch" = "@^v";
+		"objc_clear_deallocating" = "v@";
+		"objc_constructInstance" = "@#^v";
+		"objc_copyClassList" = "^#^I";
+		"objc_copyClassNamesForImage" = "?*^I";
+		"objc_copyClassNamesForImageHeader" = "??^I";
+		"objc_copyCppObjectAtomic" = "v???";
+		"objc_copyImageNames" = "?^I";
+		"objc_copyProtocolList" = "?^I";
+		"objc_copyStruct" = "v??qBB";
 		"objc_copyWeak" = "v??";
+		// decl for objc_debug_class_rw_data_mask not found
+		// decl for objc_debug_indexed_isa_index_mask not found
+		// decl for objc_debug_indexed_isa_index_shift not found
+		// decl for objc_debug_indexed_isa_magic_mask not found
+		// decl for objc_debug_indexed_isa_magic_value not found
+		// decl for objc_debug_isa_class_mask not found
+		// decl for objc_debug_isa_magic_mask not found
+		// decl for objc_debug_isa_magic_value not found
+		// decl for objc_debug_swift_stable_abi_bit not found
+		// decl for objc_debug_taggedpointer_classes not found
+		// decl for objc_debug_taggedpointer_ext_classes not found
+		// decl for objc_debug_taggedpointer_ext_mask not found
+		// decl for objc_debug_taggedpointer_ext_payload_lshift not found
+		// decl for objc_debug_taggedpointer_ext_payload_rshift not found
+		// decl for objc_debug_taggedpointer_ext_slot_mask not found
+		// decl for objc_debug_taggedpointer_ext_slot_shift not found
+		// decl for objc_debug_taggedpointer_mask not found
+		// decl for objc_debug_taggedpointer_obfuscator not found
+		// decl for objc_debug_taggedpointer_payload_lshift not found
+		// decl for objc_debug_taggedpointer_payload_rshift not found
+		// decl for objc_debug_taggedpointer_slot_mask not found
+		// decl for objc_debug_taggedpointer_slot_shift not found
 		"objc_destroyWeak" = "v?";
+		"objc_destructInstance" = "^v@";
+		"objc_disposeClassPair" = "v#";
+		"objc_duplicateClass" = "##*L";
+		"objc_end_catch" = "v";
+		"objc_enumerationMutation" = "v@";
+		"objc_exception_rethrow" = "v";
+		"objc_exception_throw" = "v@";
+		"objc_getAssociatedObject" = "@@^v";
+		"objc_getClass" = "#*";
+		"objc_getClassList" = "i^#i";
+		"objc_getFutureClass" = "#*";
+		"objc_getMetaClass" = "#*";
+		"objc_getProperty" = "@@:qB";
+		"objc_getProtocol" = "@*";
+		"objc_getRequiredClass" = "#*";
 		"objc_initWeak" = "@?@";
-		"objc_loadWeak" = "@?";
+		"objc_initWeakOrNil" = "@?@";
+		"objc_initializeClassPair" = "##*##";
+		"objc_loadWeak" = "@^@";
 		"objc_loadWeakRetained" = "@?";
+		"objc_lookUpClass" = "#*";
 		"objc_moveWeak" = "v??";
+		// decl for objc_msgLookup not found
+		// decl for objc_msgLookupSuper2 not found
+		"objc_msgSend" = "$objc_msgSend";
+		"objc_msgSendSuper" = "$objc_msgSendSuper";
+		// decl for objc_msgSendSuper2 not found
+		// decl for objc_msgSendSuper2_debug not found
+		// decl for objc_msgSend_debug not found
+		// decl for objc_msgSend_noarg not found
+		"objc_readClassPair" = "##?";
+		"objc_registerClassPair" = "v#";
+		"objc_registerProtocol" = "v@";
 		"objc_release" = "v@";
+		"objc_removeAssociatedObjects" = "v@";
 		"objc_retain" = "@@";
 		"objc_retainAutorelease" = "@@";
 		"objc_retainAutoreleaseReturnValue" = "@@";
 		"objc_retainAutoreleasedReturnValue" = "@@";
 		"objc_retainBlock" = "@@";
+		"objc_retain_autorelease" = "@@";
+		"objc_retainedObject" = "@^v";
+		"objc_setAssociatedObject" = "v@^v@L";
+		"objc_setEnumerationMutationHandler" = "v?";
+		"objc_setExceptionMatcher" = "??";
+		"objc_setExceptionPreprocessor" = "??";
+		"objc_setForwardHandler" = "v^v^v";
+		"objc_setHook_getClass" = "v?^?";
+		"objc_setHook_getImageName" = "v?^?";
+		"objc_setProperty" = "v@:q@Bc";
+		"objc_setProperty_atomic" = "v@:q@";
+		"objc_setProperty_atomic_copy" = "v@:q@";
+		"objc_setProperty_nonatomic" = "v@:q@";
+		"objc_setProperty_nonatomic_copy" = "v@:q@";
+		"objc_setUncaughtExceptionHandler" = "??";
+		"objc_should_deallocate" = "B@";
 		"objc_storeStrong" = "v?@";
-		"objc_storeWeak" = "@?@";
-		// from headers
+		"objc_storeWeak" = "@^@@";
+		"objc_storeWeakOrNil" = "@^@@";
+		"objc_sync_enter" = "i@";
+		"objc_sync_exit" = "i@";
+		"objc_terminate" = "v";
+		"objc_unretainedObject" = "@^v";
+		"objc_unretainedPointer" = "^v@";
+		"objc_unsafeClaimAutoreleasedReturnValue" = "@@";
+		"object_copy" = "@@L";
+		"object_dispose" = "@@";
+		"object_getClass" = "#@";
+		"object_getClassName" = "*@";
+		"object_getIndexedIvars" = "^v@";
+		"object_getInstanceVariable" = "^{objc_ivar=}@*?";
+		"object_getIvar" = "@@^{objc_ivar=}";
+		"object_getMethodImplementation" = "?@:";
+		"object_isClass" = "B@";
+		"object_setClass" = "#@#";
+		"object_setInstanceVariable" = "^{objc_ivar=}@*^v";
+		"object_setInstanceVariableWithStrongDefault" = "^{objc_ivar=}@*^v";
+		"object_setIvar" = "v@^{objc_ivar=}@";
+		"object_setIvarWithStrongDefault" = "v@^{objc_ivar=}@";
+		"property_copyAttributeList" = "^{?}^{objc_property=}^I";
+		"property_copyAttributeValue" = "*^{objc_property=}*";
+		"property_getAttributes" = "*^{objc_property=}";
+		"property_getName" = "*^{objc_property=}";
+		"protocol_addMethodDescription" = "v@:*BB";
+		"protocol_addProperty" = "v@*^{?}IBB";
+		"protocol_addProtocol" = "v@@";
+		"protocol_conformsToProtocol" = "B@@";
+		"protocol_copyMethodDescriptionList" = "^{objc_method_description=}@BB^I";
+		"protocol_copyPropertyList" = "^^{objc_property=}@^I";
+		"protocol_copyPropertyList2" = "^^{objc_property=}@^IBB";
+		"protocol_copyProtocolList" = "?@^I";
+		"protocol_getMethodDescription" = "{objc_method_description=}@:BB";
+		"protocol_getName" = "*@";
+		"protocol_getProperty" = "^{objc_property=}@*BB";
+		"protocol_isEqual" = "B@@";
+		"sel_getName" = "*:";
+		"sel_getUid" = ":*";
+		"sel_isEqual" = "B::";
+		"sel_isMapped" = "B:";
+		"sel_registerName" = ":*";
 	};
 	"/System/Library/Frameworks/Foundation.framework/Foundation" = {
 		"NSLog" = "$NSLog";
