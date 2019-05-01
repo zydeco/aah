@@ -27,10 +27,11 @@ SHIMDEF(NSLog) {
     prep_cifs(&cif_native, &cif_arm64, argEncoding, 1);
     ctx->cif_native = &cif_native;
     ctx->cif_arm64 = &cif_arm64;
-    if (formatWasModified) {
-        // format string was modified
-        ctx->arm64_call_context->x[0] = (uint64_t)[[[NSString alloc] initWithUTF8String:fmt] autorelease];
-    }
+    NSString *newFormat = formatWasModified ? [[NSString alloc] initWithUTF8String:fmt] : format;
+    ctx->arm64_call_context->x[0] = (uint64_t)newFormat;
     call_native_with_context(uc, ctx);
+    if (newFormat != format) {
+        [newFormat release];
+    }
     free(cif_native.arg_types); // cif_arm64.arg_types is the same
 }

@@ -189,5 +189,5 @@ int EncodeStringFormatArgs(char *fmt, char *type_encoding, int is_nsstring, int 
 }
 
 int CountStringFormatArgs(const char *format) {
-    return EncodeStringFormatArgs((char*)format, NULL, 0, 0);
+    return EncodeStringFormatArgs((char*)format, NULL, 1, 0);
 }
