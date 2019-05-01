@@ -356,6 +356,7 @@ hidden void call_native(uc_engine *uc, uint64_t pc) {
     uc_reg_read(uc, UC_ARM64_REG_X5, &call_context.x[5]);
     uc_reg_read(uc, UC_ARM64_REG_X6, &call_context.x[6]);
     uc_reg_read(uc, UC_ARM64_REG_X7, &call_context.x[7]);
+    uc_reg_read(uc, UC_ARM64_REG_X8, &call_context.x[8]);
     uc_reg_read(uc, UC_ARM64_REG_V0, &call_context.v[0]);
     uc_reg_read(uc, UC_ARM64_REG_V1, &call_context.v[1]);
     uc_reg_read(uc, UC_ARM64_REG_V2, &call_context.v[2]);

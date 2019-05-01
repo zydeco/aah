@@ -80,7 +80,7 @@ struct _v
 struct arm64_call_context
 {
   struct _v v[N_V_ARG_REG];
-  uint64_t x[N_X_ARG_REG];
+  uint64_t x[N_X_ARG_REG+1];
 };
 
 typedef struct {
