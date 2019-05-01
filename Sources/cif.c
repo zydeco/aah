@@ -106,6 +106,7 @@ next_type_1:
         case '^':
             next_type(&ms, "skipping pointer: ");
             // fall through
+        case ':':
         case '*':
         case '@':
         case '?':
