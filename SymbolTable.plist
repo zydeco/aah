@@ -194,7 +194,7 @@
 		// decl for objc_msgLookupSuper2 not found
 		"objc_msgSend" = "$objc_msgSend";
 		"objc_msgSendSuper" = "$objc_msgSendSuper";
-		// decl for objc_msgSendSuper2 not found
+		"objc_msgSendSuper2" = "$objc_msgSendSuper2";
 		// decl for objc_msgSendSuper2_debug not found
 		// decl for objc_msgSend_debug not found
 		// decl for objc_msgSend_noarg not found

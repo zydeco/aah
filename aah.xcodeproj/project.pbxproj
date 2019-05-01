@@ -47,6 +47,7 @@
 		28054DAF2275083500A6881E /* printf.c in Sources */ = {isa = PBXBuildFile; fileRef = 28054DAC2275083500A6881E /* printf.c */; };
 		28054DB02275083500A6881E /* printf.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054DAD2275083500A6881E /* printf.h */; };
 		28054DB12275083500A6881E /* nslog.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DAE2275083500A6881E /* nslog.m */; };
+		28054DB3227A0BC200A6881E /* objc_msgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DB2227A0BC200A6881E /* objc_msgSend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		28054DAC2275083500A6881E /* printf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = printf.c; sourceTree = "<group>"; };
 		28054DAD2275083500A6881E /* printf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = printf.h; sourceTree = "<group>"; };
 		28054DAE2275083500A6881E /* nslog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nslog.m; sourceTree = "<group>"; };
+		28054DB2227A0BC200A6881E /* objc_msgSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objc_msgSend.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				28054DAC2275083500A6881E /* printf.c */,
 				28054DAD2275083500A6881E /* printf.h */,
 				28054DAE2275083500A6881E /* nslog.m */,
+				28054DB2227A0BC200A6881E /* objc_msgSend.m */,
 			);
 			path = shims;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28054DB3227A0BC200A6881E /* objc_msgSend.m in Sources */,
 				28054D5B2275008F00A6881E /* cif.c in Sources */,
 				28054D582275008F00A6881E /* emulator.c in Sources */,
 				28054DAF2275083500A6881E /* printf.c in Sources */,
