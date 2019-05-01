@@ -58,7 +58,6 @@ hidden struct emulator_ctx* init_emulator_ctx() {
     uint64_t stack_top = ((uint64_t)ctx->stack) + ctx->stack_size;
     uc_reg_write(ctx->uc, UC_ARM64_REG_SP, &stack_top);
     ctx->return_ptr = (uint64_t)ctx;
-    uc_reg_write(ctx->uc, UC_ARM64_REG_LR, &ctx->return_ptr);
     ctx->pagezero_size = getsegbyname(SEG_PAGEZERO)->vmsize;
     printf("Page zero is 0x%lx\n", ctx->pagezero_size);
     
@@ -106,6 +105,7 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
     uint64_t pc;
     uc_err err;
     Dl_info info;
+    uc_reg_write(ctx->uc, UC_ARM64_REG_LR, &ctx->return_ptr);
     for(;;) {
         err = uc_emu_start(uc, start_address, ctx->return_ptr, 0, 0);
         uc_reg_read(uc, UC_ARM64_REG_PC, &pc);
