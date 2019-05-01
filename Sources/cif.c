@@ -47,6 +47,7 @@ static ffi_type *next_type(char const ** method_signature, const char *prefix) {
     ffi_type *type = NULL;
     const char *ms = *method_signature;
     P("next_type %s\n", ms);
+next_type_1:
     switch(*ms++) {
         case 'c': 
             P("%sffi_type_sint8\n", prefix);
@@ -148,6 +149,15 @@ static ffi_type *next_type(char const ** method_signature, const char *prefix) {
         case 'b': // TODO: bitfield
             fprintf(stderr, "bitfields not supported in method signature: %s", ms-1);
             abort();
+        case 'r': // const
+        case 'n': // in
+        case 'N': // inout
+        case 'o': // out
+        case 'O': // bycopy
+        case 'R': // byref
+        case 'V': // oneway
+            // skip qualifiers
+            goto next_type_1;
         default:
             fprintf(stderr, "unexpected character in method signature: %s\n", ms-1);
             abort();
