@@ -354,7 +354,7 @@ hidden void call_native_with_context(uc_engine *uc, struct native_call_context *
     }
 }
 
-hidden void call_native(uc_engine *uc, uint64_t pc) {
+hidden uint64_t call_native(uc_engine *uc, uint64_t pc) {
     // call context
     struct arm64_call_context call_context;
     uint64_t sp;
@@ -389,15 +389,15 @@ hidden void call_native(uc_engine *uc, uint64_t pc) {
     if (ctx.cif_native && ctx.cif_arm64) {
         // call with cif
         call_native_with_context(uc, &ctx);
-    } else if (ctx.cif_native == 0) {
+        return SHIM_RETURN;
+    } else if (ctx.cif_native == NULL && ctx.cif_arm64 != NULL) {
         // call shim
         shim_ptr shim = (shim_ptr)ctx.cif_arm64;
         ctx.cif_arm64 = NULL;
         printf("calling shim at %p\n", shim);
-        shim(uc, &ctx);
+        return shim(uc, &ctx);
     } else {
         printf("missing cif\n");
         abort();
     }
-    
 }

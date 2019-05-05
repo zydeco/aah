@@ -51,17 +51,19 @@ struct native_call_context {
     struct arm64_call_context *arm64_call_context;
 };
 
-typedef void (*shim_ptr)(uc_engine*, struct native_call_context*);
+typedef uint64_t (*shim_ptr)(uc_engine*, struct native_call_context*);
 
 hidden void init_cif (void);
 hidden void cif_cache_add(void *address, const char *method_signature);
 hidden ffi_cif * cif_cache_get_native(void *address);
 hidden ffi_cif_arm64 * cif_cache_get_arm64(void *address);
-hidden void call_native(uc_engine *uc, uint64_t pc);
+hidden uint64_t call_native(uc_engine *uc, uint64_t pc);
 hidden void call_native_with_context(uc_engine *uc, struct native_call_context *ctx);
 hidden void call_emulated_function (ffi_cif *cif, void *ret, void **args, void *address);
 hidden const char * lookup_method_signature(const char *lib_name, const char *sym_name);
 // fixed_args is # of fixed args in variadic functions, -1 otherwise
 hidden int prep_cifs(ffi_cif *cif, ffi_cif_arm64 *cif_arm64, const char *method_signature, int fixed_args);
 
-#define SHIMDEF(name) __attribute__((visibility("default"))) void aah_shim_ ## name (uc_engine *uc, struct native_call_context *ctx)
+#define SHIM_RETURN 0
+#define SHIMDEF(name) __attribute__((visibility("default"))) uint64_t aah_shim_ ## name (uc_engine *uc, struct native_call_context *ctx)
+

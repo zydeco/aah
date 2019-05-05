@@ -34,4 +34,5 @@ SHIMDEF(NSLog) {
         [newFormat release];
     }
     free(cif_native.arg_types); // cif_arm64.arg_types is the same
+    return SHIM_RETURN;
 }

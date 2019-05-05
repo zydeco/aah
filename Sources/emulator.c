@@ -154,7 +154,7 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
     uint64_t pc;
     uc_err err;
     Dl_info info;
-    uc_reg_write(ctx->uc, UC_ARM64_REG_LR, &ctx->return_ptr);
+    uc_reg_write(uc, UC_ARM64_REG_LR, &ctx->return_ptr);
     for(;;) {
         err = uc_emu_start(uc, start_address, ctx->return_ptr, 0, 0);
         uc_reg_read(uc, UC_ARM64_REG_PC, &pc);
@@ -162,9 +162,11 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
             uint64_t last_lr;
             uc_reg_read(uc, UC_ARM64_REG_LR, &last_lr);
             printf("  calling native %s from %p\n", info.dli_sname, (void*)last_lr);
-            call_native(uc, pc);
-            // return to emulator
-            start_address = last_lr;
+            maybe_print_regs(uc);
+            start_address = call_native(uc, pc);
+            if (start_address == 0) {
+                start_address = last_lr;
+            }
             continue;
         } else if (pc == ctx->return_ptr) {
             printf("emulation finished ok?\n");
