@@ -821,6 +821,8 @@ hidden void call_emulated_function (ffi_cif *cif, void *ret, void **args, void *
     
     
     run_emulator(ctx, (uint64_t)address);
+    stack_ptr += stack_bytes;
+    uc_reg_write(ctx->uc, UC_ARM64_REG_SP, &stack_ptr);
     
     // result
     int rflags = arm64_rflags_for_type(cif->rtype);
