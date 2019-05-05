@@ -10,6 +10,8 @@ static CFMutableDictionaryRef cif_cache_arm64 = NULL;
 static os_unfair_lock cif_cache_lock = OS_UNFAIR_LOCK_INIT;
 static CFDictionaryRef cif_sig_table = NULL;
 
+const char *CIF_LIB_OBJC_SHIMS = "objc shims";
+
 //#define P(...) printf(__VA_ARGS__)
 #define P(...)
 
@@ -107,6 +109,7 @@ next_type_1:
             next_type(&ms, "skipping pointer: ");
             // fall through
         case ':':
+        case '#':
         case '*':
         case '@':
         case '?':
@@ -232,8 +235,10 @@ hidden void cif_cache_add(void *address, const char *method_signature) {
         os_unfair_lock_unlock(&cif_cache_lock);
     } else if (prep_cifs(cif, cif_arm64, method_signature, -1)) {
         os_unfair_lock_lock(&cif_cache_lock);
-        CFDictionarySetValue(cif_cache_native, address, cif);
-        CFDictionarySetValue(cif_cache_arm64, address, cif_arm64);
+        if (!CFDictionaryContainsKey(cif_cache_native, address)) {
+            CFDictionarySetValue(cif_cache_native, address, cif);
+            CFDictionarySetValue(cif_cache_arm64, address, cif_arm64);
+        }
         os_unfair_lock_unlock(&cif_cache_lock);
     }
 }
@@ -251,7 +256,9 @@ hidden const char * lookup_method_signature(const char *lib_name, const char *sy
     CFStringRef signature = CFDictionaryGetValue(lib_table, sym_name_cf);
     CFRelease(sym_name_cf);
     if (signature == NULL) {
-        printf("Symbol %s not found in table for library %s\n", sym_name, lib_name);
+        if (lib_name != CIF_LIB_OBJC_SHIMS) {
+            printf("Symbol %s not found in table for library %s\n", sym_name, lib_name);
+        }
         return NULL;
     }
     const char *ms = CFStringGetCStringPtr(signature, kCFStringEncodingUTF8);
@@ -280,17 +287,15 @@ hidden void call_native_with_context(uc_engine *uc, struct native_call_context *
     if (rflags & AARCH64_RET_IN_MEM) {
         // copy to x8
         uint64_t x8;
-        printf("copying return value\n");
         uc_reg_read(uc, UC_ARM64_REG_X8, &x8);
         memcpy((void*)x8, ret, ctx->cif_native->rtype->size);
     } else switch(rflags & AARCH64_RET_MASK) {
         case AARCH64_RET_VOID:
             break;
+        case AARCH64_RET_INT128:
+            uc_reg_write(uc, UC_ARM64_REG_X1, ret+8);
         case AARCH64_RET_INT64:
             uc_reg_write(uc, UC_ARM64_REG_X0, ret);
-        case AARCH64_RET_INT128:
-            uc_reg_write(uc, UC_ARM64_REG_X0, ret);
-            uc_reg_write(uc, UC_ARM64_REG_X1, ret+8);
             break;
         case AARCH64_RET_UINT8:
             rr0 = *(uint8_t*)ret;
@@ -350,6 +355,7 @@ hidden void call_native_with_context(uc_engine *uc, struct native_call_context *
             break;
     
         default:
+            printf("don't know how to return\n");
             abort();
     }
 }
