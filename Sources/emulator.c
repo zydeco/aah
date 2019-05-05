@@ -9,6 +9,48 @@ static void destroy_emulator_ctx(void *ptr);
 static pthread_key_t emulator_ctx_key;
 static pthread_once_t key_once = PTHREAD_ONCE_INIT;
 
+static void dont_print_regs(uc_engine *uc) {};
+static void(*maybe_print_regs)(uc_engine*) = dont_print_regs;
+
+static void print_regs(uc_engine *uc) {
+    struct arm64_call_context call_context;
+    uint64_t pc, sp, lr, fp;
+    uc_reg_read(uc, UC_ARM64_REG_PC, &pc);
+    uc_reg_read(uc, UC_ARM64_REG_SP, &sp);
+    uc_reg_read(uc, UC_ARM64_REG_FP, &fp);
+    uc_reg_read(uc, UC_ARM64_REG_LR, &lr);
+    uc_reg_read(uc, UC_ARM64_REG_X0, &call_context.x[0]);
+    uc_reg_read(uc, UC_ARM64_REG_X1, &call_context.x[1]);
+    uc_reg_read(uc, UC_ARM64_REG_X2, &call_context.x[2]);
+    uc_reg_read(uc, UC_ARM64_REG_X3, &call_context.x[3]);
+    uc_reg_read(uc, UC_ARM64_REG_X4, &call_context.x[4]);
+    uc_reg_read(uc, UC_ARM64_REG_X5, &call_context.x[5]);
+    uc_reg_read(uc, UC_ARM64_REG_X6, &call_context.x[6]);
+    uc_reg_read(uc, UC_ARM64_REG_X7, &call_context.x[7]);
+    uc_reg_read(uc, UC_ARM64_REG_X8, &call_context.x[8]);
+    uc_reg_read(uc, UC_ARM64_REG_V0, &call_context.v[0]);
+    uc_reg_read(uc, UC_ARM64_REG_V1, &call_context.v[1]);
+    uc_reg_read(uc, UC_ARM64_REG_V2, &call_context.v[2]);
+    uc_reg_read(uc, UC_ARM64_REG_V3, &call_context.v[3]);
+    uc_reg_read(uc, UC_ARM64_REG_V4, &call_context.v[4]);
+    uc_reg_read(uc, UC_ARM64_REG_V5, &call_context.v[5]);
+    uc_reg_read(uc, UC_ARM64_REG_V6, &call_context.v[6]);
+    uc_reg_read(uc, UC_ARM64_REG_V7, &call_context.v[7]);
+    
+    printf("x0:0x%016llx ", call_context.x[0]);
+    printf("x1:0x%016llx ", call_context.x[1]);
+    printf("x2:0x%016llx ", call_context.x[2]);
+    printf("x3:0x%016llx\n", call_context.x[3]);
+    printf("x4:0x%016llx ", call_context.x[4]);
+    printf("x5:0x%016llx ", call_context.x[5]);
+    printf("x6:0x%016llx ", call_context.x[6]);
+    printf("x7:0x%016llx\n", call_context.x[7]);
+    printf("pc:0x%016llx ", pc);
+    printf("sp:0x%016llx ", sp);
+    printf("fp:0x%016llx ", fp);
+    printf("lr:0x%016llx\n", lr);
+}
+
 hidden struct emulator_ctx* init_emulator_ctx() {
     struct emulator_ctx *ctx = malloc(sizeof(struct emulator_ctx));
     pthread_setspecific(emulator_ctx_key, ctx);
@@ -52,10 +94,16 @@ hidden struct emulator_ctx* init_emulator_ctx() {
         }
     }
     
+    if (getenv("PRINT_REGS") && strtol(getenv("PRINT_REGS"), NULL, 10)) {
+        // print some registers sometimes
+        maybe_print_regs = print_regs;
+    }
+    
     // map memory for stack
     ctx->stack_size = pthread_get_stacksize_np(pthread_self());
     ctx->stack = malloc(ctx->stack_size);
     uint64_t stack_top = ((uint64_t)ctx->stack) + ctx->stack_size;
+    printf("Emulated stack is %p to %p\n", ctx->stack, (void*)stack_top);
     uc_reg_write(ctx->uc, UC_ARM64_REG_SP, &stack_top);
     ctx->return_ptr = (uint64_t)ctx;
     ctx->pagezero_size = getsegbyname(SEG_PAGEZERO)->vmsize;
@@ -100,6 +148,7 @@ static void destroy_emulator_ctx(void *ptr) {
 
 void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
     printf("running emulator at %p\n", (void*)start_address);
+    maybe_print_regs(ctx->uc);
     
     uc_engine *uc = ctx->uc;
     uint64_t pc;
@@ -173,6 +222,7 @@ static bool cb_print_disasm(uc_engine *uc, uint64_t address, uint32_t size, stru
     const uint8_t *cs_code = (const uint8_t *)address;
     size_t cs_size = 4;
     uint64_t cs_addr = address;
+    maybe_print_regs(uc);
     if (cs_disasm_iter(ctx->capstone, &cs_code, &cs_size, &cs_addr, &ctx->insn)) {
         printf("0x%" PRIx64 ":\t%-12s%s\n", ctx->insn.address, ctx->insn.mnemonic, ctx->insn.op_str);
     } else {
