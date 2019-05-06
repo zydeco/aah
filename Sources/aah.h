@@ -55,6 +55,7 @@ typedef uint64_t (*shim_ptr)(uc_engine*, struct native_call_context*);
 
 hidden void init_cif (void);
 hidden void cif_cache_add(void *address, const char *method_signature);
+hidden void cif_cache_add_class(const char *className);
 hidden ffi_cif * cif_cache_get_native(void *address);
 hidden ffi_cif_arm64 * cif_cache_get_arm64(void *address);
 hidden uint64_t call_native(uc_engine *uc, uint64_t pc);

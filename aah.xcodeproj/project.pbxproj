@@ -48,6 +48,8 @@
 		28054DB02275083500A6881E /* printf.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054DAD2275083500A6881E /* printf.h */; };
 		28054DB12275083500A6881E /* nslog.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DAE2275083500A6881E /* nslog.m */; };
 		28054DB3227A0BC200A6881E /* objc_msgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DB2227A0BC200A6881E /* objc_msgSend.m */; };
+		28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BEFA2280B2C1006A31F0 /* objc-cif.m */; };
+		28A8BEFD2280B3C4006A31F0 /* libobjc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,7 +96,8 @@
 		28054DAD2275083500A6881E /* printf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = printf.h; sourceTree = "<group>"; };
 		28054DAE2275083500A6881E /* nslog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nslog.m; sourceTree = "<group>"; };
 		28054DB2227A0BC200A6881E /* objc_msgSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objc_msgSend.m; sourceTree = "<group>"; };
-		28054DB4227E37AD00A6881E /* objc-runtime-structs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "objc-runtime-structs.h"; sourceTree = "<group>"; };
+		28A8BEFA2280B2C1006A31F0 /* objc-cif.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "objc-cif.m"; sourceTree = "<group>"; };
+		28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A8BEFD2280B3C4006A31F0 /* libobjc.tbd in Frameworks */,
 				28054D9D227501E200A6881E /* libcapstone.a in Frameworks */,
 				28054D9E227501E400A6881E /* libffi.a in Frameworks */,
 				28054D9F227501E700A6881E /* libunicorn.a in Frameworks */,
@@ -134,11 +138,11 @@
 			isa = PBXGroup;
 			children = (
 				28054D552275008F00A6881E /* cif.c */,
+				28A8BEFA2280B2C1006A31F0 /* objc-cif.m */,
 				28054D522275008F00A6881E /* emulator.c */,
 				28054D532275008F00A6881E /* ffi_arm64.c */,
 				28054D562275008F00A6881E /* ffi_arm64.h */,
 				28054D512275008F00A6881E /* loader.c */,
-				28054DB4227E37AD00A6881E /* objc-runtime-structs.h */,
 				28054D542275008F00A6881E /* memory.c */,
 				28054D4E2275007C00A6881E /* aah.c */,
 				28054D4D2275007C00A6881E /* aah.h */,
@@ -199,6 +203,7 @@
 		28054D9C227501E200A6881E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */,
 				28054D962275017E00A6881E /* libcapstone.a */,
 				28054D972275017E00A6881E /* libffi.a */,
 				28054D952275017E00A6881E /* libunicorn.a */,
@@ -348,7 +353,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\ncodesign --remove-signature \"$SCRIPT_OUTPUT_FILE_0\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# change platform to macOS\nggrep -obUaP \"\\x32\\x00\\x00\\x00\\x20\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x00\" \"$SCRIPT_OUTPUT_FILE_0\" | head -n 1 | cut -d: -f1 | xargs printf \"%08x: 32000000 20000000 01000000 000E0A00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\n\n";
+			shellScript = "exit\n\ncp \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\ncodesign --remove-signature \"$SCRIPT_OUTPUT_FILE_0\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# change platform to macOS\nggrep -obUaP \"\\x32\\x00\\x00\\x00\\x20\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x00\" \"$SCRIPT_OUTPUT_FILE_0\" | head -n 1 | cut -d: -f1 | xargs printf \"%08x: 32000000 20000000 06000000 000E0A00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -361,6 +366,7 @@
 				28054D5B2275008F00A6881E /* cif.c in Sources */,
 				28054D582275008F00A6881E /* emulator.c in Sources */,
 				28054DAF2275083500A6881E /* printf.c in Sources */,
+				28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */,
 				28054D572275008F00A6881E /* loader.c in Sources */,
 				28054D5A2275008F00A6881E /* memory.c in Sources */,
 				28054DB12275083500A6881E /* nslog.m in Sources */,

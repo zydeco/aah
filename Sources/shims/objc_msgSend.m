@@ -45,7 +45,6 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
                 uc_reg_write(uc, UC_ARM64_REG_X0, &receiver);
             }
             return (uint64_t)impl;
-            //run_emulator(get_emulator_ctx(), (uint64_t)impl);
         } else {
             // calling native method
             ffi_cif *cif_native = cif_cache_get_native(impl);

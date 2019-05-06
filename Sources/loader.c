@@ -1,6 +1,5 @@
 #include "aah.h"
 #include <sys/mman.h>
-#include "objc-runtime-structs.h"
 
 static void map_image(const struct mach_header_64 *mh, uint32_t perms, intptr_t vmaddr_slide);
 static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmaddr_slide);
@@ -22,25 +21,6 @@ static void did_load_image(const struct mach_header* mh, intptr_t vmaddr_slide) 
     }
 }
 
-static void cif_cache_add_methods(const struct method_list_t *methods) {
-    // FIXME: are any methods variadic? they'll need reverse shims
-    if (methods == NULL) {
-        return;
-    }
-    for (int i = 0; i < methods->count; i++) {
-        const struct method_t *method = &methods->method[i];
-        cif_cache_add(method->imp, method->types);
-    }
-}
-
-static void cif_cache_add_class(const struct class64 *class, void *base, void *top) {
-    if (class == NULL || (void*)class < base || (void*)class > top) {
-        return;
-    }
-    cif_cache_add_methods(class->data->baseMethods);
-    cif_cache_add_class(class->isa, base, top);
-}
-
 static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
     Dl_info info;
     dladdr(mh, &info);
@@ -51,7 +31,6 @@ static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmad
         const struct segment_command_64 *sc = lc_ptr;
         if (sc->cmd == LC_SEGMENT_64) {
             intptr_t seg_base = sc->vmaddr + vmaddr_slide;
-            intptr_t seg_top = seg_base + sc->vmsize;
             if (strncmp(sc->segname, SEG_TEXT, sizeof(sc->segname)) == 0) {
                 // make text segment non-executable
                 printf("Found text segment at 0x%lx\n", seg_base);
@@ -70,21 +49,6 @@ static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmad
                     void **pointers = (void **)((uintptr_t)vmaddr_slide + sect->addr);
                     for(int i = 0; i < sect->size / 8; i++) {
                         cif_cache_add(vmaddr_slide + pointers[i], "v");
-                    }
-                } else if (strncmp(sect->sectname, "__objc_classlist", 16) == 0 || strncmp(sect->sectname, "__objc_nlclslist", 16) == 0) {
-                    // load methods from classes
-                    void **pointers = (void **)((uintptr_t)vmaddr_slide + sect->addr);
-                    for(int i = 0; i < sect->size / 8; i++) {
-                        const struct class64 *class = (struct class64*)pointers[i];
-                        cif_cache_add_class(class, (void*)seg_base, (void*)seg_top);
-                    }
-                } else if (strncmp(sect->sectname, "__objc_catlist", 16) == 0 || strncmp(sect->sectname, "__objc_nlcatlist", 16) == 0) {
-                    // load methods from categories
-                    void **pointers = (void **)((uintptr_t)vmaddr_slide + sect->addr);
-                    for(int i = 0; i < sect->size / 8; i++) {
-                        const struct category_t *category = (struct category_t*)pointers[i];
-                        cif_cache_add_methods(category->instanceMethods);
-                        cif_cache_add_methods(category->classMethods);
                     }
                 }
             }
