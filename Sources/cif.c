@@ -19,7 +19,6 @@ hidden void init_cif() {
     // initialize cif cache
     cif_cache_native = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, NULL, NULL);
     cif_cache_arm64 = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, NULL, NULL);
-    cif_cache_add(dlsym(RTLD_DEFAULT, "main"), "ii???");
     
     // load method signature table
     Dl_info info;

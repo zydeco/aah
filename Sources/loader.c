@@ -63,6 +63,7 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
     const struct dysymtab_command *lc_dysymtab = NULL;
     const struct section_64 *la_symbol_section = getsectbynamefromheader_64(mh, SEG_DATA, "__la_symbol_ptr");
     const struct dylib_command *lc_dylibs[mh->ncmds];
+    const struct entry_point_command *lc_main;
     memset(lc_dylibs, 0, mh->ncmds * sizeof(void*));
     
     // find load commands
@@ -80,6 +81,9 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
             lc_dysymtab = (const struct dysymtab_command*)sc;
         } else if (sc->cmd == LC_LOAD_DYLIB) {
             lc_dylibs[next_dylib++] = (const struct dylib_command*)sc;
+        } else if (sc->cmd == LC_MAIN) {
+            lc_main = (const struct entry_point_command*)sc;
+            cif_cache_add((void*)(vmaddr_slide + lc_main->entryoff), "ii???");
         }
         lc_ptr += sc->cmdsize;
     }
