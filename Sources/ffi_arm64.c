@@ -146,13 +146,9 @@ int is_vfp_type (const ffi_type *ty)
         return 0;
       break;
     case FFI_TYPE_DOUBLE:
+    case FFI_TYPE_LONGDOUBLE:
       ele_count = size / sizeof(double);
       if (size != ele_count * sizeof(double))
-        return 0;
-      break;
-    case FFI_TYPE_LONGDOUBLE:
-      ele_count = size / sizeof(long double);
-      if (size != ele_count * sizeof(long double))
         return 0;
       break;
     default:
