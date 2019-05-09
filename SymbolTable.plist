@@ -1702,19 +1702,19 @@
 		"setlogmask" = "ii";
 		"syslog" = "$syslog"; // vi*...;
 		"vsyslog" = "$vsyslog"; // vi*...;
-		// decl for Block_size not found
-		// decl for _Block_copy not found
-		// decl for _Block_extended_layout not found
-		// decl for _Block_has_signature not found
-		// decl for _Block_isDeallocating not found
-		// decl for _Block_layout not found
-		// decl for _Block_object_assign not found
-		// decl for _Block_object_dispose not found
-		// decl for _Block_release not found
-		// decl for _Block_signature not found
-		// decl for _Block_tryRetain not found
-		// decl for _Block_use_RR2 not found
-		// decl for _Block_use_stret not found
+		"Block_size" = "L^v";
+		"_Block_copy" = "^v^v";
+		"_Block_extended_layout" = "*^v";
+		"_Block_has_signature" = "B^v";
+		"_Block_isDeallocating" = "B^v";
+		"_Block_layout" = "*^v";
+		"_Block_object_assign" = "v^v^vi";
+		"_Block_object_dispose" = "v^vi";
+		"_Block_release" = "v^v";
+		"_Block_signature" = "*^v";
+		"_Block_tryRetain" = "B^v";
+		"_Block_use_RR2" = "v^v";
+		"_Block_use_stret" = "B^v";
 		// decl for _NSConcreteAutoBlock not found
 		// decl for _NSConcreteFinalizingBlock not found
 		// decl for _NSConcreteGlobalBlock not found
