@@ -44,7 +44,7 @@ hidden void init_cif() {
     CFRelease(sig_data);
 }
 
-static ffi_type *next_type(char const ** method_signature, const char *prefix) {
+static ffi_type *next_type(char const ** method_signature, const char *prefix, bool skip_members) {
     ffi_type *type = NULL;
     const char *ms = *method_signature;
     P("next_type %s\n", ms);
@@ -105,7 +105,7 @@ next_type_1:
             type = &ffi_type_void;
             break;
         case '^':
-            next_type(&ms, "skipping pointer: ");
+            next_type(&ms, "skipping pointer: ", true);
             // fall through
         case ':':
         case '#':
@@ -119,7 +119,13 @@ next_type_1:
             // doesn't appear in method signatures, but could be in structures
             unsigned long nitems = strtoul(ms, (char**)&ms, 10);
             P("%sarray of %d\n", prefix, (int)nitems);
-            ffi_type *element_type = next_type(&ms, "element type: ");
+            ffi_type *element_type = NULL;
+            if (*ms == ']') {
+                element_type = &ffi_type_pointer;
+            } else {
+                element_type = next_type(&ms, "element type: ", skip_members);
+            }
+            type = calloc(1, sizeof(ffi_type));
             type->size = type->alignment = 0;
             type->type = FFI_TYPE_STRUCT;
             type->elements = calloc(nitems + 1, sizeof(void*));
@@ -131,7 +137,14 @@ next_type_1:
             } break;
         case '{': { // struct
             P("struct\n");
-            ms = strchr(ms, '=') + 1;
+            char *struct_end = strchr(ms, '}');
+            char *struct_equals = strchr(ms, '=');
+            if (struct_equals != NULL && struct_equals < struct_end) {
+                ms = struct_equals + 1;
+            } else {
+                ms = struct_end;
+            }
+            type = calloc(1, sizeof(ffi_type));
             type->size = type->alignment = 0;
             type->type = FFI_TYPE_STRUCT;
             int maxelems = 15;
@@ -142,16 +155,22 @@ next_type_1:
                     maxelems += 8;
                     type->elements = realloc(type->elements, (maxelems + 1) * sizeof(void*));
                 }
-                type->elements[elem++] = next_type(&ms, "struct member: ");
+                type->elements[elem++] = next_type(&ms, "struct member: ", skip_members);
             }
+            ms++;
             type->elements[elem] = NULL;
         } break;
         case '(': // TODO: union
             fprintf(stderr, "unions not supported in method signature: %s", ms-1);
             abort();
-        case 'b': // TODO: bitfield
+        case 'b': { // TODO: bitfield
+            unsigned long nbits = strtoul(ms, (char**)&ms, 10);
+            P("%sbitfield of %d\n", prefix, (int)nbits);
+            if (skip_members) {
+                break;
+            }
             fprintf(stderr, "bitfields not supported in method signature: %s", ms-1);
-            abort();
+            abort(); }
         case 'r': // const
         case 'n': // in
         case 'N': // inout
@@ -179,16 +198,16 @@ hidden int prep_cifs(ffi_cif *cif, ffi_cif_arm64 *cif_arm64, const char *method_
     if (ms == NULL) return 0;
     
     P("parsing method signature %s\n", method_signature);
-    ffi_type *rtype = next_type(&ms, "return type: ");
+    ffi_type *rtype = next_type(&ms, "return type: ", false);
     unsigned int nargs = 0;
     unsigned int maxargs = 8;
     ffi_type **argtypes = calloc(maxargs, sizeof(void*));
     while (*ms) {
         if (nargs == maxargs) {
             maxargs += 8;
-            argtypes = realloc(argtypes, maxargs);
+            argtypes = realloc(argtypes, maxargs*sizeof(void*));
         }
-        argtypes[nargs++] = next_type(&ms, "arg: ");
+        argtypes[nargs++] = next_type(&ms, "arg: ", false);
     }
     
     if (fixed_args == -1) {
