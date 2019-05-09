@@ -37,7 +37,7 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
     BOOL meta = class_isMetaClass(cls);
     Dl_info info;
     printf("%c[%s %s]\n", (meta ? '+' : '-'), class_getName(cls), sel_getName(op));
-    if (dladdr(impl, &info) && info.dli_saddr == impl) {
+    if (dladdr(impl, &info)) {
         if (should_emulate_image(info.dli_fbase)) {
             // calling emulated method
             printf("calling emulated method %s at %p\n", info.dli_sname, impl);
