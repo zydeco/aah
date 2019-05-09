@@ -79,7 +79,7 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
             lc_symtab = (const struct symtab_command*)sc;
         } else if (sc->cmd == LC_DYSYMTAB) {
             lc_dysymtab = (const struct dysymtab_command*)sc;
-        } else if (sc->cmd == LC_LOAD_DYLIB) {
+        } else if (sc->cmd == LC_LOAD_DYLIB || sc->cmd == LC_LOAD_WEAK_DYLIB) {
             lc_dylibs[next_dylib++] = (const struct dylib_command*)sc;
         } else if (sc->cmd == LC_MAIN) {
             lc_main = (const struct entry_point_command*)sc;
