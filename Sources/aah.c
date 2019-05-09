@@ -32,7 +32,7 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
         ffi_cif *cif = cif_cache_get_native((void*)pc);
         // TODO: shim? objc method?
         
-        if (cif == NULL && info.dli_sname[1] == '[') {
+        if (cif == NULL && info.dli_sname && info.dli_sname[1] == '[') {
             // calling unmarked obj-c method
             if (strcmp(strchr(info.dli_sname, ']') - 5, " load]") == 0) {
                 // calling load method
@@ -48,9 +48,16 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
             cif = cif_cache_get_native((void*)pc);
         }
         
+        static int loaded_objc = 0;
+        if (cif == NULL && loaded_objc == 0) {
+            load_objc_entrypoints();
+            loaded_objc = 1;
+            cif = cif_cache_get_native((void*)pc);
+        }
+        
         if (cif) {
             // call arm64 entry point
-            printf("calling emulated %s at %p\n", info.dli_sname, (void*)pc);
+            printf("calling emulated %s at %p\n", info.dli_sname ?: "(unnamed function)", (void*)pc);
             struct emulator_ctx *ctx = get_emulator_ctx();
             if (ffi_prep_closure_loc(ctx->closure, cif, call_emulated_function, (void*)pc, ctx->closure_code) != FFI_OK) {
                 fprintf(stderr, "ffi_prep_closure_loc failed\n");
