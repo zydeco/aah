@@ -7634,6 +7634,7 @@
 		// decl for xpc_unbootstrap_system not found
 		// decl for xpc_uuid_create not found
 		// decl for xpc_uuid_get_bytes not found
+		"__cxa_atexit" = "$__cxa_atexit";
 	};
 	"objc shims" = {};
 	"/usr/lib/libobjc.A.dylib" = {
@@ -8777,6 +8778,28 @@
 	"CFWriteStreamWrite" = "l^{__CFWriteStream=}^Cl";
 	"__CFRangeMake" = "{?=}ll";
 	"__CFStringMakeConstantString" = "^{__CFString=}*";
+	};
+	"/usr/lib/libc++.1.dylib" = {
+		"__cxa_allocate_exception" = "^vi";
+		"__cxa_free_exception" = "v^v";
+		"__cxa_throw" = "v^v^v?";
+		"__cxa_get_exception_ptr" = "^v^v";
+		"__cxa_begin_catch" = "^v^v";
+		"__cxa_end_catch" = "v";
+		"__cxa_begin_cleanup" = "B^v";
+		"__cxa_end_cleanup" = "v";
+		"__cxa_current_exception_type" = "^v";
+		"__cxa_rethrow" = "v";
+		"__cxa_bad_cast" = "v";
+		"__cxa_bad_typeid" = "v";
+		"__cxa_throw_bad_array_new_length" = "v";
+		"__cxa_pure_virtual" = "v";
+		"__cxa_deleted_virtual" = "v";
+		"__cxa_guard_acquire" = "i^v";
+		"__cxa_guard_release" = "v^v";
+		"__cxa_guard_abort" = "v^v";
+		"__cxa_call_unexpected" = "v^v";
+		"__dynamic_cast" = "^v^v^v^vq";
 	};
 	"/System/iOSSupport/System/Library/Frameworks/UIKit.framework/UIKit" = {
 		"UIApplicationMain" = "i??@@";

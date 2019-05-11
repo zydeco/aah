@@ -113,7 +113,6 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
             printf("  symbol %s (%zu: %s) -> %p\n", symbol_name, lib_index, lib_name, symbol);
             
             // fill cif cache
-            printf("adding symbol %s\n", symbol_name);
             cif_cache_add(symbol, lookup_method_signature(lib_name, symbol_name+1));
         }
     } else {

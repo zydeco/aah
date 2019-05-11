@@ -50,6 +50,7 @@
 		28054DB3227A0BC200A6881E /* objc_msgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DB2227A0BC200A6881E /* objc_msgSend.m */; };
 		28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BEFA2280B2C1006A31F0 /* objc-cif.m */; };
 		28A8BEFD2280B3C4006A31F0 /* libobjc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */; };
+		28A8BF0B22876490006A31F0 /* c++abi.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BF0A22876490006A31F0 /* c++abi.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +63,7 @@
 		28054D542275008F00A6881E /* memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
 		28054D552275008F00A6881E /* cif.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cif.c; sourceTree = "<group>"; };
 		28054D562275008F00A6881E /* ffi_arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_arm64.h; sourceTree = "<group>"; };
-		28054D5D227500CA00A6881E /* SymbolTable.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = SymbolTable.plist; sourceTree = "<group>"; };
+		28054D5D227500CA00A6881E /* SymbolTable.plist */ = {isa = PBXFileReference; explicitFileType = text.xml; path = SymbolTable.plist; sourceTree = "<group>"; };
 		28054D5F227500DA00A6881E /* uc_priv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uc_priv.h; sourceTree = "<group>"; };
 		28054D60227500DA00A6881E /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
 		28054D62227500DA00A6881E /* capstone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = capstone.h; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		28054DB2227A0BC200A6881E /* objc_msgSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objc_msgSend.m; sourceTree = "<group>"; };
 		28A8BEFA2280B2C1006A31F0 /* objc-cif.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "objc-cif.m"; sourceTree = "<group>"; };
 		28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
+		28A8BF0A22876490006A31F0 /* c++abi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "c++abi.c"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				28054DAD2275083500A6881E /* printf.h */,
 				28054DAE2275083500A6881E /* nslog.m */,
 				28054DB2227A0BC200A6881E /* objc_msgSend.m */,
+				28A8BF0A22876490006A31F0 /* c++abi.c */,
 			);
 			path = shims;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				28054DAF2275083500A6881E /* printf.c in Sources */,
 				28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */,
 				28054D572275008F00A6881E /* loader.c in Sources */,
+				28A8BF0B22876490006A31F0 /* c++abi.c in Sources */,
 				28054D5A2275008F00A6881E /* memory.c in Sources */,
 				28054DB12275083500A6881E /* nslog.m in Sources */,
 				28054D592275008F00A6881E /* ffi_arm64.c in Sources */,
