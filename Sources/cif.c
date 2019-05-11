@@ -239,7 +239,10 @@ hidden ffi_cif_arm64 * cif_cache_get_arm64(void *address) {
 hidden void cif_cache_add(void *address, const char *method_signature) {
     ffi_cif *cif = malloc(sizeof(ffi_cif));
     ffi_cif_arm64 *cif_arm64 = malloc(sizeof(ffi_cif_arm64));
-    if (method_signature[0] == '$') {
+    if (method_signature == NULL) {
+        // can't add symbol without signature
+        return;
+    } else if (method_signature[0] == '$') {
         // shim
         os_unfair_lock_lock(&cif_cache_lock);
         CFDictionarySetValue(cif_cache_native, address, 0); // shim marker
