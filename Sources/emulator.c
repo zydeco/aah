@@ -165,6 +165,11 @@ static void destroy_emulator_ctx(void *ptr) {
     pthread_setspecific(emulator_ctx_key, NULL);
 }
 
+static bool is_native_entry_point(void *pc, const Dl_info *info) {
+    // native cif is 0 for shims
+    return !should_emulate_image(info->dli_fbase) && cif_cache_get_arm64(pc) != NULL;
+}
+
 void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
     printf("running emulator at %p\n", (void*)start_address);
     maybe_print_regs(ctx->uc);
@@ -177,7 +182,10 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
     for(;;) {
         err = uc_emu_start(uc, start_address, ctx->return_ptr, 0, 0);
         uc_reg_read(uc, UC_ARM64_REG_PC, &pc);
-        if (err == UC_ERR_FETCH_PROT && dladdr((void*)pc, &info) && info.dli_saddr == (void*)pc) {
+        if (pc == ctx->return_ptr) {
+            printf("emulation finished ok?\n");
+            return;
+        } else if (err == UC_ERR_FETCH_PROT && dladdr((void*)pc, &info) && is_native_entry_point((void*)pc, &info)) {
             uint64_t last_lr;
             uc_reg_read(uc, UC_ARM64_REG_LR, &last_lr);
             printf("  calling native %s from %p\n", info.dli_sname, (void*)last_lr);
@@ -187,9 +195,6 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
                 start_address = last_lr;
             }
             continue;
-        } else if (pc == ctx->return_ptr) {
-            printf("emulation finished ok?\n");
-            return;
         } else {
             printf("emulation finished badly: %s\n", uc_strerror(err));
             exit(1);
