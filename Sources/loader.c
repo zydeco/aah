@@ -1,7 +1,7 @@
 #include "aah.h"
 #include <sys/mman.h>
 
-static void map_image(const struct mach_header_64 *mh, uint32_t perms, intptr_t vmaddr_slide);
+static void map_image(const struct mach_header_64 *mh, intptr_t vmaddr_slide);
 static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmaddr_slide);
 static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_slide);
 static void did_load_image(const struct mach_header* mh, intptr_t vmaddr_slide);
@@ -15,10 +15,8 @@ static void did_load_image(const struct mach_header* mh, intptr_t vmaddr_slide) 
     const struct mach_header_64 *mh64 = (const struct mach_header_64*)mh;
     if (should_emulate_image(mh64)) {
         setup_image_emulation(mh64, vmaddr_slide);
-        map_image(mh64, 0, vmaddr_slide);
-    } else {
-        map_image(mh64, UC_PROT_READ, vmaddr_slide);
     }
+    map_image(mh64, vmaddr_slide);
 }
 
 static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
@@ -123,7 +121,7 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
     }
 }
 
-static void map_image(const struct mach_header_64 *mh, uint32_t perms, intptr_t vmaddr_slide) {
+static void map_image(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
     uc_engine *uc = get_unicorn();
     Dl_info info;
     dladdr((void*)mh, &info);
@@ -135,8 +133,10 @@ static void map_image(const struct mach_header_64 *mh, uint32_t perms, intptr_t 
         if (sc->cmd == LC_SEGMENT_64 && (strncmp(sc->segname, SEG_TEXT, sizeof(sc->segname)) == 0 || strncmp(sc->segname, SEG_DATA, sizeof(sc->segname)) == 0)) {
             uint64_t seg_addr = sc->vmaddr + (uint64_t)vmaddr_slide;
             uint64_t seg_size = (sc->vmsize + 0xfff) & 0xfffffffffffff000ULL;
-            if (perms == 0) {
-                perms = sc->maxprot;
+            uint32_t perms = sc->maxprot & ~VM_PROT_EXECUTE;
+            if ((sc->maxprot & VM_PROT_EXECUTE) && should_emulate_image(mh)) {
+                // luckily, VM_PROT_* == UC_PROT_*
+                perms |= UC_PROT_EXEC;
             }
             //printf("Mapping segment %s at 0x%llx (0x%llx -> 0x%llx) with perms %x\n", sc->segname, seg_addr, sc->vmsize, seg_size, perms);
             uc_err err = uc_mem_map_ptr(uc, seg_addr, seg_size, perms, (void*)seg_addr);
