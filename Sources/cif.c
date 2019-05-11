@@ -424,7 +424,9 @@ hidden uint64_t call_native(uc_engine *uc, uint64_t pc) {
         printf("calling shim at %p\n", shim);
         return shim(uc, &ctx);
     } else {
-        printf("missing cif\n");
+        Dl_info info = {.dli_sname = "(unknown)"};
+        dladdr((void*)pc, &info);
+        printf("missing cif for %p (%s)\n", (void*)pc, info.dli_sname);
         abort();
     }
 }
