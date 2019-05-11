@@ -13,38 +13,57 @@ static void dont_print_regs(uc_engine *uc) {};
 static void(*maybe_print_regs)(uc_engine*) = dont_print_regs;
 
 static void print_regs(uc_engine *uc) {
-    struct arm64_call_context call_context;
-    uint64_t pc, sp, lr, fp;
+    uint64_t x[32], pc, sp, lr, fp;
     uc_reg_read(uc, UC_ARM64_REG_PC, &pc);
     uc_reg_read(uc, UC_ARM64_REG_SP, &sp);
     uc_reg_read(uc, UC_ARM64_REG_FP, &fp);
     uc_reg_read(uc, UC_ARM64_REG_LR, &lr);
-    uc_reg_read(uc, UC_ARM64_REG_X0, &call_context.x[0]);
-    uc_reg_read(uc, UC_ARM64_REG_X1, &call_context.x[1]);
-    uc_reg_read(uc, UC_ARM64_REG_X2, &call_context.x[2]);
-    uc_reg_read(uc, UC_ARM64_REG_X3, &call_context.x[3]);
-    uc_reg_read(uc, UC_ARM64_REG_X4, &call_context.x[4]);
-    uc_reg_read(uc, UC_ARM64_REG_X5, &call_context.x[5]);
-    uc_reg_read(uc, UC_ARM64_REG_X6, &call_context.x[6]);
-    uc_reg_read(uc, UC_ARM64_REG_X7, &call_context.x[7]);
-    uc_reg_read(uc, UC_ARM64_REG_X8, &call_context.x[8]);
-    uc_reg_read(uc, UC_ARM64_REG_V0, &call_context.v[0]);
-    uc_reg_read(uc, UC_ARM64_REG_V1, &call_context.v[1]);
-    uc_reg_read(uc, UC_ARM64_REG_V2, &call_context.v[2]);
-    uc_reg_read(uc, UC_ARM64_REG_V3, &call_context.v[3]);
-    uc_reg_read(uc, UC_ARM64_REG_V4, &call_context.v[4]);
-    uc_reg_read(uc, UC_ARM64_REG_V5, &call_context.v[5]);
-    uc_reg_read(uc, UC_ARM64_REG_V6, &call_context.v[6]);
-    uc_reg_read(uc, UC_ARM64_REG_V7, &call_context.v[7]);
+    uc_reg_read(uc, UC_ARM64_REG_X0, &x[0]);
+    uc_reg_read(uc, UC_ARM64_REG_X1, &x[1]);
+    uc_reg_read(uc, UC_ARM64_REG_X2, &x[2]);
+    uc_reg_read(uc, UC_ARM64_REG_X3, &x[3]);
+    uc_reg_read(uc, UC_ARM64_REG_X4, &x[4]);
+    uc_reg_read(uc, UC_ARM64_REG_X5, &x[5]);
+    uc_reg_read(uc, UC_ARM64_REG_X6, &x[6]);
+    uc_reg_read(uc, UC_ARM64_REG_X7, &x[7]);
+    uc_reg_read(uc, UC_ARM64_REG_X8, &x[8]);
+    uc_reg_read(uc, UC_ARM64_REG_X9, &x[9]);
+    uc_reg_read(uc, UC_ARM64_REG_X10, &x[10]);
+    uc_reg_read(uc, UC_ARM64_REG_X11, &x[11]);
+    uc_reg_read(uc, UC_ARM64_REG_X12, &x[12]);
+    uc_reg_read(uc, UC_ARM64_REG_X13, &x[13]);
+    uc_reg_read(uc, UC_ARM64_REG_X14, &x[14]);
+    uc_reg_read(uc, UC_ARM64_REG_X15, &x[15]);
+    uc_reg_read(uc, UC_ARM64_REG_X16, &x[16]);
+    uc_reg_read(uc, UC_ARM64_REG_X17, &x[17]);
+    uc_reg_read(uc, UC_ARM64_REG_X18, &x[18]);
+    uc_reg_read(uc, UC_ARM64_REG_X19, &x[19]);
+    uc_reg_read(uc, UC_ARM64_REG_X20, &x[20]);
+    uc_reg_read(uc, UC_ARM64_REG_X21, &x[21]);
+    uc_reg_read(uc, UC_ARM64_REG_X22, &x[22]);
+    uc_reg_read(uc, UC_ARM64_REG_X23, &x[23]);
+    uc_reg_read(uc, UC_ARM64_REG_X24, &x[24]);
+    uc_reg_read(uc, UC_ARM64_REG_X25, &x[25]);
+    uc_reg_read(uc, UC_ARM64_REG_X26, &x[26]);
+    uc_reg_read(uc, UC_ARM64_REG_X27, &x[27]);
+    uc_reg_read(uc, UC_ARM64_REG_X28, &x[28]);
+    uc_reg_read(uc, UC_ARM64_REG_X29, &x[29]);
+    uc_reg_read(uc, UC_ARM64_REG_X30, &x[30]);
+    /*uc_reg_read(uc, UC_ARM64_REG_V0, &v[0]);
+    uc_reg_read(uc, UC_ARM64_REG_V1, &v[1]);
+    uc_reg_read(uc, UC_ARM64_REG_V2, &v[2]);
+    uc_reg_read(uc, UC_ARM64_REG_V3, &v[3]);
+    uc_reg_read(uc, UC_ARM64_REG_V4, &v[4]);
+    uc_reg_read(uc, UC_ARM64_REG_V5, &v[5]);
+    uc_reg_read(uc, UC_ARM64_REG_V6, &v[6]);
+    uc_reg_read(uc, UC_ARM64_REG_V7, &v[7]);*/
     
-    printf("x0:0x%016llx ", call_context.x[0]);
-    printf("x1:0x%016llx ", call_context.x[1]);
-    printf("x2:0x%016llx ", call_context.x[2]);
-    printf("x3:0x%016llx\n", call_context.x[3]);
-    printf("x4:0x%016llx ", call_context.x[4]);
-    printf("x5:0x%016llx ", call_context.x[5]);
-    printf("x6:0x%016llx ", call_context.x[6]);
-    printf("x7:0x%016llx\n", call_context.x[7]);
+    for (int i=0; i <= 30; i++) {
+        printf("x%d:0x%016llx ", i, x[i]);
+        if (i % 4 == 3) {
+            printf("\n");
+        }
+    }
     printf("pc:0x%016llx ", pc);
     printf("sp:0x%016llx ", sp);
     printf("fp:0x%016llx ", fp);
