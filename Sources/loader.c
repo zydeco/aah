@@ -56,7 +56,7 @@ static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmad
 }
 
 static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
-    const struct segment_command_64 *lc_linkedit = NULL;
+    const struct segment_command_64 *lc_text = NULL, *lc_linkedit = NULL;
     const struct symtab_command *lc_symtab = NULL;
     const struct dysymtab_command *lc_dysymtab = NULL;
     const struct section_64 *la_symbol_section = getsectbynamefromheader_64(mh, SEG_DATA, "__la_symbol_ptr");
@@ -70,7 +70,9 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
     for(uint32_t i = 0; i < mh->ncmds; i++) {
         const struct segment_command_64 *sc = lc_ptr;
         if (sc->cmd == LC_SEGMENT_64) {
-            if (strncmp(sc->segname, SEG_LINKEDIT, sizeof(sc->segname)) == 0) {
+            if (strncmp(sc->segname, SEG_TEXT, sizeof(sc->segname)) == 0) {
+                lc_text = sc;
+            } else if (strncmp(sc->segname, SEG_LINKEDIT, sizeof(sc->segname)) == 0) {
                 lc_linkedit = sc;
             }
         } else if (sc->cmd == LC_SYMTAB) {
@@ -81,7 +83,9 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
             lc_dylibs[next_dylib++] = (const struct dylib_command*)sc;
         } else if (sc->cmd == LC_MAIN) {
             lc_main = (const struct entry_point_command*)sc;
-            cif_cache_add((void*)(vmaddr_slide + lc_main->entryoff), "ii???");
+            void *pmain = (void*)(vmaddr_slide + lc_text->vmaddr + lc_main->entryoff);
+            printf("main at %p\n", pmain);
+            cif_cache_add(pmain, "ii???");
         }
         lc_ptr += sc->cmdsize;
     }
