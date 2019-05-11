@@ -196,8 +196,8 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
             }
             continue;
         } else {
-            printf("emulation finished badly: %s\n", uc_strerror(err));
-            exit(1);
+            printf("emulation finished badly at %p: %s\n", (void*)pc, uc_strerror(err));
+            abort();
         }
     };
 }
