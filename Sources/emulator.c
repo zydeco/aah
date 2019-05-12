@@ -196,7 +196,8 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
             }
             continue;
         } else {
-            printf("emulation finished badly at %p: %s\n", (void*)pc, uc_strerror(err));
+            // could be a c++ virtual method, since it can be called without being linked
+            printf("emulation finished badly at %p (%s+0x%llu:%s): %s\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname, uc_strerror(err));
             abort();
         }
     };
