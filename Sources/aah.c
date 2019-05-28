@@ -64,7 +64,7 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
         }
     } else {
         // pc not in emulatable image
-        fprintf(stderr, "pc not in emulatable image (%p)\n", (void*)pc);
+        fprintf(stderr, "pc not in emulatable image  at %p (%s+0x%llx:%s)\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname);
         abort();
     }
 }
