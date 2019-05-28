@@ -202,7 +202,7 @@ hidden int prep_cifs(ffi_cif *cif, ffi_cif_arm64 *cif_arm64, const char *method_
     unsigned int nargs = 0;
     unsigned int maxargs = 8;
     ffi_type **argtypes = calloc(maxargs, sizeof(void*));
-    while (*ms) {
+    while (*ms != 0 && *ms != '>') {
         if (nargs == maxargs) {
             maxargs += 8;
             argtypes = realloc(argtypes, maxargs*sizeof(void*));
@@ -237,30 +237,55 @@ hidden ffi_cif_arm64 * cif_cache_get_arm64(void *address) {
 }
 
 hidden void cif_cache_add(void *address, const char *method_signature) {
-    ffi_cif *cif = malloc(sizeof(ffi_cif));
+    ffi_cif *cif_native = malloc(sizeof(ffi_cif));
     ffi_cif_arm64 *cif_arm64 = malloc(sizeof(ffi_cif_arm64));
     if (method_signature == NULL) {
         // can't add symbol without signature
+        free(cif_native);
+        free(cif_arm64);
         return;
     } else if (method_signature[0] == '$') {
         // shim
-        os_unfair_lock_lock(&cif_cache_lock);
-        CFDictionarySetValue(cif_cache_native, address, 0); // shim marker
         char shim_name[128];
         snprintf(shim_name, 128, "aah_shim_%s", method_signature+1);
         void *shim = dlsym(RTLD_SELF, shim_name);
         if (shim == NULL) {
             printf("shim not found: %s, might crash later\n", shim_name);
         }
-        CFDictionarySetValue(cif_cache_arm64, address, shim); // shim pointer
+        os_unfair_lock_lock(&cif_cache_lock);
+        CFDictionarySetValue(cif_cache_native, address, CIF_MARKER_SHIM);
+        CFDictionarySetValue(cif_cache_arm64, address, shim);
         os_unfair_lock_unlock(&cif_cache_lock);
-    } else if (prep_cifs(cif, cif_arm64, method_signature, -1)) {
+    } else if (method_signature[0] == '<') {
+        // wrapper
+        struct call_wrapper *wrapper = calloc(1, sizeof(struct call_wrapper));
+        const char *wrapper_name = strchr(method_signature, '>')+1;
+        char shim_name[128];
+        snprintf(shim_name, 128, "aah_Wb_%s", wrapper_name);
+        wrapper->before = dlsym(RTLD_SELF, shim_name);
+        snprintf(shim_name, 128, "aah_Wa_%s", wrapper_name);
+        wrapper->after = dlsym(RTLD_SELF, shim_name);
+        if (prep_cifs(cif_native, cif_arm64, method_signature+1, -1)) {
+            wrapper->cif_native = cif_native;
+            wrapper->cif_arm64 = cif_arm64;
+            os_unfair_lock_lock(&cif_cache_lock);
+            CFDictionarySetValue(cif_cache_native, address, CIF_MARKER_WRAPPER);
+            CFDictionarySetValue(cif_cache_arm64, address, wrapper);
+            os_unfair_lock_unlock(&cif_cache_lock);
+        } else {
+            fprintf(stderr, "couldn't prep_cifs");
+            abort();
+        }
+    } else if (prep_cifs(cif_native, cif_arm64, method_signature, -1)) {
         os_unfair_lock_lock(&cif_cache_lock);
         if (!CFDictionaryContainsKey(cif_cache_native, address)) {
-            CFDictionarySetValue(cif_cache_native, address, cif);
+            CFDictionarySetValue(cif_cache_native, address, cif_native);
             CFDictionarySetValue(cif_cache_arm64, address, cif_arm64);
         }
         os_unfair_lock_unlock(&cif_cache_lock);
+    } else {
+        fprintf(stderr, "couldn't prep_cifs");
+        abort();
     }
 }
 
@@ -292,9 +317,15 @@ hidden const char * lookup_method_signature(const char *lib_name, const char *sy
     return ms;
 }
 
-static void call_native_function(ffi_cif_arm64 *cif_arm64, void *rvalue, void **avalues, void * user_data) {
+hidden void call_native_function(ffi_cif_arm64 *cif_arm64, void *rvalue, void **avalues, void * user_data) {
     struct native_call_context *ctx = (struct native_call_context *)user_data;
+    if (ctx->before) {
+        ctx->before(rvalue, avalues);
+    }
     ffi_call(ctx->cif_native, (void*)ctx->pc, rvalue, avalues);
+    if (ctx->after) {
+        ctx->after(rvalue, avalues);
+    }
 }
 
 hidden void call_native_with_context(uc_engine *uc, struct native_call_context *ctx) {
@@ -407,22 +438,43 @@ hidden uint64_t call_native(uc_engine *uc, uint64_t pc) {
     // find cif
     struct native_call_context ctx;
     os_unfair_lock_lock(&cif_cache_lock);
+    if (!CFDictionaryContainsKey(cif_cache_native, (void*)pc)) {
+        os_unfair_lock_unlock(&cif_cache_lock);
+        // try to add symbol
+        Dl_info info = {.dli_sname = NULL};
+        if (dladdr((void*)pc, &info) && info.dli_saddr == (void*)pc) {
+            printf("trying to add cif for %s (%s+0x%llx) at runtime\n", info.dli_sname, info.dli_fname, (uint64_t)info.dli_saddr - (uint64_t)info.dli_fbase);
+            cif_cache_add(info.dli_saddr, lookup_method_signature(info.dli_fname, info.dli_sname));
+        }
+        os_unfair_lock_lock(&cif_cache_lock);
+    }
     ctx.cif_native = (ffi_cif *)CFDictionaryGetValue(cif_cache_native, (void*)pc);
     ctx.cif_arm64 = (ffi_cif_arm64 *)CFDictionaryGetValue(cif_cache_arm64, (void*)pc);
     ctx.pc = pc;
     ctx.sp = sp;
     ctx.arm64_call_context = &call_context;
     os_unfair_lock_unlock(&cif_cache_lock);
-    if (ctx.cif_native && ctx.cif_arm64) {
+    if (CIF_IS_CIF(ctx.cif_native) && ctx.cif_arm64) {
         // call with cif
+        ctx.before = ctx.after = NULL;
         call_native_with_context(uc, &ctx);
         return SHIM_RETURN;
-    } else if (ctx.cif_native == NULL && ctx.cif_arm64 != NULL) {
+    } else if (ctx.cif_native == CIF_MARKER_SHIM && ctx.cif_arm64 != NULL) {
         // call shim
         shim_ptr shim = (shim_ptr)ctx.cif_arm64;
         ctx.cif_arm64 = NULL;
         printf("calling shim at %p\n", shim);
         return shim(uc, &ctx);
+    } else if (ctx.cif_native == CIF_MARKER_WRAPPER && ctx.cif_arm64 != NULL) {
+        // call with wrapper
+        printf("calling wrapper for %p\n", (void*)pc);
+        struct call_wrapper *wrapper = (struct call_wrapper*)ctx.cif_arm64;
+        ctx.cif_native = wrapper->cif_native;
+        ctx.cif_arm64 = wrapper->cif_arm64;
+        ctx.before = wrapper->before;
+        ctx.after = wrapper->after;
+        call_native_with_context(uc, &ctx);
+        return SHIM_RETURN;
     } else {
         Dl_info info = {.dli_sname = "(unknown)"};
         dladdr((void*)pc, &info);

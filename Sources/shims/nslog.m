@@ -29,6 +29,7 @@ SHIMDEF(NSLog) {
     ctx->cif_arm64 = &cif_arm64;
     NSString *newFormat = formatWasModified ? [[NSString alloc] initWithUTF8String:fmt] : format;
     ctx->arm64_call_context->x[0] = (uint64_t)newFormat;
+    ctx->before = ctx->after = NULL;
     call_native_with_context(uc, ctx);
     if (newFormat != format) {
         [newFormat release];

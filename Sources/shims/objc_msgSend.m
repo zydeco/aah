@@ -51,6 +51,7 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
             ffi_cif_arm64 *cif_arm64 = cif_cache_get_arm64(impl);
             if (cif_native == NULL && cif_arm64 == NULL) {
                 // check if there's a shim for this method
+                // TODO: check if it's a wrapper
                 char *methodName;
                 asprintf(&methodName, "%c[%s %s]\n", (meta ? '+' : '-'), class_getName(cls), sel_getName(op));
                 const char *methodSignature = lookup_method_signature(CIF_LIB_OBJC_SHIMS, methodName);
@@ -71,15 +72,25 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
                 ctx->cif_native = cif_native;
                 ctx->cif_arm64 = cif_arm64;
                 ctx->pc = (uint64_t)impl;
+                ctx->before = ctx->after = NULL;
                 if (is_super) {
                     ctx->arm64_call_context->x[0] = (uint64_t)receiver;
                 }
                 call_native_with_context(uc, ctx);
                 return SHIM_RETURN;
-            } else if (cif_native == NULL && cif_arm64 != NULL) {
+            } else if (cif_native == CIF_MARKER_SHIM && cif_arm64 != NULL) {
                 // shim
                 shim_ptr shim = (shim_ptr)cif_arm64;
                 return shim(uc, ctx);
+            } else if (cif_native == CIF_MARKER_WRAPPER && cif_arm64 != NULL) {
+                // wrapper
+                struct call_wrapper *wrapper = (struct call_wrapper*)ctx->cif_arm64;
+                ctx->cif_native = wrapper->cif_native;
+                ctx->cif_arm64 = wrapper->cif_arm64;
+                ctx->before = wrapper->before;
+                ctx->after = wrapper->after;
+                call_native_with_context(uc, ctx);
+                return SHIM_RETURN;
             } else {
                 abort();
             }

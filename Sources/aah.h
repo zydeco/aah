@@ -30,9 +30,9 @@ struct emulator_ctx {
     void *closure_code;
 };
 
-hidden struct emulator_ctx* init_emulator_ctx();
-hidden struct emulator_ctx* get_emulator_ctx();
-hidden uc_engine* get_unicorn();
+hidden struct emulator_ctx* init_emulator_ctx(void);
+hidden struct emulator_ctx* get_emulator_ctx(void);
+hidden uc_engine* get_unicorn(void);
 hidden void run_emulator(struct emulator_ctx *ctx, uint64_t start_address);
 
 #define MH_MAGIC_EMULATED 0x456D400C
@@ -44,9 +44,19 @@ static inline int should_emulate_image(const struct mach_header_64 *mh) {
 hidden bool mem_map_region_containing(uc_engine *uc, uint64_t address, uint32_t perms);
 hidden void print_region_info(void *ptr);
 
+#define WRAPPER_ARGS (void *rvalue, void **avalues)
+typedef uint64_t (*wrapper_ptr)WRAPPER_ARGS;
+
+struct call_wrapper {
+    ffi_cif *cif_native;
+    ffi_cif_arm64 *cif_arm64;
+    wrapper_ptr before, after;
+};
+
 struct native_call_context {
     ffi_cif_arm64 *cif_arm64;
     ffi_cif *cif_native;
+    wrapper_ptr before, after;
     uint64_t pc, sp;
     struct arm64_call_context *arm64_call_context;
 };
@@ -67,6 +77,11 @@ hidden const char * lookup_method_signature(const char *lib_name, const char *sy
 hidden int prep_cifs(ffi_cif *cif, ffi_cif_arm64 *cif_arm64, const char *method_signature, int fixed_args);
 extern const char *CIF_LIB_OBJC_SHIMS;
 
+#define CIF_MARKER_SHIM ((ffi_cif *)0)
+#define CIF_MARKER_WRAPPER ((ffi_cif *)1)
+#define CIF_IS_CIF(cif) (((uint64_t)cif) > 1)
+
 #define SHIM_RETURN 0
 #define SHIMDEF(name) __attribute__((visibility("default"))) uint64_t aah_shim_ ## name (uc_engine *uc, struct native_call_context *ctx)
-
+#define WRAP_BEFORE(name) __attribute__((visibility("default"))) void aah_Wb_ ## name WRAPPER_ARGS
+#define WRAP_AFTER(name) __attribute__((visibility("default"))) void aah_Wa_ ## name WRAPPER_ARGS
