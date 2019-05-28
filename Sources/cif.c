@@ -330,17 +330,22 @@ hidden void call_native_function(ffi_cif_arm64 *cif_arm64, void *rvalue, void **
 
 hidden void call_native_with_context(uc_engine *uc, struct native_call_context *ctx) {
     // call
-    void *ret = ctx->cif_arm64->rtype->type == FFI_TYPE_VOID ? NULL : alloca(ctx->cif_native->rtype->size);
-    ffi_closure_SYSV_inner_arm64(ctx->cif_arm64, call_native_function, ctx, ctx->arm64_call_context, (void*)ctx->sp, ret, ret);
+    void *ret = NULL;
+    int rflags = arm64_rflags_for_type(ctx->cif_arm64->rtype);
+    if (rflags & AARCH64_RET_IN_MEM) {
+        uc_reg_read(uc, UC_ARM64_REG_X8, &ret);
+        printf("returning in x8: %p\n", ret);
+    } else if (rflags & AARCH64_RET_NEED_COPY) {
+        abort();
+    } else if (ctx->cif_arm64->rtype->type != FFI_TYPE_VOID) {
+        ret = alloca(ctx->cif_native->rtype->size);
+    }
+    ffi_closure_SYSV_inner_arm64(ctx->cif_arm64, call_native_function, ctx, ctx->arm64_call_context, (void*)ctx->sp, ret);
     
     // pass return value to emulator
-    int rflags = arm64_rflags_for_type(ctx->cif_arm64->rtype);
     uint64_t rr0 = 0;
     if (rflags & AARCH64_RET_IN_MEM) {
-        // copy to x8
-        uint64_t x8;
-        uc_reg_read(uc, UC_ARM64_REG_X8, &x8);
-        memcpy((void*)x8, ret, ctx->cif_native->rtype->size);
+        // already done
     } else switch(rflags & AARCH64_RET_MASK) {
         case AARCH64_RET_VOID:
             break;
@@ -405,7 +410,6 @@ hidden void call_native_with_context(uc_engine *uc, struct native_call_context *
         case AARCH64_RET_Q1:
             uc_reg_write(uc, UC_ARM64_REG_Q0, ret);
             break;
-    
         default:
             printf("don't know how to return\n");
             abort();

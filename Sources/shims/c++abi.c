@@ -88,3 +88,16 @@ WRAP_AFTER(cpp_string_01) {
     unswap_cpp_string(*(union cpp_string**)(avalues[1]));
 }
 
+// libffi can't call this?
+// should be returned in memory because it's an object
+// but libffi thinks it's returned in a register because it fits
+// should add UNIX64_FLAG_RET_IN_MEM flag to native cif
+extern void _ZNKSt3__18ios_base6getlocEv(void *p1, void *p2);
+SHIMDEF(ios_base_getloc) {
+    void *p1, *p2;
+    uc_reg_read(uc, UC_ARM64_REG_X8, &p1);
+    uc_reg_read(uc, UC_ARM64_REG_X0, &p2);
+    printf("(%p)ios_base::getloc returning at %p\n", p2, p1);
+    _ZNKSt3__18ios_base6getlocEv(p1, p2);
+    return SHIM_RETURN;
+}

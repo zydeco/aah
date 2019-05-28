@@ -472,7 +472,7 @@ int ffi_closure_SYSV_inner_arm64 (ffi_cif_arm64 *cif,
 			void (*fun)(ffi_cif_arm64*,void*,void**,void*),
 			void *user_data,
 			struct arm64_call_context *context,
-			void *stack, void *rvalue, void *struct_rvalue)
+			void *stack, void *rvalue)
 {
   void **avalue = (void**) alloca (cif->nargs * sizeof (void*));
   int i, h, nargs, flags;
@@ -575,9 +575,6 @@ int ffi_closure_SYSV_inner_arm64 (ffi_cif_arm64 *cif,
     }
 
   flags = cif->flags;
-  if (flags & AARCH64_RET_IN_MEM)
-    rvalue = struct_rvalue;
-
   fun (cif, rvalue, avalue, user_data);
 
   return flags;
@@ -623,7 +620,8 @@ hidden int arm64_rflags_for_type(ffi_type *rtype) {
             rflags = is_vfp_type (rtype);
             if (rflags == 0) {
                 size_t s = rtype->size;
-                if (s > 16) {
+                if (s > 16 || rtype->type == FFI_TYPE_STRUCT) {
+                    // FIXME: only if FFI_TYPE_STRUCT is a non-trivial object
                     rflags = AARCH64_RET_VOID | AARCH64_RET_IN_MEM;
                     //bytes += 8;
                 } else if (s == 16) {

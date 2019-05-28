@@ -118,6 +118,6 @@ hidden int ffi_closure_SYSV_inner_arm64 (ffi_cif_arm64 *cif,
                                   void (*fun)(ffi_cif_arm64*,void*,void**,void*),
                                   void *user_data,
                                   struct arm64_call_context *context,
-                                  void *stack, void *rvalue, void *struct_rvalue);
+                                  void *stack, void *rvalue);
 
 hidden int arm64_rflags_for_type(ffi_type *rtype);
