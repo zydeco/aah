@@ -48,13 +48,6 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
             cif = cif_cache_get_native((void*)pc);
         }
         
-        static int loaded_objc = 0;
-        if (cif == NULL && loaded_objc == 0) {
-            load_objc_entrypoints();
-            loaded_objc = 1;
-            cif = cif_cache_get_native((void*)pc);
-        }
-        
         if (cif) {
             // call arm64 entry point
             printf("calling emulated %s at %p\n", info.dli_sname ?: "(unnamed function)", (void*)pc);
