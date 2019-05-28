@@ -1,5 +1,8 @@
-#include "aah.h"
-#include <pthread.h>
+extern "C" {
+    #include "aah.h"
+    #include <pthread.h>
+}
+#include <exception>
 
 static bool cb_invalid_rw(uc_engine *uc, uc_mem_type type, uint64_t address, int size, int64_t value, struct emulator_ctx *ctx);
 static bool cb_invalid_fetch(uc_engine *uc, uc_mem_type type, uint64_t address, int size, int64_t value, struct emulator_ctx *ctx);
@@ -71,7 +74,7 @@ static void print_regs(uc_engine *uc) {
 }
 
 hidden struct emulator_ctx* init_emulator_ctx() {
-    struct emulator_ctx *ctx = malloc(sizeof(struct emulator_ctx));
+    struct emulator_ctx *ctx = (struct emulator_ctx*)malloc(sizeof(struct emulator_ctx));
     pthread_setspecific(emulator_ctx_key, ctx);
     uc_err err;
     printf("init unicorn\n");
@@ -84,7 +87,7 @@ hidden struct emulator_ctx* init_emulator_ctx() {
     
     // catch invalid memory access
     uc_hook mem_hook;
-    err = uc_hook_add(ctx->uc, &mem_hook, UC_HOOK_MEM_READ_UNMAPPED | UC_HOOK_MEM_WRITE_UNMAPPED, cb_invalid_rw, ctx, 8, 0);
+    err = uc_hook_add(ctx->uc, &mem_hook, UC_HOOK_MEM_READ_UNMAPPED | UC_HOOK_MEM_WRITE_UNMAPPED, (void*)cb_invalid_rw, ctx, 8, 0);
     if (err != UC_ERR_OK) {
         fprintf(stderr, "uc_hook_add: %u %s\n", err, uc_strerror(err));
         abort();
@@ -92,7 +95,7 @@ hidden struct emulator_ctx* init_emulator_ctx() {
     
     // catch invalid execute
     uc_hook exe_hook;
-    err = uc_hook_add(ctx->uc, &exe_hook, UC_HOOK_MEM_FETCH_PROT | UC_HOOK_MEM_FETCH_UNMAPPED, cb_invalid_fetch, ctx, 8, 0);
+    err = uc_hook_add(ctx->uc, &exe_hook, UC_HOOK_MEM_FETCH_PROT | UC_HOOK_MEM_FETCH_UNMAPPED, (void*)cb_invalid_fetch, ctx, 8, 0);
     if (err != UC_ERR_OK) {
         fprintf(stderr, "uc_hook_add: %u %s\n", err, uc_strerror(err));
         abort();
@@ -106,7 +109,7 @@ hidden struct emulator_ctx* init_emulator_ctx() {
             fprintf(stderr, "cs_open: %s\n", cs_strerror(cerr));
             abort();
         }
-        err = uc_hook_add(ctx->uc, &fetch_hook, UC_HOOK_CODE, cb_print_disasm, ctx, 8, 0);
+        err = uc_hook_add(ctx->uc, &fetch_hook, UC_HOOK_CODE, (void*)cb_print_disasm, ctx, 8, 0);
         if (err != UC_ERR_OK) {
             fprintf(stderr, "uc_hook_add: %u %s\n", err, uc_strerror(err));
             abort();
@@ -146,13 +149,13 @@ static void init_key() {
 
 hidden uc_engine* get_unicorn() {
     pthread_once(&key_once, init_key);
-    struct emulator_ctx *ctx = pthread_getspecific(emulator_ctx_key);
+    struct emulator_ctx *ctx = (struct emulator_ctx*)pthread_getspecific(emulator_ctx_key);
     if (ctx == NULL) ctx = init_emulator_ctx();
     return ctx->uc;
 }
 
 hidden struct emulator_ctx* get_emulator_ctx() {
-    return pthread_getspecific(emulator_ctx_key);
+    return (struct emulator_ctx*)pthread_getspecific(emulator_ctx_key);
 }
 
 static void destroy_emulator_ctx(void *ptr) {
@@ -163,11 +166,6 @@ static void destroy_emulator_ctx(void *ptr) {
     cs_close(&ctx->capstone);
     ffi_closure_free(ctx->closure);
     pthread_setspecific(emulator_ctx_key, NULL);
-}
-
-static bool is_native_entry_point(void *pc, const Dl_info *info) {
-    // native cif is 0 for shims
-    return !should_emulate_image(info->dli_fbase) && cif_cache_get_arm64(pc) != NULL;
 }
 
 void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
@@ -185,19 +183,25 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
         if (pc == ctx->return_ptr) {
             printf("emulation finished ok?\n");
             return;
-        } else if (err == UC_ERR_FETCH_PROT && dladdr((void*)pc, &info) && is_native_entry_point((void*)pc, &info)) {
+        } else if (err == UC_ERR_FETCH_PROT && dladdr((void*)pc, &info) && !should_emulate_image((struct mach_header_64 *)info.dli_fbase)) {
             uint64_t last_lr;
             uc_reg_read(uc, UC_ARM64_REG_LR, &last_lr);
+            print_regs(uc);
             printf("  calling native %s from %p\n", info.dli_sname, (void*)last_lr);
-            maybe_print_regs(uc);
-            start_address = call_native(uc, pc);
+            try {
+                start_address = call_native(uc, pc);
+            }
+            catch (const std::exception& e) {
+                // find catch block
+            }
             if (start_address == 0) {
                 start_address = last_lr;
             }
+            print_regs(uc);
             continue;
         } else {
             // could be a c++ virtual method, since it can be called without being linked
-            printf("emulation finished badly at %p (%s+0x%llu:%s): %s\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname, uc_strerror(err));
+            printf("emulation finished badly at %p (%s+0x%llx:%s): %s\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname, uc_strerror(err));
             abort();
         }
     };
