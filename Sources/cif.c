@@ -271,10 +271,10 @@ hidden void cif_cache_add(void *address, const char *method_signature) {
         struct call_wrapper *wrapper = calloc(1, sizeof(struct call_wrapper));
         const char *wrapper_name = strchr(method_signature, '>')+1;
         char shim_name[128];
-        snprintf(shim_name, 128, "aah_Wb_%s", wrapper_name);
-        wrapper->before = dlsym(RTLD_SELF, shim_name);
-        snprintf(shim_name, 128, "aah_Wa_%s", wrapper_name);
-        wrapper->after = dlsym(RTLD_SELF, shim_name);
+        snprintf(shim_name, 128, "aah_We2n_%s", wrapper_name);
+        wrapper->emulated_to_native = dlsym(RTLD_SELF, shim_name);
+        snprintf(shim_name, 128, "aah_Wn2e_%s", wrapper_name);
+        wrapper->native_to_emulated = dlsym(RTLD_SELF, shim_name);
         if (prep_cifs(cif_native, cif_arm64, method_signature+1, -1)) {
             wrapper->cif_native = cif_native;
             wrapper->cif_arm64 = cif_arm64;
@@ -485,8 +485,8 @@ hidden uint64_t call_native(uc_engine *uc, uint64_t pc) {
         struct call_wrapper *wrapper = (struct call_wrapper*)ctx.cif_arm64;
         ctx.cif_native = wrapper->cif_native;
         ctx.cif_arm64 = wrapper->cif_arm64;
-        ctx.before = wrapper->before;
-        ctx.after = wrapper->after;
+        ctx.before = wrapper->emulated_to_native;
+        ctx.after = wrapper->native_to_emulated;
         call_native_with_context(uc, &ctx);
         return SHIM_RETURN;
     } else {

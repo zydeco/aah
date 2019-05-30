@@ -703,7 +703,18 @@ static uint64_t extend_integer_type (void *source, int type) {
 hidden void call_emulated_function (ffi_cif *cif, void *ret, void **args, void *address) {
     printf("calling emulated function at %p\n", address);
     struct emulator_ctx *ctx = get_emulator_ctx();
-    ffi_cif_arm64 *cif_arm64 = cif_cache_get_arm64(address);
+    ffi_cif *cif_native = cif_cache_get_native(address);
+    ffi_cif_arm64 *cif_arm64;
+    struct call_wrapper *wrapper = NULL;
+    
+    if (cif_native == CIF_MARKER_WRAPPER) {
+        wrapper = (struct call_wrapper*)cif_cache_get_arm64(address);
+        cif_arm64 = wrapper->cif_arm64;
+    } else if (cif_native == CIF_MARKER_SHIM) {
+        abort();
+    } else if (CIF_IS_CIF(cif_native)) {
+        cif_arm64 = cif_cache_get_arm64(address);
+    }
     // FIXME: create cif for variadic call
     
     // allocate stack
@@ -813,8 +824,16 @@ hidden void call_emulated_function (ffi_cif *cif, void *ret, void **args, void *
         }
     }
     
-    
+    if (wrapper && wrapper->native_to_emulated) {
+        printf("calling reverse wrapper for %p\n", address);
+        wrapper->native_to_emulated(ret, args);
+    }
     run_emulator(ctx, (uint64_t)address);
+    if (wrapper && wrapper->emulated_to_native) {
+        printf("calling reverse wrapper for %p\n", address);
+        wrapper->emulated_to_native(ret, args);
+    }
+    
     stack_ptr += stack_bytes;
     uc_reg_write(ctx->uc, UC_ARM64_REG_SP, &stack_ptr);
     

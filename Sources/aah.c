@@ -48,6 +48,13 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
             cif = cif_cache_get_native((void*)pc);
         }
         
+        if (cif == CIF_MARKER_WRAPPER) {
+            struct call_wrapper *wrapper = (struct call_wrapper*)cif_cache_get_arm64((void*)pc);
+            cif = wrapper->cif_native;
+        } else if (cif == CIF_MARKER_SHIM) {
+            abort();
+        }
+        
         if (cif) {
             // call arm64 entry point
             printf("calling emulated %s at %p\n", info.dli_sname ?: "(unnamed function)", (void*)pc);

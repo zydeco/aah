@@ -87,8 +87,8 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
                 struct call_wrapper *wrapper = (struct call_wrapper*)ctx->cif_arm64;
                 ctx->cif_native = wrapper->cif_native;
                 ctx->cif_arm64 = wrapper->cif_arm64;
-                ctx->before = wrapper->before;
-                ctx->after = wrapper->after;
+                ctx->before = wrapper->emulated_to_native;
+                ctx->after = wrapper->native_to_emulated;
                 call_native_with_context(uc, ctx);
                 return SHIM_RETURN;
             } else {

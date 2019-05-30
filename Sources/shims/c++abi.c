@@ -73,17 +73,17 @@ void unswap_cpp_string(union cpp_string *str) {
     }
 }
 
-WRAP_BEFORE(cpp_string_0) { swap_cpp_string(*(union cpp_string**)(avalues[0])); }
-WRAP_AFTER(cpp_string_0) { unswap_cpp_string(*(union cpp_string**)(avalues[0])); }
+WRAP_EMULATED_TO_NATIVE(cpp_string_0) { swap_cpp_string(*(union cpp_string**)(avalues[0])); }
+WRAP_NATIVE_TO_EMULATED(cpp_string_0) { unswap_cpp_string(*(union cpp_string**)(avalues[0])); }
 
-WRAP_BEFORE(cpp_string_1) { swap_cpp_string(*(union cpp_string**)(avalues[1])); }
-WRAP_AFTER(cpp_string_1) { unswap_cpp_string(*(union cpp_string**)(avalues[1])); }
+WRAP_EMULATED_TO_NATIVE(cpp_string_1) { swap_cpp_string(*(union cpp_string**)(avalues[1])); }
+WRAP_NATIVE_TO_EMULATED(cpp_string_1) { unswap_cpp_string(*(union cpp_string**)(avalues[1])); }
 
-WRAP_BEFORE(cpp_string_01) {
+WRAP_EMULATED_TO_NATIVE(cpp_string_01) {
     swap_cpp_string(*(union cpp_string**)(avalues[0]));
     swap_cpp_string(*(union cpp_string**)(avalues[1]));
 }
-WRAP_AFTER(cpp_string_01) {
+WRAP_NATIVE_TO_EMULATED(cpp_string_01) {
     unswap_cpp_string(*(union cpp_string**)(avalues[0]));
     unswap_cpp_string(*(union cpp_string**)(avalues[1]));
 }

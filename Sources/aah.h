@@ -50,7 +50,7 @@ typedef uint64_t (*wrapper_ptr)WRAPPER_ARGS;
 struct call_wrapper {
     ffi_cif *cif_native;
     ffi_cif_arm64 *cif_arm64;
-    wrapper_ptr before, after;
+    wrapper_ptr emulated_to_native, native_to_emulated;
 };
 
 struct native_call_context {
@@ -84,5 +84,5 @@ extern const char *CIF_LIB_OBJC_SHIMS;
 
 #define SHIM_RETURN 0
 #define SHIMDEF(name) __attribute__((visibility("default"))) uint64_t aah_shim_ ## name (uc_engine *uc, struct native_call_context *ctx)
-#define WRAP_BEFORE(name) __attribute__((visibility("default"))) void aah_Wb_ ## name WRAPPER_ARGS
-#define WRAP_AFTER(name) __attribute__((visibility("default"))) void aah_Wa_ ## name WRAPPER_ARGS
+#define WRAP_EMULATED_TO_NATIVE(name) __attribute__((visibility("default"))) void aah_We2n_ ## name WRAPPER_ARGS
+#define WRAP_NATIVE_TO_EMULATED(name) __attribute__((visibility("default"))) void aah_Wn2e_ ## name WRAPPER_ARGS
