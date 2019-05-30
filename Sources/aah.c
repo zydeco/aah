@@ -59,12 +59,12 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
             mc->__ss.__rip = (uint64_t)ctx->closure_code;
         } else {
             // TODO: when is this? maybe blocks or callbacks
-            printf("returning to emulated %s at %p (+%lld)\n", info.dli_sname, (void*)pc, pc - (uint64_t)info.dli_saddr);
+            printf("returning to unknown emulated %p (%s+0x%llx:%s)\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname);
             abort();
         }
     } else {
         // pc not in emulatable image
-        fprintf(stderr, "pc not in emulatable image  at %p (%s+0x%llx:%s)\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname);
+        fprintf(stderr, "pc not in emulatable image at %p (%s+0x%llx:%s)\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname);
         abort();
     }
 }
