@@ -12,10 +12,10 @@ static void destroy_emulator_ctx(void *ptr);
 static pthread_key_t emulator_ctx_key;
 static pthread_once_t key_once = PTHREAD_ONCE_INIT;
 
-static void dont_print_regs(uc_engine *uc) {};
-static void(*maybe_print_regs)(uc_engine*) = dont_print_regs;
+static void dont_print_regs(uc_engine *uc,int) {};
+static void(*maybe_print_regs)(uc_engine*,int) = dont_print_regs;
 
-static void print_regs(uc_engine *uc) {
+static void print_regs(uc_engine *uc, int print_all) {
     uint64_t x[32], pc, sp, lr, fp;
     uc_reg_read(uc, UC_ARM64_REG_PC, &pc);
     uc_reg_read(uc, UC_ARM64_REG_SP, &sp);
@@ -30,43 +30,47 @@ static void print_regs(uc_engine *uc) {
     uc_reg_read(uc, UC_ARM64_REG_X6, &x[6]);
     uc_reg_read(uc, UC_ARM64_REG_X7, &x[7]);
     uc_reg_read(uc, UC_ARM64_REG_X8, &x[8]);
-    uc_reg_read(uc, UC_ARM64_REG_X9, &x[9]);
-    uc_reg_read(uc, UC_ARM64_REG_X10, &x[10]);
-    uc_reg_read(uc, UC_ARM64_REG_X11, &x[11]);
-    uc_reg_read(uc, UC_ARM64_REG_X12, &x[12]);
-    uc_reg_read(uc, UC_ARM64_REG_X13, &x[13]);
-    uc_reg_read(uc, UC_ARM64_REG_X14, &x[14]);
-    uc_reg_read(uc, UC_ARM64_REG_X15, &x[15]);
-    uc_reg_read(uc, UC_ARM64_REG_X16, &x[16]);
-    uc_reg_read(uc, UC_ARM64_REG_X17, &x[17]);
-    uc_reg_read(uc, UC_ARM64_REG_X18, &x[18]);
-    uc_reg_read(uc, UC_ARM64_REG_X19, &x[19]);
-    uc_reg_read(uc, UC_ARM64_REG_X20, &x[20]);
-    uc_reg_read(uc, UC_ARM64_REG_X21, &x[21]);
-    uc_reg_read(uc, UC_ARM64_REG_X22, &x[22]);
-    uc_reg_read(uc, UC_ARM64_REG_X23, &x[23]);
-    uc_reg_read(uc, UC_ARM64_REG_X24, &x[24]);
-    uc_reg_read(uc, UC_ARM64_REG_X25, &x[25]);
-    uc_reg_read(uc, UC_ARM64_REG_X26, &x[26]);
-    uc_reg_read(uc, UC_ARM64_REG_X27, &x[27]);
-    uc_reg_read(uc, UC_ARM64_REG_X28, &x[28]);
-    uc_reg_read(uc, UC_ARM64_REG_X29, &x[29]);
-    uc_reg_read(uc, UC_ARM64_REG_X30, &x[30]);
-    /*uc_reg_read(uc, UC_ARM64_REG_V0, &v[0]);
-    uc_reg_read(uc, UC_ARM64_REG_V1, &v[1]);
-    uc_reg_read(uc, UC_ARM64_REG_V2, &v[2]);
-    uc_reg_read(uc, UC_ARM64_REG_V3, &v[3]);
-    uc_reg_read(uc, UC_ARM64_REG_V4, &v[4]);
-    uc_reg_read(uc, UC_ARM64_REG_V5, &v[5]);
-    uc_reg_read(uc, UC_ARM64_REG_V6, &v[6]);
-    uc_reg_read(uc, UC_ARM64_REG_V7, &v[7]);*/
+    if (print_all) {
+        uc_reg_read(uc, UC_ARM64_REG_X9, &x[9]);
+        uc_reg_read(uc, UC_ARM64_REG_X10, &x[10]);
+        uc_reg_read(uc, UC_ARM64_REG_X11, &x[11]);
+        uc_reg_read(uc, UC_ARM64_REG_X12, &x[12]);
+        uc_reg_read(uc, UC_ARM64_REG_X13, &x[13]);
+        uc_reg_read(uc, UC_ARM64_REG_X14, &x[14]);
+        uc_reg_read(uc, UC_ARM64_REG_X15, &x[15]);
+        uc_reg_read(uc, UC_ARM64_REG_X16, &x[16]);
+        uc_reg_read(uc, UC_ARM64_REG_X17, &x[17]);
+        uc_reg_read(uc, UC_ARM64_REG_X18, &x[18]);
+        uc_reg_read(uc, UC_ARM64_REG_X19, &x[19]);
+        uc_reg_read(uc, UC_ARM64_REG_X20, &x[20]);
+        uc_reg_read(uc, UC_ARM64_REG_X21, &x[21]);
+        uc_reg_read(uc, UC_ARM64_REG_X22, &x[22]);
+        uc_reg_read(uc, UC_ARM64_REG_X23, &x[23]);
+        uc_reg_read(uc, UC_ARM64_REG_X24, &x[24]);
+        uc_reg_read(uc, UC_ARM64_REG_X25, &x[25]);
+        uc_reg_read(uc, UC_ARM64_REG_X26, &x[26]);
+        uc_reg_read(uc, UC_ARM64_REG_X27, &x[27]);
+        uc_reg_read(uc, UC_ARM64_REG_X28, &x[28]);
+        uc_reg_read(uc, UC_ARM64_REG_X29, &x[29]);
+        uc_reg_read(uc, UC_ARM64_REG_X30, &x[30]);
+        /*uc_reg_read(uc, UC_ARM64_REG_V0, &v[0]);
+        uc_reg_read(uc, UC_ARM64_REG_V1, &v[1]);
+        uc_reg_read(uc, UC_ARM64_REG_V2, &v[2]);
+        uc_reg_read(uc, UC_ARM64_REG_V3, &v[3]);
+        uc_reg_read(uc, UC_ARM64_REG_V4, &v[4]);
+        uc_reg_read(uc, UC_ARM64_REG_V5, &v[5]);
+        uc_reg_read(uc, UC_ARM64_REG_V6, &v[6]);
+        uc_reg_read(uc, UC_ARM64_REG_V7, &v[7]);*/
+    }
     
-    for (int i=0; i <= 30; i++) {
+    int last_reg = print_all ? 30 : 8;
+    for (int i=0; i <=last_reg; i++) {
         printf("x%d:0x%016llx ", i, x[i]);
         if (i % 4 == 3) {
             printf("\n");
         }
     }
+    printf("\n");
     printf("pc:0x%016llx ", pc);
     printf("sp:0x%016llx ", sp);
     printf("fp:0x%016llx ", fp);
@@ -170,7 +174,7 @@ static void destroy_emulator_ctx(void *ptr) {
 
 void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
     printf("running emulator at %p\n", (void*)start_address);
-    maybe_print_regs(ctx->uc);
+    maybe_print_regs(ctx->uc, 1);
     
     uc_engine *uc = ctx->uc;
     uint64_t pc;
@@ -186,7 +190,7 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
         } else if (err == UC_ERR_FETCH_PROT && dladdr((void*)pc, &info) && !should_emulate_image((struct mach_header_64 *)info.dli_fbase)) {
             uint64_t last_lr;
             uc_reg_read(uc, UC_ARM64_REG_LR, &last_lr);
-            print_regs(uc);
+            print_regs(uc, 0);
             printf("  calling native %s from %p\n", info.dli_sname, (void*)last_lr);
             try {
                 start_address = call_native(uc, pc);
@@ -197,7 +201,7 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
             if (start_address == 0) {
                 start_address = last_lr;
             }
-            print_regs(uc);
+            print_regs(uc, 0);
             continue;
         } else {
             // could be a c++ virtual method, since it can be called without being linked
@@ -282,7 +286,7 @@ static bool cb_print_disasm(uc_engine *uc, uint64_t address, uint32_t size, stru
     const uint8_t *cs_code = (const uint8_t *)address;
     size_t cs_size = 4;
     uint64_t cs_addr = address;
-    maybe_print_regs(uc);
+    maybe_print_regs(uc, 1);
     if (cs_disasm_iter(ctx->capstone, &cs_code, &cs_size, &cs_addr, &ctx->insn)) {
         printf("0x%" PRIx64 ":\t%-12s%s\n", ctx->insn.address, ctx->insn.mnemonic, ctx->insn.op_str);
     } else {
