@@ -101,3 +101,22 @@ SHIMDEF(ios_base_getloc) {
     _ZNKSt3__18ios_base6getlocEv(p1, p2);
     return SHIM_RETURN;
 }
+
+// base constructor for std::basic_streambuf - check vtable?
+// _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev
+WRAP_NATIVE_TO_EMULATED(basic_streambuf_bc) {
+    void *_this = *(void**)avalues[0];
+    void *vtable = *(void**)_this;
+    printf("calling base constructor on %p with vtable %p\n", _this, vtable);
+    // won't work, vtable is set after calling constructor
+    // watch next write to vtable? what if there's more?
+}
+
+// check vtable when calling native methods that call virtual methods?
+// doesn't sound good, but couldn't find vtable from constructor
+WRAP_EMULATED_TO_NATIVE(basic_streambuf_xsputn) {
+    void *_this = *(void**)avalues[0];
+    void **vtable = *(void**)_this;
+    cif_cache_add_new(vtable[13], "q*q");
+    printf("calling xsputn on %p with vtable %p\n", _this, vtable);
+}

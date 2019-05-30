@@ -236,6 +236,16 @@ hidden ffi_cif_arm64 * cif_cache_get_arm64(void *address) {
     return cif;
 }
 
+hidden void cif_cache_add_new(void *address, const char *method_signature) {
+    os_unfair_lock_lock(&cif_cache_lock);
+    Boolean hasValue = CFDictionaryContainsKey(cif_cache_native, address);
+    os_unfair_lock_unlock(&cif_cache_lock);
+    if (hasValue) {
+        return;
+    }
+    cif_cache_add(address, method_signature);
+}
+
 hidden void cif_cache_add(void *address, const char *method_signature) {
     ffi_cif *cif_native = malloc(sizeof(ffi_cif));
     ffi_cif_arm64 *cif_arm64 = malloc(sizeof(ffi_cif_arm64));
