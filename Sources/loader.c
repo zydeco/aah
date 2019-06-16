@@ -64,6 +64,12 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
     const struct entry_point_command *lc_main;
     memset(lc_dylibs, 0, mh->ncmds * sizeof(void*));
     
+    // find own path
+    uint32_t bufsize = 8192;
+    char *full_path = malloc(bufsize);
+    _NSGetExecutablePath(full_path, &bufsize);
+    char *after_path = strrchr(full_path, '/');
+    
     // find load commands
     size_t next_dylib = 0;
     void *lc_ptr = (void*)mh + sizeof(struct mach_header_64);
@@ -101,20 +107,39 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
         void **indirect_symbol_bindings = (void **)((uintptr_t)vmaddr_slide + la_symbol_section->addr);
         
         for(size_t i = 0; i < la_symbol_section->size / 8; i++) {
-            // resolve symbol
             uint32_t symtab_index = indirect_symbol_indices[i];
-            uint32_t strtab_offset = symtab[symtab_index].n_un.n_strx;
-            const char *symbol_name = strtab + strtab_offset;
-            if (symbol_name[0] != '_') continue;
-            // FIXME: use library instead of RTLD_DEFAULT
-            void *symbol = dlsym(RTLD_DEFAULT, &symbol_name[1]);
-            indirect_symbol_bindings[i] = symbol;
             
             // find library name
             size_t lib_index = GET_LIBRARY_ORDINAL(symtab[symtab_index].n_desc);
             const struct dylib_command *dylib = lc_dylibs[lib_index-1];
             const char *lib_name = (void*)dylib + dylib->dylib.name.offset; // it's always padded with at least one zero
-            printf("  symbol %s (%zu: %s) -> %p\n", symbol_name, lib_index, lib_name, symbol);
+
+            // resolve symbol
+            uint32_t strtab_offset = symtab[symtab_index].n_un.n_strx;
+            const char *symbol_name = strtab + strtab_offset;
+            if (symbol_name[0] != '_') continue;
+            void *handle;
+            if (strncmp(lib_name, "@executable_path/", 17) == 0) {
+                strncpy(after_path, lib_name+16, strlen(lib_name) - 16);
+                char *real_path = realpath(full_path, NULL);
+                handle = dlopen(real_path, RTLD_NOLOAD | RTLD_LAZY | RTLD_LOCAL | RTLD_FIRST);
+                free(real_path);
+            } else {
+                handle = dlopen(lib_name, RTLD_NOLOAD | RTLD_LAZY | RTLD_LOCAL | RTLD_FIRST);
+            }
+            if (handle == NULL) {
+                handle = RTLD_DEFAULT;
+            }
+            void *symbol = dlsym(handle, &symbol_name[1]);
+            if (handle != RTLD_DEFAULT) {
+                dlclose(handle);
+            }
+            indirect_symbol_bindings[i] = symbol;
+            
+            Dl_info info;
+            dladdr(symbol, &info);
+            
+            printf("  symbol %s (%zu: %s (%s)) -> %p\n", symbol_name, lib_index, lib_name, info.dli_fname, symbol);
             
             // fill cif cache
             cif_cache_add(symbol, lookup_method_signature(lib_name, symbol_name+1));
