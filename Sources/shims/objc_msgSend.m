@@ -67,7 +67,7 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
                 cif_arm64 = cif_cache_get_arm64(impl);
             }
             
-            if (cif_native && cif_arm64) {
+            if (CIF_IS_CIF(cif_native) && cif_arm64) {
                 // call
                 ctx->cif_native = cif_native;
                 ctx->cif_arm64 = cif_arm64;

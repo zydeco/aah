@@ -80,9 +80,9 @@ hidden const char * lookup_method_signature(const char *lib_name, const char *sy
 hidden int prep_cifs(ffi_cif *cif, ffi_cif_arm64 *cif_arm64, const char *method_signature, int fixed_args);
 extern const char *CIF_LIB_OBJC_SHIMS;
 
-#define CIF_MARKER_SHIM ((ffi_cif *)0)
-#define CIF_MARKER_WRAPPER ((ffi_cif *)1)
-#define CIF_IS_CIF(cif) (((uint64_t)cif) > 1)
+#define CIF_MARKER_SHIM ((ffi_cif *)1)
+#define CIF_MARKER_WRAPPER ((ffi_cif *)2)
+#define CIF_IS_CIF(cif) (((uint64_t)cif) > 15)
 
 #define SHIM_RETURN 0
 #define SHIMDEF(name) __attribute__((visibility("default"))) uint64_t aah_shim_ ## name (uc_engine *uc, struct native_call_context *ctx)
