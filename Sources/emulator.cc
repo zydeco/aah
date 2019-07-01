@@ -283,8 +283,9 @@ static bool cb_invalid_rw(uc_engine *uc, uc_mem_type type, uint64_t address, int
     return mem_map_region_containing(uc, address, UC_PROT_READ | UC_PROT_WRITE);
 }
 
+
 static bool cb_invalid_fetch(uc_engine *uc, uc_mem_type type, uint64_t address, int size, int64_t value, struct emulator_ctx *ctx) {
-    printf("cb_invalid_fetch %s %p\n", uc_mem_type_to_string(type), (void*)address);
+    Dl_info info;
     if (address < ctx->pagezero_size) {
         // in page zero
         return false;
@@ -292,6 +293,10 @@ static bool cb_invalid_fetch(uc_engine *uc, uc_mem_type type, uint64_t address, 
         // emulation done
         uc_emu_stop(uc);
         return true;
+    } else if (dladdr((void*)address, &info) && should_emulate_image((struct mach_header_64*)info.dli_fbase)) {
+        // map as executable
+        printf("cb_invalid_fetch %s %p: mapping as executable\n", uc_mem_type_to_string(type), (void*)address);
+        return mem_map_region_containing(uc, address, UC_PROT_ALL);
     } else {
         // call to native? caught in run_emulator
         return false;
