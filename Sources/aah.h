@@ -28,12 +28,14 @@ struct emulator_ctx {
     cs_insn insn;
     void *closure;
     void *closure_code;
+    uc_hook instr_hook;
 };
 
 hidden struct emulator_ctx* init_emulator_ctx(void);
 hidden struct emulator_ctx* get_emulator_ctx(void);
 hidden uc_engine* get_unicorn(void);
 hidden void run_emulator(struct emulator_ctx *ctx, uint64_t start_address);
+hidden void print_disasm(struct emulator_ctx *ctx, int print);
 
 #define MH_MAGIC_EMULATED 0x456D400C
 
