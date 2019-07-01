@@ -167,7 +167,7 @@ hidden void print_disasm(struct emulator_ctx *ctx, int print) {
         }
     } else if (print == 0 && ctx->instr_hook) {
         uc_hook_del(ctx->uc, ctx->instr_hook);
-        ctx->instr_hook == 0;
+        ctx->instr_hook = 0;
     }
 }
 
