@@ -65,6 +65,9 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
                 abort();
             }
             mc->__ss.__rip = (uint64_t)ctx->closure_code;
+        } else if ((void*)pc == info.dli_saddr && strcmp(strrchr(info.dli_fname, '/'), "/libc++em.dylib") == 0) {
+            // call native libc++
+            mc->__ss.__rip = (uint64_t)resolve_symbol("/usr/lib/libc++.1.dylib", info.dli_sname);
         } else {
             // TODO: when is this? maybe blocks or callbacks
             printf("returning to unknown emulated %p (%s+0x%llx:%s)\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname);
