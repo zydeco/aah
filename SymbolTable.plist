@@ -7636,7 +7636,9 @@
 		// decl for xpc_uuid_get_bytes not found
 		"__cxa_atexit" = "$__cxa_atexit";
 	};
-	"objc shims" = {};
+	"objc shims" = {
+		"+[NSString stringWithFormat:]" = "$NSString_stringWithFormat";
+	};
 	"/usr/lib/libobjc.A.dylib" = {
 		"_objc_getClassForTag" = "#S";
 		"_objc_registerTaggedPointerClass" = "vS#";

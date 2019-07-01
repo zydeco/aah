@@ -2,38 +2,66 @@
 #import "aah.h"
 #import "printf.h"
 
-SHIMDEF(NSLog) {
-    // in apple's arm64, all variadic arguments are allocated 8-byte stack slots
-    // that means we still need to know all the arguments in order to forward the call
-    // also the format must be modified if it uses long doubles, since they're smaller on arm64
+// in apple's arm64, all variadic arguments are allocated 8-byte stack slots
+// that means we still need to know all the arguments in order to forward the call
+// also the format must be modified if it uses long doubles, since they're smaller on arm64
+uint64_t generic_printf_shim(uc_engine *uc, struct native_call_context *ctx, const char *encoding) {
+    // last element of encoding is format arg
+    int format_arg = (int)strlen(encoding) - 2;
+    char format_encoding = encoding[format_arg+1];
+    int is_objc = (format_encoding == '@');
+    if (format_encoding  != '@' && format_encoding != '*') {
+        fprintf(stderr, "printf-like shim: invalid encoding \"%s\": format arg must be @ or *\n", encoding);
+    }
     
     // decode/modify format
-    NSString *format = (NSString*)ctx->arm64_call_context->x[0];
-    NSUInteger formatLength = [format lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    void *format = (void*)ctx->arm64_call_context->x[format_arg];
+    size_t formatLength = is_objc ? [(NSString*)format lengthOfBytesUsingEncoding:NSUTF8StringEncoding] : strlen(format);
     char *fmt = alloca(formatLength+1);
-    [format getCString:fmt maxLength:formatLength+1 encoding:NSUTF8StringEncoding];
+    if (is_objc) {
+        [(NSString*)format getCString:fmt maxLength:formatLength+1 encoding:NSUTF8StringEncoding];
+    } else {
+        memcpy(fmt, format, formatLength+1);
+    }
     int nargs = CountStringFormatArgs(fmt);
     if (nargs < 0) abort();
-    char argEncoding[3+nargs];
-    argEncoding[0] = 'v';
-    argEncoding[1] = '*';
+    char argEncoding[3+format_arg+nargs];
+    memcpy(argEncoding, encoding, 2 + format_arg);
     size_t origFormatLength = strlen(fmt);
-    EncodeStringFormatArgs(fmt, argEncoding+2, 1, 1);
+    EncodeStringFormatArgs(fmt, argEncoding+format_arg+2, is_objc, 1);
     BOOL formatWasModified = strlen(fmt) != origFormatLength;
+    argEncoding[2+format_arg+nargs] = '\0';
     
     // construct call
     ffi_cif cif_native;
     ffi_cif_arm64 cif_arm64;
-    prep_cifs(&cif_native, &cif_arm64, argEncoding, 1);
+    prep_cifs(&cif_native, &cif_arm64, argEncoding, format_arg + 1);
     ctx->cif_native = &cif_native;
     ctx->cif_arm64 = &cif_arm64;
-    NSString *newFormat = formatWasModified ? [[NSString alloc] initWithUTF8String:fmt] : format;
-    ctx->arm64_call_context->x[0] = (uint64_t)newFormat;
+    NSString *newFormat = nil;
+    if (formatWasModified) {
+        if (is_objc) {
+            newFormat = [[NSString alloc] initWithUTF8String:fmt];
+            ctx->arm64_call_context->x[format_arg] = (uint64_t)newFormat;
+        } else {
+            ctx->arm64_call_context->x[format_arg] = (uint64_t)fmt;
+        }
+    }
     ctx->before = ctx->after = NULL;
     call_native_with_context(uc, ctx);
-    if (newFormat != format) {
+    if (newFormat) {
         [newFormat release];
     }
-    free(cif_native.arg_types); // cif_arm64.arg_types is the same
+    free(cif_native.arg_types); // cif_arm64.arg_types is the same*/
     return SHIM_RETURN;
+    
 }
+
+#define PRINTF_SHIM(_name, _format) SHIMDEF(_name) { return generic_printf_shim(uc, ctx, _format); }
+
+// void NSLog(NSString * format, ...);
+PRINTF_SHIM(NSLog, "v@");
+// int snprintf_l(char * restrict str, size_t size, locale_t loc, const char * restrict format, ...);
+PRINTF_SHIM(snprintf_l, "q*L?*");
+// +[NSString stringWithFormat:(NSString*)format, ...]
+PRINTF_SHIM(NSString_stringWithFormat, "@@:@");
