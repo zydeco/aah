@@ -53,7 +53,7 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
                 // check if there's a shim for this method
                 // TODO: check if it's a wrapper
                 char *methodName;
-                asprintf(&methodName, "%c[%s %s]\n", (meta ? '+' : '-'), class_getName(cls), sel_getName(op));
+                asprintf(&methodName, "%c[%s %s]", (meta ? '+' : '-'), class_getName(cls), sel_getName(op));
                 const char *methodSignature = lookup_method_signature(CIF_LIB_OBJC_SHIMS, methodName);
                 if (methodSignature == NULL) {
                     methodSignature = method_getTypeEncoding(class_getInstanceMethod(cls, op));
