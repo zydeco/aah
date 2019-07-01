@@ -7,7 +7,6 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
 static void did_load_image(const struct mach_header* mh, intptr_t vmaddr_slide);
 
 hidden void init_loader() {
-    load_lazy_symbols((const struct mach_header_64*)_dyld_get_image_header(0), _dyld_get_image_vmaddr_slide(0));
     _dyld_register_func_for_add_image(did_load_image);
 }
 
@@ -15,6 +14,7 @@ static void did_load_image(const struct mach_header* mh, intptr_t vmaddr_slide) 
     const struct mach_header_64 *mh64 = (const struct mach_header_64*)mh;
     if (should_emulate_image(mh64)) {
         setup_image_emulation(mh64, vmaddr_slide);
+        load_lazy_symbols(mh64, vmaddr_slide);
     }
     map_image(mh64, vmaddr_slide);
 }
@@ -22,7 +22,7 @@ static void did_load_image(const struct mach_header* mh, intptr_t vmaddr_slide) 
 static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
     Dl_info info;
     dladdr(mh, &info);
-    printf("Setting up emulation for %s\n", info.dli_fname);
+    printf("Setting up emulation for %s with slide 0x%lx\n", info.dli_fname, vmaddr_slide);
     
     void *lc_ptr = (void*)mh + sizeof(struct mach_header_64);
     for(uint32_t i = 0; i < mh->ncmds; i++) {
@@ -46,13 +46,51 @@ static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmad
                     // constructors & destructors
                     void **pointers = (void **)((uintptr_t)vmaddr_slide + sect->addr);
                     for(int i = 0; i < sect->size / 8; i++) {
-                        cif_cache_add(vmaddr_slide + pointers[i], "v");
+                        // pointers are already slid by the loader
+                        cif_cache_add(pointers[i], "v");
                     }
                 }
             }
         }
         lc_ptr += sc->cmdsize;
     }
+}
+
+hidden void* resolve_symbol(const char *lib_name, const char *symbol_name) {
+    // find own path
+    static char *full_path;
+    static char *after_path;
+    static uint32_t bufsize = 0;
+    static unsigned long extra_size = 512;
+    if (bufsize == 0) {
+        _NSGetExecutablePath(NULL, &bufsize);
+        bufsize += extra_size;
+        full_path = malloc(bufsize);
+        _NSGetExecutablePath(full_path, &bufsize);
+        after_path = strrchr(full_path, '/');
+    }
+    
+    // find path
+    strlcpy(after_path, lib_name, extra_size);
+
+    // resolve symbol
+    void *handle;
+    if (strncmp(lib_name, "@executable_path/", 17) == 0) {
+        strncpy(after_path, lib_name+16, strlen(lib_name) - 15);
+        char *real_path = realpath(full_path, NULL);
+        handle = dlopen(real_path, RTLD_NOLOAD | RTLD_LAZY | RTLD_LOCAL | RTLD_FIRST);
+        free(real_path);
+    } else {
+        handle = dlopen(lib_name, RTLD_NOLOAD | RTLD_LAZY | RTLD_LOCAL | RTLD_FIRST);
+    }
+    if (handle == NULL) {
+        handle = RTLD_DEFAULT;
+    }
+    void *symbol = dlsym(handle, symbol_name);
+    if (handle != RTLD_DEFAULT) {
+        dlclose(handle);
+    }
+    return symbol;
 }
 
 static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
@@ -111,29 +149,18 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
             
             // find library name
             size_t lib_index = GET_LIBRARY_ORDINAL(symtab[symtab_index].n_desc);
+            if (lib_index == BIND_SPECIAL_DYLIB_SELF) {
+                continue;
+            }
             const struct dylib_command *dylib = lc_dylibs[lib_index-1];
             const char *lib_name = (void*)dylib + dylib->dylib.name.offset; // it's always padded with at least one zero
-
+            
             // resolve symbol
             uint32_t strtab_offset = symtab[symtab_index].n_un.n_strx;
             const char *symbol_name = strtab + strtab_offset;
             if (symbol_name[0] != '_') continue;
-            void *handle;
-            if (strncmp(lib_name, "@executable_path/", 17) == 0) {
-                strncpy(after_path, lib_name+16, strlen(lib_name) - 16);
-                char *real_path = realpath(full_path, NULL);
-                handle = dlopen(real_path, RTLD_NOLOAD | RTLD_LAZY | RTLD_LOCAL | RTLD_FIRST);
-                free(real_path);
-            } else {
-                handle = dlopen(lib_name, RTLD_NOLOAD | RTLD_LAZY | RTLD_LOCAL | RTLD_FIRST);
-            }
-            if (handle == NULL) {
-                handle = RTLD_DEFAULT;
-            }
-            void *symbol = dlsym(handle, &symbol_name[1]);
-            if (handle != RTLD_DEFAULT) {
-                dlclose(handle);
-            }
+            //bool n_indr = symtab[symtab_index].n_type & N_INDR;
+            void *symbol = resolve_symbol(lib_name, &symbol_name[1]);
             indirect_symbol_bindings[i] = symbol;
             
             Dl_info info;

@@ -69,6 +69,7 @@ hidden void init_cif (void);
 hidden void cif_cache_add_new(void *address, const char *method_signature); // doesn't overwrite
 hidden void cif_cache_add(void *address, const char *method_signature); // overwrites
 hidden void load_objc_entrypoints(void);
+hidden void* resolve_symbol(const char *libname, const char *symname);
 hidden void cif_cache_add_class(const char *className);
 hidden ffi_cif * cif_cache_get_native(void *address);
 hidden ffi_cif_arm64 * cif_cache_get_arm64(void *address);
