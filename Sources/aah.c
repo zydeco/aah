@@ -10,7 +10,8 @@ __attribute__((constructor)) static void init_aah(void) {
     uc_version(&maj, &min);
     printf("Unicorn version %d.%d\n", maj, min);
     
-    get_unicorn();
+    init_emulator_ctx_key();
+    get_emulator_ctx();
     init_cif();
     init_loader();
     

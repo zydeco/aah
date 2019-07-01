@@ -177,7 +177,7 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
 }
 
 static void map_image(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
-    uc_engine *uc = get_unicorn();
+    uc_engine *uc = get_emulator_ctx()->uc;
     Dl_info info;
     dladdr((void*)mh, &info);
     //printf("Mapping image %s\n", info.dli_fname);

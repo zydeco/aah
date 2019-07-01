@@ -2,7 +2,7 @@
 
 void mem_print_uc_regions(uc_engine *uc) {
     if (uc == NULL) {
-        uc = get_unicorn();
+        uc = get_emulator_ctx()->uc;
     }
     uc_mem_region *regions;
     uint32_t num_regions;

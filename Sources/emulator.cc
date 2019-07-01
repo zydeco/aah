@@ -142,15 +142,14 @@ static void init_key() {
     pthread_key_create(&emulator_ctx_key, destroy_emulator_ctx);
 }
 
-hidden uc_engine* get_unicorn() {
+hidden void init_emulator_ctx_key() {
     pthread_once(&key_once, init_key);
-    struct emulator_ctx *ctx = (struct emulator_ctx*)pthread_getspecific(emulator_ctx_key);
-    if (ctx == NULL) ctx = init_emulator_ctx();
-    return ctx->uc;
 }
 
 hidden struct emulator_ctx* get_emulator_ctx() {
-    return (struct emulator_ctx*)pthread_getspecific(emulator_ctx_key);
+    struct emulator_ctx *ctx = (struct emulator_ctx*)pthread_getspecific(emulator_ctx_key);
+    if (ctx == NULL) ctx = init_emulator_ctx();
+    return ctx;
 }
 
 hidden void print_disasm(struct emulator_ctx *ctx, int print) {
