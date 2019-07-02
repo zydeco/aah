@@ -44,6 +44,18 @@ hidden void init_cif() {
     CFRelease(sig_data);
 }
 
+static const char * find_struct_end(const char *ms) {
+    // find next unbalanced '}'
+    const char *end_candidate = strchr(ms, '}');
+    const char *next_struct = strchr(ms, '{');
+    while (next_struct && next_struct < end_candidate) {
+        ms = end_candidate + 1;
+        end_candidate = strchr(ms, '}');
+        next_struct = strchr(ms, '{');
+    }
+    return end_candidate;
+}
+
 static ffi_type *next_type(char const ** method_signature, const char *prefix, bool skip_members) {
     ffi_type *type = NULL;
     const char *ms = *method_signature;
@@ -137,10 +149,10 @@ next_type_1:
             } break;
         case '{': { // struct
             P("struct\n");
-            char *struct_end = strchr(ms, '}');
+            const char *struct_end = find_struct_end(ms);
             char *struct_equals = strchr(ms, '=');
             if (struct_equals != NULL && struct_equals < struct_end) {
-                ms = struct_equals + 1;
+                ms = strchr(ms, '=') + 1;
             } else {
                 ms = struct_end;
             }
@@ -160,9 +172,21 @@ next_type_1:
             ms++;
             type->elements[elem] = NULL;
         } break;
-        case '(': // TODO: union
-            fprintf(stderr, "unions not supported in method signature: %s", ms-1);
-            abort();
+        case '(': {
+            P("union\n");
+            // FIXME: support union properly
+            // skip to after equals
+            ms = strchr(ms, '=') + 1;
+            if (!skip_members) {
+                fprintf(stderr, "unions not supported in method signature: %s", ms-1);
+                abort();
+            }
+            while(*ms != ')') {
+                // FIXME: structs will be leaked
+                next_type(&ms, "struct member: ", skip_members);
+            }
+            ms++;
+        } break;
         case 'b': { // TODO: bitfield
             unsigned long nbits = strtoul(ms, (char**)&ms, 10);
             P("%sbitfield of %d\n", prefix, (int)nbits);

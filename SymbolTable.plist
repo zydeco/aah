@@ -7660,7 +7660,7 @@
 		"NXHashMember" = "i^{?=}^v";
 		"NXHashRemove" = "^v^{?=}^v";
 		"NXInitHashState" = "{?=ii}^{?=}";
-		"NXInitMapState" = "{i}^v";
+		"NXInitMapState" = "{?=i}^v";
 		"NXMapGet" = "^v^v^v";
 		"NXMapInsert" = "^v^v^v^v";
 		"NXMapMember" = "^v^v^v?";
