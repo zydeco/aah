@@ -78,7 +78,7 @@ bool mem_map_region_containing(uc_engine *uc, uint64_t address, uint32_t perms) 
     return true;
 }
 
-hidden void print_region_info(void *ptr) {
+hidden void print_mem_info(void *ptr) {
     vm_address_t address = (vm_address_t)ptr;
     vm_size_t size;
     vm_region_basic_info_data_64_t info;
@@ -90,4 +90,14 @@ hidden void print_region_info(void *ptr) {
     printf("  size = 0x%lx\n", size);
     printf("  offset = 0x%llx\n", info.offset);
     printf("  protection = (%x to %x)\n", info.protection, info.max_protection);
+    
+    Dl_info dl_info;
+    if (dladdr(ptr, &dl_info)) {
+        printf("  dli_fname = %s\n", dl_info.dli_fname);
+        printf("  dli_fbase = %p\n", dl_info.dli_fbase);
+        printf("  dli_sname = %s\n", dl_info.dli_sname);
+        printf("  dli_saddr = %p\n", dl_info.dli_saddr);
+    } else {
+        printf("  no Dl_info");
+    }
 }
