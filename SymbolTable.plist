@@ -1000,11 +1000,11 @@
 		"dispatch_assert_queue_barrier" = "v^{dispatch_queue_s=}";
 		"dispatch_assert_queue_not" = "v^{dispatch_queue_s=}";
 		// decl for dispatch_assert_queue_not$V2 not found
-		"dispatch_async" = "v^{dispatch_queue_s=}?";
+		"dispatch_async" = "<v^{dispatch_queue_s=}?>dispatch_block_1";
 		// decl for dispatch_async_and_wait not found
 		// decl for dispatch_async_and_wait_f not found
 		// decl for dispatch_async_enforce_qos_class_f not found
-		"dispatch_async_f" = "v^{dispatch_queue_s=}^v?";
+		"dispatch_async_f" = "<v^{dispatch_queue_s=}^v?>dispatch_async_f";
 		// decl for dispatch_atfork_child not found
 		// decl for dispatch_atfork_parent not found
 		// decl for dispatch_atfork_prepare not found
@@ -1092,8 +1092,8 @@
 		// decl for dispatch_mach_send_with_result_and_wait_for_reply not found
 		"dispatch_main" = "v";
 		// decl for dispatch_mig_server not found
-		"dispatch_once" = "v^l?";
-		"dispatch_once_f" = "v^l^v?";
+		"dispatch_once" = "<v^l?>dispatch_block_1";
+		"dispatch_once_f" = "<v^l^v?>dispatch_once_f";
 		// decl for dispatch_pthread_root_queue_copy_current not found
 		// decl for dispatch_pthread_root_queue_create not found
 		"dispatch_queue_attr_make_initially_inactive" = "^{dispatch_queue_attr_s=}^{dispatch_queue_attr_s=}";
