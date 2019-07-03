@@ -1,21 +1,23 @@
 #include "aah.h"
 
+const char *mem_perm_str[] = {
+    [0] = "none",
+    [1] = "r--",
+    [2] = "-w-",
+    [3] = "rw-",
+    [4] = "--x",
+    [5] = "r-x",
+    [6] = "-wx",
+    [7] = "rwx"
+};
+
 void mem_print_uc_regions(uc_engine *uc) {
     if (uc == NULL) {
         uc = get_emulator_ctx()->uc;
     }
     uc_mem_region *regions;
     uint32_t num_regions;
-    const char *perm_str[] = {
-        [0] = "none",
-        [1] = "r--",
-        [2] = "-w-",
-        [3] = "rw-",
-        [4] = "--x",
-        [5] = "r-x",
-        [6] = "-wx",
-        [7] = "rwx"
-    };
+    
     uc_mem_regions(uc, &regions, &num_regions);
     qsort_b(regions, num_regions, sizeof(uc_mem_region), ^int(const void * rpa, const void * rpb) {
         const uc_mem_region *ra = (const uc_mem_region*)rpa;
@@ -24,9 +26,31 @@ void mem_print_uc_regions(uc_engine *uc) {
     });
     printf("%d regions:\n", num_regions);
     for(uint32_t i = 0; i < num_regions; i++) {
-        printf("  %p->%p %s\n", (void*)regions[i].begin, (void*)regions[i].end, perm_str[regions[i].perms]);
+        printf("  %p->%p %s\n", (void*)regions[i].begin, (void*)regions[i].end, mem_perm_str[regions[i].perms]);
     }
     free(regions);
+}
+
+bool mem_remap_region(uc_engine *uc, uint64_t address, size_t size, uint32_t perms, void *ptr, uc_err *err_ptr) {
+    uc_mem_region *regions;
+    uint32_t num_regions;
+    uc_mem_regions(uc, &regions, &num_regions);
+    // find overlapping region and unmap it
+    // assume regions only expand from the end
+    for(uint32_t i = 0; i < num_regions; i++) {
+        if (regions[i].begin == address) {
+            size_t region_size = regions[i].end - regions[i].begin;
+            perms |= regions[i].perms;
+            uc_mem_unmap(uc, address, region_size);
+            uc_err err = uc_mem_map(uc, address, size, perms);
+            *err_ptr = err;
+            free(regions);
+            return true;
+        }
+    }
+    fprintf(stderr, "mem_remap_region: did not find region\n");
+    free(regions);
+    return false;
 }
 
 bool mem_map_region_containing(uc_engine *uc, uint64_t address, uint32_t perms) {
@@ -42,9 +66,13 @@ bool mem_map_region_containing(uc_engine *uc, uint64_t address, uint32_t perms) 
     
     uc_err uerr = uc_mem_map_ptr(uc, region_address, region_size, perms, (void*)region_address);
     if (uerr != UC_ERR_OK) {
-        printf("uc_mem_map_ptr: %s\n", uc_strerror(uerr));
-        mem_print_uc_regions(uc);
-        return false;
+        // TODO: check an already mapped region was embiggened and try again
+        bool found = mem_remap_region(uc, region_address, region_size, perms, (void*)region_address, &uerr);
+        if (uerr != UC_ERR_OK || !found) {
+            printf("uc_mem_map_ptr(%p, 0x%lx, %s): %s\n", (void*)region_address, region_size, mem_perm_str[perms], uc_strerror(uerr));
+            mem_print_uc_regions(uc);
+            return false;
+        }
     }
     
     return true;
