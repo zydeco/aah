@@ -293,12 +293,20 @@ static bool cb_invalid_fetch(uc_engine *uc, uc_mem_type type, uint64_t address, 
         // emulation done
         uc_emu_stop(uc);
         return true;
-    } else if (dladdr((void*)address, &info) && should_emulate_image((struct mach_header_64*)info.dli_fbase)) {
-        // map as executable
-        printf("cb_invalid_fetch %s %p: mapping as executable\n", uc_mem_type_to_string(type), (void*)address);
-        return mem_map_region_containing(uc, address, UC_PROT_ALL);
+    } else if (dladdr((void*)address, &info)) {
+        if (should_emulate_image((struct mach_header_64*)info.dli_fbase)) {
+            // map as executable
+            printf("cb_invalid_fetch %s %p: mapping as executable\n", uc_mem_type_to_string(type), (void*)address);
+            return mem_map_region_containing(uc, address, UC_PROT_ALL);
+        } else if (type == UC_MEM_FETCH_UNMAPPED) {
+            // call to native unmapped memory
+            return mem_map_region_containing(uc, address, UC_PROT_READ);
+        } else {
+            // call to native mapped memory? caught in run_emulator
+            return false;
+        }
     } else {
-        // call to native? caught in run_emulator
+        // probalby not a call to native code
         return false;
     }
 }
