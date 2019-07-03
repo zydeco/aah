@@ -57,7 +57,13 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
                 const char *methodSignature = lookup_method_signature(CIF_LIB_OBJC_SHIMS, methodName);
                 if (methodSignature == NULL) {
                     methodSignature = method_getTypeEncoding(class_getInstanceMethod(cls, op));
-                    printf("caching cif for %s with type encoding %s\n", methodName, methodSignature);
+                    if (methodSignature == NULL) {
+                        // CIF is needed for forwarding the call
+                        printf("could not find cif for %s\n", methodName);
+                        // TODO: try to guess it?
+                    } else {
+                        printf("caching cif for %s with type encoding %s\n", methodName, methodSignature);
+                    }
                 } else {
                     printf("caching shim for %s\n", methodName);
                 }

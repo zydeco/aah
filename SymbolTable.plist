@@ -7638,6 +7638,8 @@
 	};
 	"objc shims" = {
 		"+[NSString stringWithFormat:]" = "$NSString_stringWithFormat";
+		// not actually shims
+		"-[_UIAppearance setTintColor:]" = "v@:@";
 	};
 	"/usr/lib/libobjc.A.dylib" = {
 		"_objc_getClassForTag" = "#S";
