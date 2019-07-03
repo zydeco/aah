@@ -15,6 +15,7 @@ static void did_load_image(const struct mach_header* mh, intptr_t vmaddr_slide) 
     if (should_emulate_image(mh64)) {
         setup_image_emulation(mh64, vmaddr_slide);
         load_lazy_symbols(mh64, vmaddr_slide);
+        load_objc_entrypoints(mh64, vmaddr_slide);
     }
     map_image(mh64, vmaddr_slide);
 }
@@ -203,3 +204,4 @@ static void map_image(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
         lc_ptr += sc->cmdsize;
     }
 }
+

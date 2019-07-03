@@ -67,7 +67,7 @@ typedef uint64_t (*shim_ptr)(uc_engine*, struct native_call_context*);
 hidden void init_cif (void);
 hidden void cif_cache_add_new(void *address, const char *method_signature); // doesn't overwrite
 hidden void cif_cache_add(void *address, const char *method_signature); // overwrites
-hidden void load_objc_entrypoints(void);
+hidden void load_objc_entrypoints(const struct mach_header_64 *mh, intptr_t vmaddr_slide);
 hidden void* resolve_symbol(const char *libname, const char *symname);
 hidden void cif_cache_add_class(const char *className);
 hidden ffi_cif * cif_cache_get_native(void *address);
