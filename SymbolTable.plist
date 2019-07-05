@@ -8822,6 +8822,1909 @@
 	"/usr/lib/swift/libswiftCore.dylib" = {
 		"swift_getInitializedObjCClass" = "##";
 	};
+	"/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics" = {
+		// decl for CGRegionContainsPoint not found
+		// decl for CGRegionContainsRect not found
+		// decl for CGRegionContainsRegion not found
+		// decl for CGRegionCreateCopy not found
+		// decl for CGRegionCreateDifferenceWithRegion not found
+		// decl for CGRegionCreateEmptyRegion not found
+		// decl for CGRegionCreateIntersectionWithRect not found
+		// decl for CGRegionCreateIntersectionWithRegion not found
+		// decl for CGRegionCreateUnionWithRect not found
+		// decl for CGRegionCreateUnionWithRegion not found
+		// decl for CGRegionCreateWithOffset not found
+		// decl for CGRegionCreateWithRect not found
+		// decl for CGRegionCreateWithRects not found
+		// decl for CGRegionEqualToRegion not found
+		// decl for CGRegionGetBoundingBox not found
+		// decl for CGRegionIntersectsRect not found
+		// decl for CGRegionIntersectsRegion not found
+		// decl for CGRegionIsEmpty not found
+		// decl for CGRegionIsRect not found
+		// decl for CFTypeCreateWithCGPDFObject not found
+		// decl for CGAccessSessionCreate not found
+		// decl for CGAccessSessionGetBytePointer not found
+		// decl for CGAccessSessionGetBytes not found
+		// decl for CGAccessSessionGetChunks not found
+		// decl for CGAccessSessionRelease not found
+		// decl for CGAccessSessionRewind not found
+		// decl for CGAccessSessionSkipForward not found
+		"CGAffineTransformConcat" = "{CGAffineTransform=dddddd}{CGAffineTransform=dddddd}{CGAffineTransform=dddddd}";
+		"CGAffineTransformEqualToTransform" = "B{CGAffineTransform=dddddd}{CGAffineTransform=dddddd}";
+		// decl for CGAffineTransformIdentity not found
+		"CGAffineTransformInvert" = "{CGAffineTransform=dddddd}{CGAffineTransform=dddddd}";
+		"CGAffineTransformIsIdentity" = "B{CGAffineTransform=dddddd}";
+		// decl for CGAffineTransformIsRectilinear not found
+		// decl for CGAffineTransformIsSingular not found
+		"CGAffineTransformMake" = "{CGAffineTransform=dddddd}dddddd";
+		"CGAffineTransformMakeRotation" = "{CGAffineTransform=dddddd}d";
+		"CGAffineTransformMakeScale" = "{CGAffineTransform=dddddd}dd";
+		"CGAffineTransformMakeTranslation" = "{CGAffineTransform=dddddd}dd";
+		// decl for CGAffineTransformMakeWithRect not found
+		"CGAffineTransformRotate" = "{CGAffineTransform=dddddd}{CGAffineTransform=dddddd}d";
+		"CGAffineTransformScale" = "{CGAffineTransform=dddddd}{CGAffineTransform=dddddd}dd";
+		"CGAffineTransformTranslate" = "{CGAffineTransform=dddddd}{CGAffineTransform=dddddd}dd";
+		// decl for CGApplicationPropertyGetBoolean not found
+		// decl for CGBitmapAllocateData not found
+		// decl for CGBitmapContextCopyData not found
+		"CGBitmapContextCreate" = "^{CGContext=}^vLLLL^{CGColorSpace=}I";
+		"CGBitmapContextCreateImage" = "^{CGImage=}^{CGContext=}";
+		// decl for CGBitmapContextCreateWithAlpha not found
+		// decl for CGBitmapContextCreateWithCallbacks not found
+		"CGBitmapContextCreateWithData" = "^{CGContext=}^vLLLL^{CGColorSpace=}I?^v";
+		// decl for CGBitmapContextCreateWithDictionary not found
+		// decl for CGBitmapContextCreateWithPlanarAlpha not found
+		// decl for CGBitmapContextDelegateCreateWithDictionary not found
+		// decl for CGBitmapContextGetAlphaBytesPerRow not found
+		// decl for CGBitmapContextGetAlphaData not found
+		"CGBitmapContextGetAlphaInfo" = "I^{CGContext=}";
+		"CGBitmapContextGetBitmapInfo" = "I^{CGContext=}";
+		"CGBitmapContextGetBitsPerComponent" = "L^{CGContext=}";
+		"CGBitmapContextGetBitsPerPixel" = "L^{CGContext=}";
+		"CGBitmapContextGetBytesPerRow" = "L^{CGContext=}";
+		"CGBitmapContextGetColorSpace" = "^{CGColorSpace=}^{CGContext=}";
+		"CGBitmapContextGetData" = "^v^{CGContext=}";
+		"CGBitmapContextGetHeight" = "L^{CGContext=}";
+		"CGBitmapContextGetWidth" = "L^{CGContext=}";
+		// decl for CGBitmapContextSetData not found
+		// decl for CGBitmapContextWriteImageToFile not found
+		// decl for CGBitmapFreeData not found
+		// decl for CGBitmapGetAlignedBytesPerRow not found
+		// decl for CGBitmapGetFastestAlignment not found
+		// decl for CGBlt_copyBytes not found
+		// decl for CGBlt_depth not found
+		// decl for CGBlt_fillBytes not found
+		// decl for CGBlt_initialize not found
+		// decl for CGBlt_release_pattern not found
+		// decl for CGBufferLockBytePtr not found
+		// decl for CGBufferProviderCreate not found
+		// decl for CGBufferProviderCreateWithCFData not found
+		// decl for CGBufferProviderGetSize not found
+		// decl for CGBufferProviderGetTypeID not found
+		// decl for CGBufferUnlockBytePtr not found
+		// decl for CGCFArrayAppendCGFloat not found
+		// decl for CGCFArrayAppendInteger not found
+		// decl for CGCFArrayAppendRect not found
+		// decl for CGCFArrayApplyBlock not found
+		// decl for CGCFArrayCreate not found
+		// decl for CGCFArrayGetLastValue not found
+		// decl for CGCFArrayGetRectAtIndex not found
+		// decl for CGCFDictionaryApplyBlock not found
+		// decl for CGCFDictionaryCopyKeys not found
+		// decl for CGCFDictionaryCopyValues not found
+		// decl for CGCFDictionaryCreate not found
+		// decl for CGCFDictionaryCreateCopy not found
+		// decl for CGCFDictionaryGetBoolean not found
+		// decl for CGCFDictionaryGetBooleanWithDefault not found
+		// decl for CGCFDictionaryGetCFTypeRef not found
+		// decl for CGCFDictionaryGetFloat not found
+		// decl for CGCFDictionaryGetFloatWithDefault not found
+		// decl for CGCFDictionaryGetInteger not found
+		// decl for CGCFDictionaryGetIntegerWithDefault not found
+		// decl for CGCFDictionaryGetNumber not found
+		// decl for CGCFDictionaryGetPoint not found
+		// decl for CGCFDictionaryGetRect not found
+		// decl for CGCFDictionaryGetSize not found
+		// decl for CGCFDictionarySetBoolean not found
+		// decl for CGCFDictionarySetCFTypeRef not found
+		// decl for CGCFDictionarySetCString not found
+		// decl for CGCFDictionarySetFloat not found
+		// decl for CGCFDictionarySetInteger not found
+		// decl for CGCFDictionarySetNumber not found
+		// decl for CGCFDictionarySetPoint not found
+		// decl for CGCFDictionarySetRect not found
+		// decl for CGCFDictionarySetSize not found
+		// decl for CGCFRelease not found
+		// decl for CGCFRetain not found
+		// decl for CGCFURLCopyFileData not found
+		// decl for CGCMSUtilsGetICCProfileData not found
+		// decl for CGClipCreateClipPath not found
+		// decl for CGClipGetFlatness not found
+		// decl for CGClipGetIdentifier not found
+		// decl for CGClipGetMask not found
+		// decl for CGClipGetMode not found
+		// decl for CGClipGetPath not found
+		// decl for CGClipGetRect not found
+		// decl for CGClipGetShouldAntialias not found
+		// decl for CGClipGetStroke not found
+		// decl for CGClipGetTextClipping not found
+		// decl for CGClipGetType not found
+		// decl for CGClipGlyphsCreate not found
+		// decl for CGClipGlyphsCreateCopy not found
+		// decl for CGClipGlyphsCreateCopyByApplyingTransform not found
+		// decl for CGClipGlyphsEqualToClipGlyphs not found
+		// decl for CGClipGlyphsGetAdvanceAtIndex not found
+		// decl for CGClipGlyphsGetAdvances not found
+		// decl for CGClipGlyphsGetBounds not found
+		// decl for CGClipGlyphsGetCount not found
+		// decl for CGClipGlyphsGetFont not found
+		// decl for CGClipGlyphsGetFontAtIndex not found
+		// decl for CGClipGlyphsGetFontRenderingStyle not found
+		// decl for CGClipGlyphsGetFontRenderingStyleAtIndex not found
+		// decl for CGClipGlyphsGetGlyphAtIndex not found
+		// decl for CGClipGlyphsGetGlyphs not found
+		// decl for CGClipGlyphsGetLength not found
+		// decl for CGClipGlyphsGetMatrix not found
+		// decl for CGClipGlyphsGetMatrixAtIndex not found
+		// decl for CGClipGlyphsRelease not found
+		// decl for CGClipGlyphsRetain not found
+		// decl for CGClipMaskCreate not found
+		// decl for CGClipMaskCreateCopy not found
+		// decl for CGClipMaskCreateCopyByApplyingTransform not found
+		// decl for CGClipMaskEqualToClipMask not found
+		// decl for CGClipMaskGetBounds not found
+		// decl for CGClipMaskGetImage not found
+		// decl for CGClipMaskGetMatrix not found
+		// decl for CGClipMaskGetRect not found
+		// decl for CGClipMaskRelease not found
+		// decl for CGClipMaskRetain not found
+		// decl for CGClipRelease not found
+		// decl for CGClipRetain not found
+		// decl for CGClipStackAddClip not found
+		// decl for CGClipStackAddRect not found
+		// decl for CGClipStackContainsMask not found
+		// decl for CGClipStackCreateCopy not found
+		// decl for CGClipStackCreateMutable not found
+		// decl for CGClipStackCreateMutableCopy not found
+		// decl for CGClipStackEqual not found
+		// decl for CGClipStackGetBounds not found
+		// decl for CGClipStackGetClipAtIndex not found
+		// decl for CGClipStackGetCount not found
+		// decl for CGClipStackGetIdentifier not found
+		// decl for CGClipStackGetRect not found
+		// decl for CGClipStackIsInfinite not found
+		// decl for CGClipStackPrint not found
+		// decl for CGClipStackRelease not found
+		// decl for CGClipStackRetain not found
+		// decl for CGClipStrokeCreate not found
+		// decl for CGClipStrokeCreateCopy not found
+		// decl for CGClipStrokeCreateCopyWithTransform not found
+		// decl for CGClipStrokeCreateStrokedPath not found
+		// decl for CGClipStrokeCreateWithGState not found
+		// decl for CGClipStrokeGetDash not found
+		// decl for CGClipStrokeGetFlatness not found
+		// decl for CGClipStrokeGetLineCap not found
+		// decl for CGClipStrokeGetLineJoin not found
+		// decl for CGClipStrokeGetLineWidth not found
+		// decl for CGClipStrokeGetMatrix not found
+		// decl for CGClipStrokeGetMiterLimit not found
+		// decl for CGClipStrokeGetShouldAntialias not found
+		// decl for CGClipStrokeGetStrokeAdjust not found
+		// decl for CGClipStrokeRelease not found
+		// decl for CGClipStrokeRetain not found
+		// decl for CGColorCodeFragmentGetParametricConversion not found
+		// decl for CGColorCodeFragmentGetParametricCount not found
+		// decl for CGColorCodeFragmentGetTextureData not found
+		// decl for CGColorCodeFragmentGetTextureFormat not found
+		// decl for CGColorCodeFragmentGetTextureGridPoints not found
+		// decl for CGColorCodeFragmentRelease not found
+		"CGColorConversionInfoCreate" = "^{CGColorConversionInfo=}^{CGColorSpace=}^{CGColorSpace=}";
+		"CGColorConversionInfoCreateFromList" = "^{CGColorConversionInfo=}^{__CFDictionary=}^{CGColorSpace=}Ii...";
+		"CGColorConversionInfoCreateFromListWithArguments" = "^{CGColorConversionInfo=}^{__CFDictionary=}^{CGColorSpace=}Ii...";
+		"CGColorConversionInfoGetTypeID" = "L";
+		// decl for CGColorConversionInfoIterateColorSpaceFunctionsWithCallbacks not found
+		// decl for CGColorConversionInfoIterateFunctionsWithCallbacks not found
+		// decl for CGColorConverterCreate not found
+		// decl for CGColorConverterCreateSimple not found
+		// decl for CGColorConverterGetTypeID not found
+		// decl for CGColorConverterIterateColorSpaceFunctionsWithCallbacks not found
+		// decl for CGColorConverterIterateFunctionsWithCallbacks not found
+		// decl for CGColorConverterRelease not found
+		// decl for CGColorConverterRetain not found
+		"CGColorCreate" = "^{CGColor=}^{CGColorSpace=}^d";
+		"CGColorCreateCopy" = "^{CGColor=}^{CGColor=}";
+		"CGColorCreateCopyByMatchingToColorSpace" = "^{CGColor=}^{CGColorSpace=}i^{CGColor=}^{__CFDictionary=}";
+		"CGColorCreateCopyWithAlpha" = "^{CGColor=}^{CGColor=}d";
+		"CGColorCreateGenericCMYK" = "^{CGColor=}ddddd";
+		"CGColorCreateGenericGray" = "^{CGColor=}dd";
+		"CGColorCreateGenericRGB" = "^{CGColor=}dddd";
+		"CGColorCreateWithPattern" = "^{CGColor=}^{CGColorSpace=}^{CGPattern=}^d";
+		// decl for CGColorCurveEqualToGammaCurve not found
+		// decl for CGColorCurveGetGamma not found
+		// decl for CGColorCurveGetParameters not found
+		// decl for CGColorCurveGetTRC not found
+		// decl for CGColorCurveMapValue not found
+		// decl for CGColorCurvePrint not found
+		// decl for CGColorCurveRelease not found
+		// decl for CGColorCurveRetain not found
+		"CGColorEqualToColor" = "B^{CGColor=}^{CGColor=}";
+		// decl for CGColorFunctionGetOptions not found
+		// decl for CGColorFunctionGetProperties not found
+		"CGColorGetAlpha" = "d^{CGColor=}";
+		"CGColorGetColorSpace" = "^{CGColorSpace=}^{CGColor=}";
+		"CGColorGetComponents" = "^d^{CGColor=}";
+		"CGColorGetConstantColor" = "^{CGColor=}^{__CFString=}";
+		// decl for CGColorGetIdentifier not found
+		"CGColorGetNumberOfComponents" = "L^{CGColor=}";
+		"CGColorGetPattern" = "^{CGPattern=}^{CGColor=}";
+		// decl for CGColorGetPatternBaseColor not found
+		"CGColorGetTypeID" = "L";
+		// decl for CGColorMatrixConcat not found
+		// decl for CGColorMatrixGetMatrix not found
+		// decl for CGColorMatrixGetTypeID not found
+		// decl for CGColorMatrixIsIdentity not found
+		// decl for CGColorMatrixMake not found
+		// decl for CGColorMatrixMakeIdentity not found
+		// decl for CGColorNxMLUTGetLUT not found
+		// decl for CGColorNxMLUTGetTypeID not found
+		"CGColorRelease" = "v^{CGColor=}";
+		"CGColorRetain" = "^{CGColor=}^{CGColor=}";
+		// decl for CGColorSpaceConcatenate not found
+		// decl for CGColorSpaceCopyColorTable not found
+		// decl for CGColorSpaceCopyDefaultColor not found
+		"CGColorSpaceCopyICCData" = "^{__CFData=}^{CGColorSpace=}";
+		"CGColorSpaceCopyICCProfile" = "^{__CFData=}^{CGColorSpace=}";
+		// decl for CGColorSpaceCopyICCProfileASCIIDescriptionString not found
+		// decl for CGColorSpaceCopyICCProfileDescription not found
+		"CGColorSpaceCopyName" = "^{__CFString=}^{CGColorSpace=}";
+		"CGColorSpaceCopyPropertyList" = "^v^{CGColorSpace=}";
+		"CGColorSpaceCreateCalibratedGray" = "^{CGColorSpace=}^d^dd";
+		"CGColorSpaceCreateCalibratedRGB" = "^{CGColorSpace=}^d^d^d^d";
+		// decl for CGColorSpaceCreateConversionCurve not found
+		"CGColorSpaceCreateDeviceCMYK" = "^{CGColorSpace=}";
+		"CGColorSpaceCreateDeviceGray" = "^{CGColorSpace=}";
+		// decl for CGColorSpaceCreateDeviceN not found
+		"CGColorSpaceCreateDeviceRGB" = "^{CGColorSpace=}";
+		"CGColorSpaceCreateICCBased" = "^{CGColorSpace=}L^d^{CGDataProvider=}^{CGColorSpace=}";
+		"CGColorSpaceCreateIndexed" = "^{CGColorSpace=}^{CGColorSpace=}L^C";
+		"CGColorSpaceCreateLab" = "^{CGColorSpace=}^d^d^d";
+		// decl for CGColorSpaceCreateLinearized not found
+		"CGColorSpaceCreatePattern" = "^{CGColorSpace=}^{CGColorSpace=}";
+		"CGColorSpaceCreateWithICCData" = "^{CGColorSpace=}^v";
+		"CGColorSpaceCreateWithICCProfile" = "^{CGColorSpace=}^{__CFData=}";
+		"CGColorSpaceCreateWithName" = "^{CGColorSpace=}^{__CFString=}";
+		"CGColorSpaceCreateWithPlatformColorSpace" = "^{CGColorSpace=}^v";
+		"CGColorSpaceCreateWithPropertyList" = "^{CGColorSpace=}^v";
+		// decl for CGColorSpaceEqualToColorSpace not found
+		// decl for CGColorSpaceEqualToColorSpaceIgnoringRange not found
+		// decl for CGColorSpaceGetAlternateColorSpace not found
+		"CGColorSpaceGetBaseColorSpace" = "^{CGColorSpace=}^{CGColorSpace=}";
+		// decl for CGColorSpaceGetCalibratedGrayData not found
+		// decl for CGColorSpaceGetCalibratedRGBData not found
+		"CGColorSpaceGetColorTable" = "v^{CGColorSpace=}^C";
+		"CGColorSpaceGetColorTableCount" = "L^{CGColorSpace=}";
+		// decl for CGColorSpaceGetColorants not found
+		// decl for CGColorSpaceGetConversionMatrix not found
+		// decl for CGColorSpaceGetDescriptor not found
+		// decl for CGColorSpaceGetIdentifier not found
+		// decl for CGColorSpaceGetLabData not found
+		// decl for CGColorSpaceGetMD5Digest not found
+		"CGColorSpaceGetModel" = "i^{CGColorSpace=}";
+		"CGColorSpaceGetName" = "^{__CFString=}^{CGColorSpace=}";
+		// decl for CGColorSpaceGetNames not found
+		"CGColorSpaceGetNumberOfComponents" = "L^{CGColorSpace=}";
+		// decl for CGColorSpaceGetProcessColorModel not found
+		// decl for CGColorSpaceGetRenderingIntent not found
+		// decl for CGColorSpaceGetTintTransform not found
+		// decl for CGColorSpaceGetType not found
+		"CGColorSpaceGetTypeID" = "L";
+		// decl for CGColorSpaceICCGetPlatformProfile not found
+		// decl for CGColorSpaceICCGetRange not found
+		// decl for CGColorSpaceIgnoresIntent not found
+		// decl for CGColorSpaceIsICCCompatible not found
+		// decl for CGColorSpaceIsUncalibrated not found
+		"CGColorSpaceIsWideGamutRGB" = "B^{CGColorSpace=}";
+		"CGColorSpaceRelease" = "v^{CGColorSpace=}";
+		"CGColorSpaceRetain" = "^{CGColorSpace=}^{CGColorSpace=}";
+		"CGColorSpaceSupportsOutput" = "B^{CGColorSpace=}";
+		// decl for CGColorSpaceUsesExtendedRange not found
+		// decl for CGColorTRCGetFunction not found
+		// decl for CGColorTRCGetGammaID not found
+		// decl for CGColorTRCGetLuminanceScale not found
+		// decl for CGColorTRCGetTypeID not found
+		// decl for CGColorTransformConvertColor not found
+		// decl for CGColorTransformConvertColorComponents not found
+		// decl for CGColorTransformConvertColorFloatComponents not found
+		// decl for CGColorTransformConvertComponentData not found
+		// decl for CGColorTransformConvertData not found
+		// decl for CGColorTransformConvertNeedsCMS not found
+		// decl for CGColorTransformConvertRequired not found
+		// decl for CGColorTransformCreate not found
+		// decl for CGColorTransformCreateCodeFragment not found
+		// decl for CGColorTransformCreateLookupTextureCodeFragment not found
+		// decl for CGColorTransformCreateParametricCodeFragment not found
+		// decl for CGColorTransformGetColorSpace not found
+		// decl for CGColorTransformGetTypeID not found
+		// decl for CGColorTransformRelease not found
+		// decl for CGColorTransformRetain not found
+		// decl for CGContainerGetRect not found
+		// decl for CGContainerGetTypeID not found
+		"CGContextAddArc" = "v^{CGContext=}dddddi";
+		"CGContextAddArcToPoint" = "v^{CGContext=}ddddd";
+		"CGContextAddCurveToPoint" = "v^{CGContext=}dddddd";
+		"CGContextAddEllipseInRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGContextAddLineToPoint" = "v^{CGContext=}dd";
+		"CGContextAddLines" = "v^{CGContext=}^{CGPoint=dd}L";
+		"CGContextAddPath" = "v^{CGContext=}^{CGPath=}";
+		"CGContextAddQuadCurveToPoint" = "v^{CGContext=}dddd";
+		"CGContextAddRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGContextAddRects" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}L";
+		"CGContextBeginPage" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}";
+		// decl for CGContextBeginPage2 not found
+		"CGContextBeginPath" = "v^{CGContext=}";
+		"CGContextBeginTransparencyLayer" = "v^{CGContext=}^{__CFDictionary=}";
+		"CGContextBeginTransparencyLayerWithRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}^{__CFDictionary=}";
+		// decl for CGContextClear not found
+		"CGContextClearRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGContextClip" = "v^{CGContext=}";
+		"CGContextClipToMask" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}^{CGImage=}";
+		"CGContextClipToRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGContextClipToRects" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}L";
+		// decl for CGContextClipToTextClipping not found
+		"CGContextClosePath" = "v^{CGContext=}";
+		// decl for CGContextColorIsExtendedRGB not found
+		"CGContextConcatCTM" = "v^{CGContext=}{CGAffineTransform=dddddd}";
+		"CGContextConvertPointToDeviceSpace" = "{CGPoint=dd}^{CGContext=}{CGPoint=dd}";
+		"CGContextConvertPointToUserSpace" = "{CGPoint=dd}^{CGContext=}{CGPoint=dd}";
+		"CGContextConvertRectToDeviceSpace" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGContextConvertRectToUserSpace" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGContextConvertSizeToDeviceSpace" = "{CGSize=dd}^{CGContext=}{CGSize=dd}";
+		"CGContextConvertSizeToUserSpace" = "{CGSize=dd}^{CGContext=}{CGSize=dd}";
+		// decl for CGContextCopyDeviceColorSpace not found
+		"CGContextCopyPath" = "^{CGPath=}^{CGContext=}";
+		// decl for CGContextCopyTopGState not found
+		// decl for CGContextCreate not found
+		// decl for CGContextCreateWithDelegate not found
+		// decl for CGContextCreateWithDelegateAndInfo not found
+		// decl for CGContextDelegateBeginLayer not found
+		// decl for CGContextDelegateBeginPage not found
+		// decl for CGContextDelegateCreate not found
+		// decl for CGContextDelegateCreateFilter not found
+		// decl for CGContextDelegateDrawConicGradient not found
+		// decl for CGContextDelegateDrawDisplayList not found
+		// decl for CGContextDelegateDrawGlyphs not found
+		// decl for CGContextDelegateDrawImage not found
+		// decl for CGContextDelegateDrawImageFromRect not found
+		// decl for CGContextDelegateDrawImages not found
+		// decl for CGContextDelegateDrawLayer not found
+		// decl for CGContextDelegateDrawLinearGradient not found
+		// decl for CGContextDelegateDrawLines not found
+		// decl for CGContextDelegateDrawPath not found
+		// decl for CGContextDelegateDrawPathDirect not found
+		// decl for CGContextDelegateDrawRadialGradient not found
+		// decl for CGContextDelegateDrawRects not found
+		// decl for CGContextDelegateDrawShading not found
+		// decl for CGContextDelegateDrawWindowContents not found
+		// decl for CGContextDelegateEndLayer not found
+		// decl for CGContextDelegateEndPage not found
+		// decl for CGContextDelegateFinalize not found
+		// decl for CGContextDelegateGetBitmapContextInfo not found
+		// decl for CGContextDelegateGetBounds not found
+		// decl for CGContextDelegateGetCallback not found
+		// decl for CGContextDelegateGetColorTransform not found
+		// decl for CGContextDelegateGetDelegate not found
+		// decl for CGContextDelegateGetInfo not found
+		// decl for CGContextDelegateGetLayer not found
+		// decl for CGContextDelegateGetNext not found
+		// decl for CGContextDelegateGetTransform not found
+		// decl for CGContextDelegateGetTypeID not found
+		// decl for CGContextDelegateImplementsCallback not found
+		// decl for CGContextDelegateOperation not found
+		// decl for CGContextDelegateRelease not found
+		// decl for CGContextDelegateRetain not found
+		// decl for CGContextDelegateSetCallback not found
+		// decl for CGContextDelegateSetCallbacks not found
+		// decl for CGContextDelegateSetNext not found
+		// decl for CGContextDrawConicGradient not found
+		// decl for CGContextDrawDisplayList not found
+		"CGContextDrawImage" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}^{CGImage=}";
+		// decl for CGContextDrawImageFromRect not found
+		// decl for CGContextDrawImageWithOptions not found
+		// decl for CGContextDrawImages not found
+		"CGContextDrawLayerAtPoint" = "v^{CGContext=}{CGPoint=dd}^{CGLayer=}";
+		"CGContextDrawLayerInRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}^{CGLayer=}";
+		"CGContextDrawLinearGradient" = "v^{CGContext=}^{CGGradient=}{CGPoint=dd}{CGPoint=dd}I";
+		// decl for CGContextDrawPDFAnnotation not found
+		"CGContextDrawPDFDocument" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPDFDocument=}i";
+		"CGContextDrawPDFPage" = "v^{CGContext=}^{CGPDFPage=}";
+		// decl for CGContextDrawPDFPageInRect not found
+		// decl for CGContextDrawPDFPageInRect2 not found
+		// decl for CGContextDrawPDFPageWithAnnotations not found
+		// decl for CGContextDrawPDFPageWithDrawingCallbacks not found
+		// decl for CGContextDrawPDFPageWithProgressCallback not found
+		"CGContextDrawPath" = "v^{CGContext=}i";
+		// decl for CGContextDrawPathDirect not found
+		// decl for CGContextDrawPatternCell not found
+		"CGContextDrawRadialGradient" = "v^{CGContext=}^{CGGradient=}{CGPoint=dd}d{CGPoint=dd}dI";
+		"CGContextDrawShading" = "v^{CGContext=}^{CGShading=}";
+		"CGContextDrawTiledImage" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}^{CGImage=}";
+		// decl for CGContextDrawsWithCorrectShadowOffsets not found
+		"CGContextEOClip" = "v^{CGContext=}";
+		"CGContextEOFillPath" = "v^{CGContext=}";
+		"CGContextEndPage" = "v^{CGContext=}";
+		// decl for CGContextEndPage2 not found
+		"CGContextEndTransparencyLayer" = "v^{CGContext=}";
+		// decl for CGContextErase not found
+		"CGContextFillEllipseInRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGContextFillPath" = "v^{CGContext=}";
+		"CGContextFillRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGContextFillRects" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}L";
+		"CGContextFlush" = "v^{CGContext=}";
+		// decl for CGContextGetAdjustedLineWidth not found
+		// decl for CGContextGetAllowedFontRenderingStyle not found
+		// decl for CGContextGetAllowsAntialiasing not found
+		// decl for CGContextGetAllowsDithering not found
+		// decl for CGContextGetAllowsFontAntialiasing not found
+		// decl for CGContextGetAllowsFontSmoothing not found
+		// decl for CGContextGetAllowsFontSubpixelPositioning not found
+		// decl for CGContextGetAllowsFontSubpixelQuantization not found
+		// decl for CGContextGetAlpha not found
+		// decl for CGContextGetAlphaIsShape not found
+		// decl for CGContextGetBaseCTM not found
+		// decl for CGContextGetBlackGeneration not found
+		// decl for CGContextGetBlendMode not found
+		"CGContextGetCTM" = "{CGAffineTransform=dddddd}^{CGContext=}";
+		// decl for CGContextGetCharacterSpacing not found
+		"CGContextGetClipBoundingBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGContext=}";
+		// decl for CGContextGetCompositeOperation not found
+		// decl for CGContextGetContentMD5 not found
+		// decl for CGContextGetDefaultUserSpaceToDeviceSpaceTransform not found
+		// decl for CGContextGetDelegate not found
+		// decl for CGContextGetDelegateInfo not found
+		// decl for CGContextGetDeviceClipBoundingBox not found
+		// decl for CGContextGetFillColor not found
+		// decl for CGContextGetFillColorAsColor not found
+		// decl for CGContextGetFillColorSpace not found
+		// decl for CGContextGetFillOverprint not found
+		// decl for CGContextGetFillPattern not found
+		// decl for CGContextGetFlatness not found
+		// decl for CGContextGetFont not found
+		// decl for CGContextGetFontAntialiasingStyle not found
+		// decl for CGContextGetFontDilation not found
+		// decl for CGContextGetFontRenderingStyle not found
+		// decl for CGContextGetFontSize not found
+		// decl for CGContextGetFontSmoothingBackgroundColor not found
+		// decl for CGContextGetFontSmoothingContrast not found
+		// decl for CGContextGetFontSmoothingStyle not found
+		// decl for CGContextGetFontSubpixelQuantizationLevel not found
+		// decl for CGContextGetGState not found
+		// decl for CGContextGetGStateMark not found
+		// decl for CGContextGetIdentifier not found
+		// decl for CGContextGetImageRenderingIntent not found
+		"CGContextGetInterpolationQuality" = "i^{CGContext=}";
+		// decl for CGContextGetInterpolationQualityRange not found
+		// decl for CGContextGetLineCap not found
+		// decl for CGContextGetLineDashCount not found
+		// decl for CGContextGetLineDashPattern not found
+		// decl for CGContextGetLineJoin not found
+		// decl for CGContextGetLineWidth not found
+		// decl for CGContextGetLineWidthThreshold not found
+		// decl for CGContextGetMiterLimit not found
+		// decl for CGContextGetOverprintMode not found
+		"CGContextGetPathBoundingBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGContext=}";
+		"CGContextGetPathCurrentPoint" = "{CGPoint=dd}^{CGContext=}";
+		// decl for CGContextGetPatternPhase not found
+		// decl for CGContextGetProperty not found
+		// decl for CGContextGetRenderingIntent not found
+		// decl for CGContextGetRenderingResolution not found
+		// decl for CGContextGetRenderingState not found
+		// decl for CGContextGetShouldAntialias not found
+		// decl for CGContextGetShouldAntialiasFonts not found
+		// decl for CGContextGetShouldDrawBitmapRuns not found
+		// decl for CGContextGetShouldSmoothFonts not found
+		// decl for CGContextGetShouldSubpixelPositionFonts not found
+		// decl for CGContextGetShouldSubpixelQuantizeFonts not found
+		// decl for CGContextGetShouldUsePlatformNativeGlyphs not found
+		// decl for CGContextGetSmoothness not found
+		// decl for CGContextGetSoftMask not found
+		// decl for CGContextGetStrokeAdjust not found
+		// decl for CGContextGetStrokeColor not found
+		// decl for CGContextGetStrokeColorAsColor not found
+		// decl for CGContextGetStrokeColorSpace not found
+		// decl for CGContextGetStrokeOverprint not found
+		// decl for CGContextGetStrokePattern not found
+		// decl for CGContextGetStyle not found
+		// decl for CGContextGetTextDrawingMode not found
+		// decl for CGContextGetTextGreekingThreshold not found
+		"CGContextGetTextMatrix" = "{CGAffineTransform=dddddd}^{CGContext=}";
+		"CGContextGetTextPosition" = "{CGPoint=dd}^{CGContext=}";
+		// decl for CGContextGetTransferFunctions not found
+		// decl for CGContextGetType not found
+		"CGContextGetTypeID" = "L";
+		// decl for CGContextGetUndercolorRemoval not found
+		"CGContextGetUserSpaceToDeviceSpaceTransform" = "{CGAffineTransform=dddddd}^{CGContext=}";
+		// decl for CGContextHandleInvalid not found
+		// decl for CGContextIsEmptyClipBoundingBox not found
+		"CGContextIsPathEmpty" = "B^{CGContext=}";
+		"CGContextMoveToPoint" = "v^{CGContext=}dd";
+		"CGContextPathContainsPoint" = "B^{CGContext=}{CGPoint=dd}i";
+		"CGContextRelease" = "v^{CGContext=}";
+		// decl for CGContextReplacePathWithClipPath not found
+		// decl for CGContextReplacePathWithShapePath not found
+		"CGContextReplacePathWithStrokedPath" = "v^{CGContext=}";
+		// decl for CGContextReplaceTopGState not found
+		// decl for CGContextResetCTM not found
+		"CGContextResetClip" = "v^{CGContext=}";
+		// decl for CGContextResetState not found
+		// decl for CGContextResetTopGState not found
+		"CGContextRestoreGState" = "v^{CGContext=}";
+		// decl for CGContextRestoreToGStateMark not found
+		"CGContextRetain" = "^{CGContext=}^{CGContext=}";
+		"CGContextRotateCTM" = "v^{CGContext=}d";
+		"CGContextSaveGState" = "v^{CGContext=}";
+		"CGContextScaleCTM" = "v^{CGContext=}dd";
+		"CGContextSelectFont" = "v^{CGContext=}*di";
+		"CGContextSetAllowsAntialiasing" = "v^{CGContext=}B";
+		// decl for CGContextSetAllowsDithering not found
+		// decl for CGContextSetAllowsFontAntialiasing not found
+		"CGContextSetAllowsFontSmoothing" = "v^{CGContext=}B";
+		"CGContextSetAllowsFontSubpixelPositioning" = "v^{CGContext=}B";
+		"CGContextSetAllowsFontSubpixelQuantization" = "v^{CGContext=}B";
+		"CGContextSetAlpha" = "v^{CGContext=}d";
+		// decl for CGContextSetAlphaIsShape not found
+		// decl for CGContextSetBaseCTM not found
+		// decl for CGContextSetBlackGeneration not found
+		"CGContextSetBlendMode" = "v^{CGContext=}i";
+		"CGContextSetCMYKFillColor" = "v^{CGContext=}ddddd";
+		"CGContextSetCMYKStrokeColor" = "v^{CGContext=}ddddd";
+		// decl for CGContextSetCTM not found
+		"CGContextSetCharacterSpacing" = "v^{CGContext=}d";
+		// decl for CGContextSetCompositeOperation not found
+		// decl for CGContextSetDelegate not found
+		"CGContextSetFillColor" = "v^{CGContext=}^d";
+		"CGContextSetFillColorSpace" = "v^{CGContext=}^{CGColorSpace=}";
+		"CGContextSetFillColorWithColor" = "v^{CGContext=}^{CGColor=}";
+		// decl for CGContextSetFillOverprint not found
+		"CGContextSetFillPattern" = "v^{CGContext=}^{CGPattern=}^d";
+		"CGContextSetFlatness" = "v^{CGContext=}d";
+		// decl for CGContextSetFlush not found
+		// decl for CGContextSetFocusRingWithColor not found
+		"CGContextSetFont" = "v^{CGContext=}^{CGFont=}";
+		// decl for CGContextSetFontAntialiasingStyle not found
+		// decl for CGContextSetFontDilation not found
+		// decl for CGContextSetFontRenderingStyle not found
+		"CGContextSetFontSize" = "v^{CGContext=}d";
+		// decl for CGContextSetFontSmoothingBackgroundColor not found
+		// decl for CGContextSetFontSmoothingContrast not found
+		// decl for CGContextSetFontSmoothingStyle not found
+		// decl for CGContextSetFontSubpixelQuantizationLevel not found
+		"CGContextSetGrayFillColor" = "v^{CGContext=}dd";
+		"CGContextSetGrayStrokeColor" = "v^{CGContext=}dd";
+		// decl for CGContextSetImageRenderingIntent not found
+		// decl for CGContextSetImageReplacer not found
+		"CGContextSetInterpolationQuality" = "v^{CGContext=}i";
+		// decl for CGContextSetInterpolationQualityRange not found
+		"CGContextSetLineCap" = "v^{CGContext=}i";
+		"CGContextSetLineDash" = "v^{CGContext=}d^dL";
+		"CGContextSetLineJoin" = "v^{CGContext=}i";
+		"CGContextSetLineWidth" = "v^{CGContext=}d";
+		// decl for CGContextSetLineWidthThreshold not found
+		"CGContextSetMiterLimit" = "v^{CGContext=}d";
+		// decl for CGContextSetOverprintMode not found
+		"CGContextSetPatternPhase" = "v^{CGContext=}{CGSize=dd}";
+		// decl for CGContextSetProperty not found
+		"CGContextSetRGBFillColor" = "v^{CGContext=}dddd";
+		"CGContextSetRGBStrokeColor" = "v^{CGContext=}dddd";
+		"CGContextSetRenderingIntent" = "v^{CGContext=}i";
+		// decl for CGContextSetRenderingResolution not found
+		"CGContextSetShadow" = "v^{CGContext=}{CGSize=dd}d";
+		"CGContextSetShadowWithColor" = "v^{CGContext=}{CGSize=dd}d^{CGColor=}";
+		"CGContextSetShouldAntialias" = "v^{CGContext=}B";
+		// decl for CGContextSetShouldAntialiasFonts not found
+		// decl for CGContextSetShouldDrawBitmapRuns not found
+		"CGContextSetShouldSmoothFonts" = "v^{CGContext=}B";
+		"CGContextSetShouldSubpixelPositionFonts" = "v^{CGContext=}B";
+		"CGContextSetShouldSubpixelQuantizeFonts" = "v^{CGContext=}B";
+		// decl for CGContextSetShouldUsePlatformNativeGlyphs not found
+		// decl for CGContextSetSmoothness not found
+		// decl for CGContextSetSoftMask not found
+		// decl for CGContextSetStrokeAdjust not found
+		"CGContextSetStrokeColor" = "v^{CGContext=}^d";
+		"CGContextSetStrokeColorSpace" = "v^{CGContext=}^{CGColorSpace=}";
+		"CGContextSetStrokeColorWithColor" = "v^{CGContext=}^{CGColor=}";
+		// decl for CGContextSetStrokeOverprint not found
+		"CGContextSetStrokePattern" = "v^{CGContext=}^{CGPattern=}^d";
+		// decl for CGContextSetStyle not found
+		"CGContextSetTextDrawingMode" = "v^{CGContext=}i";
+		// decl for CGContextSetTextGreekingThreshold not found
+		"CGContextSetTextMatrix" = "v^{CGContext=}{CGAffineTransform=dddddd}";
+		"CGContextSetTextPosition" = "v^{CGContext=}dd";
+		// decl for CGContextSetTransferFunctions not found
+		// decl for CGContextSetUndercolorRemoval not found
+		"CGContextShowGlyphs" = "v^{CGContext=}^SL";
+		"CGContextShowGlyphsAtPoint" = "v^{CGContext=}dd^SL";
+		"CGContextShowGlyphsAtPositions" = "v^{CGContext=}^S^{CGPoint=dd}L";
+		// decl for CGContextShowGlyphsAtPositionsWithString not found
+		"CGContextShowGlyphsWithAdvances" = "v^{CGContext=}^S^{CGSize=dd}L";
+		"CGContextShowText" = "v^{CGContext=}*L";
+		"CGContextShowTextAtPoint" = "v^{CGContext=}dd*L";
+		"CGContextStrokeEllipseInRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGContextStrokeLineSegments" = "v^{CGContext=}^{CGPoint=dd}L";
+		"CGContextStrokePath" = "v^{CGContext=}";
+		"CGContextStrokeRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGContextStrokeRectWithWidth" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}d";
+		"CGContextSynchronize" = "v^{CGContext=}";
+		"CGContextTranslateCTM" = "v^{CGContext=}dd";
+		// decl for CGContextValidate not found
+		// decl for CGContextWait not found
+		// decl for CGCryptorCreateAES not found
+		// decl for CGCryptorCreateRC4 not found
+		// decl for CGCryptorDrain not found
+		// decl for CGCryptorGetCipher not found
+		// decl for CGCryptorGetInitializationVector not found
+		// decl for CGCryptorProcessBytes not found
+		// decl for CGCryptorRelease not found
+		// decl for CGCryptorReset not found
+		// decl for CGDashCreate not found
+		// decl for CGDashEqualToDash not found
+		// decl for CGDashGetPattern not found
+		// decl for CGDashRelease not found
+		// decl for CGDashRetain not found
+		// decl for CGDataConsumerClose not found
+		"CGDataConsumerCreate" = "^{CGDataConsumer=}^v^{CGDataConsumerCallbacks=??}";
+		// decl for CGDataConsumerCreateFlateEncoder not found
+		"CGDataConsumerCreateWithCFData" = "^{CGDataConsumer=}^{__CFData=}";
+		// decl for CGDataConsumerCreateWithFilename not found
+		"CGDataConsumerCreateWithURL" = "^{CGDataConsumer=}^{__CFURL=}";
+		// decl for CGDataConsumerFlush not found
+		// decl for CGDataConsumerGetByteCount not found
+		"CGDataConsumerGetTypeID" = "L";
+		// decl for CGDataConsumerGetURL not found
+		// decl for CGDataConsumerPrintf not found
+		// decl for CGDataConsumerPutBytes not found
+		"CGDataConsumerRelease" = "v^{CGDataConsumer=}";
+		"CGDataConsumerRetain" = "^{CGDataConsumer=}^{CGDataConsumer=}";
+		// decl for CGDataConsumerVPrintf not found
+		"CGDataProviderCopyData" = "^{__CFData=}^{CGDataProvider=}";
+		"CGDataProviderCreateDirect" = "^{CGDataProvider=}^vq^{CGDataProviderDirectCallbacks=I????}";
+		"CGDataProviderCreateSequential" = "^{CGDataProvider=}^v^{CGDataProviderSequentialCallbacks=I????}";
+		"CGDataProviderCreateWithCFData" = "^{CGDataProvider=}^{__CFData=}";
+		// decl for CGDataProviderCreateWithCopyOfData not found
+		"CGDataProviderCreateWithData" = "^{CGDataProvider=}^v^vL?";
+		"CGDataProviderCreateWithFilename" = "^{CGDataProvider=}*";
+		// decl for CGDataProviderCreateWithSwappedProvider not found
+		"CGDataProviderCreateWithURL" = "^{CGDataProvider=}^{__CFURL=}";
+		// decl for CGDataProviderGetBytePtr not found
+		// decl for CGDataProviderGetBytes not found
+		// decl for CGDataProviderGetBytesAtPosition not found
+		"CGDataProviderGetInfo" = "^v^{CGDataProvider=}";
+		// decl for CGDataProviderGetSize not found
+		// decl for CGDataProviderGetSize2 not found
+		// decl for CGDataProviderGetSizeOfData not found
+		"CGDataProviderGetTypeID" = "L";
+		// decl for CGDataProviderHasDataPtr not found
+		// decl for CGDataProviderLock not found
+		"CGDataProviderRelease" = "v^{CGDataProvider=}";
+		// decl for CGDataProviderReleaseBytePtr not found
+		"CGDataProviderRetain" = "^{CGDataProvider=}^{CGDataProvider=}";
+		// decl for CGDataProviderRetainBytePtr not found
+		// decl for CGDataProviderRewind not found
+		// decl for CGDataProviderSkipForward not found
+		// decl for CGDataProviderUngetBytePtr not found
+		// decl for CGDataProviderUnlock not found
+		// decl for CGDefaultsCopyString not found
+		// decl for CGDefaultsGetBoolean not found
+		// decl for CGDefaultsGetInteger not found
+		// decl for CGDigesterAddBytes not found
+		// decl for CGDigesterCreateMD5 not found
+		// decl for CGDigesterGetDigest not found
+		// decl for CGDigesterRelease not found
+		// decl for CGDisplayList2Create not found
+		// decl for CGDisplayList2CreateWithRect not found
+		// decl for CGDisplayList2GetTypeID not found
+		// decl for CGDisplayListContainsTransparentContent not found
+		// decl for CGDisplayListContextCreate not found
+		// decl for CGDisplayListCreate not found
+		// decl for CGDisplayListCreateWithRect not found
+		// decl for CGDisplayListCreateWithURL not found
+		// decl for CGDisplayListDrawInContext not found
+		// decl for CGDisplayListDrawInContextDelegate not found
+		// decl for CGDisplayListDumpToFile not found
+		// decl for CGDisplayListExecute not found
+		// decl for CGDisplayListGetBoundingBox not found
+		// decl for CGDisplayListGetTypeID not found
+		// decl for CGDisplayListRelease not found
+		// decl for CGDisplayListReset not found
+		// decl for CGDisplayListSerializeToURL not found
+		// decl for CGDisplayListSetBoundingBox not found
+		// decl for CGFloatIsValid not found
+		// decl for CGFontApplyFunction not found
+		// decl for CGFontCacheCreate not found
+		// decl for CGFontCacheGetLocalCache not found
+		// decl for CGFontCacheGetMaxSize not found
+		// decl for CGFontCachePrint not found
+		// decl for CGFontCacheRelease not found
+		// decl for CGFontCacheRemoveFont not found
+		// decl for CGFontCacheReset not found
+		// decl for CGFontCacheRetain not found
+		// decl for CGFontCacheSetMaxSize not found
+		// decl for CGFontCacheSetShouldAutoExpire not found
+		"CGFontCanCreatePostScriptSubset" = "B^{CGFont=}i";
+		// decl for CGFontCopyCharacterSet not found
+		// decl for CGFontCopyFamilyName not found
+		"CGFontCopyFullName" = "^{__CFString=}^{CGFont=}";
+		"CGFontCopyGlyphNameForGlyph" = "^{__CFString=}^{CGFont=}S";
+		// decl for CGFontCopyLocalizedName not found
+		// decl for CGFontCopyName not found
+		// decl for CGFontCopyPath not found
+		"CGFontCopyPostScriptName" = "^{__CFString=}^{CGFont=}";
+		"CGFontCopyTableForTag" = "^{__CFData=}^{CGFont=}I";
+		"CGFontCopyTableTags" = "^{__CFArray=}^{CGFont=}";
+		// decl for CGFontCopyURL not found
+		"CGFontCopyVariationAxes" = "^{__CFArray=}^{CGFont=}";
+		"CGFontCopyVariations" = "^{__CFDictionary=}^{CGFont=}";
+		// decl for CGFontCreate not found
+		// decl for CGFontCreateCopy not found
+		"CGFontCreateCopyWithVariations" = "^{CGFont=}^{CGFont=}^{__CFDictionary=}";
+		// decl for CGFontCreateFontSubset not found
+		// decl for CGFontCreateFontsFromData not found
+		// decl for CGFontCreateFontsWithPath not found
+		// decl for CGFontCreateFontsWithURL not found
+		// decl for CGFontCreateGlyphPath not found
+		// decl for CGFontCreateMatchingFont not found
+		"CGFontCreatePostScriptEncoding" = "^{__CFData=}^{CGFont=}^S";
+		"CGFontCreatePostScriptSubset" = "^{__CFData=}^{CGFont=}^{__CFString=}i^SL^S";
+		"CGFontCreateWithDataProvider" = "^{CGFont=}^{CGDataProvider=}";
+		"CGFontCreateWithFontName" = "^{CGFont=}^{__CFString=}";
+		// decl for CGFontCreateWithName not found
+		"CGFontCreateWithPlatformFont" = "^{CGFont=}^v";
+		// decl for CGFontCreateWithPlatformFontAndVariation not found
+		// decl for CGFontCreateWithVariations not found
+		// decl for CGFontDBAddFont not found
+		// decl for CGFontDBAddFontReferencesAtPath not found
+		// decl for CGFontDBAddFontsAtPath not found
+		// decl for CGFontDBAddFontsFromPlist not found
+		// decl for CGFontDBAddFontsInDirectory not found
+		// decl for CGFontDBApplyFunction not found
+		// decl for CGFontDBCreate not found
+		// decl for CGFontDBCreatePlist not found
+		// decl for CGFontDBGetFontWithName not found
+		// decl for CGFontDBGetLocal not found
+		// decl for CGFontDBPurgeFont not found
+		// decl for CGFontDBRelease not found
+		// decl for CGFontDBRemoveFont not found
+		// decl for CGFontDBSetInitializer not found
+		// decl for CGFontDefaultAllowsFontSmoothing not found
+		// decl for CGFontDefaultGetAntialiasingStyle not found
+		// decl for CGFontDefaultGetSmoothingContrast not found
+		// decl for CGFontDefaultGetSmoothingStyle not found
+		// decl for CGFontFinderApplyFunction not found
+		// decl for CGFontFinderCopyAllURLs not found
+		// decl for CGFontFinderCopyURLForName not found
+		// decl for CGFontFinderCopyURLForPlatformFont not found
+		// decl for CGFontFinderCreate not found
+		// decl for CGFontFinderCreateFontWithName not found
+		// decl for CGFontFinderCreateFontWithPlatformFont not found
+		// decl for CGFontFinderGetDefault not found
+		// decl for CGFontFinderRelease not found
+		// decl for CGFontFinderRetain not found
+		// decl for CGFontFinderSetDefault not found
+		"CGFontGetAscent" = "i^{CGFont=}";
+		// decl for CGFontGetCIDsForGlyphs not found
+		"CGFontGetCapHeight" = "i^{CGFont=}";
+		// decl for CGFontGetContainingBoundingBoxForGlyphs not found
+		"CGFontGetDescent" = "i^{CGFont=}";
+		// decl for CGFontGetDescriptor not found
+		"CGFontGetFontBBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGFont=}";
+		// decl for CGFontGetFontSubsetFormat not found
+		"CGFontGetGlyphAdvances" = "B^{CGFont=}^SL^i";
+		// decl for CGFontGetGlyphAdvancesForStyle not found
+		"CGFontGetGlyphBBoxes" = "B^{CGFont=}^SL^{CGRect={CGPoint=dd}{CGSize=dd}}";
+		// decl for CGFontGetGlyphBBoxesForStyle not found
+		// decl for CGFontGetGlyphForGlyphName not found
+		// decl for CGFontGetGlyphIdentifiers not found
+		// decl for CGFontGetGlyphNameForGlyph not found
+		// decl for CGFontGetGlyphNameMaxLength not found
+		// decl for CGFontGetGlyphVerticalAdvances not found
+		// decl for CGFontGetGlyphVerticalOffsets not found
+		"CGFontGetGlyphWithGlyphName" = "S^{CGFont=}^{__CFString=}";
+		// decl for CGFontGetGlyphsForCIDs not found
+		// decl for CGFontGetGlyphsForGlyphNames not found
+		// decl for CGFontGetGlyphsForUnichars not found
+		// decl for CGFontGetHMetrics not found
+		// decl for CGFontGetIdentifier not found
+		// decl for CGFontGetIntProperty not found
+		"CGFontGetItalicAngle" = "d^{CGFont=}";
+		"CGFontGetLeading" = "i^{CGFont=}";
+		// decl for CGFontGetMaxUnichars not found
+		"CGFontGetNumberOfGlyphs" = "L^{CGFont=}";
+		// decl for CGFontGetParserFont not found
+		// decl for CGFontGetPostScriptName not found
+		// decl for CGFontGetProperty not found
+		// decl for CGFontGetQuantizationLevelWithStyle not found
+		// decl for CGFontGetRegistryOrderingSupplement not found
+		"CGFontGetStemV" = "d^{CGFont=}";
+		"CGFontGetTypeID" = "L";
+		// decl for CGFontGetUnderlinePosition not found
+		// decl for CGFontGetUnderlineThickness not found
+		// decl for CGFontGetUnicharsForGlyph not found
+		"CGFontGetUnitsPerEm" = "i^{CGFont=}";
+		// decl for CGFontGetVMetrics not found
+		// decl for CGFontGetVariationAxes not found
+		// decl for CGFontGetVariations not found
+		"CGFontGetXHeight" = "i^{CGFont=}";
+		// decl for CGFontIndexMapAddIndex not found
+		// decl for CGFontIndexMapAddIndexes not found
+		// decl for CGFontIndexMapAddRange not found
+		// decl for CGFontIndexMapCreate not found
+		// decl for CGFontIndexMapCreateIdentity not found
+		// decl for CGFontIndexMapGetValue not found
+		// decl for CGFontIndexMapGetValues not found
+		// decl for CGFontIndexMapPrint not found
+		// decl for CGFontIndexMapRelease not found
+		// decl for CGFontIndexMapRetain not found
+		// decl for CGFontIndexSetAddIndex not found
+		// decl for CGFontIndexSetAddIndexRange not found
+		// decl for CGFontIndexSetAddIndexes not found
+		// decl for CGFontIndexSetContainsIndex not found
+		// decl for CGFontIndexSetCreate not found
+		// decl for CGFontIndexSetCreateCopy not found
+		// decl for CGFontIndexSetGetCount not found
+		// decl for CGFontIndexSetGetIndexRange not found
+		// decl for CGFontIndexSetGetIndexVector not found
+		// decl for CGFontIndexSetGetIndexVectorSize not found
+		// decl for CGFontIndexSetGetIndexes not found
+		// decl for CGFontIndexSetGetName not found
+		// decl for CGFontIndexSetRelease not found
+		// decl for CGFontIndexSetRetain not found
+		// decl for CGFontIsBitmapOnly not found
+		// decl for CGFontIsFixedPitch not found
+		// decl for CGFontIsItalic not found
+		// decl for CGFontNameTableCopyLocales not found
+		// decl for CGFontNameTableCopyNameForLocale not found
+		// decl for CGFontNameTableCopyRootName not found
+		// decl for CGFontNameTableCreate not found
+		// decl for CGFontNameTableGetPostScriptName not found
+		// decl for CGFontNameTablePrint not found
+		// decl for CGFontNameTableRelease not found
+		// decl for CGFontQuantumEqualToQuantum not found
+		// decl for CGFontQuantumZero not found
+		"CGFontRelease" = "v^{CGFont=}";
+		// decl for CGFontRenderingGetFontSmoothingDisabled not found
+		"CGFontRetain" = "^{CGFont=}^{CGFont=}";
+		// decl for CGFontURLCreate not found
+		// decl for CGFunctionCopyPDFDescription not found
+		"CGFunctionCreate" = "^{CGFunction=}^vL^dL^d^{CGFunctionCallbacks=I??}";
+		// decl for CGFunctionEvaluate not found
+		// decl for CGFunctionEvaluateFloat not found
+		// decl for CGFunctionGetAssociate not found
+		// decl for CGFunctionGetDomain not found
+		// decl for CGFunctionGetDomainDimension not found
+		// decl for CGFunctionGetIdentifier not found
+		// decl for CGFunctionGetRange not found
+		// decl for CGFunctionGetRangeDimension not found
+		"CGFunctionGetTypeID" = "L";
+		// decl for CGFunctionIsIdentity not found
+		"CGFunctionRelease" = "v^{CGFunction=}";
+		"CGFunctionRetain" = "^{CGFunction=}^{CGFunction=}";
+		// decl for CGFunctionSetAssociate not found
+		// decl for CGFunctionSetProperty not found
+		// decl for CGGStateClipToRect not found
+		// decl for CGGStateCreate not found
+		// decl for CGGStateCreateCopy not found
+		// decl for CGGStateGetAdjustedLineWidth not found
+		// decl for CGGStateGetAlpha not found
+		// decl for CGGStateGetAlphaIsShape not found
+		// decl for CGGStateGetBlackGeneration not found
+		// decl for CGGStateGetCTM not found
+		// decl for CGGStateGetCharacterSpacing not found
+		// decl for CGGStateGetClipBoundingBox not found
+		// decl for CGGStateGetClipRect not found
+		// decl for CGGStateGetClipStack not found
+		// decl for CGGStateGetCompositeOperation not found
+		// decl for CGGStateGetFillColor not found
+		// decl for CGGStateGetFillOverprint not found
+		// decl for CGGStateGetFlatness not found
+		// decl for CGGStateGetFont not found
+		// decl for CGGStateGetFontAntialiasingStyle not found
+		// decl for CGGStateGetFontDilation not found
+		// decl for CGGStateGetFontRenderingStyle not found
+		// decl for CGGStateGetFontSize not found
+		// decl for CGGStateGetFontSmoothingBackgroundColor not found
+		// decl for CGGStateGetFontSmoothingContrast not found
+		// decl for CGGStateGetFontSmoothingStyle not found
+		// decl for CGGStateGetFontSubpixelQuantizationLevel not found
+		// decl for CGGStateGetFontSubpixelQuantizationStyle not found
+		// decl for CGGStateGetImageRenderingIntent not found
+		// decl for CGGStateGetInterpolationQuality not found
+		// decl for CGGStateGetLineCap not found
+		// decl for CGGStateGetLineDash not found
+		// decl for CGGStateGetLineJoin not found
+		// decl for CGGStateGetLineWidth not found
+		// decl for CGGStateGetLineWidthThreshold not found
+		// decl for CGGStateGetMiterLimit not found
+		// decl for CGGStateGetOverprintMode not found
+		// decl for CGGStateGetPatternPhase not found
+		// decl for CGGStateGetRenderingIntent not found
+		// decl for CGGStateGetShouldAntialias not found
+		// decl for CGGStateGetShouldAntialiasFonts not found
+		// decl for CGGStateGetShouldDrawBitmapRuns not found
+		// decl for CGGStateGetShouldSmoothFonts not found
+		// decl for CGGStateGetShouldSubpixelPositionFonts not found
+		// decl for CGGStateGetShouldSubpixelQuantizeFonts not found
+		// decl for CGGStateGetSmoothness not found
+		// decl for CGGStateGetSoftMask not found
+		// decl for CGGStateGetStrokeAdjust not found
+		// decl for CGGStateGetStrokeColor not found
+		// decl for CGGStateGetStrokeOverprint not found
+		// decl for CGGStateGetStyle not found
+		// decl for CGGStateGetTextDrawingMode not found
+		// decl for CGGStateGetTextGreekingThreshold not found
+		// decl for CGGStateGetTextKnockout not found
+		// decl for CGGStateGetTransferFunctions not found
+		// decl for CGGStateGetUndercolorRemoval not found
+		// decl for CGGStateRelease not found
+		// decl for CGGStateResetClip not found
+		// decl for CGGStateRetain not found
+		// decl for CGGStateSetAlpha not found
+		// decl for CGGStateSetCTM not found
+		// decl for CGGStateSetCompositeOperation not found
+		// decl for CGGStateSetFillColor not found
+		// decl for CGGStateSetPatternPhase not found
+		// decl for CGGStateSetRenderingIntent not found
+		// decl for CGGStateSetSoftMask not found
+		// decl for CGGStateSetStrokeColor not found
+		// decl for CGGStateSetStyle not found
+		// decl for CGGetMD5DigestOfBytes not found
+		// decl for CGGlyphBitmapCreate not found
+		// decl for CGGlyphBitmapCreateWithPath not found
+		// decl for CGGlyphBitmapCreateWithPathAndDilation not found
+		// decl for CGGlyphBitmapRelease not found
+		// decl for CGGlyphBitmapRetain not found
+		// decl for CGGlyphBuilderCreate not found
+		// decl for CGGlyphBuilderGetQuantizationLevel not found
+		// decl for CGGlyphBuilderLockBitmaps not found
+		// decl for CGGlyphBuilderRelease not found
+		// decl for CGGlyphBuilderUnlockBitmaps not found
+		// decl for CGGlyphLockAccess not found
+		// decl for CGGlyphLockAccessCustomized not found
+		// decl for CGGlyphLockCreate not found
+		// decl for CGGlyphLockGetQuantizationLevel not found
+		// decl for CGGlyphLockLockGlyphBitmaps not found
+		// decl for CGGlyphLockRelease not found
+		// decl for CGGlyphLockUnlock not found
+		// decl for CGGradientApply not found
+		// decl for CGGradientApplyWithBlock not found
+		"CGGradientCreateWithColorComponents" = "^{CGGradient=}^{CGColorSpace=}^d^dL";
+		"CGGradientCreateWithColors" = "^{CGGradient=}^{CGColorSpace=}^{__CFArray=}^d";
+		// decl for CGGradientGetColorSpace not found
+		// decl for CGGradientGetFunction not found
+		// decl for CGGradientGetIdentifier not found
+		// decl for CGGradientGetLocationCount not found
+		"CGGradientGetTypeID" = "L";
+		// decl for CGGradientPrint not found
+		"CGGradientRelease" = "v^{CGGradient=}";
+		"CGGradientRetain" = "^{CGGradient=}^{CGGradient=}";
+		// decl for CGIOSurfaceContextCreate not found
+		// decl for CGIOSurfaceContextCreateImage not found
+		// decl for CGIOSurfaceContextCreateImageReference not found
+		// decl for CGIOSurfaceContextGetBitmapInfo not found
+		// decl for CGIOSurfaceContextGetBitsPerComponent not found
+		// decl for CGIOSurfaceContextGetBitsPerPixel not found
+		// decl for CGIOSurfaceContextGetColorSpace not found
+		// decl for CGIOSurfaceContextGetDisplayMask not found
+		// decl for CGIOSurfaceContextGetHeight not found
+		// decl for CGIOSurfaceContextGetSizeLimits not found
+		// decl for CGIOSurfaceContextGetSurface not found
+		// decl for CGIOSurfaceContextGetWidth not found
+		// decl for CGIOSurfaceContextSetDisplayMask not found
+		// decl for CGImageBlockCreate not found
+		// decl for CGImageBlockGetBytesPerRow not found
+		// decl for CGImageBlockGetData not found
+		// decl for CGImageBlockGetRect not found
+		// decl for CGImageBlockRelease not found
+		// decl for CGImageBlockSetCreate not found
+		// decl for CGImageBlockSetCreateWithType not found
+		// decl for CGImageBlockSetGetColorSpace not found
+		// decl for CGImageBlockSetGetComponentType not found
+		// decl for CGImageBlockSetGetCount not found
+		// decl for CGImageBlockSetGetImageBlock not found
+		// decl for CGImageBlockSetGetPixelSize not found
+		// decl for CGImageBlockSetGetProperty not found
+		// decl for CGImageBlockSetGetRect not found
+		// decl for CGImageBlockSetGetSize not found
+		// decl for CGImageBlockSetRelease not found
+		// decl for CGImageBlockSetRetain not found
+		// decl for CGImageBlockSetSetProperty not found
+		// decl for CGImageCopyProperty not found
+		"CGImageCreate" = "^{CGImage=}LLLLL^{CGColorSpace=}I^{CGDataProvider=}^dBi";
+		"CGImageCreateCopy" = "^{CGImage=}^{CGImage=}";
+		// decl for CGImageCreateCopyWithClipPath not found
+		"CGImageCreateCopyWithColorSpace" = "^{CGImage=}^{CGImage=}^{CGColorSpace=}";
+		// decl for CGImageCreateCopyWithOptions not found
+		// decl for CGImageCreateCopyWithRenderingIntent not found
+		// decl for CGImageCreateWithCGPDFStream not found
+		// decl for CGImageCreateWithEPSDataProvider not found
+		"CGImageCreateWithImageInRect" = "^{CGImage=}^{CGImage=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		// decl for CGImageCreateWithImageProvider not found
+		"CGImageCreateWithJPEGDataProvider" = "^{CGImage=}^{CGDataProvider=}^dBi";
+		// decl for CGImageCreateWithJPEGDataProvider2 not found
+		"CGImageCreateWithMask" = "^{CGImage=}^{CGImage=}^{CGImage=}";
+		// decl for CGImageCreateWithMaskAndMatte not found
+		// decl for CGImageCreateWithMaskingColor not found
+		"CGImageCreateWithMaskingColors" = "^{CGImage=}^{CGImage=}^d";
+		"CGImageCreateWithPNGDataProvider" = "^{CGImage=}^{CGDataProvider=}^dBi";
+		// decl for CGImageDumpToFile not found
+		// decl for CGImageEPSRepCreate not found
+		// decl for CGImageEPSRepGetAlternateImage not found
+		// decl for CGImageEPSRepGetBBox not found
+		// decl for CGImageEPSRepGetSource not found
+		// decl for CGImageEPSRepRelease not found
+		// decl for CGImageEPSRepRetain not found
+		"CGImageGetAlphaInfo" = "I^{CGImage=}";
+		"CGImageGetBitmapInfo" = "I^{CGImage=}";
+		"CGImageGetBitsPerComponent" = "L^{CGImage=}";
+		"CGImageGetBitsPerPixel" = "L^{CGImage=}";
+		"CGImageGetByteOrderInfo" = "I^{CGImage=}";
+		"CGImageGetBytesPerRow" = "L^{CGImage=}";
+		// decl for CGImageGetCachingFlags not found
+		// decl for CGImageGetClipPath not found
+		"CGImageGetColorSpace" = "^{CGColorSpace=}^{CGImage=}";
+		// decl for CGImageGetData not found
+		"CGImageGetDataProvider" = "^{CGDataProvider=}^{CGImage=}";
+		"CGImageGetDecode" = "^d^{CGImage=}";
+		// decl for CGImageGetEPSRep not found
+		"CGImageGetHeight" = "L^{CGImage=}";
+		// decl for CGImageGetIdentifier not found
+		// decl for CGImageGetImageProvider not found
+		// decl for CGImageGetMask not found
+		// decl for CGImageGetMaskingColors not found
+		// decl for CGImageGetMatte not found
+		"CGImageGetPixelFormatInfo" = "I^{CGImage=}";
+		// decl for CGImageGetProperty not found
+		"CGImageGetRenderingIntent" = "i^{CGImage=}";
+		"CGImageGetShouldInterpolate" = "B^{CGImage=}";
+		"CGImageGetTypeID" = "L";
+		"CGImageGetUTType" = "^{__CFString=}^{CGImage=}";
+		"CGImageGetWidth" = "L^{CGImage=}";
+		// decl for CGImageHasAlpha not found
+		// decl for CGImageIOSurfaceSetCreate not found
+		// decl for CGImageIOSurfaceSetGetColorSpace not found
+		// decl for CGImageIOSurfaceSetGetComponentType not found
+		// decl for CGImageIOSurfaceSetGetCount not found
+		// decl for CGImageIOSurfaceSetGetPixelSize not found
+		// decl for CGImageIOSurfaceSetGetProperty not found
+		// decl for CGImageIOSurfaceSetGetRect not found
+		// decl for CGImageIOSurfaceSetGetSize not found
+		// decl for CGImageIOSurfaceSetGetTypeID not found
+		// decl for CGImageIOSurfaceSetRelease not found
+		// decl for CGImageIOSurfaceSetRetain not found
+		// decl for CGImageIOSurfaceSetSetProperty not found
+		"CGImageIsMask" = "B^{CGImage=}";
+		// decl for CGImageIsOptimizedForSharing not found
+		// decl for CGImageIsSubimage not found
+		"CGImageMaskCreate" = "^{CGImage=}LLLLL^{CGDataProvider=}^dB";
+		// decl for CGImageNotificationCenter not found
+		// decl for CGImageProviderCopyIOSurface not found
+		// decl for CGImageProviderCopyIOSurfaceSet not found
+		// decl for CGImageProviderCopyImageBlockSet not found
+		// decl for CGImageProviderCopyImageBlockSetWithOptions not found
+		// decl for CGImageProviderCopyImageTextureData not found
+		// decl for CGImageProviderCreate not found
+		// decl for CGImageProviderGetAlphaInfo not found
+		// decl for CGImageProviderGetCallbackVersion not found
+		// decl for CGImageProviderGetColorSpace not found
+		// decl for CGImageProviderGetComponentType not found
+		// decl for CGImageProviderGetInfo not found
+		// decl for CGImageProviderGetPixelSize not found
+		// decl for CGImageProviderGetProperty not found
+		// decl for CGImageProviderGetSize not found
+		// decl for CGImageProviderGetTypeID not found
+		// decl for CGImageProviderRelease not found
+		// decl for CGImageProviderRetain not found
+		// decl for CGImageProviderSetProperty not found
+		"CGImageRelease" = "v^{CGImage=}";
+		"CGImageRetain" = "^{CGImage=}^{CGImage=}";
+		// decl for CGImageSetCachingFlags not found
+		// decl for CGImageSetProperty not found
+		// decl for CGImageSurfaceSetGetIOSurface not found
+		// decl for CGImageTextureDataCopyProperties not found
+		// decl for CGImageTextureDataCreate not found
+		// decl for CGImageTextureDataGetColorSpace not found
+		// decl for CGImageTextureDataGetDataWithBlock not found
+		// decl for CGImageTextureDataGetNumberOfFaces not found
+		// decl for CGImageTextureDataGetNumberOfMipmaps not found
+		// decl for CGImageTextureDataGetOffsetWithBlock not found
+		// decl for CGImageTextureDataGetPixelFormat not found
+		// decl for CGImageTextureDataGetProperty not found
+		// decl for CGImageTextureDataGetSize not found
+		// decl for CGImageTextureDataGetTypeID not found
+		// decl for CGImageTextureDataIsCompressed not found
+		// decl for CGImageTextureDataRelease not found
+		// decl for CGImageTextureDataRetain not found
+		// decl for CGImageTextureDataSetProperty not found
+		// decl for CGImageTextureDataSupportsTiledLayout not found
+		// decl for CGImageWriteToFile not found
+		"CGLayerCreateWithContext" = "^{CGLayer=}^{CGContext=}{CGSize=dd}^{__CFDictionary=}";
+		"CGLayerGetContext" = "^{CGContext=}^{CGLayer=}";
+		"CGLayerGetSize" = "{CGSize=dd}^{CGLayer=}";
+		"CGLayerGetTypeID" = "L";
+		"CGLayerRelease" = "v^{CGLayer=}";
+		"CGLayerRetain" = "^{CGLayer=}^{CGLayer=}";
+		// decl for CGNotificationCenterAddCallback not found
+		// decl for CGNotificationCenterRemoveCallback not found
+		// decl for CGPDFAdvancesCreate not found
+		// decl for CGPDFAdvancesGetHorizontalAdvance not found
+		// decl for CGPDFAdvancesGetVerticalAdvance not found
+		// decl for CGPDFAdvancesPrint not found
+		// decl for CGPDFAdvancesRelease not found
+		// decl for CGPDFAdvancesValidate not found
+		// decl for CGPDFAnnotationCreate not found
+		// decl for CGPDFAnnotationCreateWithCGPDFDictionary not found
+		// decl for CGPDFAnnotationGetBurnIn not found
+		// decl for CGPDFAnnotationGetCGPDFDictionary not found
+		// decl for CGPDFAnnotationGetDictionary not found
+		// decl for CGPDFAnnotationGetHash not found
+		// decl for CGPDFAnnotationGetRect not found
+		// decl for CGPDFAnnotationGetTag not found
+		// decl for CGPDFAnnotationGetType not found
+		// decl for CGPDFAnnotationGetTypeID not found
+		// decl for CGPDFAnnotationIsGhost not found
+		// decl for CGPDFAnnotationIsPristine not found
+		// decl for CGPDFAnnotationIsSupportedType not found
+		// decl for CGPDFAnnotationIsVersioned not found
+		// decl for CGPDFAnnotationSetAnnotationForKey not found
+		// decl for CGPDFAnnotationSetBurnIn not found
+		// decl for CGPDFAnnotationSetIsGhost not found
+		// decl for CGPDFAnnotationSetTag not found
+		"CGPDFArrayApplyBlock" = "v^{CGPDFArray=}?^v";
+		"CGPDFArrayGetArray" = "B^{CGPDFArray=}L^^{CGPDFArray=}";
+		"CGPDFArrayGetBoolean" = "B^{CGPDFArray=}L^C";
+		"CGPDFArrayGetCount" = "L^{CGPDFArray=}";
+		"CGPDFArrayGetDictionary" = "B^{CGPDFArray=}L^^{CGPDFDictionary=}";
+		"CGPDFArrayGetInteger" = "B^{CGPDFArray=}L^l";
+		// decl for CGPDFArrayGetIntegers not found
+		"CGPDFArrayGetName" = "B^{CGPDFArray=}L?";
+		"CGPDFArrayGetNull" = "B^{CGPDFArray=}L";
+		"CGPDFArrayGetNumber" = "B^{CGPDFArray=}L^d";
+		// decl for CGPDFArrayGetNumbers not found
+		"CGPDFArrayGetObject" = "B^{CGPDFArray=}L^^{CGPDFObject=}";
+		// decl for CGPDFArrayGetOffset not found
+		"CGPDFArrayGetStream" = "B^{CGPDFArray=}L^^{CGPDFStream=}";
+		"CGPDFArrayGetString" = "B^{CGPDFArray=}L^^{CGPDFString=}";
+		// decl for CGPDFArrayGetUnresolvedObject not found
+		// decl for CGPDFArrayPrint not found
+		// decl for CGPDFArrayPrintWithIndent not found
+		// decl for CGPDFArrayRelease not found
+		// decl for CGPDFArrayRetain not found
+		// decl for CGPDFBase14GetBase14Name not found
+		// decl for CGPDFBase14GetInfo not found
+		// decl for CGPDFCMapCreate not found
+		// decl for CGPDFCMapCreateWithName not found
+		// decl for CGPDFCMapGetCIDsForText not found
+		// decl for CGPDFCMapGetMaxUnicodes not found
+		// decl for CGPDFCMapGetName not found
+		// decl for CGPDFCMapGetROS not found
+		// decl for CGPDFCMapGetUnicodeCMap not found
+		// decl for CGPDFCMapGetUnicodesForIndex not found
+		// decl for CGPDFCMapGetZapfTable not found
+		// decl for CGPDFCMapIsHorizontal not found
+		// decl for CGPDFCMapRelease not found
+		"CGPDFContentStreamCreateWithPage" = "^{CGPDFContentStream=}^{CGPDFPage=}";
+		"CGPDFContentStreamCreateWithStream" = "^{CGPDFContentStream=}^{CGPDFStream=}^{CGPDFDictionary=}^{CGPDFContentStream=}";
+		"CGPDFContentStreamGetResource" = "^{CGPDFObject=}^{CGPDFContentStream=}**";
+		"CGPDFContentStreamGetStreams" = "^{__CFArray=}^{CGPDFContentStream=}";
+		"CGPDFContentStreamRelease" = "v^{CGPDFContentStream=}";
+		"CGPDFContentStreamRetain" = "^{CGPDFContentStream=}^{CGPDFContentStream=}";
+		// decl for CGPDFContextAddAnnotation not found
+		// decl for CGPDFContextAddCatalogEntry not found
+		"CGPDFContextAddDestinationAtPoint" = "v^{CGContext=}^{__CFString=}{CGPoint=dd}";
+		"CGPDFContextAddDocumentMetadata" = "v^{CGContext=}^{__CFData=}";
+		// decl for CGPDFContextAddPDFXInfo not found
+		"CGPDFContextBeginPage" = "v^{CGContext=}^{__CFDictionary=}";
+		// decl for CGPDFContextBeginTag not found
+		"CGPDFContextClose" = "v^{CGContext=}";
+		"CGPDFContextCreate" = "^{CGContext=}^{CGDataConsumer=}^{CGRect={CGPoint=dd}{CGSize=dd}}^{__CFDictionary=}";
+		// decl for CGPDFContextCreateWithFilename not found
+		"CGPDFContextCreateWithURL" = "^{CGContext=}^{__CFURL=}^{CGRect={CGPoint=dd}{CGSize=dd}}^{__CFDictionary=}";
+		"CGPDFContextEndPage" = "v^{CGContext=}";
+		// decl for CGPDFContextEndTag not found
+		"CGPDFContextSetDestinationForRect" = "v^{CGContext=}^{__CFString=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		// decl for CGPDFContextSetImageTag not found
+		"CGPDFContextSetOutline" = "v^{CGContext=}^{__CFDictionary=}";
+		// decl for CGPDFContextSetOutputIntent not found
+		"CGPDFContextSetURLForRect" = "v^{CGContext=}^{__CFURL=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGPDFDictionaryApplyBlock" = "v^{CGPDFDictionary=}?^v";
+		"CGPDFDictionaryApplyFunction" = "v^{CGPDFDictionary=}?^v";
+		// decl for CGPDFDictionaryApplyFunctionRaw not found
+		"CGPDFDictionaryGetArray" = "B^{CGPDFDictionary=}*^^{CGPDFArray=}";
+		"CGPDFDictionaryGetBoolean" = "B^{CGPDFDictionary=}*^C";
+		// decl for CGPDFDictionaryGetBooleans not found
+		"CGPDFDictionaryGetCount" = "L^{CGPDFDictionary=}";
+		"CGPDFDictionaryGetDictionary" = "B^{CGPDFDictionary=}*^^{CGPDFDictionary=}";
+		"CGPDFDictionaryGetInteger" = "B^{CGPDFDictionary=}*^l";
+		// decl for CGPDFDictionaryGetIntegers not found
+		// decl for CGPDFDictionaryGetMatrix not found
+		"CGPDFDictionaryGetName" = "B^{CGPDFDictionary=}*?";
+		"CGPDFDictionaryGetNumber" = "B^{CGPDFDictionary=}*^d";
+		// decl for CGPDFDictionaryGetNumbers not found
+		"CGPDFDictionaryGetObject" = "B^{CGPDFDictionary=}*^^{CGPDFObject=}";
+		// decl for CGPDFDictionaryGetOffset not found
+		// decl for CGPDFDictionaryGetOwner not found
+		// decl for CGPDFDictionaryGetRect not found
+		"CGPDFDictionaryGetStream" = "B^{CGPDFDictionary=}*^^{CGPDFStream=}";
+		"CGPDFDictionaryGetString" = "B^{CGPDFDictionary=}*^^{CGPDFString=}";
+		// decl for CGPDFDictionaryGetUnresolvedObject not found
+		// decl for CGPDFDictionaryPrint not found
+		// decl for CGPDFDictionaryPrintWithIndent not found
+		// decl for CGPDFDictionaryRelease not found
+		// decl for CGPDFDictionaryRetain not found
+		"CGPDFDocumentAllowsCopying" = "B^{CGPDFDocument=}";
+		"CGPDFDocumentAllowsPrinting" = "B^{CGPDFDocument=}";
+		// decl for CGPDFDocumentAppendChanges not found
+		// decl for CGPDFDocumentAppendMetadata not found
+		// decl for CGPDFDocumentAppendPage not found
+		// decl for CGPDFDocumentAuthenticateOwnerPassword not found
+		// decl for CGPDFDocumentAuthenticateUserPassword not found
+		// decl for CGPDFDocumentCopyInfoDictionary not found
+		// decl for CGPDFDocumentCopyOutputIntents not found
+		// decl for CGPDFDocumentCopyPage not found
+		// decl for CGPDFDocumentCopyToConsumer not found
+		// decl for CGPDFDocumentCopyToConsumerWithChanges not found
+		"CGPDFDocumentCreateWithProvider" = "^{CGPDFDocument=}^{CGDataProvider=}";
+		"CGPDFDocumentCreateWithURL" = "^{CGPDFDocument=}^{__CFURL=}";
+		// decl for CGPDFDocumentEnableMRUMode not found
+		// decl for CGPDFDocumentEnableTaggedStructureSerialization not found
+		// decl for CGPDFDocumentExchangePagesAtIndices not found
+		"CGPDFDocumentGetAccessPermissions" = "I^{CGPDFDocument=}";
+		"CGPDFDocumentGetArtBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPDFDocument=}i";
+		"CGPDFDocumentGetBleedBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPDFDocument=}i";
+		"CGPDFDocumentGetCatalog" = "^{CGPDFDictionary=}^{CGPDFDocument=}";
+		"CGPDFDocumentGetCropBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPDFDocument=}i";
+		// decl for CGPDFDocumentGetDataProvider not found
+		// decl for CGPDFDocumentGetDestination not found
+		"CGPDFDocumentGetID" = "^{CGPDFArray=}^{CGPDFDocument=}";
+		"CGPDFDocumentGetInfo" = "^{CGPDFDictionary=}^{CGPDFDocument=}";
+		"CGPDFDocumentGetMediaBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPDFDocument=}i";
+		// decl for CGPDFDocumentGetNumberOfObjects not found
+		"CGPDFDocumentGetNumberOfPages" = "L^{CGPDFDocument=}";
+		// decl for CGPDFDocumentGetObject not found
+		"CGPDFDocumentGetOutline" = "^{__CFDictionary=}^{CGPDFDocument=}";
+		"CGPDFDocumentGetPage" = "^{CGPDFPage=}^{CGPDFDocument=}L";
+		// decl for CGPDFDocumentGetPageDictionary not found
+		// decl for CGPDFDocumentGetPageForPageDictionary not found
+		// decl for CGPDFDocumentGetPageNumberForPageDictionary not found
+		// decl for CGPDFDocumentGetPermissions not found
+		// decl for CGPDFDocumentGetProperty not found
+		"CGPDFDocumentGetRotationAngle" = "i^{CGPDFDocument=}i";
+		"CGPDFDocumentGetTrimBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPDFDocument=}i";
+		"CGPDFDocumentGetTypeID" = "L";
+		// decl for CGPDFDocumentGetURL not found
+		"CGPDFDocumentGetVersion" = "v^{CGPDFDocument=}^i^i";
+		// decl for CGPDFDocumentInsertPageAtIndex not found
+		"CGPDFDocumentIsEncrypted" = "B^{CGPDFDocument=}";
+		// decl for CGPDFDocumentIsLinearized not found
+		// decl for CGPDFDocumentIsTaggedPDF not found
+		"CGPDFDocumentIsUnlocked" = "B^{CGPDFDocument=}";
+		// decl for CGPDFDocumentIsUnlockedAsOwner not found
+		// decl for CGPDFDocumentPrintObject not found
+		"CGPDFDocumentRelease" = "v^{CGPDFDocument=}";
+		// decl for CGPDFDocumentRemovePageAtIndex not found
+		// decl for CGPDFDocumentRemoveProperty not found
+		"CGPDFDocumentRetain" = "^{CGPDFDocument=}^{CGPDFDocument=}";
+		// decl for CGPDFDocumentSetDeviceCMYKColorSpace not found
+		// decl for CGPDFDocumentSetDeviceGrayColorSpace not found
+		// decl for CGPDFDocumentSetDeviceRGBColorSpace not found
+		// decl for CGPDFDocumentSetProperty not found
+		// decl for CGPDFDocumentUnlockAsOwnerWithPassword not found
+		"CGPDFDocumentUnlockWithPassword" = "B^{CGPDFDocument=}*";
+		// decl for CGPDFDrawingContextCreateWithStream not found
+		// decl for CGPDFDrawingContextDraw not found
+		// decl for CGPDFDrawingContextRelease not found
+		// decl for CGPDFEncodingCreate not found
+		// decl for CGPDFEncodingGetGlyphVector not found
+		// decl for CGPDFEncodingGetGlyphVectorWithFont not found
+		// decl for CGPDFEncodingGetNameForIndex not found
+		// decl for CGPDFEncodingGetUnicodeMaxLength not found
+		// decl for CGPDFEncodingGetUnicodesForIndex not found
+		// decl for CGPDFEncodingRelease not found
+		// decl for CGPDFFontCreate not found
+		// decl for CGPDFFontCreateToUnicodeCMap not found
+		// decl for CGPDFFontCreateWithObject not found
+		// decl for CGPDFFontDescriptorGetDictionary not found
+		// decl for CGPDFFontDescriptorGetFlags not found
+		// decl for CGPDFFontDescriptorRelease not found
+		// decl for CGPDFFontDescriptorRetain not found
+		// decl for CGPDFFontGetAdvances not found
+		// decl for CGPDFFontGetCIDSystemInfo not found
+		// decl for CGPDFFontGetCIDToGlyphMap not found
+		// decl for CGPDFFontGetCMap not found
+		// decl for CGPDFFontGetDescendant not found
+		// decl for CGPDFFontGetDictionary not found
+		// decl for CGPDFFontGetEncoding not found
+		// decl for CGPDFFontGetFont not found
+		// decl for CGPDFFontGetFontBBox not found
+		// decl for CGPDFFontGetFontDescriptor not found
+		// decl for CGPDFFontGetFontMatrix not found
+		// decl for CGPDFFontGetMutator not found
+		// decl for CGPDFFontGetName not found
+		// decl for CGPDFFontGetProcedures not found
+		// decl for CGPDFFontGetROSUnicodeCMap not found
+		// decl for CGPDFFontGetToUnicodeCMap not found
+		// decl for CGPDFFontGetType not found
+		// decl for CGPDFFontIsBase14 not found
+		// decl for CGPDFFontIsEmbedded not found
+		// decl for CGPDFFontRelease not found
+		// decl for CGPDFFontRetain not found
+		// decl for CGPDFFormCreate not found
+		// decl for CGPDFFormGetBBox not found
+		// decl for CGPDFFormGetMatrix not found
+		// decl for CGPDFFormGetResources not found
+		// decl for CGPDFFormGetStream not found
+		// decl for CGPDFFormRelease not found
+		// decl for CGPDFFormRetain not found
+		// decl for CGPDFFunctionCreateFunction not found
+		// decl for CGPDFGetBaseEncodingForName not found
+		// decl for CGPDFGetNameForBaseEncoding not found
+		// decl for CGPDFGetNameVectorForBaseEncoding not found
+		// decl for CGPDFGetUnicharGuessForCID not found
+		// decl for CGPDFGetUnicharGuessForGlyphName not found
+		// decl for CGPDFGetUnicharVectorForBaseEncoding not found
+		// decl for CGPDFGetUnicharsForGlyphName not found
+		// decl for CGPDFLayoutCreate not found
+		// decl for CGPDFObjectGetReference not found
+		"CGPDFObjectGetType" = "i^{CGPDFObject=}";
+		"CGPDFObjectGetValue" = "B^{CGPDFObject=}i^v";
+		// decl for CGPDFObjectPrint not found
+		"CGPDFOperatorTableCreate" = "^{CGPDFOperatorTable=}";
+		"CGPDFOperatorTableRelease" = "v^{CGPDFOperatorTable=}";
+		"CGPDFOperatorTableRetain" = "^{CGPDFOperatorTable=}^{CGPDFOperatorTable=}";
+		"CGPDFOperatorTableSetCallback" = "v^{CGPDFOperatorTable=}*?";
+		// decl for CGPDFPageAddAnnotation not found
+		// decl for CGPDFPageContainsWideGamutContent not found
+		// decl for CGPDFPageCopyAnnotations not found
+		// decl for CGPDFPageCopyPageLabel not found
+		// decl for CGPDFPageCopyTextString not found
+		// decl for CGPDFPageCopyTextStringWithGlyphs not found
+		// decl for CGPDFPageCopyThumbnail not found
+		// decl for CGPDFPageCreate not found
+		// decl for CGPDFPageCreateThumbnail not found
+		// decl for CGPDFPageCreateWithImage not found
+		// decl for CGPDFPageEnumerateAnnotations not found
+		// decl for CGPDFPageGetAnnotationAtIndex not found
+		// decl for CGPDFPageGetAnnotationCount not found
+		"CGPDFPageGetBoxRect" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPDFPage=}i";
+		// decl for CGPDFPageGetColorSpace not found
+		// decl for CGPDFPageGetContents not found
+		"CGPDFPageGetDictionary" = "^{CGPDFDictionary=}^{CGPDFPage=}";
+		"CGPDFPageGetDocument" = "^{CGPDFDocument=}^{CGPDFPage=}";
+		"CGPDFPageGetDrawingTransform" = "{CGAffineTransform=dddddd}^{CGPDFPage=}i{CGRect={CGPoint=dd}{CGSize=dd}}iB";
+		// decl for CGPDFPageGetDrawingTransformForRect not found
+		// decl for CGPDFPageGetImages not found
+		"CGPDFPageGetPageNumber" = "L^{CGPDFPage=}";
+		// decl for CGPDFPageGetProperty not found
+		"CGPDFPageGetRotationAngle" = "i^{CGPDFPage=}";
+		// decl for CGPDFPageGetThumbnail not found
+		"CGPDFPageGetTypeID" = "L";
+		// decl for CGPDFPagePrint not found
+		"CGPDFPageRelease" = "v^{CGPDFPage=}";
+		// decl for CGPDFPageRemoveAnnotation not found
+		// decl for CGPDFPageRemoveProperty not found
+		"CGPDFPageRetain" = "^{CGPDFPage=}^{CGPDFPage=}";
+		// decl for CGPDFPageSetBoxRect not found
+		// decl for CGPDFPageSetProperty not found
+		// decl for CGPDFPageSetRotationAngle not found
+		// decl for CGPDFPageSortAnnotations not found
+		// decl for CGPDFPageSubstituteAnnotation not found
+		"CGPDFScannerCreate" = "^{CGPDFScanner=}^{CGPDFContentStream=}^{CGPDFOperatorTable=}^v";
+		"CGPDFScannerGetContentStream" = "^{CGPDFContentStream=}^{CGPDFScanner=}";
+		"CGPDFScannerPopArray" = "B^{CGPDFScanner=}^^{CGPDFArray=}";
+		"CGPDFScannerPopBoolean" = "B^{CGPDFScanner=}^C";
+		"CGPDFScannerPopDictionary" = "B^{CGPDFScanner=}^^{CGPDFDictionary=}";
+		"CGPDFScannerPopInteger" = "B^{CGPDFScanner=}^l";
+		"CGPDFScannerPopName" = "B^{CGPDFScanner=}?";
+		"CGPDFScannerPopNumber" = "B^{CGPDFScanner=}^d";
+		"CGPDFScannerPopObject" = "B^{CGPDFScanner=}^^{CGPDFObject=}";
+		"CGPDFScannerPopStream" = "B^{CGPDFScanner=}^^{CGPDFStream=}";
+		"CGPDFScannerPopString" = "B^{CGPDFScanner=}^^{CGPDFString=}";
+		"CGPDFScannerRelease" = "v^{CGPDFScanner=}";
+		"CGPDFScannerRetain" = "^{CGPDFScanner=}^{CGPDFScanner=}";
+		"CGPDFScannerScan" = "B^{CGPDFScanner=}";
+		// decl for CGPDFSourceGetLength not found
+		// decl for CGPDFSourceGetPosition not found
+		// decl for CGPDFSourceGetc not found
+		// decl for CGPDFSourceIsAtEOF not found
+		// decl for CGPDFSourceRead not found
+		// decl for CGPDFSourceRelease not found
+		// decl for CGPDFSourceRetain not found
+		// decl for CGPDFSourceRewind not found
+		// decl for CGPDFSourceSetPosition not found
+		// decl for CGPDFSourceUngetc not found
+		"CGPDFStreamCopyData" = "^{__CFData=}^{CGPDFStream=}^i";
+		// decl for CGPDFStreamCreateDataProvider not found
+		// decl for CGPDFStreamCreateWithData not found
+		// decl for CGPDFStreamGetData not found
+		"CGPDFStreamGetDictionary" = "^{CGPDFDictionary=}^{CGPDFStream=}";
+		// decl for CGPDFStreamPrint not found
+		// decl for CGPDFStreamPrintContents not found
+		// decl for CGPDFStreamPrintContentsWithIndent not found
+		// decl for CGPDFStreamPrintWithIndent not found
+		// decl for CGPDFStreamRelease not found
+		// decl for CGPDFStreamRetain not found
+		"CGPDFStringCopyDate" = "^{__CFDate=}^{CGPDFString=}";
+		"CGPDFStringCopyTextString" = "^{__CFString=}^{CGPDFString=}";
+		"CGPDFStringGetBytePtr" = "^C^{CGPDFString=}";
+		"CGPDFStringGetLength" = "L^{CGPDFString=}";
+		// decl for CGPDFStringPrint not found
+		// decl for CGPDFStringRelease not found
+		// decl for CGPDFStringRetain not found
+		// decl for CGPDFTagTypeGetName not found
+		// decl for CGPDFTextStringGetBBoxForIndex not found
+		// decl for CGPDFTextStringGetCharacterAtIndex not found
+		// decl for CGPDFTextStringGetColorForIndex not found
+		// decl for CGPDFTextStringGetFontForIndex not found
+		// decl for CGPDFTextStringGetGlyphAtIndex not found
+		// decl for CGPDFTextStringGetLength not found
+		// decl for CGPDFTextStringGetPositionForIndex not found
+		// decl for CGPDFTextStringGetTransformForIndex not found
+		// decl for CGPDFTextStringRelease not found
+		// decl for CGPDFTextStringRetain not found
+		"CGPathAddArc" = "v^{CGPath=}^{CGAffineTransform=dddddd}dddddB";
+		"CGPathAddArcToPoint" = "v^{CGPath=}^{CGAffineTransform=dddddd}ddddd";
+		"CGPathAddCurveToPoint" = "v^{CGPath=}^{CGAffineTransform=dddddd}dddddd";
+		"CGPathAddEllipseInRect" = "v^{CGPath=}^{CGAffineTransform=dddddd}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGPathAddLineToPoint" = "v^{CGPath=}^{CGAffineTransform=dddddd}dd";
+		"CGPathAddLines" = "v^{CGPath=}^{CGAffineTransform=dddddd}^{CGPoint=dd}L";
+		"CGPathAddPath" = "v^{CGPath=}^{CGAffineTransform=dddddd}^{CGPath=}";
+		"CGPathAddQuadCurveToPoint" = "v^{CGPath=}^{CGAffineTransform=dddddd}dddd";
+		"CGPathAddRect" = "v^{CGPath=}^{CGAffineTransform=dddddd}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGPathAddRects" = "v^{CGPath=}^{CGAffineTransform=dddddd}^{CGRect={CGPoint=dd}{CGSize=dd}}L";
+		// decl for CGPathAddRegion not found
+		"CGPathAddRelativeArc" = "v^{CGPath=}^{CGAffineTransform=dddddd}ddddd";
+		"CGPathAddRoundedRect" = "v^{CGPath=}^{CGAffineTransform=dddddd}{CGRect={CGPoint=dd}{CGSize=dd}}dd";
+		// decl for CGPathAddUnevenCornersRoundedRect not found
+		"CGPathApply" = "v^{CGPath=}^v?";
+		// decl for CGPathApplyDashedPath not found
+		// decl for CGPathApplyIterator not found
+		// decl for CGPathApplyStrokedDashedPath not found
+		"CGPathApplyWithBlock" = "v^{CGPath=}?";
+		"CGPathCloseSubpath" = "v^{CGPath=}";
+		"CGPathContainsPoint" = "B^{CGPath=}^{CGAffineTransform=dddddd}{CGPoint=dd}B";
+		// decl for CGPathCreateByNormalizingGlyphPath not found
+		"CGPathCreateCopy" = "^{CGPath=}^{CGPath=}";
+		"CGPathCreateCopyByDashingPath" = "^{CGPath=}^{CGPath=}^{CGAffineTransform=dddddd}d^dL";
+		"CGPathCreateCopyByStrokingPath" = "^{CGPath=}^{CGPath=}^{CGAffineTransform=dddddd}diid";
+		"CGPathCreateCopyByTransformingPath" = "^{CGPath=}^{CGPath=}^{CGAffineTransform=dddddd}";
+		// decl for CGPathCreateDashedPath not found
+		"CGPathCreateMutable" = "^{CGPath=}";
+		"CGPathCreateMutableCopy" = "^{CGPath=}^{CGPath=}";
+		"CGPathCreateMutableCopyByTransformingPath" = "^{CGPath=}^{CGPath=}^{CGAffineTransform=dddddd}";
+		// decl for CGPathCreateStrokedPath not found
+		"CGPathCreateWithEllipseInRect" = "^{CGPath=}{CGRect={CGPoint=dd}{CGSize=dd}}^{CGAffineTransform=dddddd}";
+		// decl for CGPathCreateWithLineSegment not found
+		"CGPathCreateWithRect" = "^{CGPath=}{CGRect={CGPoint=dd}{CGSize=dd}}^{CGAffineTransform=dddddd}";
+		"CGPathCreateWithRoundedRect" = "^{CGPath=}{CGRect={CGPoint=dd}{CGSize=dd}}dd^{CGAffineTransform=dddddd}";
+		// decl for CGPathCreateWithThresholdedImage not found
+		// decl for CGPathCreateWithThresholdedImageDebug not found
+		// decl for CGPathCreateWithUnevenCornersRoundedRect not found
+		"CGPathEqualToPath" = "B^{CGPath=}^{CGPath=}";
+		"CGPathGetBoundingBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPath=}";
+		"CGPathGetCurrentPoint" = "{CGPoint=dd}^{CGPath=}";
+		// decl for CGPathGetGeometricBoundingBox not found
+		"CGPathGetPathBoundingBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPath=}";
+		"CGPathGetTypeID" = "L";
+		// decl for CGPathIsEllipse not found
+		// decl for CGPathIsEllipse2 not found
+		// decl for CGPathIsEllipseWithTransform not found
+		"CGPathIsEmpty" = "B^{CGPath=}";
+		// decl for CGPathIsLine not found
+		"CGPathIsRect" = "B^{CGPath=}^{CGRect={CGPoint=dd}{CGSize=dd}}";
+		// decl for CGPathIsRectWithTransform not found
+		// decl for CGPathIsRegion not found
+		// decl for CGPathIsRoundedRect not found
+		// decl for CGPathIsRoundedRectWithTransform not found
+		// decl for CGPathIsUnevenCornersRoundedRectWithTransform not found
+		// decl for CGPathIsValidGlyphPath not found
+		"CGPathMoveToPoint" = "v^{CGPath=}^{CGAffineTransform=dddddd}dd";
+		// decl for CGPathPrint not found
+		"CGPathRelease" = "v^{CGPath=}";
+		"CGPathRetain" = "^{CGPath=}^{CGPath=}";
+		"CGPatternCreate" = "^{CGPattern=}^v{CGRect={CGPoint=dd}{CGSize=dd}}{CGAffineTransform=dddddd}ddiB^{CGPatternCallbacks=I??}";
+		// decl for CGPatternCreateColoredEmpty not found
+		// decl for CGPatternCreateUncoloredEmpty not found
+		// decl for CGPatternCreateWithImage not found
+		// decl for CGPatternCreateWithImage2 not found
+		// decl for CGPatternDrawInContextDelegate not found
+		// decl for CGPatternGetAssociate not found
+		// decl for CGPatternGetBounds not found
+		// decl for CGPatternGetIdentifier not found
+		// decl for CGPatternGetImage not found
+		// decl for CGPatternGetMatrix not found
+		// decl for CGPatternGetShading not found
+		// decl for CGPatternGetStep not found
+		// decl for CGPatternGetTiling not found
+		// decl for CGPatternGetType not found
+		"CGPatternGetTypeID" = "L";
+		// decl for CGPatternIsColored not found
+		// decl for CGPatternIsOpaque not found
+		// decl for CGPatternNotificationCenter not found
+		"CGPatternRelease" = "v^{CGPattern=}";
+		"CGPatternRetain" = "^{CGPattern=}^{CGPattern=}";
+		// decl for CGPatternSetAssociate not found
+		"CGPointApplyAffineTransform" = "{CGPoint=dd}{CGPoint=dd}{CGAffineTransform=dddddd}";
+		// decl for CGPointApplyInverseAffineTransform not found
+		"CGPointCreateDictionaryRepresentation" = "^{__CFDictionary=}{CGPoint=dd}";
+		"CGPointEqualToPoint" = "B{CGPoint=dd}{CGPoint=dd}";
+		"CGPointMakeWithDictionaryRepresentation" = "B^{__CFDictionary=}^{CGPoint=dd}";
+		// decl for CGPointZero not found
+		// decl for CGPostError not found
+		// decl for CGPostErrorWithArguments not found
+		// decl for CGPreferencesCopyString not found
+		// decl for CGPreferencesGetBoolean not found
+		// decl for CGPreferencesGetCGFloat not found
+		// decl for CGPreferencesGetInteger not found
+		"CGRectApplyAffineTransform" = "{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}{CGAffineTransform=dddddd}";
+		// decl for CGRectApplyInverseAffineTransform not found
+		"CGRectContainsPoint" = "B{CGRect={CGPoint=dd}{CGSize=dd}}{CGPoint=dd}";
+		"CGRectContainsRect" = "B{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectCreateDictionaryRepresentation" = "^{__CFDictionary=}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectDivide" = "v{CGRect={CGPoint=dd}{CGSize=dd}}^{CGRect={CGPoint=dd}{CGSize=dd}}^{CGRect={CGPoint=dd}{CGSize=dd}}dI";
+		"CGRectEqualToRect" = "B{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectGetHeight" = "d{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectGetMaxX" = "d{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectGetMaxY" = "d{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectGetMidX" = "d{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectGetMidY" = "d{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectGetMinX" = "d{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectGetMinY" = "d{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectGetWidth" = "d{CGRect={CGPoint=dd}{CGSize=dd}}";
+		// decl for CGRectInfinite not found
+		"CGRectInset" = "{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}dd";
+		"CGRectIntegral" = "{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectIntersection" = "{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectIntersectsRect" = "B{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectIsEmpty" = "B{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectIsInfinite" = "B{CGRect={CGPoint=dd}{CGSize=dd}}";
+		// decl for CGRectIsIntegral not found
+		"CGRectIsNull" = "B{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectMakeWithDictionaryRepresentation" = "B^{__CFDictionary=}^{CGRect={CGPoint=dd}{CGSize=dd}}";
+		// decl for CGRectNull not found
+		"CGRectOffset" = "{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}dd";
+		"CGRectStandardize" = "{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGRectUnion" = "{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}{CGRect={CGPoint=dd}{CGSize=dd}}";
+		// decl for CGRectZero not found
+		// decl for CGRegionCreateWithBytes not found
+		// decl for CGRegionCreateWithData not found
+		// decl for CGRegionCreateWithInset not found
+		// decl for CGRegionGetTypeID not found
+		// decl for CGRegionIsValid not found
+		// decl for CGRegionRelease not found
+		// decl for CGRegionRetain not found
+		// decl for CGRenderingStateCreate not found
+		// decl for CGRenderingStateCreateCopy not found
+		// decl for CGRenderingStateGetAllowedFontRenderingStyle not found
+		// decl for CGRenderingStateGetAllowsAcceleration not found
+		// decl for CGRenderingStateGetAllowsAntialiasing not found
+		// decl for CGRenderingStateGetAllowsDithering not found
+		// decl for CGRenderingStateGetAllowsFontAntialiasing not found
+		// decl for CGRenderingStateGetAllowsFontSmoothing not found
+		// decl for CGRenderingStateGetAllowsFontSubpixelPositioning not found
+		// decl for CGRenderingStateGetAllowsFontSubpixelQuantization not found
+		// decl for CGRenderingStateGetBaseCTM not found
+		// decl for CGRenderingStateGetFontRenderingStyle not found
+		// decl for CGRenderingStateGetMaxInterpolationQuality not found
+		// decl for CGRenderingStateGetMinInterpolationQuality not found
+		// decl for CGRenderingStateGetRenderingResolution not found
+		// decl for CGRenderingStateRelease not found
+		// decl for CGRenderingStateReset not found
+		// decl for CGRenderingStateRetain not found
+		// decl for CGRenderingStateSetAllowsAcceleration not found
+		// decl for CGRenderingStateSetAllowsAntialiasing not found
+		// decl for CGRenderingStateSetAllowsDithering not found
+		// decl for CGRenderingStateSetAllowsFontAntialiasing not found
+		// decl for CGRenderingStateSetAllowsFontSmoothing not found
+		// decl for CGRenderingStateSetAllowsFontSubpixelPositioning not found
+		// decl for CGRenderingStateSetAllowsFontSubpixelQuantization not found
+		// decl for CGRenderingStateSetBaseCTM not found
+		// decl for CGRenderingStateSetMaxInterpolationQuality not found
+		// decl for CGRenderingStateSetMinInterpolationQuality not found
+		// decl for CGRenderingStateSetRenderingResolution not found
+		// decl for CGRenderingStateSynchronize not found
+		// decl for CGSBoundingShapeAdd not found
+		// decl for CGSBoundingShapeAddRect not found
+		// decl for CGSBoundingShapeAddRegion not found
+		// decl for CGSBoundingShapeCreate not found
+		// decl for CGSBoundingShapeGetBounds not found
+		// decl for CGSBoundingShapeGetRegion not found
+		// decl for CGSBoundingShapeRelease not found
+		// decl for CGSBoundingShapeReset not found
+		// decl for CGSBoundsEqualToBounds not found
+		// decl for CGSBoundsIntersection not found
+		// decl for CGSBoundsUnion not found
+		// decl for CGSConvertXRGB8888toARGB8888 not found
+		// decl for CGSDiffRegion not found
+		// decl for CGSGetRegionBounds not found
+		// decl for CGSGetRegionData not found
+		// decl for CGSIntersectRegionWithRect not found
+		// decl for CGSNewEmptyRegion not found
+		// decl for CGSNewRegionWithData not found
+		// decl for CGSNewRegionWithRect not found
+		// decl for CGSNextPoint not found
+		// decl for CGSNextRect not found
+		// decl for CGSOffsetRegion not found
+		// decl for CGSRectInRegion not found
+		// decl for CGSRegionEnumerator not found
+		// decl for CGSRegionEnumeratorWithDirection not found
+		// decl for CGSRegionFromBitmap not found
+		// decl for CGSRegionIsEmpty not found
+		// decl for CGSRegionPathEnumerator not found
+		// decl for CGSReleaseRegion not found
+		// decl for CGSReleaseRegionEnumerator not found
+		// decl for CGSTransformRegion not found
+		// decl for CGSUnionRegion not found
+		"CGShadingCreateAxial" = "^{CGShading=}^{CGColorSpace=}{CGPoint=dd}{CGPoint=dd}^{CGFunction=}BB";
+		// decl for CGShadingCreateConic not found
+		"CGShadingCreateRadial" = "^{CGShading=}^{CGColorSpace=}{CGPoint=dd}d{CGPoint=dd}d^{CGFunction=}BB";
+		// decl for CGShadingDelegateDrawShading not found
+		// decl for CGShadingDrawInContextDelegate not found
+		// decl for CGShadingGetAssociate not found
+		// decl for CGShadingGetBackground not found
+		// decl for CGShadingGetBounds not found
+		// decl for CGShadingGetColorSpace not found
+		// decl for CGShadingGetDescriptor not found
+		// decl for CGShadingGetIdentifier not found
+		// decl for CGShadingGetType not found
+		"CGShadingGetTypeID" = "L";
+		"CGShadingRelease" = "v^{CGShading=}";
+		"CGShadingRetain" = "^{CGShading=}^{CGShading=}";
+		// decl for CGShadingSetAssociate not found
+		"CGSizeApplyAffineTransform" = "{CGSize=dd}{CGSize=dd}{CGAffineTransform=dddddd}";
+		"CGSizeCreateDictionaryRepresentation" = "^{__CFDictionary=}{CGSize=dd}";
+		"CGSizeEqualToSize" = "B{CGSize=dd}{CGSize=dd}";
+		"CGSizeMakeWithDictionaryRepresentation" = "B^{__CFDictionary=}^{CGSize=dd}";
+		// decl for CGSizeZero not found
+		// decl for CGSoftMaskCreate not found
+		// decl for CGSoftMaskDelegateDrawSoftMask not found
+		// decl for CGSoftMaskEqual not found
+		// decl for CGSoftMaskGetBackground not found
+		// decl for CGSoftMaskGetBounds not found
+		// decl for CGSoftMaskGetIdentifier not found
+		// decl for CGSoftMaskGetMatrix not found
+		// decl for CGSoftMaskGetTransfer not found
+		// decl for CGSoftMaskGetTypeID not found
+		// decl for CGSoftMaskRelease not found
+		// decl for CGSoftMaskRetain not found
+		// decl for CGStyleCreate not found
+		// decl for CGStyleCreateFocusRing not found
+		// decl for CGStyleCreateFocusRingWithColor not found
+		// decl for CGStyleCreateShadow not found
+		// decl for CGStyleCreateShadow2 not found
+		// decl for CGStyleCreateShadowWithColor not found
+		// decl for CGStyleEqualToStyle not found
+		// decl for CGStyleFilterContextDelegateCreate not found
+		// decl for CGStyleGetColor not found
+		// decl for CGStyleGetData not found
+		// decl for CGStyleGetDrawBoundingBox not found
+		// decl for CGStyleGetDrawOrdering not found
+		// decl for CGStyleGetIdentifier not found
+		// decl for CGStyleGetType not found
+		// decl for CGStyleGetTypeID not found
+		// decl for CGStyleRelease not found
+		// decl for CGStyleRetain not found
+		// decl for CGStyleShouldUseCorrectShadowOffsets not found
+		// decl for CGTextClippingCreatePath not found
+		// decl for CGTriangleMeshAddTriangle not found
+		// decl for CGTriangleMeshAddTriangleWithRelativePoint not found
+		// decl for CGTriangleMeshAddTriangleWithTrianglePoints not found
+		// decl for CGTriangleMeshCreate not found
+		// decl for CGTriangleMeshGetColorSpace not found
+		// decl for CGTriangleMeshGetCount not found
+		// decl for CGTriangleMeshGetNumberOfComponents not found
+		// decl for CGTriangleMeshGetTriangleAtIndex not found
+		// decl for CGTriangleMeshPrint not found
+		// decl for CGTriangleMeshRelease not found
+		// decl for CGTriangleMeshRetain not found
+		// decl for CGUpdateConvolveKernelBlue not found
+		// decl for CGUpdateConvolveKernelGreen not found
+		// decl for CGUpdateConvolveKernelMonochrome not found
+		// decl for CGUpdateConvolveKernelRed not found
+		// decl for kCGAutoBitDepthMax not found
+		// decl for kCGCFNumberPointerType not found
+		// decl for kCGCFNumberSizeTType not found
+		// decl for kCGColorBlack not found
+		// decl for kCGColorClear not found
+		// decl for kCGColorConversionBlackPointCompensation not found
+		// decl for kCGColorConversionTRCSize not found
+		// decl for kCGColorSpaceACESCGLinear not found
+		// decl for kCGColorSpaceAdobeRGB1998 not found
+		// decl for kCGColorSpaceDCIP3 not found
+		// decl for kCGColorSpaceDisplayP3 not found
+		// decl for kCGColorSpaceExtendedGray not found
+		// decl for kCGColorSpaceExtendedLinearDisplayP3 not found
+		// decl for kCGColorSpaceExtendedLinearGray not found
+		// decl for kCGColorSpaceExtendedLinearITUR_2020 not found
+		// decl for kCGColorSpaceExtendedLinearSRGB not found
+		// decl for kCGColorSpaceExtendedSRGB not found
+		// decl for kCGColorSpaceGenericCMYK not found
+		// decl for kCGColorSpaceGenericGray not found
+		// decl for kCGColorSpaceGenericGrayGamma2_2 not found
+		// decl for kCGColorSpaceGenericLab not found
+		// decl for kCGColorSpaceGenericRGB not found
+		// decl for kCGColorSpaceGenericRGBLinear not found
+		// decl for kCGColorSpaceGenericXYZ not found
+		// decl for kCGColorSpaceITUR_2020 not found
+		// decl for kCGColorSpaceITUR_2020_PQ_EOTF not found
+		// decl for kCGColorSpaceITUR_709 not found
+		// decl for kCGColorSpaceLinearGray not found
+		// decl for kCGColorSpaceLinearSRGB not found
+		// decl for kCGColorSpacePerceptualStandardRGB not found
+		// decl for kCGColorSpaceROMMRGB not found
+		// decl for kCGColorSpaceSRGB not found
+		// decl for kCGColorSpaceUncalibratedCMYK not found
+		// decl for kCGColorSpaceUncalibratedGray not found
+		// decl for kCGColorSpaceUncalibratedRGB not found
+		// decl for kCGColorTransformBlackPointCompensation not found
+		// decl for kCGColorTransformUseCalibratedColor not found
+		// decl for kCGColorWhite not found
+		// decl for kCGContextBackgroundColor not found
+		// decl for kCGContextBoundingBox not found
+		// decl for kCGContextClear not found
+		// decl for kCGContextColorSpace not found
+		// decl for kCGContextDeviceScale not found
+		// decl for kCGContextDisplayList not found
+		// decl for kCGContextErase not found
+		// decl for kCGContextFlush not found
+		// decl for kCGContextGroup not found
+		// decl for kCGContextLog not found
+		// decl for kCGContextResolution not found
+		// decl for kCGContextStyle not found
+		// decl for kCGContextStyleBegin not found
+		// decl for kCGContextStyleContent not found
+		// decl for kCGContextStyleContentBegin not found
+		// decl for kCGContextStyleContentEnd not found
+		// decl for kCGContextStyleEnd not found
+		// decl for kCGContextStyleType not found
+		// decl for kCGContextSynchronize not found
+		// decl for kCGContextWait not found
+		// decl for kCGFontNameKeyCopyright not found
+		// decl for kCGFontNameKeyDescription not found
+		// decl for kCGFontNameKeyDesigner not found
+		// decl for kCGFontNameKeyDesignerURL not found
+		// decl for kCGFontNameKeyFontFamily not found
+		// decl for kCGFontNameKeyFontSubfamily not found
+		// decl for kCGFontNameKeyFullName not found
+		// decl for kCGFontNameKeyLicense not found
+		// decl for kCGFontNameKeyLicenseURL not found
+		// decl for kCGFontNameKeyManufacturer not found
+		// decl for kCGFontNameKeyPostScriptName not found
+		// decl for kCGFontNameKeyPreferredFamily not found
+		// decl for kCGFontNameKeyPreferredSubfamily not found
+		// decl for kCGFontNameKeySampleText not found
+		// decl for kCGFontNameKeyTrademark not found
+		// decl for kCGFontNameKeyUniqueID not found
+		// decl for kCGFontNameKeyVendorURL not found
+		// decl for kCGFontNameKeyVersion not found
+		// decl for kCGFontVariationAxisDefaultValue not found
+		// decl for kCGFontVariationAxisMaxValue not found
+		// decl for kCGFontVariationAxisMinValue not found
+		// decl for kCGFontVariationAxisName not found
+		// decl for kCGImageBlockBaseAddressAlignmentRequest not found
+		// decl for kCGImageBlockBytesPerRowAlignmentRequest not found
+		// decl for kCGImageBlockColorSpaceRequest not found
+		// decl for kCGImageBlockFormatBGRx8 not found
+		// decl for kCGImageBlockFormatRequest not found
+		// decl for kCGImageBlockMarkAsReadOnlyRequest not found
+		// decl for kCGImageBlockSingletonRequest not found
+		// decl for kCGImageBlockTileRequest not found
+		// decl for kCGImageForceConversion not found
+		// decl for kCGImagePropertyIOSurface not found
+		// decl for kCGImageProviderAlphaIsNotPremultiplied not found
+		// decl for kCGImageProviderAlphaIsOne not found
+		// decl for kCGImageProviderAlphaIsPremultiplied not found
+		// decl for kCGImageProviderAlphaNoneSkipLastRequest not found
+		// decl for kCGImageProviderPremultipliedAlphaRequest not found
+		// decl for kCGImageProviderSupportsMultipleResolutions not found
+		// decl for kCGImageSurfaceDisplayMaskRequest not found
+		// decl for kCGImageWillDeallocate not found
+		// decl for kCGLineWidthHairline not found
+		// decl for kCGPDFContextAccessPermissions not found
+		// decl for kCGPDFContextAllowsCopying not found
+		// decl for kCGPDFContextAllowsPrinting not found
+		// decl for kCGPDFContextArtBox not found
+		// decl for kCGPDFContextAuthor not found
+		// decl for kCGPDFContextBleedBox not found
+		// decl for kCGPDFContextCreator not found
+		// decl for kCGPDFContextCropBox not found
+		// decl for kCGPDFContextEncryptionCipher not found
+		// decl for kCGPDFContextEncryptionCipherAESv2 not found
+		// decl for kCGPDFContextEncryptionCipherAESv3 not found
+		// decl for kCGPDFContextEncryptionCipherNone not found
+		// decl for kCGPDFContextEncryptionCipherRC4 not found
+		// decl for kCGPDFContextEncryptionKeyLength not found
+		// decl for kCGPDFContextEncryptionPermissions not found
+		// decl for kCGPDFContextKeywords not found
+		// decl for kCGPDFContextMediaBox not found
+		// decl for kCGPDFContextOutputIntent not found
+		// decl for kCGPDFContextOutputIntents not found
+		// decl for kCGPDFContextOwnerPassword not found
+		// decl for kCGPDFContextSecurityHandlerRevision not found
+		// decl for kCGPDFContextShouldCompress not found
+		// decl for kCGPDFContextSubject not found
+		// decl for kCGPDFContextTitle not found
+		// decl for kCGPDFContextTrimBox not found
+		// decl for kCGPDFContextUserPassword not found
+		// decl for kCGPDFDocumentAuthor not found
+		// decl for kCGPDFDocumentCreationDate not found
+		// decl for kCGPDFDocumentCreator not found
+		// decl for kCGPDFDocumentKeywords not found
+		// decl for kCGPDFDocumentModificationDate not found
+		// decl for kCGPDFDocumentProducer not found
+		// decl for kCGPDFDocumentSubject not found
+		// decl for kCGPDFDocumentTitle not found
+		// decl for kCGPDFFontDataKey not found
+		// decl for kCGPDFFontFormatKey not found
+		// decl for kCGPDFOutlineChildren not found
+		// decl for kCGPDFOutlineDestination not found
+		// decl for kCGPDFOutlineDestinationRect not found
+		// decl for kCGPDFOutlineTitle not found
+		// decl for kCGPDFTagPropertyActualText not found
+		// decl for kCGPDFTagPropertyAlternativeText not found
+		// decl for kCGPDFTagPropertyLanguageText not found
+		// decl for kCGPDFTagPropertyTitleText not found
+		// decl for kCGPDFXDestinationOutputProfile not found
+		// decl for kCGPDFXInfo not found
+		// decl for kCGPDFXOutputCondition not found
+		// decl for kCGPDFXOutputConditionIdentifier not found
+		// decl for kCGPDFXOutputIntentSubtype not found
+		// decl for kCGPDFXRegistryName not found
+		// decl for kCGPDFXTrapped not found
+		// decl for kCGPDFXVersion not found
+		// decl for kCGPatternWillDeallocate not found
+		// decl for path_iterator_add_curve_to_point not found
+		// decl for path_iterator_add_line_to_point not found
+		// decl for path_iterator_add_quad_curve_to_point not found
+		// decl for path_iterator_begin not found
+		// decl for path_iterator_call not found
+		// decl for path_iterator_close_subpath not found
+		// decl for path_iterator_create not found
+		// decl for path_iterator_dasher_create not found
+		// decl for path_iterator_end not found
+		// decl for path_iterator_move_to_point not found
+		// decl for path_iterator_release not found
+		// decl for path_iterator_stroker_create not found
+		// decl for shape_alloc_bounds not found
+		// decl for shape_alloc_data not found
+		// decl for shape_bounds not found
+		// decl for shape_combine not found
+		// decl for shape_contains_bounds not found
+		// decl for shape_contains_point not found
+		// decl for shape_copy not found
+		// decl for shape_count not found
+		// decl for shape_difference not found
+		// decl for shape_empty not found
+		// decl for shape_enclose_with_bounds not found
+		// decl for shape_enum_alloc not found
+		// decl for shape_enum_clip_alloc not found
+		// decl for shape_enum_clip_next not found
+		// decl for shape_enum_clip_scan not found
+		// decl for shape_enum_free not found
+		// decl for shape_enum_next not found
+		// decl for shape_forward_enum not found
+		// decl for shape_forward_enum_next not found
+		// decl for shape_free not found
+		// decl for shape_inset not found
+		// decl for shape_intersect not found
+		// decl for shape_intersect_with_bounds not found
+		// decl for shape_is_empty not found
+		// decl for shape_is_rectangular not found
+		// decl for shape_length not found
+		// decl for shape_offset not found
+		// decl for shape_qdrgn_alloc not found
+		// decl for shape_qdrgn_free not found
+		// decl for shape_union not found
+		// decl for shape_xor not found
+	};
 	"/System/iOSSupport/System/Library/Frameworks/UIKit.framework/UIKit" = {
 		"UIApplicationMain" = "i??@@";
 	};
