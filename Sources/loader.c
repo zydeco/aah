@@ -196,7 +196,7 @@ static void map_image(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
             }
             //printf("Mapping segment %s at 0x%llx (0x%llx -> 0x%llx) with perms %x\n", sc->segname, seg_addr, sc->vmsize, seg_size, perms);
             uc_err err = uc_mem_map_ptr(uc, seg_addr, seg_size, perms, (void*)seg_addr);
-            if (err != UC_ERR_OK) {
+            if (err != UC_ERR_OK && !mem_is_mapped(uc, seg_addr, seg_size, perms)) {
                 fprintf(stderr, "uc_mem_map_ptr: %u %s\n", err, uc_strerror(err));
                 abort();
             }

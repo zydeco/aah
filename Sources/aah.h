@@ -43,6 +43,7 @@ static inline int should_emulate_image(const struct mach_header_64 *mh) {
 }
 
 hidden bool mem_map_region_containing(uc_engine *uc, uint64_t address, uint32_t perms);
+hidden bool mem_is_mapped(uc_engine *uc, uint64_t address, size_t size, uint32_t perms);
 hidden void print_mem_info(void *ptr);
 
 #define WRAPPER_ARGS (void *rvalue, void **avalues)

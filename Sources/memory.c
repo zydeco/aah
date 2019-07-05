@@ -89,6 +89,22 @@ bool mem_map_region_containing(uc_engine *uc, uint64_t address, uint32_t perms) 
     return true;
 }
 
+hidden bool mem_is_mapped(uc_engine *uc, uint64_t address, size_t size, uint32_t perms) {
+    uc_mem_region *regions;
+    uint32_t num_regions;
+    uint64_t end = address + size - 1;
+    bool is_mapped = false;
+    uc_mem_regions(uc, &regions, &num_regions);
+    for(uint32_t i = 0; i < num_regions; i++) {
+        if (address >= regions[i].begin && address <= regions[i].end && end <= regions[i].end) {
+            is_mapped = (regions[i].perms & perms) ? true : false;
+            break;
+        }
+    }
+    free(regions);
+    return is_mapped;
+}
+
 hidden void print_mem_info(void *ptr) {
     vm_address_t address = (vm_address_t)ptr;
     vm_size_t size;
