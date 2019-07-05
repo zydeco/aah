@@ -10725,6 +10725,10 @@
 		// decl for shape_union not found
 		// decl for shape_xor not found
 	};
+	"/System/Library/Frameworks/Metal.framework/Versions/A/Metal" = {
+		"MTLCreateSystemDefaultDevice" = "*";
+		"MTLCopyAllDevices" = "*";
+	};
 	"/System/iOSSupport/System/Library/Frameworks/UIKit.framework/UIKit" = {
 		"UIApplicationMain" = "i??@@";
 	};
