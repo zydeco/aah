@@ -1846,10 +1846,10 @@
 		// decl for __match_D2A not found
 		// decl for __mb_cur_max not found
 		// decl for __mb_sb_limit not found
-		// decl for __memccpy_chk not found
-		// decl for __memcpy_chk not found
-		// decl for __memmove_chk not found
-		// decl for __memset_chk not found
+		"__memccpy_chk" = "^v^v^viL";
+		"__memcpy_chk" = "^v^v^vL";
+		"__memmove_chk" = "^v^v^vL";
+		"__memset_chk" = "^v^viL";
 		// decl for __mult_D2A not found
 		// decl for __multadd_D2A not found
 		// decl for __nrv_alloc_D2A not found
@@ -1893,27 +1893,27 @@
 		// decl for __sinit not found
 		// decl for __slbexpand not found
 		// decl for __smakebuf not found
-		"__snprintf_chk" = "$__snprintf_chk"; // i*LiL*...;
+		"__snprintf_chk" = "$snprintf"; // i*LiL*...;
 		// decl for __split_page not found
-		"__sprintf_chk" = "$__sprintf_chk"; // i*iL*...;
+		"__sprintf_chk" = "$sprintf"; // i*iL*...;
 		// decl for __sread not found
 		// decl for __srefill not found
 		"__srget" = "i^{__sFILE=}";
 		// decl for __sseek not found
-		// decl for __stack_chk_fail not found
+		"__stack_chk_fail" = "v";
 		// decl for __stack_chk_guard not found
 		// decl for __stderrp not found
 		// decl for __stdinp not found
 		// decl for __stdoutp not found
-		// decl for __stpcpy_chk not found
-		// decl for __stpncpy_chk not found
-		// decl for __strcat_chk not found
+		"__stpcpy_chk" = "***";
+		"__stpncpy_chk" = "***L";
+		"__strcat_chk" = "***";
 		// decl for __strcp_D2A not found
-		// decl for __strcpy_chk not found
-		// decl for __strlcat_chk not found
-		// decl for __strlcpy_chk not found
-		// decl for __strncat_chk not found
-		// decl for __strncpy_chk not found
+		"__strcpy_chk" = "***";
+		"__strlcat_chk" = "L**L";
+		"__strlcpy_chk" = "L**L";
+		"__strncat_chk" = "***L";
+		"__strncpy_chk" = "***L";
 		// decl for __strtodg not found
 		// decl for __strtopdd not found
 		// decl for __sum_D2A not found
@@ -1932,8 +1932,8 @@
 		// decl for __ulp_D2A not found
 		// decl for __ungetc not found
 		// decl for __ungetwc not found
-		"__vsnprintf_chk" = "$__vsnprintf_chk"; // i*LiL*...;
-		"__vsprintf_chk" = "$__vsprintf_chk"; // i*iL*...;
+		"__vsnprintf_chk" = "$vsnprintf"; // i*LiL*...;
+		"__vsprintf_chk" = "$vsprintf"; // i*iL*...;
 		// decl for __wcwidth not found
 		// decl for __wcwidth_l not found
 		// decl for _allocenvstate not found
