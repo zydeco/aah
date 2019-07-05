@@ -34,15 +34,25 @@ void mem_print_uc_regions(uc_engine *uc) {
 bool mem_remap_region(uc_engine *uc, uint64_t address, size_t size, uint32_t perms, void *ptr, uc_err *err_ptr) {
     uc_mem_region *regions;
     uint32_t num_regions;
+    uint64_t end = address + size - 1;
     uc_mem_regions(uc, &regions, &num_regions);
     // find overlapping region and unmap it
     // assume regions only expand from the end
     for(uint32_t i = 0; i < num_regions; i++) {
-        if (regions[i].begin == address) {
-            size_t region_size = regions[i].end - regions[i].begin;
+        if ((address >= regions[i].begin && address <= regions[i].end) ||
+            (end >= regions[i].begin && end <= regions[i].end)) {
+            size_t region_size = regions[i].end - regions[i].begin + 1;
             perms |= regions[i].perms;
-            uc_mem_unmap(uc, address, region_size);
-            uc_err err = uc_mem_map(uc, address, size, perms);
+            uc_err err = uc_mem_unmap(uc, regions[i].begin, region_size);
+            if (err != UC_ERR_OK) {
+                printf("uc_mem_unmap(%p, 0x%lx): %s\n", (void*)regions[i].begin, region_size, uc_strerror(err));
+                break;
+            }
+            err = uc_mem_map(uc, address, size, perms);
+            if (err != UC_ERR_OK) {
+                printf("uc_mem_map(%p, 0x%lx): %s\n", (void*)regions[i].begin, region_size, uc_strerror(err));
+                break;
+            }
             *err_ptr = err;
             free(regions);
             return true;
@@ -67,6 +77,7 @@ bool mem_map_region_containing(uc_engine *uc, uint64_t address, uint32_t perms) 
     uc_err uerr = uc_mem_map_ptr(uc, region_address, region_size, perms, (void*)region_address);
     if (uerr != UC_ERR_OK) {
         // TODO: check an already mapped region was embiggened and try again
+        printf("uc_mem_map_ptr(%p, 0x%lx, %s): %s, trying to remap\n", (void*)region_address, region_size, mem_perm_str[perms], uc_strerror(uerr));
         bool found = mem_remap_region(uc, region_address, region_size, perms, (void*)region_address, &uerr);
         if (uerr != UC_ERR_OK || !found) {
             printf("uc_mem_map_ptr(%p, 0x%lx, %s): %s\n", (void*)region_address, region_size, mem_perm_str[perms], uc_strerror(uerr));
