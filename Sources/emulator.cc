@@ -200,7 +200,7 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
             uint64_t last_lr;
             uc_reg_read(uc, UC_ARM64_REG_LR, &last_lr);
             maybe_print_regs(uc, 0);
-            printf("  calling native %s from %p\n", info.dli_sname, (void*)last_lr);
+            //printf("  calling native %s from %p\n", info.dli_sname, (void*)last_lr);
             try {
                 start_address = call_native(uc, pc);
             }
@@ -273,7 +273,9 @@ void print_regions(uc_engine *uc) {
 }
 
 static bool cb_invalid_rw(uc_engine *uc, uc_mem_type type, uint64_t address, int size, int64_t value, struct emulator_ctx *ctx) {
-    printf("cb_invalid_rw %s %p\n", uc_mem_type_to_string(type), (void*)address);
+    uint64_t pc;
+    uc_reg_read(uc, UC_ARM64_REG_PC, &pc);
+    printf("cb_invalid_rw %s %p from %p\n", uc_mem_type_to_string(type), (void*)address, (void*)pc);
     if (address < ctx->pagezero_size) {
         // in page zero
         return false;
