@@ -52,6 +52,7 @@
 		28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BEFA2280B2C1006A31F0 /* objc-cif.m */; };
 		28A8BEFD2280B3C4006A31F0 /* libobjc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */; };
 		28A8BF0B22876490006A31F0 /* c++abi.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BF0A22876490006A31F0 /* c++abi.c */; };
+		28FD84A322D0C7D30046E0A6 /* marzipan_glue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD84A222D0C7D30046E0A6 /* marzipan_glue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		28A8BEFA2280B2C1006A31F0 /* objc-cif.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "objc-cif.m"; sourceTree = "<group>"; };
 		28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
 		28A8BF0A22876490006A31F0 /* c++abi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "c++abi.c"; sourceTree = "<group>"; };
+		28FD84A222D0C7D30046E0A6 /* marzipan_glue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = marzipan_glue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				28054D4E2275007C00A6881E /* aah.c */,
 				28054D4D2275007C00A6881E /* aah.h */,
 				28054DAB2275083500A6881E /* shims */,
+				28FD84A222D0C7D30046E0A6 /* marzipan_glue.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
