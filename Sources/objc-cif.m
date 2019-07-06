@@ -23,7 +23,9 @@ static void cif_cache_add_methods(Class cls, bool only_emulated) {
         }
         const char *typeEncoding = method_getTypeEncoding(m);
         if (strlen(typeEncoding) > 0 && strchr(typeEncoding, '<') == 0 && strchr(typeEncoding, ',') == 0) {
-            cif_cache_add(imp, typeEncoding);
+            char *name = NULL;
+            asprintf(&name, "%c[%s %s]", class_isMetaClass(cls) ? '+' : '-', class_getName(cls), sel_getName(method_getName(m)));
+            cif_cache_add(imp, typeEncoding, name);
         }
     }
 }
@@ -84,8 +86,10 @@ hidden void load_objc_methods(struct method_list *methods, bool meta, const char
     }
     for(uint32_t i = 0; i < methods->count; i++) {
         struct method * method = &methods->methods[i];
-        printf("%c[%s %s] (%s) -> %p\n", meta ? '+' : '-', name, method->name, method->types, method->implementation);
-        cif_cache_add(method->implementation, method->types);
+        char *method_name = NULL;
+        asprintf(&method_name, "%c[%s %s]", meta ? '+' : '-', name, method->name);
+        printf("%s (%s) -> %p\n", method_name, method->types, method->implementation);
+        cif_cache_add(method->implementation, method->types, method_name);
     }
 }
 

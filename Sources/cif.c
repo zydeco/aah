@@ -7,6 +7,7 @@
 
 static CFMutableDictionaryRef cif_cache_native = NULL;
 static CFMutableDictionaryRef cif_cache_arm64 = NULL;
+static CFMutableDictionaryRef cif_cache_names = NULL;
 static os_unfair_lock cif_cache_lock = OS_UNFAIR_LOCK_INIT;
 static CFDictionaryRef cif_sig_table = NULL;
 
@@ -19,7 +20,8 @@ hidden void init_cif() {
     // initialize cif cache
     cif_cache_native = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, NULL, NULL);
     cif_cache_arm64 = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, NULL, NULL);
-    
+    cif_cache_names = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, NULL, NULL);
+
     // load method signature table
     Dl_info info;
     if (dladdr(&init_cif, &info) == 0) {
@@ -260,17 +262,17 @@ hidden ffi_cif_arm64 * cif_cache_get_arm64(void *address) {
     return cif;
 }
 
-hidden void cif_cache_add_new(void *address, const char *method_signature) {
+hidden void cif_cache_add_new(void *address, const char *method_signature, const char *name) {
     os_unfair_lock_lock(&cif_cache_lock);
     Boolean hasValue = CFDictionaryContainsKey(cif_cache_native, address);
     os_unfair_lock_unlock(&cif_cache_lock);
     if (hasValue) {
         return;
     }
-    cif_cache_add(address, method_signature);
+    cif_cache_add(address, method_signature, name);
 }
 
-hidden void cif_cache_add(void *address, const char *method_signature) {
+hidden void cif_cache_add(void *address, const char *method_signature, const char *name) {
     ffi_cif *cif_native = malloc(sizeof(ffi_cif));
     ffi_cif_arm64 *cif_arm64 = malloc(sizeof(ffi_cif_arm64));
     if (method_signature == NULL) {
@@ -289,6 +291,7 @@ hidden void cif_cache_add(void *address, const char *method_signature) {
         os_unfair_lock_lock(&cif_cache_lock);
         CFDictionarySetValue(cif_cache_native, address, CIF_MARKER_SHIM);
         CFDictionarySetValue(cif_cache_arm64, address, shim);
+        CFDictionarySetValue(cif_cache_names, address, name);
         os_unfair_lock_unlock(&cif_cache_lock);
     } else if (method_signature[0] == '<') {
         // wrapper
@@ -305,6 +308,7 @@ hidden void cif_cache_add(void *address, const char *method_signature) {
             os_unfair_lock_lock(&cif_cache_lock);
             CFDictionarySetValue(cif_cache_native, address, CIF_MARKER_WRAPPER);
             CFDictionarySetValue(cif_cache_arm64, address, wrapper);
+            CFDictionarySetValue(cif_cache_names, address, name);
             os_unfair_lock_unlock(&cif_cache_lock);
         } else {
             fprintf(stderr, "couldn't prep_cifs");
@@ -315,12 +319,21 @@ hidden void cif_cache_add(void *address, const char *method_signature) {
         if (!CFDictionaryContainsKey(cif_cache_native, address)) {
             CFDictionarySetValue(cif_cache_native, address, cif_native);
             CFDictionarySetValue(cif_cache_arm64, address, cif_arm64);
+            CFDictionarySetValue(cif_cache_names, address, name);
         }
         os_unfair_lock_unlock(&cif_cache_lock);
     } else {
         fprintf(stderr, "couldn't prep_cifs");
         abort();
     }
+}
+
+hidden const char * get_cif_name(void *address) {
+    const char *name = NULL;
+    os_unfair_lock_lock(&cif_cache_lock);
+    name = CFDictionaryGetValue(cif_cache_names, address);
+    os_unfair_lock_unlock(&cif_cache_lock);
+    return name;
 }
 
 hidden const char * lookup_method_signature(const char *lib_name, const char *sym_name) {
@@ -482,7 +495,7 @@ hidden uint64_t call_native(uc_engine *uc, uint64_t pc) {
         Dl_info info = {.dli_sname = NULL};
         if (dladdr((void*)pc, &info) && info.dli_saddr == (void*)pc) {
             printf("trying to add cif for %s (%s+0x%llx) at runtime\n", info.dli_sname, info.dli_fname, (uint64_t)info.dli_saddr - (uint64_t)info.dli_fbase);
-            cif_cache_add(info.dli_saddr, lookup_method_signature(info.dli_fname, info.dli_sname));
+            cif_cache_add(info.dli_saddr, lookup_method_signature(info.dli_fname, info.dli_sname), info.dli_sname);
         }
         os_unfair_lock_lock(&cif_cache_lock);
     }

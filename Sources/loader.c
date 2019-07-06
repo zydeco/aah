@@ -48,7 +48,7 @@ static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmad
                     void **pointers = (void **)((uintptr_t)vmaddr_slide + sect->addr);
                     for(int i = 0; i < sect->size / 8; i++) {
                         // pointers are already slid by the loader
-                        cif_cache_add(pointers[i], "v");
+                        cif_cache_add(pointers[i], "v", type == S_MOD_INIT_FUNC_POINTERS ? "(mod_init_func)" : "(mod_term_func)");
                     }
                 }
             }
@@ -130,7 +130,7 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
             lc_main = (const struct entry_point_command*)sc;
             void *pmain = (void*)(vmaddr_slide + lc_text->vmaddr + lc_main->entryoff);
             printf("main at %p\n", pmain);
-            cif_cache_add(pmain, "ii???");
+            cif_cache_add(pmain, "ii???", "main");
         }
         lc_ptr += sc->cmdsize;
     }
@@ -170,7 +170,7 @@ static void load_lazy_symbols(const struct mach_header_64 *mh, intptr_t vmaddr_s
             printf("  symbol %s (%zu: %s (%s)) -> %p\n", symbol_name, lib_index, lib_name, info.dli_fname, symbol);
             
             // fill cif cache
-            cif_cache_add(symbol, lookup_method_signature(lib_name, symbol_name+1));
+            cif_cache_add(symbol, lookup_method_signature(lib_name, symbol_name+1), symbol_name);
         }
     } else {
         printf("not loading lazy symbols\n");

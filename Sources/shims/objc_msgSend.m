@@ -67,8 +67,7 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
                 } else {
                     printf("caching shim for %s\n", methodName);
                 }
-                free(methodName);
-                cif_cache_add(impl, methodSignature);
+                cif_cache_add(impl, methodSignature, methodName);
                 cif_native = cif_cache_get_native(impl);
                 cif_arm64 = cif_cache_get_arm64(impl);
             }

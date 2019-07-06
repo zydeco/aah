@@ -22,17 +22,17 @@ struct Block_layout {
 WRAP_EMULATED_TO_NATIVE(dispatch_block_1) {
     struct Block_layout *block = *(void**)avalues[1];
     printf("caching cif for block %p\n", block->invoke);
-    cif_cache_add(block->invoke, "v");
+    cif_cache_add(block->invoke, "v", "(block)");
 }
 
 WRAP_EMULATED_TO_NATIVE(dispatch_once_f) {
     void *fptr = *(void**)avalues[1];
     printf("caching cif for block %p\n", fptr);
-    cif_cache_add(fptr, "v");
+    cif_cache_add(fptr, "v", "(block)");
 }
 
 WRAP_EMULATED_TO_NATIVE(dispatch_async_f) {
     void *fptr = *(void**)avalues[2];
     printf("caching cif for block %p\n", fptr);
-    cif_cache_add(fptr, "v");
+    cif_cache_add(fptr, "v", "(block)");
 }

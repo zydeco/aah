@@ -33,22 +33,6 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
         ffi_cif *cif = cif_cache_get_native((void*)pc);
         // TODO: shim? objc method?
         
-        if (cif == NULL && info.dli_sname && info.dli_sname[1] == '[') {
-            // calling unmarked obj-c method
-            if (strcmp(strchr(info.dli_sname, ']') - 5, " load]") == 0) {
-                // calling load method
-                cif_cache_add((void*)pc, "v");
-            } else {
-                // load all methods for class
-                char *buf = strdup(info.dli_sname);
-                strchr(buf, ' ')[0] = '\0';
-                const char *className = &buf[2];
-                cif_cache_add_class(className);
-                free(buf);
-            }
-            cif = cif_cache_get_native((void*)pc);
-        }
-        
         if (cif == CIF_MARKER_WRAPPER) {
             struct call_wrapper *wrapper = (struct call_wrapper*)cif_cache_get_arm64((void*)pc);
             cif = wrapper->cif_native;

@@ -15,7 +15,7 @@ SHIMDEF(__cxa_atexit) {
     uc_reg_read(uc, UC_ARM64_REG_X0, &f);
     uc_reg_read(uc, UC_ARM64_REG_X1, &p);
     uc_reg_read(uc, UC_ARM64_REG_X2, &d);
-    cif_cache_add(f, "v^v");
+    cif_cache_add(f, "v^v", "(registered with __cxa_atexit)");
     __cxa_atexit(f, p, d);
     return SHIM_RETURN;
 }
