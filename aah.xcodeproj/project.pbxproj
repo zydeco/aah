@@ -52,8 +52,19 @@
 		28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BEFA2280B2C1006A31F0 /* objc-cif.m */; };
 		28A8BEFD2280B3C4006A31F0 /* libobjc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */; };
 		28A8BF0B22876490006A31F0 /* c++abi.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BF0A22876490006A31F0 /* c++abi.c */; };
+		28FD849B22D0B99C0046E0A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD849A22D0B99C0046E0A6 /* main.m */; };
 		28FD84A322D0C7D30046E0A6 /* marzipan_glue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD84A222D0C7D30046E0A6 /* marzipan_glue.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28FD84A022D0C11E0046E0A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28054D3D2275004B00A6881E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28FD848822D0B99A0046E0A6;
+			remoteInfo = TestApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		28054D452275004B00A6881E /* libaah.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libaah.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +114,9 @@
 		28A8BEFA2280B2C1006A31F0 /* objc-cif.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "objc-cif.m"; sourceTree = "<group>"; };
 		28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
 		28A8BF0A22876490006A31F0 /* c++abi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "c++abi.c"; sourceTree = "<group>"; };
+		28FD848922D0B99A0046E0A6 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28FD849922D0B99C0046E0A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28FD849A22D0B99C0046E0A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		28FD84A222D0C7D30046E0A6 /* marzipan_glue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = marzipan_glue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +132,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		28FD848622D0B99A0046E0A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -127,6 +148,7 @@
 				28054D5D227500CA00A6881E /* SymbolTable.plist */,
 				28054D5E227500DA00A6881E /* include */,
 				28054D4C2275007100A6881E /* Sources */,
+				28FD848A22D0B99B0046E0A6 /* TestApp */,
 				28054D9C227501E200A6881E /* Frameworks */,
 				28054D462275004B00A6881E /* Products */,
 			);
@@ -136,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				28054D452275004B00A6881E /* libaah.dylib */,
+				28FD848922D0B99A0046E0A6 /* TestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,6 +254,15 @@
 			path = shims;
 			sourceTree = "<group>";
 		};
+		28FD848A22D0B99B0046E0A6 /* TestApp */ = {
+			isa = PBXGroup;
+			children = (
+				28FD849922D0B99C0046E0A6 /* Info.plist */,
+				28FD849A22D0B99C0046E0A6 /* main.m */,
+			);
+			path = TestApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -286,11 +318,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				28FD84A122D0C11E0046E0A6 /* PBXTargetDependency */,
 			);
 			name = aah;
 			productName = aah;
 			productReference = 28054D452275004B00A6881E /* libaah.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
+		};
+		28FD848822D0B99A0046E0A6 /* TestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28FD849C22D0B99C0046E0A6 /* Build configuration list for PBXNativeTarget "TestApp" */;
+			buildPhases = (
+				28FD848522D0B99A0046E0A6 /* Sources */,
+				28FD848622D0B99A0046E0A6 /* Frameworks */,
+				28FD848722D0B99A0046E0A6 /* Resources */,
+				28FD849F22D0B9E70046E0A6 /* Make emulatable */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestApp;
+			productName = TestApp;
+			productReference = 28FD848922D0B99A0046E0A6 /* TestApp.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -304,6 +355,9 @@
 					28054D442275004B00A6881E = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
+					28FD848822D0B99A0046E0A6 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 28054D402275004B00A6881E /* Build configuration list for PBXProject "aah" */;
@@ -312,6 +366,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 28054D3C2275004B00A6881E;
 			productRefGroup = 28054D462275004B00A6881E /* Products */;
@@ -319,9 +374,20 @@
 			projectRoot = "";
 			targets = (
 				28054D442275004B00A6881E /* aah */,
+				28FD848822D0B99A0046E0A6 /* TestApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28FD848722D0B99A0046E0A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		28054DA12275031B00A6881E /* Binarize Symbol Table plist */ = {
@@ -364,6 +430,26 @@
 			shellPath = /bin/sh;
 			shellScript = "exit\n\ncp \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\ncodesign --remove-signature \"$SCRIPT_OUTPUT_FILE_0\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# change platform to macOS\nggrep -obUaP \"\\x32\\x00\\x00\\x00\\x20\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x00\" \"$SCRIPT_OUTPUT_FILE_0\" | head -n 1 | cut -d: -f1 | xargs printf \"%08x: 32000000 20000000 06000000 000E0A00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\n\n";
 		};
+		28FD849F22D0B9E70046E0A6 /* Make emulatable */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
+			);
+			name = "Make emulatable";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH).x86-64",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\ncodesign --remove-signature \"$SCRIPT_OUTPUT_FILE_0\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# change platform to macOS\nggrep -obUaP \"\\x32\\x00\\x00\\x00\\x20\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x00\" \"$SCRIPT_OUTPUT_FILE_0\" | head -n 1 | cut -d: -f1 | xargs printf \"%08x: 32000000 20000000 06000000 000E0A00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -372,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28054DB3227A0BC200A6881E /* objc_msgSend.m in Sources */,
+				288F826322CD2BDF00BEF175 /* libdispatch.c in Sources */,
 				28054D5B2275008F00A6881E /* cif.c in Sources */,
 				28054D582275008F00A6881E /* emulator.cc in Sources */,
 				28054DAF2275083500A6881E /* printf.c in Sources */,
@@ -380,12 +467,29 @@
 				28A8BF0B22876490006A31F0 /* c++abi.c in Sources */,
 				28054D5A2275008F00A6881E /* memory.c in Sources */,
 				28054DB12275083500A6881E /* nslog.m in Sources */,
+				28FD84A322D0C7D30046E0A6 /* marzipan_glue.m in Sources */,
 				28054D592275008F00A6881E /* ffi_arm64.c in Sources */,
 				28054D502275007C00A6881E /* aah.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		28FD848522D0B99A0046E0A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28FD849B22D0B99C0046E0A6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28FD84A122D0C11E0046E0A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28FD848822D0B99A0046E0A6 /* TestApp */;
+			targetProxy = 28FD84A022D0C11E0046E0A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		28054D472275004B00A6881E /* Debug */ = {
@@ -557,6 +661,54 @@
 			};
 			name = Release;
 		};
+		28FD849D22D0B99C0046E0A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJXNDZ5TNU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = net.namedfork.TestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = Debug;
+		};
+		28FD849E22D0B99C0046E0A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJXNDZ5TNU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.namedfork.TestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = arm64;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -574,6 +726,15 @@
 			buildConfigurations = (
 				28054D4A2275004B00A6881E /* Debug */,
 				28054D4B2275004B00A6881E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28FD849C22D0B99C0046E0A6 /* Build configuration list for PBXNativeTarget "TestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28FD849D22D0B99C0046E0A6 /* Debug */,
+				28FD849E22D0B99C0046E0A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
