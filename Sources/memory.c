@@ -22,7 +22,7 @@ void mem_print_uc_regions(uc_engine *uc) {
     qsort_b(regions, num_regions, sizeof(uc_mem_region), ^int(const void * rpa, const void * rpb) {
         const uc_mem_region *ra = (const uc_mem_region*)rpa;
         const uc_mem_region *rb = (const uc_mem_region*)rpb;
-        return (int)ra->begin - (int)rb->end;
+        return (int64_t)ra->begin - (int64_t)rb->end;
     });
     printf("%d regions:\n", num_regions);
     for(uint32_t i = 0; i < num_regions; i++) {
@@ -76,7 +76,6 @@ bool mem_map_region_containing(uc_engine *uc, uint64_t address, uint32_t perms) 
     
     uc_err uerr = uc_mem_map_ptr(uc, region_address, region_size, perms, (void*)region_address);
     if (uerr != UC_ERR_OK) {
-        // TODO: check an already mapped region was embiggened and try again
         printf("uc_mem_map_ptr(%p, 0x%lx, %s): %s, trying to remap\n", (void*)region_address, region_size, mem_perm_str[perms], uc_strerror(uerr));
         bool found = mem_remap_region(uc, region_address, region_size, perms, (void*)region_address, &uerr);
         if (uerr != UC_ERR_OK || !found) {

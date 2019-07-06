@@ -188,17 +188,14 @@ static void map_image(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
         const struct segment_command_64 *sc = lc_ptr;
         if (sc->cmd == LC_SEGMENT_64 && (strncmp(sc->segname, SEG_TEXT, sizeof(sc->segname)) == 0 || strncmp(sc->segname, SEG_DATA, sizeof(sc->segname)) == 0)) {
             uint64_t seg_addr = sc->vmaddr + (uint64_t)vmaddr_slide;
-            uint64_t seg_size = (sc->vmsize + 0xfff) & 0xfffffffffffff000ULL;
+            uint64_t seg_size = sc->vmsize;
             uint32_t perms = sc->maxprot & ~VM_PROT_EXECUTE;
             if ((sc->maxprot & VM_PROT_EXECUTE) && should_emulate_image(mh)) {
                 // luckily, VM_PROT_* == UC_PROT_*
                 perms |= UC_PROT_EXEC;
             }
-            //printf("Mapping segment %s at 0x%llx (0x%llx -> 0x%llx) with perms %x\n", sc->segname, seg_addr, sc->vmsize, seg_size, perms);
-            uc_err err = uc_mem_map_ptr(uc, seg_addr, seg_size, perms, (void*)seg_addr);
-            if (err != UC_ERR_OK && !mem_is_mapped(uc, seg_addr, seg_size, perms)) {
-                fprintf(stderr, "uc_mem_map_ptr: %u %s\n", err, uc_strerror(err));
-                abort();
+            if (!mem_is_mapped(uc, seg_addr, seg_size, perms)) {
+                mem_map_region_containing(uc, seg_addr, perms);
             }
         }
         lc_ptr += sc->cmdsize;
