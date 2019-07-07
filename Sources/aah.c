@@ -42,7 +42,7 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
         
         if (cif) {
             // call arm64 entry point
-            printf("calling emulated %s at %p\n", info.dli_sname ?: "(unnamed function)", (void*)pc);
+            printf("calling emulated %s at %p\n", info.dli_sname ?: cif_get_name((void*)pc), (void*)pc);
             struct emulator_ctx *ctx = get_emulator_ctx();
             if (ffi_prep_closure_loc(ctx->closure, cif, call_emulated_function, (void*)pc, ctx->closure_code) != FFI_OK) {
                 fprintf(stderr, "ffi_prep_closure_loc failed\n");

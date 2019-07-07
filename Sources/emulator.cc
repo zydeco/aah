@@ -201,7 +201,7 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
             uc_reg_read(uc, UC_ARM64_REG_LR, &last_lr);
             maybe_print_regs(uc, 0);
             if (pc != (uint64_t)info.dli_saddr) {
-                info.dli_sname = get_cif_name((void*)pc);
+                info.dli_sname = cif_get_name((void*)pc);
             }
             printf("  calling native %s from %p\n", info.dli_sname, (void*)last_lr);
             try {

@@ -40,7 +40,7 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
     if (dladdr(impl, &info)) {
         if (should_emulate_image(info.dli_fbase)) {
             // calling emulated method
-            printf("calling emulated method %s at %p\n", info.dli_sname, impl);
+            printf("calling emulated method %s at %p\n", info.dli_sname ?: cif_get_name(impl), impl);
             if (is_super) {
                 uc_reg_write(uc, UC_ARM64_REG_X0, &receiver);
             }

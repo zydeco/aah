@@ -328,7 +328,7 @@ hidden void cif_cache_add(void *address, const char *method_signature, const cha
     }
 }
 
-hidden const char * get_cif_name(void *address) {
+hidden const char * cif_get_name(void *address) {
     const char *name = NULL;
     os_unfair_lock_lock(&cif_cache_lock);
     name = CFDictionaryGetValue(cif_cache_names, address);
@@ -514,7 +514,7 @@ hidden uint64_t call_native(uc_engine *uc, uint64_t pc) {
         // call shim
         shim_ptr shim = (shim_ptr)ctx.cif_arm64;
         ctx.cif_arm64 = NULL;
-        printf("calling shim at %p\n", shim);
+        printf("calling shim for %s at %p\n", cif_get_name((void*)pc), shim);
         return shim(uc, &ctx);
     } else if (ctx.cif_native == CIF_MARKER_WRAPPER && ctx.cif_arm64 != NULL) {
         // call with wrapper
