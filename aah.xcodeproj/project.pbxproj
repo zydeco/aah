@@ -448,7 +448,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\ncodesign --remove-signature \"$SCRIPT_OUTPUT_FILE_0\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# change platform to macOS\nggrep -obUaP \"\\x32\\x00\\x00\\x00\\x20\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x00\" \"$SCRIPT_OUTPUT_FILE_0\" | head -n 1 | cut -d: -f1 | xargs printf \"%08x: 32000000 20000000 06000000 000E0A00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\n";
+			shellScript = "cp \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\ncodesign --remove-signature \"$SCRIPT_OUTPUT_FILE_0\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# change platform to macOS\n#ggrep -obUaP \"\\x32\\x00\\x00\\x00\\x20\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x00\" \"$SCRIPT_OUTPUT_FILE_0\" | head -n 1 | cut -d: -f1 | xargs printf \"%08x: 32000000 20000000 06000000 000E0A00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\n\necho \"0530: 32000000 20000000 06000000 00000D00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
