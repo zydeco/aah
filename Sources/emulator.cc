@@ -246,35 +246,6 @@ static inline const char * uc_mem_type_to_string(uc_mem_type type) {
     }
 }
 
-void print_regions(uc_engine *uc) {
-    uc_mem_region *regions;
-    uint32_t count;
-    uc_mem_regions(uc, &regions, &count);
-    printf("regions:\n");
-    static const char* prots[] = {
-        "none",
-        "r",
-        "w",
-        "rw",
-        "x",
-        "rx",
-        "wx",
-        "rwx"
-    };
-    for (uint32_t i=0; i < count; i++) {
-        const char *tag = "";
-        if (regions[i].perms & UC_PROT_READ) {
-            uint32_t header = *(uint32_t*)regions[i].begin;
-            Dl_info info;
-            if (header == MH_MAGIC_64 && dladdr((void*)regions[i].begin, &info)) {
-                tag = strrchr(info.dli_fname, '/') + 1;
-            }
-        }
-        printf("  0x%016llx -> 0x%016llx %s %s\n", regions[i].begin, regions[i].end, prots[regions[i].perms], tag);
-    }
-    uc_free(regions);
-}
-
 static bool cb_invalid_rw(uc_engine *uc, uc_mem_type type, uint64_t address, int size, int64_t value, struct emulator_ctx *ctx) {
     uint64_t pc;
     uc_reg_read(uc, UC_ARM64_REG_PC, &pc);
