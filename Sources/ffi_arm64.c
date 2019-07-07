@@ -714,8 +714,10 @@ hidden void call_emulated_function (ffi_cif *cif, void *ret, void **args, void *
         abort();
     } else if (CIF_IS_CIF(cif_native)) {
         cif_arm64 = cif_cache_get_arm64(address);
+    } else {
+        fprintf(stderr, "call_emulated_function(%p) with no valid cif (%p)\n", address, cif_native);
+        abort();
     }
-    // FIXME: create cif for variadic call
     
     // allocate stack
     size_t stack_bytes = cif_arm64->bytes;
