@@ -273,6 +273,10 @@ hidden void cif_cache_add_new(void *address, const char *method_signature, const
 }
 
 hidden void cif_cache_add(void *address, const char *method_signature, const char *name) {
+    if (cif_cache_native == NULL) {
+        // too early
+        return;
+    }
     ffi_cif *cif_native = malloc(sizeof(ffi_cif));
     ffi_cif_arm64 *cif_arm64 = malloc(sizeof(ffi_cif_arm64));
     if (method_signature == NULL) {
