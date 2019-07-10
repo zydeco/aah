@@ -14,7 +14,7 @@ int EncodeStringFormatArgs(char *fmt, char *type_encoding, int is_nsstring, int 
         } else if (isdigit(arg[1]) && arg[2] == '$') {
             // positional argument
             pos = arg[1] - '1';
-            if (nargs < pos) nargs = pos;
+            if (nargs <= pos) nargs = pos + 1;
             arg += 2;
         } else if (arg[1] != '%') {
             // normal argument
