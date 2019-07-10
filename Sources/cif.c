@@ -128,6 +128,11 @@ next_type_1:
         case '?':
             P("%sffi_type_pointer\n", prefix);
             type = &ffi_type_pointer;
+            if (*ms == '"') {
+                // class name for objects in block signatures
+                // skip to next quote
+                ms = strchr(ms+1, '"') + 1;
+            }
             break;
         case '[': { // array
             // doesn't appear in method signatures, but could be in structures
