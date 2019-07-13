@@ -6485,7 +6485,7 @@
 		// decl for __libplatform_init not found
 		// decl for __os_once_reset not found
 		// decl for __platform_sigaction not found
-		// decl for _longjmp not found
+		"_longjmp" = "$longjmp";
 		// decl for _os_alloc_once not found
 		// decl for _os_lock_type_handoff not found
 		// decl for _os_lock_type_nospin not found
@@ -6518,7 +6518,7 @@
 		// decl for _platform_strncpy not found
 		// decl for _platform_strnlen not found
 		// decl for _platform_strstr not found
-		// decl for _setjmp not found
+		"_setjmp" = "$setjmp";
 		// decl for _simple_asl_log not found
 		// decl for _simple_asl_log_prog not found
 		// decl for _simple_asl_msg_new not found
@@ -6549,7 +6549,7 @@
 		"flsl" = "il";
 		"flsll" = "iq";
 		// decl for getcontext not found
-		// decl for longjmp not found
+		"longjmp" = "$longjmp";
 		// decl for makecontext not found
 		// decl for os_lock_lock not found
 		// decl for os_lock_trylock not found
@@ -6587,7 +6587,7 @@
 		// decl for platform_thread_set_state not found
 		// decl for platform_thread_suspend not found
 		// decl for setcontext not found
-		// decl for setjmp not found
+		"setjmp" = "$setjmp";
 		// decl for siglongjmp not found
 		// decl for sigsetjmp not found
 		// decl for spin_lock not found
