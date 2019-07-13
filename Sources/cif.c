@@ -46,16 +46,12 @@ hidden void init_cif() {
     CFRelease(sig_data);
 }
 
-static const char * find_struct_end(const char *ms) {
-    // find next unbalanced '}'
-    const char *end_candidate = strchr(ms, '}');
-    const char *next_struct = strchr(ms, '{');
-    while (next_struct && next_struct < end_candidate) {
-        ms = end_candidate + 1;
-        end_candidate = strchr(ms, '}');
-        next_struct = strchr(ms, '{');
+static const char * skip_struct(const char *ms, char opening, char closing) {
+    for(int level = 1; level; ms++) {
+        if (*ms == closing) level--;
+        else if (*ms == opening) level++;
     }
-    return end_candidate;
+    return ms;
 }
 
 static ffi_type *next_type(char const ** method_signature, const char *prefix, bool skip_members) {
@@ -156,12 +152,12 @@ next_type_1:
             } break;
         case '{': { // struct
             P("struct\n");
-            const char *struct_end = find_struct_end(ms);
+            const char *struct_end = skip_struct(ms, '{', '}');
             char *struct_equals = strchr(ms, '=');
             if (struct_equals != NULL && struct_equals < struct_end) {
                 ms = strchr(ms, '=') + 1;
             } else {
-                ms = struct_end;
+                ms = struct_end - 1;
             }
             type = calloc(1, sizeof(ffi_type));
             type->size = type->alignment = 0;
@@ -202,6 +198,11 @@ next_type_1:
             }
             fprintf(stderr, "bitfields not supported in method signature: %s", ms-1);
             abort(); }
+        case '<':
+            P("block pointer");
+            type = &ffi_type_pointer;
+            ms = skip_struct(ms, '<', '>');
+            break;
         case 'r': // const
         case 'n': // in
         case 'N': // inout
@@ -209,6 +210,7 @@ next_type_1:
         case 'O': // bycopy
         case 'R': // byref
         case 'V': // oneway
+        case 'A': // atomic
             // skip qualifiers
             goto next_type_1;
         default:
