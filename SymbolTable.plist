@@ -4506,10 +4506,10 @@
 		// decl for normal_boost_assertion_token not found
 		"ntp_adjtime" = "i^{timex=}";
 		"ntp_gettime" = "i^{ntptimeval=}";
-		"open" = "$open"; // i*i...;
+		"open" = "i*i"; // i*i...; FIXME: extra args
 		// decl for open$NOCANCEL not found
-		"open_dprotected_np" = "$open_dprotected_np"; // i*iii...;
-		"openat" = "$openat"; // ii*i...;
+		"open_dprotected_np" = "i*iii"; // i*iii...; FIXME: extra args
+		"openat" = "ii*i"; // ii*i...; FIXME: extra args
 		// decl for openat$NOCANCEL not found
 		// decl for openbyid_np not found
 		// decl for os_buflet_get_data_length not found
