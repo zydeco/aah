@@ -89,7 +89,12 @@ hidden void load_objc_methods(struct method_list *methods, bool meta, const char
         char *method_name = NULL;
         asprintf(&method_name, "%c[%s %s]", meta ? '+' : '-', name, method->name);
         printf("%s (%s) -> %p\n", method_name, method->types, method->implementation);
-        cif_cache_add(method->implementation, method->types, method_name);
+        const char *shimMethodSignature = lookup_method_signature(CIF_LIB_OBJC_SHIMS, method_name);
+        if (shimMethodSignature) {
+            cif_cache_add(method->implementation, shimMethodSignature, method_name);
+        } else {
+            cif_cache_add(method->implementation, method->types, method_name);
+        }
     }
 }
 
