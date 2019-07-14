@@ -29,6 +29,7 @@ struct emulator_ctx {
     void *closure;
     void *closure_code;
     uc_hook instr_hook;
+    void(*maybe_print_regs)(uc_engine*,int);
 };
 
 hidden void init_emulator_ctx_key(void);

@@ -13,7 +13,6 @@ static pthread_key_t emulator_ctx_key;
 static pthread_once_t key_once = PTHREAD_ONCE_INIT;
 
 static void dont_print_regs(uc_engine *uc,int) {};
-static void(*maybe_print_regs)(uc_engine*,int) = dont_print_regs;
 
 static void print_regs(uc_engine *uc, int print_all) {
     uint64_t x[32], pc, sp, lr, fp;
@@ -113,7 +112,9 @@ hidden struct emulator_ctx* init_emulator_ctx() {
     
     if (getenv("PRINT_REGS") && strtol(getenv("PRINT_REGS"), NULL, 10)) {
         // print some registers sometimes
-        maybe_print_regs = print_regs;
+        ctx->maybe_print_regs = print_regs;
+    } else {
+        ctx->maybe_print_regs = dont_print_regs;
     }
     
     // map memory for stack
@@ -152,22 +153,30 @@ hidden struct emulator_ctx* get_emulator_ctx() {
     return ctx;
 }
 
-hidden void print_disasm(struct emulator_ctx *ctx, int print) {
-    if (print && ctx->instr_hook == 0) {
-        // print emulated instructions as they are fetched
-        cs_err cerr = cs_open(CS_ARCH_ARM64, CS_MODE_LITTLE_ENDIAN, &(ctx->capstone));
-        if (cerr != CS_ERR_OK) {
-            fprintf(stderr, "cs_open: %s\n", cs_strerror(cerr));
-            abort();
-        }
-        uc_err err = uc_hook_add(ctx->uc, &ctx->instr_hook, UC_HOOK_CODE, (void*)cb_print_disasm, ctx, 8, 0);
-        if (err != UC_ERR_OK) {
-            fprintf(stderr, "uc_hook_add: %u %s\n", err, uc_strerror(err));
-            abort();
-        }
-    } else if (print == 0 && ctx->instr_hook) {
+hidden void print_disasm(struct emulator_ctx *ctx, int level) {
+    if (level == 0 && ctx->instr_hook) {
         uc_hook_del(ctx->uc, ctx->instr_hook);
         ctx->instr_hook = 0;
+        ctx->maybe_print_regs = dont_print_regs;
+    } else if (level > 0) {
+        if (ctx->instr_hook == 0) {
+            // print emulated instructions as they are fetched
+            cs_err cerr = cs_open(CS_ARCH_ARM64, CS_MODE_LITTLE_ENDIAN, &(ctx->capstone));
+            if (cerr != CS_ERR_OK) {
+                fprintf(stderr, "cs_open: %s\n", cs_strerror(cerr));
+                abort();
+            }
+            uc_err err = uc_hook_add(ctx->uc, &ctx->instr_hook, UC_HOOK_CODE, (void*)cb_print_disasm, ctx, 8, 0);
+            if (err != UC_ERR_OK) {
+                fprintf(stderr, "uc_hook_add: %u %s\n", err, uc_strerror(err));
+                abort();
+            }
+        }
+        if (level == 1) {
+            ctx->maybe_print_regs = dont_print_regs;
+        } else if (level == 2) {
+            ctx->maybe_print_regs = print_regs;
+        }
     }
 }
 
@@ -183,7 +192,7 @@ static void destroy_emulator_ctx(void *ptr) {
 
 void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
     printf("running emulator at %p\n", (void*)start_address);
-    maybe_print_regs(ctx->uc, 1);
+    ctx->maybe_print_regs(ctx->uc, 1);
     
     uc_engine *uc = ctx->uc;
     uint64_t pc;
@@ -199,7 +208,7 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
         } else if (err == UC_ERR_FETCH_PROT && dladdr((void*)pc, &info) && !should_emulate_image((struct mach_header_64 *)info.dli_fbase)) {
             uint64_t last_lr;
             uc_reg_read(uc, UC_ARM64_REG_LR, &last_lr);
-            maybe_print_regs(uc, 0);
+            ctx->maybe_print_regs(uc, 0);
             if (pc != (uint64_t)info.dli_saddr) {
                 info.dli_sname = cif_get_name((void*)pc);
             }
@@ -292,7 +301,7 @@ static bool cb_print_disasm(uc_engine *uc, uint64_t address, uint32_t size, stru
     uint8_t cs_code[4];
     const uint8_t *code_ptr = cs_code;
     uint64_t cs_addr = address;
-    maybe_print_regs(uc, 1);
+    ctx->maybe_print_regs(uc, 1);
     uc_err err = uc_mem_read(uc, cs_addr, cs_code, cs_size);
     if (err != UC_ERR_OK) {
         fprintf(stderr, "Can't even read memory to disassemble at %p: %s\n", (void*)address, uc_strerror(err));
