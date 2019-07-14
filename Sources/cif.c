@@ -177,17 +177,17 @@ next_type_1:
         } break;
         case '(': {
             P("union\n");
-            // FIXME: support union properly
             // skip to after equals
             ms = strchr(ms, '=') + 1;
-            if (!skip_members) {
-                fprintf(stderr, "unions not supported in method signature: %s", ms-1);
-                abort();
-            }
+            ffi_type *largest_type = NULL;
             while(*ms != ')') {
                 // FIXME: structs will be leaked
-                next_type(&ms, "struct member: ", skip_members);
+                type = next_type(&ms, "struct member: ", skip_members);
+                if (largest_type == NULL || largest_type->size < type->size) {
+                    largest_type = type;
+                }
             }
+            type = largest_type;
             ms++;
         } break;
         case 'b': { // TODO: bitfield
