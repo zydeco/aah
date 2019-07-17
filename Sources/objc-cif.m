@@ -98,23 +98,27 @@ hidden void load_objc_methods(struct method_list *methods, bool meta, const char
     }
 }
 
-hidden void load_objc_entrypoints(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
-    // FIXME: must vmaddr_slide really be applied?
-    
-    // load classes
-    const struct section_64 *classlist = getsectbynamefromheader_64(mh, "__DATA", "__objc_classlist");
+hidden void load_objc_classlist(const struct section_64 *classlist, intptr_t vmaddr_slide) {
     if (classlist) {
         uint64_t numClasses = classlist->size / 8;
+        printf("loading %d classes\n", (int)numClasses);
         struct classref **classes = (struct classref**)(classlist->addr + vmaddr_slide);
         for(uint64_t i = 0; i < numClasses; i++) {
             struct classref *class = classes[i];
             bool is_metaclass = class->data->flags & RO_META;
+            printf("loading class %p(%p): %s\n", class, class->data, class->data->name);
             load_objc_methods(class->data->baseMethodList, is_metaclass, class->data->name);
+            // superclass methods
+            struct classref *isa = (struct classref*)class->isa;
+            if (isa && isa != class) {
+                printf("super class %p(%p): %s\n", isa, isa->data, isa->data->name);
+                load_objc_methods(isa->data->baseMethodList, isa->data->flags & RO_META, isa->data->name);
+            }
         }
     }
-    
-    // load categories
-    const struct section_64 *catlist = getsectbynamefromheader_64(mh, "__DATA", "__objc_catlist");
+}
+
+hidden void load_objc_catlist(const struct section_64 *catlist, intptr_t vmaddr_slide) {
     if (catlist) { // meow
         uint64_t numCats = catlist->size / 8;
         struct cat_info **cats = (struct cat_info**)(catlist->addr + vmaddr_slide);
@@ -124,4 +128,16 @@ hidden void load_objc_entrypoints(const struct mach_header_64 *mh, intptr_t vmad
             load_objc_methods(cat->instanceMethods, false, cat->name);
         }
     }
+}
+
+hidden void load_objc_entrypoints(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
+    // FIXME: must vmaddr_slide really be applied?
+
+    // load classes
+    load_objc_classlist(getsectbynamefromheader_64(mh, "__DATA", "__objc_classlist"), vmaddr_slide);
+    load_objc_classlist(getsectbynamefromheader_64(mh, "__DATA", "__objc_nlclslist"), vmaddr_slide);
+
+    // load categories
+    load_objc_catlist(getsectbynamefromheader_64(mh, "__DATA", "__objc_catlist"), vmaddr_slide);
+    load_objc_catlist(getsectbynamefromheader_64(mh, "__DATA", "__objc_nlcatlist"), vmaddr_slide);
 }
