@@ -622,7 +622,7 @@ hidden int arm64_rflags_for_type(ffi_type *rtype) {
                 size_t s = rtype->size;
                 if (s > 16 || rtype->type == FFI_TYPE_STRUCT) {
                     // FIXME: only if FFI_TYPE_STRUCT is a non-trivial object
-                    rflags = AARCH64_RET_VOID | AARCH64_RET_IN_MEM;
+                    rflags = AARCH64_RET_VOID; // | AARCH64_RET_IN_MEM;
                     //bytes += 8;
                 } else if (s == 16) {
                     rflags = AARCH64_RET_INT128;
