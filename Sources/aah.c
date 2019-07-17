@@ -3,6 +3,9 @@
 #include <string.h>
 #include <pthread.h>
 #include <signal.h>
+#include <objc/runtime.h>
+
+uint64_t loadSelector;
 
 __attribute__((constructor)) static void init_aah(void) {
     // initialize unicorn
@@ -14,6 +17,8 @@ __attribute__((constructor)) static void init_aah(void) {
     get_emulator_ctx();
     init_cif();
     init_loader();
+    
+    loadSelector = (uint64_t)sel_registerName("load");
     
     // set up signal handler
     struct sigaction sa, osa;
@@ -27,22 +32,25 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
     mcontext_t mc = uctx->uc_mcontext;
     uint64_t pc = mc->__ss.__rip;
     Dl_info info;
-    printf("bus error at %p\n", (void*)pc);
+    //printf("bus error at %p\n", (void*)pc);
     if (dladdr((void*)pc, &info) && should_emulate_image((const struct mach_header_64*)info.dli_fbase)) {
         // get native cif for call
         ffi_cif *cif = cif_cache_get_native((void*)pc);
-        // TODO: shim? objc method?
         
         if (cif == CIF_MARKER_WRAPPER) {
             struct call_wrapper *wrapper = (struct call_wrapper*)cif_cache_get_arm64((void*)pc);
             cif = wrapper->cif_native;
         } else if (cif == CIF_MARKER_SHIM) {
             abort();
+        } else if (cif == NULL && mc->__ss.__rsi == loadSelector) {
+            // calling unknown load method
+            cif_cache_add((void*)pc, "v@:", "+[??? load]");
+            cif = cif_cache_get_native((void*)pc);
         }
         
         if (cif) {
             // call arm64 entry point
-            printf("calling emulated %s at %p\n", info.dli_sname ?: cif_get_name((void*)pc), (void*)pc);
+            printf("calling emulated %s at %p\n", cif_get_name((void*)pc), (void*)pc);
             struct emulator_ctx *ctx = get_emulator_ctx();
             if (ffi_prep_closure_loc(ctx->closure, cif, call_emulated_function, (void*)pc, ctx->closure_code) != FFI_OK) {
                 fprintf(stderr, "ffi_prep_closure_loc failed\n");
