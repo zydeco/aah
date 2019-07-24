@@ -5,18 +5,19 @@
 
 int EncodeStringFormatArgs(char *fmt, char *type_encoding, int is_nsstring, int replace_long_double) {
     int nargs = 0;
-    for(const char *arg = strchr(fmt, '%'); arg; arg = arg[1] ? strchr(arg+2, '%') : 0) {
+    for(const char *arg = strchr(fmt, '%'); arg; arg = arg[1] ? strchr(arg+1, '%') : 0) {
         int pos = 0;
         if (arg[1] == 0) {
             break;
         } else if (arg[1] == '%') {
+            arg++;
             continue;
         } else if (isdigit(arg[1]) && arg[2] == '$') {
             // positional argument
             pos = arg[1] - '1';
             if (nargs <= pos) nargs = pos + 1;
             arg += 2;
-        } else if (arg[1] != '%') {
+        } else {
             // normal argument
             pos = nargs++;
         }
@@ -172,6 +173,7 @@ int EncodeStringFormatArgs(char *fmt, char *type_encoding, int is_nsstring, int 
             arg_enc = '*';
             break;
         case '@':
+        case 'K': // key (NSPredicate)
             if (is_nsstring) {
                 arg_enc = '*';
                 break;
