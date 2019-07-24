@@ -34,4 +34,7 @@ static const interpose_t interposing_functions[] __attribute__ ((used, section("
 
 @implementation NSObject (Marzipan)
 -(CGFloat)_bodyLeading { return 0.0; }
+- (id)animatablePropertyKeys { return nil; }
+- (id)isPartOfHigherOrderProperty { return nil; }
 @end
+

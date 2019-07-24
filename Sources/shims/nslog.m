@@ -54,7 +54,6 @@ uint64_t generic_printf_shim(uc_engine *uc, struct native_call_context *ctx, con
     }
     free(cif_native.arg_types); // cif_arm64.arg_types is the same*/
     return SHIM_RETURN;
-    
 }
 
 #define PRINTF_SHIM(_name, _format) SHIMDEF(_name) { return generic_printf_shim(uc, ctx, _format); }
@@ -63,5 +62,8 @@ uint64_t generic_printf_shim(uc_engine *uc, struct native_call_context *ctx, con
 PRINTF_SHIM(NSLog, "v@");
 // int snprintf_l(char * restrict str, size_t size, locale_t loc, const char * restrict format, ...);
 PRINTF_SHIM(snprintf_l, "q*L?*");
-// +[NSString stringWithFormat:(NSString*)format, ...]
-PRINTF_SHIM(NSString_stringWithFormat, "@@:@");
+// [something somethingWithFormat:(NSString*)format, ...]
+PRINTF_SHIM(NSSomethingWithFormat, "@@:@");
+// +[NSException raise:(NSString*)name format:(NSString*)format, ...]
+PRINTF_SHIM(NSException_raise_format, "@@:@@");
+
