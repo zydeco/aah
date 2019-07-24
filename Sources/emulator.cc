@@ -50,8 +50,6 @@ static void print_regs(uc_engine *uc, int print_all) {
         uc_reg_read(uc, UC_ARM64_REG_X26, &x[26]);
         uc_reg_read(uc, UC_ARM64_REG_X27, &x[27]);
         uc_reg_read(uc, UC_ARM64_REG_X28, &x[28]);
-        uc_reg_read(uc, UC_ARM64_REG_X29, &x[29]);
-        uc_reg_read(uc, UC_ARM64_REG_X30, &x[30]);
         /*uc_reg_read(uc, UC_ARM64_REG_V0, &v[0]);
         uc_reg_read(uc, UC_ARM64_REG_V1, &v[1]);
         uc_reg_read(uc, UC_ARM64_REG_V2, &v[2]);
@@ -62,7 +60,7 @@ static void print_regs(uc_engine *uc, int print_all) {
         uc_reg_read(uc, UC_ARM64_REG_V7, &v[7]);*/
     }
     
-    int last_reg = print_all ? 30 : 8;
+    int last_reg = print_all ? 28 : 8;
     for (int i=0; i <=last_reg; i++) {
         printf("x%d:0x%016llx ", i, x[i]);
         if (i % 4 == 3) {
