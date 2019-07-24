@@ -620,16 +620,12 @@ hidden int arm64_rflags_for_type(ffi_type *rtype) {
             rflags = is_vfp_type (rtype);
             if (rflags == 0) {
                 size_t s = rtype->size;
-                if (s > 16 || rtype->type == FFI_TYPE_STRUCT) {
-                    // FIXME: only if FFI_TYPE_STRUCT is a non-trivial object
-                    rflags = AARCH64_RET_VOID; // | AARCH64_RET_IN_MEM;
-                    //bytes += 8;
+                if (s > 16) {
+                    rflags = AARCH64_RET_VOID | AARCH64_RET_IN_MEM;
                 } else if (s == 16) {
                     rflags = AARCH64_RET_INT128;
-                } else if (s == 8) {
-                    rflags = AARCH64_RET_INT64;
                 } else {
-                    rflags = AARCH64_RET_INT128 | AARCH64_RET_NEED_COPY;
+                    rflags = AARCH64_RET_INT64;
                 }
             }
             break;
