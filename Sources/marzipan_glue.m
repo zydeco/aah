@@ -5,6 +5,7 @@
 #import "aah.h"
 
 void *my_Block_copy(const void *arg);
+extern void AXPushNotificationToSystemForBroadcast(void*);
 
 int aah_pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg) {
     printf("caching cif for pthread start routine %p\n", start_routine);
@@ -21,11 +22,14 @@ int aah_pthread_key_create(pthread_key_t *key, void (*destructor)(void *)) {
     return pthread_key_create(key, destructor);
 }
 
+void aah_ax_bug_thing(void* whatever) {};
+
 typedef struct interpose_s { void *new_func; void *orig_func; } interpose_t;
 static const interpose_t interposing_functions[] __attribute__ ((used, section("__DATA, __interpose"))) = {
     { (void*) my_Block_copy, (void*)_Block_copy},
     { (void*) aah_pthread_create, (void*)pthread_create},
     { (void*) aah_pthread_key_create, (void*)pthread_key_create},
+    { (void*) aah_ax_bug_thing, (void*)AXPushNotificationToSystemForBroadcast }
 };
 
 @implementation NSBundle (Marzipan)

@@ -48,6 +48,7 @@
 		28054DB02275083500A6881E /* printf.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054DAD2275083500A6881E /* printf.h */; };
 		28054DB12275083500A6881E /* nslog.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DAE2275083500A6881E /* nslog.m */; };
 		28054DB3227A0BC200A6881E /* objc_msgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DB2227A0BC200A6881E /* objc_msgSend.m */; };
+		2815D6A922EE40340021AF41 /* AXRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2815D6A822EE40340021AF41 /* AXRuntime.framework */; };
 		2829AD9D22D6769000EA1177 /* setjmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 2829AD9C22D6769000EA1177 /* setjmp.c */; };
 		282DB9A822D29B2500F04DCD /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = 282DB9A722D29B2500F04DCD /* blocks.c */; };
 		288F826322CD2BDF00BEF175 /* libdispatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 288F826222CD2BDF00BEF175 /* libdispatch.c */; };
@@ -115,6 +116,7 @@
 		28054DAD2275083500A6881E /* printf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = printf.h; sourceTree = "<group>"; };
 		28054DAE2275083500A6881E /* nslog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nslog.m; sourceTree = "<group>"; };
 		28054DB2227A0BC200A6881E /* objc_msgSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objc_msgSend.m; sourceTree = "<group>"; };
+		2815D6A822EE40340021AF41 /* AXRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AXRuntime.framework; path = ../../../../../../../System/Library/PrivateFrameworks/AXRuntime.framework; sourceTree = "<group>"; };
 		2829AD9C22D6769000EA1177 /* setjmp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = setjmp.c; sourceTree = "<group>"; };
 		282DB9A622D299B400F04DCD /* blocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blocks.h; sourceTree = "<group>"; };
 		282DB9A722D29B2500F04DCD /* blocks.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blocks.c; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				28054D9D227501E200A6881E /* libcapstone.a in Frameworks */,
 				28054D9E227501E400A6881E /* libffi.a in Frameworks */,
 				28054D9F227501E700A6881E /* libunicorn.a in Frameworks */,
+				2815D6A922EE40340021AF41 /* AXRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +247,7 @@
 		28054D9C227501E200A6881E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2815D6A822EE40340021AF41 /* AXRuntime.framework */,
 				28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */,
 				28054D962275017E00A6881E /* libcapstone.a */,
 				28054D972275017E00A6881E /* libffi.a */,
@@ -650,6 +654,10 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Sources";
 			};
 			name = Debug;
@@ -679,6 +687,10 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Sources";
 			};
 			name = Release;
