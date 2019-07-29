@@ -201,23 +201,19 @@ void run_emulator(struct emulator_ctx *ctx, uint64_t start_address) {
         err = uc_emu_start(uc, start_address, ctx->return_ptr, 0, 0);
         uc_reg_read(uc, UC_ARM64_REG_PC, &pc);
         if (pc == ctx->return_ptr) {
-            printf("emulation finished ok?\n");
+            printf("emulation done\n");
             return;
-        } else if (err == UC_ERR_FETCH_PROT && dladdr((void*)pc, &info) && !should_emulate_image((struct mach_header_64 *)info.dli_fbase)) {
+        } else if (err == UC_ERR_FETCH_PROT) {
             uint64_t last_lr;
             uc_reg_read(uc, UC_ARM64_REG_LR, &last_lr);
             ctx->maybe_print_regs(uc, 0);
-            if (pc != (uint64_t)info.dli_saddr) {
-                info.dli_sname = cif_get_name((void*)pc);
-            }
-            printf("  calling native %s from %p\n", info.dli_sname, (void*)last_lr);
             try {
                 start_address = call_native(uc, pc);
             }
             catch (const std::exception& e) {
                 // find catch block
             }
-            if (start_address == 0) {
+            if (start_address == SHIM_RETURN) {
                 start_address = last_lr;
             }
             //print_regs(uc, 0);

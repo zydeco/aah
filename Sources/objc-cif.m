@@ -15,11 +15,8 @@ static void cif_cache_add_methods(Class cls, bool only_emulated) {
     for (unsigned int i = 0; i < methodCount; i++) {
         Method m = methods[i];
         IMP imp = method_getImplementation(m);
-        if (only_emulated) {
-            Dl_info info;
-            if (dladdr(imp, &info) && !should_emulate_image(info.dli_fbase)) {
-                continue;
-            }
+        if (only_emulated && !should_emulate_at((uint64_t)imp)) {
+            continue;
         }
         const char *typeEncoding = method_getTypeEncoding(m);
         if (strlen(typeEncoding) > 0 && strchr(typeEncoding, '<') == 0 && strchr(typeEncoding, ',') == 0) {
@@ -88,7 +85,7 @@ hidden void load_objc_methods(struct method_list *methods, bool meta, const char
         struct method * method = &methods->methods[i];
         char *method_name = NULL;
         asprintf(&method_name, "%c[%s %s]", meta ? '+' : '-', name, method->name);
-        printf("%s (%s) -> %p\n", method_name, method->types, method->implementation);
+        //printf("%s (%s) -> %p\n", method_name, method->types, method->implementation);
         const char *shimMethodSignature = lookup_method_signature(CIF_LIB_OBJC_SHIMS, method_name);
         if (shimMethodSignature) {
             cif_cache_add(method->implementation, shimMethodSignature, method_name);
@@ -131,8 +128,6 @@ hidden void load_objc_catlist(const struct section_64 *catlist, intptr_t vmaddr_
 }
 
 hidden void load_objc_entrypoints(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
-    // FIXME: must vmaddr_slide really be applied?
-
     // load classes
     load_objc_classlist(getsectbynamefromheader_64(mh, "__DATA", "__objc_classlist"), vmaddr_slide);
     load_objc_classlist(getsectbynamefromheader_64(mh, "__DATA", "__objc_nlclslist"), vmaddr_slide);

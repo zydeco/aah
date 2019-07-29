@@ -20,12 +20,59 @@ static void did_load_image(const struct mach_header* mh, intptr_t vmaddr_slide) 
     map_image(mh64, vmaddr_slide);
 }
 
+#define MH_MAGIC_EMULATED 0x456D400C
+
+static uint32_t emulated_range_count = 0;
+static uc_mem_region *emulated_range = NULL;
+
+static void add_emulated_range(uint64_t base, uint64_t size, uint32_t flags) {
+    int pos = 0;
+    if ((flags & AAH_RANGE_EMULATE) == 0) {
+        fprintf(stderr, "emulated range must be marked with AAH_RANGE_EMULATE\n");
+        abort();
+    }
+    if (emulated_range == NULL) {
+        emulated_range_count = 8;
+        emulated_range = calloc(emulated_range_count, sizeof(uc_mem_region));
+    } else {
+        while (emulated_range[pos].begin != 0) { pos++; }
+    }
+    printf("adding emulated range %d: %p-%p (%d)\n", pos, base, base+size, flags);
+    emulated_range[pos].begin = base;
+    emulated_range[pos].end = base + size;
+    emulated_range[pos].perms = flags;
+    if ((pos + 1) == emulated_range_count) {
+        emulated_range_count += 8;
+        emulated_range = realloc(emulated_range, emulated_range_count * sizeof(uc_mem_region));
+        bzero(&emulated_range[emulated_range_count-8], 8 * sizeof(uc_mem_region));
+    }
+}
+
+hidden int should_emulate_image(const struct mach_header_64 *mh) {
+    return mh->magic == MH_MAGIC_64 && mh->reserved == MH_MAGIC_EMULATED;
+}
+
+hidden uint32_t should_emulate_at(uint64_t address) {
+    for (int i = 0; i < emulated_range_count; i++) {
+        if (address >= emulated_range[i].begin && address < emulated_range[i].end) {
+            return emulated_range[i].perms;
+        } else if (emulated_range[i].begin == 0) {
+            return 0;
+        }
+    }
+    return 0;
+}
+
 static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
     Dl_info info;
     dladdr(mh, &info);
     printf("Setting up emulation for %s with slide 0x%lx\n", info.dli_fname, vmaddr_slide);
     
     void *lc_ptr = (void*)mh + sizeof(struct mach_header_64);
+    uint32_t flag = AAH_RANGE_EMULATE;
+    if (strcmp(strrchr(info.dli_fname, '/'), "/libc++em.dylib") == 0) {
+        flag |= AAH_RANGE_LIBCPP;
+    }
     for(uint32_t i = 0; i < mh->ncmds; i++) {
         const struct segment_command_64 *sc = lc_ptr;
         if (sc->cmd == LC_SEGMENT_64) {
@@ -34,8 +81,12 @@ static void setup_image_emulation(const struct mach_header_64 *mh, intptr_t vmad
                 // make text segment non-executable
                 printf("Found text segment at 0x%lx\n", seg_base);
                 if (mprotect((void*)seg_base, sc->vmsize, PROT_READ)) {
-                    printf("mprotect: %s\n", strerror(errno));
+                    fprintf(stderr, "mprotect: %s\n", strerror(errno));
+                    abort();
                 }
+            }
+            if (seg_base && sc->vmsize) {
+                add_emulated_range(seg_base, sc->vmsize, flag);
             }
             
             // check sections

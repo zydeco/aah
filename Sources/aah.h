@@ -37,11 +37,11 @@ hidden struct emulator_ctx* get_emulator_ctx(void);
 hidden void run_emulator(struct emulator_ctx *ctx, uint64_t start_address);
 hidden void print_disasm(struct emulator_ctx *ctx, int print);
 
-#define MH_MAGIC_EMULATED 0x456D400C
+#define AAH_RANGE_EMULATE (1 << 0)
+#define AAH_RANGE_LIBCPP (1 << 1)
 
-static inline int should_emulate_image(const struct mach_header_64 *mh) {
-    return mh->magic == MH_MAGIC_64 && mh->reserved == MH_MAGIC_EMULATED;
-}
+hidden int should_emulate_image(const struct mach_header_64 *mh);
+hidden uint32_t should_emulate_at(uint64_t address);
 
 hidden bool mem_map_region_containing(uc_engine *uc, uint64_t address, uint32_t perms);
 hidden bool mem_is_mapped(uc_engine *uc, uint64_t address, size_t size, uint32_t perms);

@@ -33,7 +33,8 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
     uint64_t pc = mc->__ss.__rip;
     Dl_info info;
     //printf("bus error at %p\n", (void*)pc);
-    if (dladdr((void*)pc, &info) && should_emulate_image((const struct mach_header_64*)info.dli_fbase)) {
+    uint32_t should_emulate = should_emulate_at(pc);
+    if (should_emulate) {
         // get native cif for call
         ffi_cif *cif = cif_cache_get_native((void*)pc);
         
@@ -57,16 +58,19 @@ hidden void sighandler (int signo, siginfo_t *si, void *data) {
                 abort();
             }
             mc->__ss.__rip = (uint64_t)ctx->closure_code;
-        } else if ((void*)pc == info.dli_saddr && strcmp(strrchr(info.dli_fname, '/'), "/libc++em.dylib") == 0) {
-            // call native libc++
+        } else if (should_emulate & AAH_RANGE_LIBCPP) {
+            // FIXME: loading emulated libc++ messes up the namespace
+            dladdr((void*)pc, &info);
             mc->__ss.__rip = (uint64_t)resolve_symbol("/usr/lib/libc++.1.dylib", info.dli_sname);
         } else {
             // TODO: when is this? maybe blocks or callbacks
+            dladdr((void*)pc, &info);
             printf("returning to unknown emulated %p (%s+0x%llx:%s)\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname);
             abort();
         }
     } else {
         // pc not in emulatable image
+        dladdr((void*)pc, &info);
         fprintf(stderr, "pc not in emulatable image at %p (%s+0x%llx:%s)\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname);
         abort();
     }
