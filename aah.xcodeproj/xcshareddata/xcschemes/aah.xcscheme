@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1020"
-   version = "1.3">
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -29,20 +29,23 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       disableMainThreadChecker = "YES"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "YES"
+      debugDocumentVersioning = "NO"
+      debugXPCServices = "NO"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      enableGPUFrameCaptureMode = "3"
+      enableGPUValidationMode = "1"
+      allowLocationSimulation = "NO"
+      queueDebuggingEnabled = "No"
+      GPUProfilerEnabled = "No">
       <PathRunnable
          runnableDebuggingMode = "0"
          FilePath = "/Users/zydeco/Library/Developer/Xcode/DerivedData/aah-bzpwubqemxsqjraztfccfoqdqzik/Build/Products/Debug/TestBinary">
@@ -62,9 +65,37 @@
             value = "$(TARGET_BUILD_DIR)/libaah.dylib"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "DYLD_INSERT_LIBRARIES"
+            value = "$(TARGET_BUILD_DIR)/libaah.dylib:$(SRCROOT)/lib/frida-gadget-12.6.10-macos-universal.dylib"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "DYLD_PRINT_LIBRARIES"
+            value = "1"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "DYLD_PRINT_LIBRARIES_POST_LAUNCH"
+            value = "1"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "DYLD_PRINT_INITIALIZERS"
+            value = "1"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "PRINT_DISASSEMBLY"
+            value = "1"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "PRINT_REGS"
+            value = "1"
+            isEnabled = "NO">
+         </EnvironmentVariable>
       </EnvironmentVariables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

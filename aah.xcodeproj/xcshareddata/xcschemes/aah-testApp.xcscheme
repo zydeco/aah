@@ -59,7 +59,7 @@
       <PathRunnable
          runnableDebuggingMode = "0"
          BundleIdentifier = "net.namedfork.TestApp"
-         FilePath = "/Users/zydeco/Library/Developer/Xcode/DerivedData/aah-asfgpsytylmbwfbmcodalgvgrxzq/Build/Products/Debug-iphoneos/TestApp.app">
+         FilePath = "/System/Volumes/Data/Users/zydeco/Library/Developer/Xcode/DerivedData/aah-bmwvlbifhoeqgeexmsbchuswspvk/Build/Products/Debug-iphoneos/TestApp.app">
       </PathRunnable>
       <MacroExpansion>
          <BuildableReference
@@ -94,12 +94,12 @@
          <EnvironmentVariable
             key = "PRINT_DISASSEMBLY"
             value = "1"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "PRINT_REGS"
             value = "1"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>

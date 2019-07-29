@@ -466,11 +466,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH).x86-64",
+				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_FOLDER_PATH)/$(EXECUTABLE_NAME)🦄",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\ncodesign --remove-signature \"$SCRIPT_OUTPUT_FILE_0\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# change platform to macOS\n#ggrep -obUaP \"\\x32\\x00\\x00\\x00\\x20\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x00\" \"$SCRIPT_OUTPUT_FILE_0\" | head -n 1 | cut -d: -f1 | xargs printf \"%08x: 32000000 20000000 06000000 000E0A00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\n\necho \"0530: 32000000 20000000 06000000 00000D00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\n";
+			shellPath = /bin/zsh;
+			shellScript = "cp -f \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\ncodesign --remove-signature \"$SCRIPT_OUTPUT_FILE_0\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# change platform to iosMac\nbuild_version_start=\"32 00 00 00 20 00 00 00 02 00 00 00 00\"\nlet pos=`hexdump -v -e '/1 \"%02X \"' \"$SCRIPT_OUTPUT_FILE_0\" | sed \"s/$build_version_start/-/g\" | cut -f1 -d- | wc -c | sed 's/ //g'`/3\nlet pos_hex=`printf \"%04x\" $pos`\necho \"$pos_hex: 32000000 20000000 06000000 00000C00 000E0A00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\nplutil -replace MinimumOSVersion -string 10.14 \"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -700,7 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJXNDZ5TNU;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -713,6 +713,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = net.namedfork.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
@@ -724,7 +725,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJXNDZ5TNU;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -736,6 +737,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.namedfork.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
