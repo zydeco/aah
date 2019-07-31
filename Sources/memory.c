@@ -11,6 +11,15 @@ const char *mem_perm_str[] = {
     [7] = "rwx"
 };
 
+const char *mem_get_tag(void *address) {
+    Dl_info info;
+    if (dladdr(address, &info)) {
+        return info.dli_fname;
+    } else {
+        return "*";
+    }
+}
+
 void mem_print_uc_regions(uc_engine *uc) {
     if (uc == NULL) {
         uc = get_emulator_ctx()->uc;
@@ -26,7 +35,7 @@ void mem_print_uc_regions(uc_engine *uc) {
     });
     printf("%d regions:\n", num_regions);
     for(uint32_t i = 0; i < num_regions; i++) {
-        printf("  %p->%p %s\n", (void*)regions[i].begin, (void*)regions[i].end, mem_perm_str[regions[i].perms]);
+        printf("  %p->%p %s %s\n", (void*)regions[i].begin, (void*)regions[i].end, mem_perm_str[regions[i].perms], mem_get_tag((void*)regions[i].begin));
     }
     free(regions);
 }
@@ -117,6 +126,10 @@ hidden void print_mem_info(void *ptr) {
     memory_object_name_t object;
     kern_return_t err = vm_region_64(mach_task_self(), &address, &size, VM_REGION_BASIC_INFO_64, (vm_region_info_t)&info, &count, &object);
     printf("region info for %p:\n", ptr);
+    if (err != KERN_SUCCESS) {
+        printf("  error: kern_return %d\n", err);
+        return;
+    }
     printf("  address = %p -> %p\n", (void*)address, (void*)(address+size));
     printf("  size = 0x%lx\n", size);
     printf("  offset = 0x%llx\n", info.offset);
