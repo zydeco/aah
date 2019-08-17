@@ -9,7 +9,7 @@
 #include "aah.h"
 #include "blocks.h"
 
-void *my_Block_copy(const void *arg) {
+void cif_cache_block(const void *arg) {
     struct Block_layout *block = (struct Block_layout*)arg;
     if (block) {
         cif_cache_add(block->invoke, _Block_signature(block) ?: "v?", "(block)");
@@ -22,5 +22,16 @@ void *my_Block_copy(const void *arg) {
             }
         }
     }
+}
+
+void *my_Block_copy(const void *arg) {
+    cif_cache_block(arg);
     return _Block_copy(arg);
 }
+
+ffi_type aah_type_block_pointer = {
+    .size = 8,
+    .alignment = 8,
+    .type = FFI_TYPE_POINTER,
+    .elements = NULL
+};

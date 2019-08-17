@@ -4,6 +4,7 @@
 #include <string.h>
 #include <CoreFoundation/CoreFoundation.h>
 #include <os/lock.h>
+#include "blocks.h"
 
 static CFMutableDictionaryRef cif_cache_native = NULL;
 static CFMutableDictionaryRef cif_cache_arm64 = NULL;
@@ -120,14 +121,22 @@ next_type_1:
         case ':':
         case '#':
         case '*':
-        case '@':
         case '?':
+            P("%sffi_type_pointer\n", prefix);
+            type = &ffi_type_pointer;
+            break;
+        case '@':
             P("%sffi_type_pointer\n", prefix);
             type = &ffi_type_pointer;
             if (*ms == '"') {
                 // class name for objects in block signatures
                 // skip to next quote
                 ms = strchr(ms+1, '"') + 1;
+            } else if (*ms == '?') {
+                // block pointer
+                // skip over question mark
+                type = &aah_type_block_pointer;
+                ms++;
             }
             break;
         case '[': { // array

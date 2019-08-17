@@ -17,3 +17,6 @@ struct Block_layout {
     struct Block_descriptor *descriptor;
     // imported variables
 };
+
+extern ffi_type aah_type_block_pointer;
+void cif_cache_block(const void *arg);

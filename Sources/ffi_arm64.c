@@ -1,4 +1,5 @@
 #include "aah.h"
+#include "blocks.h"
 
 /* Representation of the procedure call argument marshalling
    state.
@@ -503,6 +504,9 @@ int ffi_closure_SYSV_inner_arm64 (ffi_cif_arm64 *cif,
 	case FFI_TYPE_SINT64:
 	case FFI_TYPE_POINTER:
 	  avalue[i] = allocate_int_to_reg_or_stack (context, &state, stack, s);
+      if (cif->arg_types[i] == &aah_type_block_pointer) {
+        cif_cache_block(*(void**)avalue[i]);
+      }
 	  break;
 
 	case FFI_TYPE_FLOAT:
