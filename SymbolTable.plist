@@ -10735,6 +10735,11 @@
 		"MTLCreateSystemDefaultDevice" = "*";
 		"MTLCopyAllDevices" = "*";
 	};
+	"/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox" = {
+		"AudioServicesCreateSystemSoundID" = "i^?^I";
+		"AudioServicesDisposeSystemSoundID" = "iI";
+		"AudioServicesPlaySystemSound" = "vI";
+	};
 	"/System/iOSSupport/System/Library/Frameworks/UIKit.framework/UIKit" = {
 		"UIApplicationMain" = "i^?^?@@";
 	};
