@@ -1,3 +1,6 @@
 [submodule "capstone"]
 	path = capstone
 	url = git@github.com:aquynh/capstone.git
+[submodule "unicorn"]
+	path = unicorn
+	url = git@github.com:unicorn-engine/unicorn.git

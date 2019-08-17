@@ -15,19 +15,7 @@
 		28054D5A2275008F00A6881E /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 28054D542275008F00A6881E /* memory.c */; };
 		28054D5B2275008F00A6881E /* cif.c in Sources */ = {isa = PBXBuildFile; fileRef = 28054D552275008F00A6881E /* cif.c */; };
 		28054D5C2275008F00A6881E /* ffi_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D562275008F00A6881E /* ffi_arm64.h */; };
-		28054D7B227500DA00A6881E /* uc_priv.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D5F227500DA00A6881E /* uc_priv.h */; };
-		28054D7C227500DA00A6881E /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D60227500DA00A6881E /* list.h */; };
-		28054D8C227500DA00A6881E /* mips.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D72227500DA00A6881E /* mips.h */; };
-		28054D8D227500DA00A6881E /* unicorn.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D73227500DA00A6881E /* unicorn.h */; };
-		28054D8E227500DA00A6881E /* sparc.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D74227500DA00A6881E /* sparc.h */; };
-		28054D8F227500DA00A6881E /* m68k.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D75227500DA00A6881E /* m68k.h */; };
-		28054D90227500DA00A6881E /* arm.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D76227500DA00A6881E /* arm.h */; };
-		28054D91227500DA00A6881E /* x86.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D77227500DA00A6881E /* x86.h */; };
-		28054D92227500DA00A6881E /* arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D78227500DA00A6881E /* arm64.h */; };
-		28054D93227500DA00A6881E /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D79227500DA00A6881E /* platform.h */; };
-		28054D94227500DA00A6881E /* qemu.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D7A227500DA00A6881E /* qemu.h */; };
 		28054D9E227501E400A6881E /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28054D972275017E00A6881E /* libffi.a */; };
-		28054D9F227501E700A6881E /* libunicorn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28054D952275017E00A6881E /* libunicorn.a */; };
 		28054DAF2275083500A6881E /* printf.c in Sources */ = {isa = PBXBuildFile; fileRef = 28054DAC2275083500A6881E /* printf.c */; };
 		28054DB02275083500A6881E /* printf.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054DAD2275083500A6881E /* printf.h */; };
 		28054DB12275083500A6881E /* nslog.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DAE2275083500A6881E /* nslog.m */; };
@@ -36,6 +24,7 @@
 		2829AD9D22D6769000EA1177 /* setjmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 2829AD9C22D6769000EA1177 /* setjmp.c */; };
 		282DB9A822D29B2500F04DCD /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = 282DB9A722D29B2500F04DCD /* blocks.c */; };
 		287A7AE423082DE900FC1A0B /* libcapstone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 287A7AE323082DE900FC1A0B /* libcapstone.a */; };
+		287A7AEE2308309400FC1A0B /* libunicorn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 287A7AED2308309400FC1A0B /* libunicorn.a */; };
 		288F826322CD2BDF00BEF175 /* libdispatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 288F826222CD2BDF00BEF175 /* libdispatch.c */; };
 		2891EE3A22DF9CD5004117B5 /* foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2891EE3922DF9CD5004117B5 /* foundation.m */; };
 		28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BEFA2280B2C1006A31F0 /* objc-cif.m */; };
@@ -54,6 +43,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 287A7ADF23082BB200FC1A0B;
 			remoteInfo = capstone;
+		};
+		287A7AEB2308302E00FC1A0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28054D3D2275004B00A6881E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 287A7AE723082FDB00FC1A0B;
+			remoteInfo = unicorn;
 		};
 		28FD84A022D0C11E0046E0A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -75,18 +71,6 @@
 		28054D552275008F00A6881E /* cif.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cif.c; sourceTree = "<group>"; };
 		28054D562275008F00A6881E /* ffi_arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_arm64.h; sourceTree = "<group>"; };
 		28054D5D227500CA00A6881E /* SymbolTable.plist */ = {isa = PBXFileReference; explicitFileType = text.xml; path = SymbolTable.plist; sourceTree = "<group>"; };
-		28054D5F227500DA00A6881E /* uc_priv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uc_priv.h; sourceTree = "<group>"; };
-		28054D60227500DA00A6881E /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
-		28054D72227500DA00A6881E /* mips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mips.h; sourceTree = "<group>"; };
-		28054D73227500DA00A6881E /* unicorn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unicorn.h; sourceTree = "<group>"; };
-		28054D74227500DA00A6881E /* sparc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sparc.h; sourceTree = "<group>"; };
-		28054D75227500DA00A6881E /* m68k.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m68k.h; sourceTree = "<group>"; };
-		28054D76227500DA00A6881E /* arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arm.h; sourceTree = "<group>"; };
-		28054D77227500DA00A6881E /* x86.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x86.h; sourceTree = "<group>"; };
-		28054D78227500DA00A6881E /* arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arm64.h; sourceTree = "<group>"; };
-		28054D79227500DA00A6881E /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
-		28054D7A227500DA00A6881E /* qemu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qemu.h; sourceTree = "<group>"; };
-		28054D952275017E00A6881E /* libunicorn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libunicorn.a; sourceTree = "<group>"; };
 		28054D972275017E00A6881E /* libffi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libffi.a; sourceTree = "<group>"; };
 		28054DAC2275083500A6881E /* printf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = printf.c; sourceTree = "<group>"; };
 		28054DAD2275083500A6881E /* printf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = printf.h; sourceTree = "<group>"; };
@@ -97,6 +81,7 @@
 		282DB9A622D299B400F04DCD /* blocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blocks.h; sourceTree = "<group>"; };
 		282DB9A722D29B2500F04DCD /* blocks.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blocks.c; sourceTree = "<group>"; };
 		287A7AE323082DE900FC1A0B /* libcapstone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcapstone.a; path = capstone/libcapstone.a; sourceTree = "<group>"; };
+		287A7AED2308309400FC1A0B /* libunicorn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libunicorn.a; path = unicorn/libunicorn.a; sourceTree = "<group>"; };
 		288F826222CD2BDF00BEF175 /* libdispatch.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libdispatch.c; sourceTree = "<group>"; };
 		2891EE3922DF9CD5004117B5 /* foundation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foundation.m; sourceTree = "<group>"; };
 		28A8BEFA2280B2C1006A31F0 /* objc-cif.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "objc-cif.m"; sourceTree = "<group>"; };
@@ -115,10 +100,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				287A7AEE2308309400FC1A0B /* libunicorn.a in Frameworks */,
 				28A8BEFD2280B3C4006A31F0 /* libobjc.tbd in Frameworks */,
 				28054D9E227501E400A6881E /* libffi.a in Frameworks */,
 				287A7AE423082DE900FC1A0B /* libcapstone.a in Frameworks */,
-				28054D9F227501E700A6881E /* libunicorn.a in Frameworks */,
 				2815D6A922EE40340021AF41 /* AXRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				28054D5D227500CA00A6881E /* SymbolTable.plist */,
-				28054D5E227500DA00A6881E /* include */,
 				28054D4C2275007100A6881E /* Sources */,
 				28FD848A22D0B99B0046E0A6 /* TestApp */,
 				28054D9C227501E200A6881E /* Frameworks */,
@@ -172,40 +156,14 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		28054D5E227500DA00A6881E /* include */ = {
-			isa = PBXGroup;
-			children = (
-				28054D5F227500DA00A6881E /* uc_priv.h */,
-				28054D60227500DA00A6881E /* list.h */,
-				28054D71227500DA00A6881E /* unicorn */,
-				28054D7A227500DA00A6881E /* qemu.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		28054D71227500DA00A6881E /* unicorn */ = {
-			isa = PBXGroup;
-			children = (
-				28054D72227500DA00A6881E /* mips.h */,
-				28054D73227500DA00A6881E /* unicorn.h */,
-				28054D74227500DA00A6881E /* sparc.h */,
-				28054D75227500DA00A6881E /* m68k.h */,
-				28054D76227500DA00A6881E /* arm.h */,
-				28054D77227500DA00A6881E /* x86.h */,
-				28054D78227500DA00A6881E /* arm64.h */,
-				28054D79227500DA00A6881E /* platform.h */,
-			);
-			path = unicorn;
-			sourceTree = "<group>";
-		};
 		28054D9C227501E200A6881E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				2815D6A822EE40340021AF41 /* AXRuntime.framework */,
 				28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */,
 				287A7AE323082DE900FC1A0B /* libcapstone.a */,
+				287A7AED2308309400FC1A0B /* libunicorn.a */,
 				28054D972275017E00A6881E /* libffi.a */,
-				28054D952275017E00A6881E /* libunicorn.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,20 +203,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28054D91227500DA00A6881E /* x86.h in Headers */,
-				28054D7C227500DA00A6881E /* list.h in Headers */,
-				28054D7B227500DA00A6881E /* uc_priv.h in Headers */,
 				28054D4F2275007C00A6881E /* aah.h in Headers */,
-				28054D90227500DA00A6881E /* arm.h in Headers */,
-				28054D8D227500DA00A6881E /* unicorn.h in Headers */,
-				28054D93227500DA00A6881E /* platform.h in Headers */,
-				28054D8C227500DA00A6881E /* mips.h in Headers */,
-				28054D92227500DA00A6881E /* arm64.h in Headers */,
-				28054D8F227500DA00A6881E /* m68k.h in Headers */,
 				28054DB02275083500A6881E /* printf.h in Headers */,
 				28FD9FFA22E90A4800E47B05 /* DWUWebView.h in Headers */,
-				28054D94227500DA00A6881E /* qemu.h in Headers */,
-				28054D8E227500DA00A6881E /* sparc.h in Headers */,
 				28054D5C2275008F00A6881E /* ffi_arm64.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +227,20 @@
 			passBuildSettingsInEnvironment = 1;
 			productName = capstone;
 		};
+		287A7AE723082FDB00FC1A0B /* unicorn */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 287A7AEA23082FDB00FC1A0B /* Build configuration list for PBXLegacyTarget "unicorn" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "$(SRCROOT)/unicorn";
+			dependencies = (
+			);
+			name = unicorn;
+			passBuildSettingsInEnvironment = 1;
+			productName = unicorn;
+		};
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
@@ -298,6 +259,7 @@
 			dependencies = (
 				28FD84A122D0C11E0046E0A6 /* PBXTargetDependency */,
 				287A7AE623082E3B00FC1A0B /* PBXTargetDependency */,
+				287A7AEC2308302E00FC1A0B /* PBXTargetDependency */,
 			);
 			name = aah;
 			productName = aah;
@@ -337,6 +299,9 @@
 					287A7ADF23082BB200FC1A0B = {
 						CreatedOnToolsVersion = 11.0;
 					};
+					287A7AE723082FDB00FC1A0B = {
+						CreatedOnToolsVersion = 11.0;
+					};
 					28FD848822D0B99A0046E0A6 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -358,6 +323,7 @@
 				28054D442275004B00A6881E /* aah */,
 				28FD848822D0B99A0046E0A6 /* TestApp */,
 				287A7ADF23082BB200FC1A0B /* capstone */,
+				287A7AE723082FDB00FC1A0B /* unicorn */,
 			);
 		};
 /* End PBXProject section */
@@ -475,6 +441,11 @@
 			isa = PBXTargetDependency;
 			target = 287A7ADF23082BB200FC1A0B /* capstone */;
 			targetProxy = 287A7AE523082E3B00FC1A0B /* PBXContainerItemProxy */;
+		};
+		287A7AEC2308302E00FC1A0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 287A7AE723082FDB00FC1A0B /* unicorn */;
+			targetProxy = 287A7AEB2308302E00FC1A0B /* PBXContainerItemProxy */;
 		};
 		28FD84A122D0C11E0046E0A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -605,6 +576,7 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/unicorn/include",
 					"$(SRCROOT)/capstone/include",
 					"$(SRCROOT)/include",
 				);
@@ -612,6 +584,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/capstone",
+					"$(PROJECT_DIR)/unicorn",
 				);
 				OTHER_LDFLAGS = (
 					"-sectcreate",
@@ -639,6 +612,7 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/unicorn/include",
 					"$(SRCROOT)/capstone/include",
 					"$(SRCROOT)/include",
 				);
@@ -646,6 +620,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/capstone",
+					"$(PROJECT_DIR)/unicorn",
 				);
 				OTHER_LDFLAGS = (
 					"-sectcreate",
@@ -697,6 +672,43 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		287A7AE823082FDB00FC1A0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOS_UNIVERSAL = no;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				UNICORN_ARCHS = aarch64;
+				UNICORN_SHARED = no;
+				UNICORN_STATIC = yes;
+			};
+			name = Debug;
+		};
+		287A7AE923082FDB00FC1A0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOS_UNIVERSAL = no;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				UNICORN_ARCHS = aarch64;
+				UNICORN_SHARED = no;
+				UNICORN_STATIC = yes;
 			};
 			name = Release;
 		};
@@ -776,6 +788,15 @@
 			buildConfigurations = (
 				287A7AE123082BB200FC1A0B /* Debug */,
 				287A7AE223082BB200FC1A0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		287A7AEA23082FDB00FC1A0B /* Build configuration list for PBXLegacyTarget "unicorn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				287A7AE823082FDB00FC1A0B /* Debug */,
+				287A7AE923082FDB00FC1A0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
