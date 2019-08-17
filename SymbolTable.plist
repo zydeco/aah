@@ -7637,15 +7637,13 @@
 		"__cxa_atexit" = "$__cxa_atexit";
 	};
 	"objc shims" = {
-		"-[NSString initWithFormat:]" = "$NSSomethingWithFormat";
-		"+[NSString stringWithFormat:]" = "$NSSomethingWithFormat";
-		"-[NSString stringByAppendingFormat:]" = "$NSSomethingWithFormat";
+		"-[* initWithFormat:]" = "$NSSomethingWithFormat";
+		"+[* stringWithFormat:]" = "$NSSomethingWithFormat";
+		"-[* stringByAppendingFormat:]" = "$NSSomethingWithFormat";
 		"-[NSMutableString appendFormat:]" = "$NSSomethingWithFormat";
-		"-[__NSCFConstantString stringByAppendingFormat:]" = "$NSSomethingWithFormat";
 		"+[NSPredicate predicateWithFormat:]" = "$NSSomethingWithFormat";
 		"+[NSException raise:format:]" = "$NSException_raise_format";
-		"-[NSDictionary initWithObjectsAndKeys:]" = "$nilTerminatedListOfObjects";
-		"-[__NSPlaceholderDictionary initWithObjectsAndKeys:]" = "$nilTerminatedListOfObjects";
+		"-[* initWithObjectsAndKeys:]" = "$nilTerminatedListOfObjects";
 		// not actually shims
 		"-[_UIAppearance setTintColor:]" = "v@:@";
 	};

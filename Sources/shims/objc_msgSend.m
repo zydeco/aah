@@ -113,7 +113,7 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
             return shim(uc, ctx);
         } else if (cif_native == CIF_MARKER_WRAPPER && cif_arm64 != NULL) {
             // wrapper
-            struct call_wrapper *wrapper = (struct call_wrapper*)ctx->cif_arm64;
+            struct call_wrapper *wrapper = (struct call_wrapper*)cif_arm64;
             ctx->cif_native = wrapper->cif_native;
             ctx->cif_arm64 = wrapper->cif_arm64;
             ctx->before = wrapper->emulated_to_native;

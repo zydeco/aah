@@ -360,7 +360,18 @@ hidden const char * lookup_method_signature(const char *lib_name, const char *sy
     CFStringRef signature = CFDictionaryGetValue(lib_table, sym_name_cf);
     CFRelease(sym_name_cf);
     if (signature == NULL) {
-        if (lib_name != CIF_LIB_OBJC_SHIMS) {
+        if (lib_name == CIF_LIB_OBJC_SHIMS) {
+            // look for shim without class name
+            if (strncmp(sym_name+1, "[* ", 3)) {
+                size_t size = strlen(sym_name)+1;
+                char *method_name = alloca(size);
+                method_name[0] = sym_name[0];
+                method_name[1] = '\0';
+                strcat(method_name, "[*");
+                strcat(method_name, strchr(sym_name, ' '));
+                return lookup_method_signature(CIF_LIB_OBJC_SHIMS, method_name);
+            }
+        } else {
             printf("Symbol %s not found in table for library %s\n", sym_name, lib_name);
         }
         return NULL;
