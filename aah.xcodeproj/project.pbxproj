@@ -21,6 +21,7 @@
 		28054DB12275083500A6881E /* nslog.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DAE2275083500A6881E /* nslog.m */; };
 		28054DB3227A0BC200A6881E /* objc_msgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DB2227A0BC200A6881E /* objc_msgSend.m */; };
 		2815D6A922EE40340021AF41 /* AXRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2815D6A822EE40340021AF41 /* AXRuntime.framework */; };
+		282236D922D2154800D49B79 /* app.m in Sources */ = {isa = PBXBuildFile; fileRef = 282236D822D2154800D49B79 /* app.m */; };
 		2829AD9D22D6769000EA1177 /* setjmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 2829AD9C22D6769000EA1177 /* setjmp.c */; };
 		282DB9A822D29B2500F04DCD /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = 282DB9A722D29B2500F04DCD /* blocks.c */; };
 		287A7AE423082DE900FC1A0B /* libcapstone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 287A7AE323082DE900FC1A0B /* libcapstone.a */; };
@@ -77,6 +78,7 @@
 		28054DAE2275083500A6881E /* nslog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nslog.m; sourceTree = "<group>"; };
 		28054DB2227A0BC200A6881E /* objc_msgSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objc_msgSend.m; sourceTree = "<group>"; };
 		2815D6A822EE40340021AF41 /* AXRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AXRuntime.framework; path = ../../../../../../../System/Library/PrivateFrameworks/AXRuntime.framework; sourceTree = "<group>"; };
+		282236D822D2154800D49B79 /* app.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = app.m; sourceTree = "<group>"; };
 		2829AD9C22D6769000EA1177 /* setjmp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = setjmp.c; sourceTree = "<group>"; };
 		282DB9A622D299B400F04DCD /* blocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blocks.h; sourceTree = "<group>"; };
 		282DB9A722D29B2500F04DCD /* blocks.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blocks.c; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				28054DB2227A0BC200A6881E /* objc_msgSend.m */,
 				28A8BF0A22876490006A31F0 /* c++abi.c */,
 				288F826222CD2BDF00BEF175 /* libdispatch.c */,
+				282236D822D2154800D49B79 /* app.m */,
 				282DB9A622D299B400F04DCD /* blocks.h */,
 				282DB9A722D29B2500F04DCD /* blocks.c */,
 				2829AD9C22D6769000EA1177 /* setjmp.c */,
@@ -411,6 +414,7 @@
 				288F826322CD2BDF00BEF175 /* libdispatch.c in Sources */,
 				28054D5B2275008F00A6881E /* cif.c in Sources */,
 				28054D582275008F00A6881E /* emulator.cc in Sources */,
+				282236D922D2154800D49B79 /* app.m in Sources */,
 				28054DAF2275083500A6881E /* printf.c in Sources */,
 				28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */,
 				28054D572275008F00A6881E /* loader.c in Sources */,
