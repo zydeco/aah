@@ -1,6 +1,7 @@
 #include <Block.h>
 
 const char * _Block_signature(void *aBlock);
+bool _Block_has_signature(void *aBlock);
 
 struct Block_descriptor {
     unsigned long int reserved;
