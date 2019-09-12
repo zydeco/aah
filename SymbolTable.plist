@@ -7689,7 +7689,7 @@
 		"_objc_msgForward" = "$objc_msgForward";
 		"_objc_realizeClassFromSwift" = "##^v";
 		"_objc_rootAlloc" = "@#";
-		"_objc_rootAllocWithZone" = "@#^?";
+		"_objc_rootAllocWithZone" = "@#^?^?";
 		"_objc_rootAutorelease" = "@@";
 		"_objc_rootDealloc" = "v@";
 		"_objc_rootFinalize" = "v@";
@@ -7835,6 +7835,11 @@
 		// decl for objc_msgSendSuper2_debug not found
 		// decl for objc_msgSend_debug not found
 		// decl for objc_msgSend_noarg not found
+		"objc_opt_class" = "@@";
+		"objc_opt_isKindOfClass" = "B@@";
+		"objc_opt_new" = "@#^?^?";
+		"objc_opt_respondsToSelector" = "B@:";
+		"objc_opt_self" = "@@";
 		"objc_readClassPair" = "##^?";
 		"objc_registerClassPair" = "v#";
 		"objc_registerProtocol" = "v@";
