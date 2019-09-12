@@ -255,10 +255,6 @@
 		// decl for MD5Final not found
 		// decl for ccDRBGGetRngState not found
 		// decl for ccDevRandomGetRngState not found
-		// decl for kCCDHRFC2409Group2 not found
-		// decl for kCCDHRFC3526Group5 not found
-		// decl for kCCRandomDefault not found
-		// decl for kCCRandomDevRandom not found
 		// decl for __clzti2 not found
 		// decl for __divti3 not found
 		// decl for __fixdfti not found
@@ -2433,11 +2429,6 @@
 		"isxdigit" = "ii";
 		"isxdigit_l" = "ii^{_xlocale=}";
 		"jrand48" = "l^S";
-		// decl for kOSMemoryNotificationName not found
-		// decl for kOSThermalNotificationAlert not found
-		// decl for kOSThermalNotificationDecision not found
-		// decl for kOSThermalNotificationName not found
-		// decl for kOSThermalNotificationPressureLevelName not found
 		"killpg" = "iii";
 		"l64a" = "*l";
 		"labs" = "ll";
@@ -5656,8 +5647,6 @@
 		// decl for freeassocids not found
 		// decl for freeconnids not found
 		// decl for freeconninfo not found
-		// decl for kNetworkConfigPersistentInterfaceNoGuidance not found
-		// decl for kNetworkdStartedNotificationName not found
 		// decl for libnetcore_symptom_to_string not found
 		// decl for net_flowhash not found
 		// decl for net_flowhash_jhash not found
@@ -6804,11 +6793,6 @@
 		// decl for SANDBOX_EXTENSION_UNRESOLVED not found
 		// decl for _amkrtemp not found
 		// decl for _sandbox_in_a_container not found
-		// decl for kSBXProfileNoInternet not found
-		// decl for kSBXProfileNoNetwork not found
-		// decl for kSBXProfileNoWrite not found
-		// decl for kSBXProfileNoWriteExceptTemporary not found
-		// decl for kSBXProfilePureComputation not found
 		// decl for rootless_allows_task_for_pid not found
 		// decl for rootless_check_datavault_flag not found
 		// decl for rootless_check_restricted_flag not found
@@ -10535,158 +10519,6 @@
 		// decl for CGUpdateConvolveKernelGreen not found
 		// decl for CGUpdateConvolveKernelMonochrome not found
 		// decl for CGUpdateConvolveKernelRed not found
-		// decl for kCGAutoBitDepthMax not found
-		// decl for kCGCFNumberPointerType not found
-		// decl for kCGCFNumberSizeTType not found
-		// decl for kCGColorBlack not found
-		// decl for kCGColorClear not found
-		// decl for kCGColorConversionBlackPointCompensation not found
-		// decl for kCGColorConversionTRCSize not found
-		// decl for kCGColorSpaceACESCGLinear not found
-		// decl for kCGColorSpaceAdobeRGB1998 not found
-		// decl for kCGColorSpaceDCIP3 not found
-		// decl for kCGColorSpaceDisplayP3 not found
-		// decl for kCGColorSpaceExtendedGray not found
-		// decl for kCGColorSpaceExtendedLinearDisplayP3 not found
-		// decl for kCGColorSpaceExtendedLinearGray not found
-		// decl for kCGColorSpaceExtendedLinearITUR_2020 not found
-		// decl for kCGColorSpaceExtendedLinearSRGB not found
-		// decl for kCGColorSpaceExtendedSRGB not found
-		// decl for kCGColorSpaceGenericCMYK not found
-		// decl for kCGColorSpaceGenericGray not found
-		// decl for kCGColorSpaceGenericGrayGamma2_2 not found
-		// decl for kCGColorSpaceGenericLab not found
-		// decl for kCGColorSpaceGenericRGB not found
-		// decl for kCGColorSpaceGenericRGBLinear not found
-		// decl for kCGColorSpaceGenericXYZ not found
-		// decl for kCGColorSpaceITUR_2020 not found
-		// decl for kCGColorSpaceITUR_2020_PQ_EOTF not found
-		// decl for kCGColorSpaceITUR_709 not found
-		// decl for kCGColorSpaceLinearGray not found
-		// decl for kCGColorSpaceLinearSRGB not found
-		// decl for kCGColorSpacePerceptualStandardRGB not found
-		// decl for kCGColorSpaceROMMRGB not found
-		// decl for kCGColorSpaceSRGB not found
-		// decl for kCGColorSpaceUncalibratedCMYK not found
-		// decl for kCGColorSpaceUncalibratedGray not found
-		// decl for kCGColorSpaceUncalibratedRGB not found
-		// decl for kCGColorTransformBlackPointCompensation not found
-		// decl for kCGColorTransformUseCalibratedColor not found
-		// decl for kCGColorWhite not found
-		// decl for kCGContextBackgroundColor not found
-		// decl for kCGContextBoundingBox not found
-		// decl for kCGContextClear not found
-		// decl for kCGContextColorSpace not found
-		// decl for kCGContextDeviceScale not found
-		// decl for kCGContextDisplayList not found
-		// decl for kCGContextErase not found
-		// decl for kCGContextFlush not found
-		// decl for kCGContextGroup not found
-		// decl for kCGContextLog not found
-		// decl for kCGContextResolution not found
-		// decl for kCGContextStyle not found
-		// decl for kCGContextStyleBegin not found
-		// decl for kCGContextStyleContent not found
-		// decl for kCGContextStyleContentBegin not found
-		// decl for kCGContextStyleContentEnd not found
-		// decl for kCGContextStyleEnd not found
-		// decl for kCGContextStyleType not found
-		// decl for kCGContextSynchronize not found
-		// decl for kCGContextWait not found
-		// decl for kCGFontNameKeyCopyright not found
-		// decl for kCGFontNameKeyDescription not found
-		// decl for kCGFontNameKeyDesigner not found
-		// decl for kCGFontNameKeyDesignerURL not found
-		// decl for kCGFontNameKeyFontFamily not found
-		// decl for kCGFontNameKeyFontSubfamily not found
-		// decl for kCGFontNameKeyFullName not found
-		// decl for kCGFontNameKeyLicense not found
-		// decl for kCGFontNameKeyLicenseURL not found
-		// decl for kCGFontNameKeyManufacturer not found
-		// decl for kCGFontNameKeyPostScriptName not found
-		// decl for kCGFontNameKeyPreferredFamily not found
-		// decl for kCGFontNameKeyPreferredSubfamily not found
-		// decl for kCGFontNameKeySampleText not found
-		// decl for kCGFontNameKeyTrademark not found
-		// decl for kCGFontNameKeyUniqueID not found
-		// decl for kCGFontNameKeyVendorURL not found
-		// decl for kCGFontNameKeyVersion not found
-		// decl for kCGFontVariationAxisDefaultValue not found
-		// decl for kCGFontVariationAxisMaxValue not found
-		// decl for kCGFontVariationAxisMinValue not found
-		// decl for kCGFontVariationAxisName not found
-		// decl for kCGImageBlockBaseAddressAlignmentRequest not found
-		// decl for kCGImageBlockBytesPerRowAlignmentRequest not found
-		// decl for kCGImageBlockColorSpaceRequest not found
-		// decl for kCGImageBlockFormatBGRx8 not found
-		// decl for kCGImageBlockFormatRequest not found
-		// decl for kCGImageBlockMarkAsReadOnlyRequest not found
-		// decl for kCGImageBlockSingletonRequest not found
-		// decl for kCGImageBlockTileRequest not found
-		// decl for kCGImageForceConversion not found
-		// decl for kCGImagePropertyIOSurface not found
-		// decl for kCGImageProviderAlphaIsNotPremultiplied not found
-		// decl for kCGImageProviderAlphaIsOne not found
-		// decl for kCGImageProviderAlphaIsPremultiplied not found
-		// decl for kCGImageProviderAlphaNoneSkipLastRequest not found
-		// decl for kCGImageProviderPremultipliedAlphaRequest not found
-		// decl for kCGImageProviderSupportsMultipleResolutions not found
-		// decl for kCGImageSurfaceDisplayMaskRequest not found
-		// decl for kCGImageWillDeallocate not found
-		// decl for kCGLineWidthHairline not found
-		// decl for kCGPDFContextAccessPermissions not found
-		// decl for kCGPDFContextAllowsCopying not found
-		// decl for kCGPDFContextAllowsPrinting not found
-		// decl for kCGPDFContextArtBox not found
-		// decl for kCGPDFContextAuthor not found
-		// decl for kCGPDFContextBleedBox not found
-		// decl for kCGPDFContextCreator not found
-		// decl for kCGPDFContextCropBox not found
-		// decl for kCGPDFContextEncryptionCipher not found
-		// decl for kCGPDFContextEncryptionCipherAESv2 not found
-		// decl for kCGPDFContextEncryptionCipherAESv3 not found
-		// decl for kCGPDFContextEncryptionCipherNone not found
-		// decl for kCGPDFContextEncryptionCipherRC4 not found
-		// decl for kCGPDFContextEncryptionKeyLength not found
-		// decl for kCGPDFContextEncryptionPermissions not found
-		// decl for kCGPDFContextKeywords not found
-		// decl for kCGPDFContextMediaBox not found
-		// decl for kCGPDFContextOutputIntent not found
-		// decl for kCGPDFContextOutputIntents not found
-		// decl for kCGPDFContextOwnerPassword not found
-		// decl for kCGPDFContextSecurityHandlerRevision not found
-		// decl for kCGPDFContextShouldCompress not found
-		// decl for kCGPDFContextSubject not found
-		// decl for kCGPDFContextTitle not found
-		// decl for kCGPDFContextTrimBox not found
-		// decl for kCGPDFContextUserPassword not found
-		// decl for kCGPDFDocumentAuthor not found
-		// decl for kCGPDFDocumentCreationDate not found
-		// decl for kCGPDFDocumentCreator not found
-		// decl for kCGPDFDocumentKeywords not found
-		// decl for kCGPDFDocumentModificationDate not found
-		// decl for kCGPDFDocumentProducer not found
-		// decl for kCGPDFDocumentSubject not found
-		// decl for kCGPDFDocumentTitle not found
-		// decl for kCGPDFFontDataKey not found
-		// decl for kCGPDFFontFormatKey not found
-		// decl for kCGPDFOutlineChildren not found
-		// decl for kCGPDFOutlineDestination not found
-		// decl for kCGPDFOutlineDestinationRect not found
-		// decl for kCGPDFOutlineTitle not found
-		// decl for kCGPDFTagPropertyActualText not found
-		// decl for kCGPDFTagPropertyAlternativeText not found
-		// decl for kCGPDFTagPropertyLanguageText not found
-		// decl for kCGPDFTagPropertyTitleText not found
-		// decl for kCGPDFXDestinationOutputProfile not found
-		// decl for kCGPDFXInfo not found
-		// decl for kCGPDFXOutputCondition not found
-		// decl for kCGPDFXOutputConditionIdentifier not found
-		// decl for kCGPDFXOutputIntentSubtype not found
-		// decl for kCGPDFXRegistryName not found
-		// decl for kCGPDFXTrapped not found
-		// decl for kCGPDFXVersion not found
-		// decl for kCGPatternWillDeallocate not found
 		// decl for path_iterator_add_curve_to_point not found
 		// decl for path_iterator_add_line_to_point not found
 		// decl for path_iterator_add_quad_curve_to_point not found
