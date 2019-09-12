@@ -10575,4 +10575,478 @@
 	"/System/iOSSupport/System/Library/Frameworks/UIKit.framework/UIKit" = {
 		"UIApplicationMain" = "i^?^?@@";
 	};
+	"/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration" = {
+		// decl for CNCopyCurrentNetworkInfo not found
+		// decl for CNCopySupportedInterfaces not found
+		// decl for CNMarkPortalOffline not found
+		// decl for CNMarkPortalOnline not found
+		// decl for CNSetSupportedSSIDs not found
+		// decl for DHCPClientPreferencesCopyApplicationOptions not found
+		// decl for DHCPClientPreferencesSetApplicationOptions not found
+		// decl for DHCPInfoGetLeaseExpirationTime not found
+		// decl for DHCPInfoGetLeaseStartTime not found
+		// decl for DHCPInfoGetOptionData not found
+		// decl for SCBridgeInterfaceCopyAll not found
+		// decl for SCBridgeInterfaceCopyAvailableMemberInterfaces not found
+		// decl for SCBridgeInterfaceCreate not found
+		// decl for SCBridgeInterfaceGetMemberInterfaces not found
+		// decl for SCBridgeInterfaceGetOptions not found
+		// decl for SCBridgeInterfaceRemove not found
+		// decl for SCBridgeInterfaceSetLocalizedDisplayName not found
+		// decl for SCBridgeInterfaceSetMemberInterfaces not found
+		// decl for SCBridgeInterfaceSetOptions not found
+		"SCCopyLastError" = "^{__CFError=}";
+		"SCDynamicStoreAddTemporaryValue" = "C^{__SCDynamicStore=}^{__CFString=}^v";
+		"SCDynamicStoreAddValue" = "C^{__SCDynamicStore=}^{__CFString=}^v";
+		// decl for SCDynamicStoreAddWatchedKey not found
+		"SCDynamicStoreCopyComputerName" = "^{__CFString=}^{__SCDynamicStore=}^I";
+		// decl for SCDynamicStoreCopyDHCPInfo not found
+		"SCDynamicStoreCopyKeyList" = "^{__CFArray=}^{__SCDynamicStore=}^{__CFString=}";
+		"SCDynamicStoreCopyLocalHostName" = "^{__CFString=}^{__SCDynamicStore=}";
+		"SCDynamicStoreCopyMultiple" = "^{__CFDictionary=}^{__SCDynamicStore=}^{__CFArray=}^{__CFArray=}";
+		"SCDynamicStoreCopyNotifiedKeys" = "^{__CFArray=}^{__SCDynamicStore=}";
+		"SCDynamicStoreCopyProxies" = "^{__CFDictionary=}^{__SCDynamicStore=}";
+		// decl for SCDynamicStoreCopyProxiesWithOptions not found
+		"SCDynamicStoreCopyValue" = "^v^{__SCDynamicStore=}^{__CFString=}";
+		"SCDynamicStoreCreate" = "^{__SCDynamicStore=}^{__CFAllocator=}^{__CFString=}^?^{?=l^v^?^?^?}";
+		"SCDynamicStoreCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__SCDynamicStore=}l";
+		"SCDynamicStoreCreateWithOptions" = "^{__SCDynamicStore=}^{__CFAllocator=}^{__CFString=}^{__CFDictionary=}^?^{?=l^v^?^?^?}";
+		"SCDynamicStoreGetTypeID" = "L";
+		"SCDynamicStoreKeyCreate" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}...";
+		"SCDynamicStoreKeyCreateComputerName" = "^{__CFString=}^{__CFAllocator=}";
+		"SCDynamicStoreKeyCreateHostNames" = "^{__CFString=}^{__CFAllocator=}";
+		"SCDynamicStoreKeyCreateLocation" = "^{__CFString=}^{__CFAllocator=}";
+		"SCDynamicStoreKeyCreateNetworkGlobalEntity" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}^{__CFString=}";
+		"SCDynamicStoreKeyCreateNetworkInterface" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}";
+		"SCDynamicStoreKeyCreateNetworkInterfaceEntity" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}^{__CFString=}^{__CFString=}";
+		"SCDynamicStoreKeyCreateNetworkServiceEntity" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}^{__CFString=}^{__CFString=}";
+		// decl for SCDynamicStoreKeyCreatePreferences not found
+		"SCDynamicStoreKeyCreateProxies" = "^{__CFString=}^{__CFAllocator=}";
+		// decl for SCDynamicStoreNotifyCancel not found
+		// decl for SCDynamicStoreNotifyFileDescriptor not found
+		// decl for SCDynamicStoreNotifySignal not found
+		"SCDynamicStoreNotifyValue" = "C^{__SCDynamicStore=}^{__CFString=}";
+		// decl for SCDynamicStoreNotifyWait not found
+		"SCDynamicStoreRemoveValue" = "C^{__SCDynamicStore=}^{__CFString=}";
+		// decl for SCDynamicStoreRemoveWatchedKey not found
+		// decl for SCDynamicStoreSetDisconnectCallBack not found
+		"SCDynamicStoreSetDispatchQueue" = "C^{__SCDynamicStore=}^{dispatch_queue_s=}";
+		"SCDynamicStoreSetMultiple" = "C^{__SCDynamicStore=}^{__CFDictionary=}^{__CFArray=}^{__CFArray=}";
+		"SCDynamicStoreSetNotificationKeys" = "C^{__SCDynamicStore=}^{__CFArray=}^{__CFArray=}";
+		"SCDynamicStoreSetValue" = "C^{__SCDynamicStore=}^{__CFString=}^v";
+		// decl for SCDynamicStoreSnapshot not found
+		"SCError" = "i";
+		"SCErrorString" = "*i";
+		// decl for SCLog not found
+		// decl for SCNetworkConnectionCanTunnelAddress not found
+		// decl for SCNetworkConnectionCopyAllUserPreferences not found
+		// decl for SCNetworkConnectionCopyAvailableServices not found
+		// decl for SCNetworkConnectionCopyCurrentUserPreferences not found
+		"SCNetworkConnectionCopyExtendedStatus" = "^{__CFDictionary=}^{__SCNetworkConnection=}";
+		// decl for SCNetworkConnectionCopyFlowDivertToken not found
+		// decl for SCNetworkConnectionCopyOnDemandInfo not found
+		"SCNetworkConnectionCopyServiceID" = "^{__CFString=}^{__SCNetworkConnection=}";
+		"SCNetworkConnectionCopyStatistics" = "^{__CFDictionary=}^{__SCNetworkConnection=}";
+		"SCNetworkConnectionCopyUserOptions" = "^{__CFDictionary=}^{__SCNetworkConnection=}";
+		"SCNetworkConnectionCopyUserPreferences" = "C^{__CFDictionary=}^^{__CFString=}^^{__CFDictionary=}";
+		// decl for SCNetworkConnectionCreate not found
+		// decl for SCNetworkConnectionCreateUserPreferences not found
+		// decl for SCNetworkConnectionCreateWithService not found
+		"SCNetworkConnectionCreateWithServiceID" = "^{__SCNetworkConnection=}^{__CFAllocator=}^{__CFString=}^?^{?=l^v^?^?^?}";
+		// decl for SCNetworkConnectionGetReachabilityInfo not found
+		// decl for SCNetworkConnectionGetService not found
+		// decl for SCNetworkConnectionGetServiceIdentifier not found
+		"SCNetworkConnectionGetStatus" = "i^{__SCNetworkConnection=}";
+		// decl for SCNetworkConnectionGetStatusFromNEStatus not found
+		// decl for SCNetworkConnectionGetType not found
+		"SCNetworkConnectionGetTypeID" = "L";
+		// decl for SCNetworkConnectionIsOnDemandSuspended not found
+		// decl for SCNetworkConnectionOnDemandShouldRetryOnFailure not found
+		// decl for SCNetworkConnectionRefreshOnDemandState not found
+		// decl for SCNetworkConnectionResume not found
+		"SCNetworkConnectionScheduleWithRunLoop" = "C^{__SCNetworkConnection=}^{__CFRunLoop=}^{__CFString=}";
+		// decl for SCNetworkConnectionSelectServiceWithOptions not found
+		// decl for SCNetworkConnectionSetClientAuditInfo not found
+		// decl for SCNetworkConnectionSetClientInfo not found
+		"SCNetworkConnectionSetDispatchQueue" = "C^{__SCNetworkConnection=}^{dispatch_queue_s=}";
+		"SCNetworkConnectionStart" = "C^{__SCNetworkConnection=}^{__CFDictionary=}C";
+		// decl for SCNetworkConnectionStartWithUserPreferences not found
+		"SCNetworkConnectionStop" = "C^{__SCNetworkConnection=}C";
+		// decl for SCNetworkConnectionSuspend not found
+		// decl for SCNetworkConnectionTriggerOnDemandIfNeeded not found
+		"SCNetworkConnectionUnscheduleFromRunLoop" = "C^{__SCNetworkConnection=}^{__CFRunLoop=}^{__CFString=}";
+		// decl for SCNetworkInterfaceAdvisoryIsSet not found
+		// decl for SCNetworkInterfaceCheckPassword not found
+		// decl for SCNetworkInterfaceCopyAdvisoryNotificationKey not found
+		"SCNetworkInterfaceCopyAll" = "^{__CFArray=}";
+		// decl for SCNetworkInterfaceCopyCapability not found
+		"SCNetworkInterfaceCopyMTU" = "C^{__SCNetworkInterface=}^i^i^i";
+		"SCNetworkInterfaceCopyMediaOptions" = "C^{__SCNetworkInterface=}^^{__CFDictionary=}^^{__CFDictionary=}^^{__CFArray=}C";
+		"SCNetworkInterfaceCopyMediaSubTypeOptions" = "^{__CFArray=}^{__CFArray=}^{__CFString=}";
+		"SCNetworkInterfaceCopyMediaSubTypes" = "^{__CFArray=}^{__CFArray=}";
+		// decl for SCNetworkInterfaceCopyPassword not found
+		"SCNetworkInterfaceCreateWithInterface" = "^{__SCNetworkInterface=}^{__SCNetworkInterface=}^{__CFString=}";
+		"SCNetworkInterfaceForceConfigurationRefresh" = "C^{__SCNetworkInterface=}";
+		"SCNetworkInterfaceGetBSDName" = "^{__CFString=}^{__SCNetworkInterface=}";
+		"SCNetworkInterfaceGetConfiguration" = "^{__CFDictionary=}^{__SCNetworkInterface=}";
+		// decl for SCNetworkInterfaceGetDisableUntilNeeded not found
+		"SCNetworkInterfaceGetExtendedConfiguration" = "^{__CFDictionary=}^{__SCNetworkInterface=}^{__CFString=}";
+		"SCNetworkInterfaceGetHardwareAddressString" = "^{__CFString=}^{__SCNetworkInterface=}";
+		"SCNetworkInterfaceGetInterface" = "^{__SCNetworkInterface=}^{__SCNetworkInterface=}";
+		"SCNetworkInterfaceGetInterfaceType" = "^{__CFString=}^{__SCNetworkInterface=}";
+		"SCNetworkInterfaceGetLocalizedDisplayName" = "^{__CFString=}^{__SCNetworkInterface=}";
+		// decl for SCNetworkInterfaceGetPrimaryRank not found
+		// decl for SCNetworkInterfaceGetQoSMarkingPolicy not found
+		"SCNetworkInterfaceGetSupportedInterfaceTypes" = "^{__CFArray=}^{__SCNetworkInterface=}";
+		"SCNetworkInterfaceGetSupportedProtocolTypes" = "^{__CFArray=}^{__SCNetworkInterface=}";
+		"SCNetworkInterfaceGetTypeID" = "L";
+		// decl for SCNetworkInterfaceProviderCreate not found
+		// decl for SCNetworkInterfaceProviderResume not found
+		// decl for SCNetworkInterfaceProviderSetEventHandler not found
+		// decl for SCNetworkInterfaceRemovePassword not found
+		// decl for SCNetworkInterfaceSetAdvisory not found
+		// decl for SCNetworkInterfaceSetCapability not found
+		"SCNetworkInterfaceSetConfiguration" = "C^{__SCNetworkInterface=}^{__CFDictionary=}";
+		// decl for SCNetworkInterfaceSetDisableUntilNeeded not found
+		"SCNetworkInterfaceSetExtendedConfiguration" = "C^{__SCNetworkInterface=}^{__CFString=}^{__CFDictionary=}";
+		"SCNetworkInterfaceSetMTU" = "C^{__SCNetworkInterface=}i";
+		"SCNetworkInterfaceSetMediaOptions" = "C^{__SCNetworkInterface=}^{__CFString=}^{__CFArray=}";
+		// decl for SCNetworkInterfaceSetPassword not found
+		// decl for SCNetworkInterfaceSetPrimaryRank not found
+		// decl for SCNetworkInterfaceSetQoSMarkingPolicy not found
+		"SCNetworkProtocolGetConfiguration" = "^{__CFDictionary=}^{__SCNetworkProtocol=}";
+		"SCNetworkProtocolGetEnabled" = "C^{__SCNetworkProtocol=}";
+		"SCNetworkProtocolGetProtocolType" = "^{__CFString=}^{__SCNetworkProtocol=}";
+		"SCNetworkProtocolGetTypeID" = "L";
+		"SCNetworkProtocolSetConfiguration" = "C^{__SCNetworkProtocol=}^{__CFDictionary=}";
+		"SCNetworkProtocolSetEnabled" = "C^{__SCNetworkProtocol=}C";
+		// decl for SCNetworkProxiesCopyMatching not found
+		// decl for SCNetworkProxiesCopyMatchingWithOptions not found
+		// decl for SCNetworkProxiesCreateProxyAgentData not found
+		// decl for SCNetworkReachabilityCopyResolvedAddress not found
+		"SCNetworkReachabilityCreateWithAddress" = "^{__SCNetworkReachability=}^{__CFAllocator=}^{sockaddr=CC[14c]}";
+		"SCNetworkReachabilityCreateWithAddressPair" = "^{__SCNetworkReachability=}^{__CFAllocator=}^{sockaddr=CC[14c]}^{sockaddr=CC[14c]}";
+		"SCNetworkReachabilityCreateWithName" = "^{__SCNetworkReachability=}^{__CFAllocator=}*";
+		// decl for SCNetworkReachabilityCreateWithOptions not found
+		"SCNetworkReachabilityGetFlags" = "C^{__SCNetworkReachability=}^I";
+		// decl for SCNetworkReachabilityGetInterfaceIndex not found
+		"SCNetworkReachabilityGetTypeID" = "L";
+		"SCNetworkReachabilityScheduleWithRunLoop" = "C^{__SCNetworkReachability=}^{__CFRunLoop=}^{__CFString=}";
+		"SCNetworkReachabilitySetCallback" = "C^{__SCNetworkReachability=}^?^{?=l^v^?^?^?}";
+		"SCNetworkReachabilitySetDispatchQueue" = "C^{__SCNetworkReachability=}^{dispatch_queue_s=}";
+		"SCNetworkReachabilityUnscheduleFromRunLoop" = "C^{__SCNetworkReachability=}^{__CFRunLoop=}^{__CFString=}";
+		"SCNetworkServiceAddProtocolType" = "C^{__SCNetworkService=}^{__CFString=}";
+		"SCNetworkServiceCopy" = "^{__SCNetworkService=}^{__SCPreferences=}^{__CFString=}";
+		"SCNetworkServiceCopyAll" = "^{__CFArray=}^{__SCPreferences=}";
+		// decl for SCNetworkServiceCopyExternalID not found
+		"SCNetworkServiceCopyProtocol" = "^{__SCNetworkProtocol=}^{__SCNetworkService=}^{__CFString=}";
+		"SCNetworkServiceCopyProtocols" = "^{__CFArray=}^{__SCNetworkService=}";
+		"SCNetworkServiceCreate" = "^{__SCNetworkService=}^{__SCPreferences=}^{__SCNetworkInterface=}";
+		"SCNetworkServiceEstablishDefaultConfiguration" = "C^{__SCNetworkService=}";
+		"SCNetworkServiceGetEnabled" = "C^{__SCNetworkService=}";
+		"SCNetworkServiceGetInterface" = "^{__SCNetworkInterface=}^{__SCNetworkService=}";
+		"SCNetworkServiceGetName" = "^{__CFString=}^{__SCNetworkService=}";
+		// decl for SCNetworkServiceGetPrimaryRank not found
+		"SCNetworkServiceGetServiceID" = "^{__CFString=}^{__SCNetworkService=}";
+		"SCNetworkServiceGetTypeID" = "L";
+		"SCNetworkServiceRemove" = "C^{__SCNetworkService=}";
+		"SCNetworkServiceRemoveProtocolType" = "C^{__SCNetworkService=}^{__CFString=}";
+		"SCNetworkServiceSetEnabled" = "C^{__SCNetworkService=}C";
+		// decl for SCNetworkServiceSetExternalID not found
+		"SCNetworkServiceSetName" = "C^{__SCNetworkService=}^{__CFString=}";
+		// decl for SCNetworkServiceSetPrimaryRank not found
+		"SCNetworkSetAddService" = "C^{__SCNetworkSet=}^{__SCNetworkService=}";
+		"SCNetworkSetContainsInterface" = "C^{__SCNetworkSet=}^{__SCNetworkInterface=}";
+		"SCNetworkSetCopy" = "^{__SCNetworkSet=}^{__SCPreferences=}^{__CFString=}";
+		"SCNetworkSetCopyAll" = "^{__CFArray=}^{__SCPreferences=}";
+		// decl for SCNetworkSetCopyAvailableInterfaces not found
+		"SCNetworkSetCopyCurrent" = "^{__SCNetworkSet=}^{__SCPreferences=}";
+		// decl for SCNetworkSetCopySelectedVPNService not found
+		"SCNetworkSetCopyServices" = "^{__CFArray=}^{__SCNetworkSet=}";
+		"SCNetworkSetCreate" = "^{__SCNetworkSet=}^{__SCPreferences=}";
+		// decl for SCNetworkSetEstablishDefaultConfiguration not found
+		// decl for SCNetworkSetEstablishDefaultInterfaceConfiguration not found
+		"SCNetworkSetGetName" = "^{__CFString=}^{__SCNetworkSet=}";
+		"SCNetworkSetGetServiceOrder" = "^{__CFArray=}^{__SCNetworkSet=}";
+		"SCNetworkSetGetSetID" = "^{__CFString=}^{__SCNetworkSet=}";
+		"SCNetworkSetGetTypeID" = "L";
+		"SCNetworkSetRemove" = "C^{__SCNetworkSet=}";
+		"SCNetworkSetRemoveService" = "C^{__SCNetworkSet=}^{__SCNetworkService=}";
+		"SCNetworkSetSetCurrent" = "C^{__SCNetworkSet=}";
+		"SCNetworkSetSetName" = "C^{__SCNetworkSet=}^{__CFString=}";
+		// decl for SCNetworkSetSetSelectedVPNService not found
+		"SCNetworkSetSetServiceOrder" = "C^{__SCNetworkSet=}^{__CFArray=}";
+		// decl for SCNetworkSignatureCopyActiveIdentifierForAddress not found
+		// decl for SCNetworkSignatureCopyActiveIdentifiers not found
+		// decl for SCNetworkSignatureCopyIdentifierForConnectedSocket not found
+		"SCPreferencesAddValue" = "C^{__SCPreferences=}^{__CFString=}^v";
+		"SCPreferencesApplyChanges" = "C^{__SCPreferences=}";
+		"SCPreferencesCommitChanges" = "C^{__SCPreferences=}";
+		"SCPreferencesCopyKeyList" = "^{__CFArray=}^{__SCPreferences=}";
+		"SCPreferencesCreate" = "^{__SCPreferences=}^{__CFAllocator=}^{__CFString=}^{__CFString=}";
+		"SCPreferencesCreateWithAuthorization" = "^{__SCPreferences=}^{__CFAllocator=}^{__CFString=}^{__CFString=}^{AuthorizationOpaqueRef=}";
+		// decl for SCPreferencesCreateWithOptions not found
+		// decl for SCPreferencesGetHostName not found
+		"SCPreferencesGetSignature" = "^{__CFData=}^{__SCPreferences=}";
+		"SCPreferencesGetTypeID" = "L";
+		"SCPreferencesGetValue" = "^v^{__SCPreferences=}^{__CFString=}";
+		"SCPreferencesLock" = "C^{__SCPreferences=}C";
+		"SCPreferencesPathCreateUniqueChild" = "^{__CFString=}^{__SCPreferences=}^{__CFString=}";
+		"SCPreferencesPathGetLink" = "^{__CFString=}^{__SCPreferences=}^{__CFString=}";
+		"SCPreferencesPathGetValue" = "^{__CFDictionary=}^{__SCPreferences=}^{__CFString=}";
+		// decl for SCPreferencesPathKeyCreate not found
+		// decl for SCPreferencesPathKeyCreateNetworkServiceEntity not found
+		// decl for SCPreferencesPathKeyCreateNetworkServices not found
+		// decl for SCPreferencesPathKeyCreateSet not found
+		// decl for SCPreferencesPathKeyCreateSetNetworkGlobalEntity not found
+		// decl for SCPreferencesPathKeyCreateSetNetworkInterfaceEntity not found
+		// decl for SCPreferencesPathKeyCreateSetNetworkService not found
+		// decl for SCPreferencesPathKeyCreateSetNetworkServiceEntity not found
+		// decl for SCPreferencesPathKeyCreateSets not found
+		"SCPreferencesPathRemoveValue" = "C^{__SCPreferences=}^{__CFString=}";
+		"SCPreferencesPathSetLink" = "C^{__SCPreferences=}^{__CFString=}^{__CFString=}";
+		"SCPreferencesPathSetValue" = "C^{__SCPreferences=}^{__CFString=}^{__CFDictionary=}";
+		// decl for SCPreferencesRemoveAllValues not found
+		"SCPreferencesRemoveValue" = "C^{__SCPreferences=}^{__CFString=}";
+		"SCPreferencesScheduleWithRunLoop" = "C^{__SCPreferences=}^{__CFRunLoop=}^{__CFString=}";
+		"SCPreferencesSetCallback" = "C^{__SCPreferences=}^?^{?=l^v^?^?^?}";
+		"SCPreferencesSetComputerName" = "C^{__SCPreferences=}^{__CFString=}I";
+		"SCPreferencesSetDispatchQueue" = "C^{__SCPreferences=}^{dispatch_queue_s=}";
+		// decl for SCPreferencesSetHostName not found
+		"SCPreferencesSetLocalHostName" = "C^{__SCPreferences=}^{__CFString=}";
+		"SCPreferencesSetValue" = "C^{__SCPreferences=}^{__CFString=}^v";
+		"SCPreferencesSynchronize" = "v^{__SCPreferences=}";
+		"SCPreferencesUnlock" = "C^{__SCPreferences=}";
+		"SCPreferencesUnscheduleFromRunLoop" = "C^{__SCPreferences=}^{__CFRunLoop=}^{__CFString=}";
+		// decl for SCPrint not found
+		// decl for SCUserPreferencesCheckInterfacePassword not found
+		// decl for SCUserPreferencesCopyExtendedInterfaceConfiguration not found
+		// decl for SCUserPreferencesCopyInterfaceConfiguration not found
+		// decl for SCUserPreferencesCopyInterfacePassword not found
+		// decl for SCUserPreferencesCopyName not found
+		// decl for SCUserPreferencesGetTypeID not found
+		// decl for SCUserPreferencesGetUniqueID not found
+		// decl for SCUserPreferencesIsForced not found
+		// decl for SCUserPreferencesRemove not found
+		// decl for SCUserPreferencesRemoveInterfacePassword not found
+		// decl for SCUserPreferencesSetCurrent not found
+		// decl for SCUserPreferencesSetExtendedInterfaceConfiguration not found
+		// decl for SCUserPreferencesSetInterfaceConfiguration not found
+		// decl for SCUserPreferencesSetInterfacePassword not found
+		// decl for SCUserPreferencesSetName not found
+		"SCVLANInterfaceCopyAll" = "^{__CFArray=}^{__SCPreferences=}";
+		"SCVLANInterfaceCopyAvailablePhysicalInterfaces" = "^{__CFArray=}";
+		"SCVLANInterfaceCreate" = "^{__SCNetworkInterface=}^{__SCPreferences=}^{__SCNetworkInterface=}^{__CFNumber=}";
+		"SCVLANInterfaceGetOptions" = "^{__CFDictionary=}^{__SCNetworkInterface=}";
+		"SCVLANInterfaceGetPhysicalInterface" = "^{__SCNetworkInterface=}^{__SCNetworkInterface=}";
+		"SCVLANInterfaceGetTag" = "^{__CFNumber=}^{__SCNetworkInterface=}";
+		"SCVLANInterfaceRemove" = "C^{__SCNetworkInterface=}";
+		"SCVLANInterfaceSetLocalizedDisplayName" = "C^{__SCNetworkInterface=}^{__CFString=}";
+		"SCVLANInterfaceSetOptions" = "C^{__SCNetworkInterface=}^{__CFDictionary=}";
+		"SCVLANInterfaceSetPhysicalInterfaceAndTag" = "C^{__SCNetworkInterface=}^{__SCNetworkInterface=}^{__CFNumber=}";
+		// decl for SystemConfigurationVersionNumber not found
+		// decl for SystemConfigurationVersionString not found
+		// decl for VPNApplicationInstalled not found
+		// decl for VPNApplicationRemoved not found
+		// decl for VPNConfigurationConnectionStart not found
+		// decl for VPNConfigurationConnectionStop not found
+		// decl for VPNConfigurationCopy not found
+		// decl for VPNConfigurationCopyAll not found
+		// decl for VPNConfigurationCopyAppRule not found
+		// decl for VPNConfigurationCopyAppRuleIDs not found
+		// decl for VPNConfigurationCopyCertificate not found
+		// decl for VPNConfigurationCopyIdentities not found
+		// decl for VPNConfigurationCopyLastConnectionError not found
+		// decl for VPNConfigurationCopyPersistentData not found
+		// decl for VPNConfigurationCopyVendorData not found
+		// decl for VPNConfigurationCreate not found
+		// decl for VPNConfigurationCreateWithOptions not found
+		// decl for VPNConfigurationEnableVPNType not found
+		// decl for VPNConfigurationGetEnabled not found
+		// decl for VPNConfigurationGetName not found
+		// decl for VPNConfigurationGetStatus not found
+		// decl for VPNConfigurationGetTunnelType not found
+		// decl for VPNConfigurationIsVPNTypeEnabled not found
+		// decl for VPNConfigurationRemove not found
+		// decl for VPNConfigurationRemoveAppRule not found
+		// decl for VPNConfigurationScheduleWithRunLoop not found
+		// decl for VPNConfigurationSendMessage not found
+		// decl for VPNConfigurationSet not found
+		// decl for VPNConfigurationSetAppRule not found
+		// decl for VPNConfigurationSetCallback not found
+		// decl for VPNConfigurationSetEnabled not found
+		// decl for VPNConfigurationSetMessageCallback not found
+		// decl for VPNConfigurationSetName not found
+		// decl for VPNConfigurationSetPersistentData not found
+		// decl for VPNConfigurationSetVendorData not found
+		// decl for VPNConfigurationUnscheduleFromRunLoop not found
+		// decl for VPNConfigurationValidateCertificate not found
+		// decl for VPNCopyLastError not found
+		// decl for VPNFlowCanAcceptBytes not found
+		// decl for VPNFlowCopyError not found
+		// decl for VPNFlowCopyProperty not found
+		// decl for VPNFlowDatagramCopyNext not found
+		// decl for VPNFlowDatagramSend not found
+		// decl for VPNFlowGetTypeID not found
+		// decl for VPNFlowHasBytesAvailable not found
+		// decl for VPNFlowOpen not found
+		// decl for VPNFlowReadClose not found
+		// decl for VPNFlowScheduleWithRunLoop not found
+		// decl for VPNFlowSetDispatchQueue not found
+		// decl for VPNFlowSetEventHandler not found
+		// decl for VPNFlowSetProperty not found
+		// decl for VPNFlowStreamRead not found
+		// decl for VPNFlowStreamWrite not found
+		// decl for VPNFlowUnscheduleFromRunLoop not found
+		// decl for VPNFlowWriteClose not found
+		// decl for VPNSerializeData not found
+		// decl for VPNServiceCopyAll not found
+		// decl for VPNServiceCopyAllMatchingExternalID not found
+		// decl for VPNServiceCopyAppRule not found
+		// decl for VPNServiceCopyAppRuleIDs not found
+		// decl for VPNServiceIsManagedAppVPN not found
+		// decl for VPNServiceRemoveAppRule not found
+		// decl for VPNServiceSetAppRule not found
+		// decl for VPNTunnelAuthenticate not found
+		// decl for VPNTunnelClearConfiguration not found
+		// decl for VPNTunnelCopyPersistentData not found
+		// decl for VPNTunnelCopySavedConfiguration not found
+		// decl for VPNTunnelCopySavedConfigurationName not found
+		// decl for VPNTunnelCopySavedVendorData not found
+		// decl for VPNTunnelCopySocketInfo not found
+		// decl for VPNTunnelCryptoAddConfigurations not found
+		// decl for VPNTunnelCryptoDisable not found
+		// decl for VPNTunnelCryptoEnable not found
+		// decl for VPNTunnelCryptoGenerateIndex not found
+		// decl for VPNTunnelCryptoRemoveConfigurations not found
+		// decl for VPNTunnelCryptoStartDataTraffic not found
+		// decl for VPNTunnelCryptoStopDataTraffic not found
+		// decl for VPNTunnelDisplayBanner not found
+		// decl for VPNTunnelEnvironmentEventComplete not found
+		// decl for VPNTunnelFetchCredentialComplete not found
+		// decl for VPNTunnelIPCSendMessage not found
+		// decl for VPNTunnelIncrementDataReceived not found
+		// decl for VPNTunnelIncrementDataSent not found
+		// decl for VPNTunnelLog not found
+		// decl for VPNTunnelSetConfigurationEntities not found
+		// decl for VPNTunnelSetPersistentData not found
+		// decl for VPNTunnelSetStatus not found
+		// decl for VPNTunnelSetTunnelSocket not found
+		// decl for VPNTunnelUpdatePlugin not found
+		// decl for VPNUnserializeData not found
+		// decl for _SCBridgeInterfaceCopyActive not found
+		// decl for _SCBridgeInterfaceUpdateConfiguration not found
+		// decl for _SCCopyDescription not found
+		// decl for _SCCreatePropertyListFromResource not found
+		// decl for _SCDPluginExecCommand not found
+		// decl for _SCDPluginExecCommand2 not found
+		// decl for _SCDPluginExecInit not found
+		// decl for _SCErrorSet not found
+		// decl for _SCNetworkConfigurationCheckValidity not found
+		// decl for _SCNetworkConfigurationCheckValidityWithPreferences not found
+		// decl for _SCNetworkConfigurationCopyMigrationPaths not found
+		// decl for _SCNetworkConfigurationCopyMigrationRemovePaths not found
+		// decl for _SCNetworkConfigurationPerformMigration not found
+		// decl for _SCNetworkInterfaceCompare not found
+		// decl for _SCNetworkInterfaceCopyActive not found
+		// decl for _SCNetworkInterfaceCopyAllWithPreferences not found
+		// decl for _SCNetworkInterfaceCopyInterfaceInfo not found
+		// decl for _SCNetworkInterfaceCopySlashDevPath not found
+		// decl for _SCNetworkInterfaceCreateWithBSDName not found
+		// decl for _SCNetworkInterfaceCreateWithEntity not found
+		// decl for _SCNetworkInterfaceCreateWithIONetworkInterfaceObject not found
+		// decl for _SCNetworkInterfaceForceConfigurationRefresh not found
+		// decl for _SCNetworkInterfaceGetConfigurationAction not found
+		// decl for _SCNetworkInterfaceGetFamilySubType not found
+		// decl for _SCNetworkInterfaceGetFamilyType not found
+		// decl for _SCNetworkInterfaceGetHardwareAddress not found
+		// decl for _SCNetworkInterfaceGetIOInterfaceNamePrefix not found
+		// decl for _SCNetworkInterfaceGetIOInterfaceType not found
+		// decl for _SCNetworkInterfaceGetIOInterfaceUnit not found
+		// decl for _SCNetworkInterfaceGetIOPath not found
+		// decl for _SCNetworkInterfaceGetIORegistryEntryID not found
+		// decl for _SCNetworkInterfaceIsApplePreconfigured not found
+		// decl for _SCNetworkInterfaceIsBluetoothP2P not found
+		// decl for _SCNetworkInterfaceIsBluetoothPAN not found
+		// decl for _SCNetworkInterfaceIsBluetoothPAN_NAP not found
+		// decl for _SCNetworkInterfaceIsBuiltin not found
+		// decl for _SCNetworkInterfaceIsHiddenConfiguration not found
+		// decl for _SCNetworkInterfaceIsPhysicalEthernet not found
+		// decl for _SCNetworkInterfaceIsTethered not found
+		// decl for _SCNetworkInterfaceIsThunderbolt not found
+		// decl for _SCNetworkInterfaceIsTrustRequired not found
+		// decl for _SCNetworkMigrationAreConfigurationsIdentical not found
+		// decl for _SCNetworkProtocolCompare not found
+		// decl for _SCNetworkServiceCompare not found
+		// decl for _SCNetworkServiceCopyActive not found
+		// decl for _SCNetworkServiceIsVPN not found
+		// decl for _SCNetworkServiceSetServiceID not found
+		// decl for _SCNetworkSetCompare not found
+		// decl for _SCNetworkSetCreateDefault not found
+		// decl for _SCNetworkSetSetSetID not found
+		// decl for _SCPreferencesCopyComputerName not found
+		// decl for _SCPreferencesCopyLocalHostName not found
+		// decl for _SCPreferencesSystemKeychainPasswordItemCopy not found
+		// decl for _SCPreferencesSystemKeychainPasswordItemExists not found
+		// decl for _SCPreferencesSystemKeychainPasswordItemRemove not found
+		// decl for _SCPreferencesSystemKeychainPasswordItemSet not found
+		// decl for _SCSecKeychainCopySystemKeychain not found
+		// decl for _SCSecKeychainPasswordItemCopy not found
+		// decl for _SCSecKeychainPasswordItemExists not found
+		// decl for _SCSecKeychainPasswordItemRemove not found
+		// decl for _SCSecKeychainPasswordItemSet not found
+		// decl for _SCSerialize not found
+		// decl for _SCSerializeData not found
+		// decl for _SCSerializeMultiple not found
+		// decl for _SCSerializeString not found
+		// decl for _SCUnserialize not found
+		// decl for _SCUnserializeData not found
+		// decl for _SCUnserializeMultiple not found
+		// decl for _SCUnserializeString not found
+		// decl for _SCVLANInterfaceCopyActive not found
+		// decl for _SCVLANInterfaceUpdateConfiguration not found
+		// decl for _SC_CFBundleCopyNonLocalizedString not found
+		// decl for _SC_CFBundleGet not found
+		// decl for _SC_CFMachPortCreateWithPort not found
+		// decl for _SC_CFStringIsValidDNSName not found
+		// decl for _SC_CFStringIsValidNetBIOSName not found
+		// decl for _SC_LOG_DEFAULT not found
+		// decl for _SC_cfstring_to_cstring not found
+		// decl for _SC_checkResolverReachabilityByAddress not found
+		// decl for _SC_copyBacktrace not found
+		// decl for _SC_crash not found
+		// decl for _SC_dlopen not found
+		// decl for _SC_domainEndsWithDomain not found
+		// decl for _SC_getconninfo not found
+		// decl for _SC_hostMatchesDomain not found
+		// decl for _SC_hw_model not found
+		// decl for _SC_isInstallEnvironment not found
+		// decl for _SC_logMachPortReferences not found
+		// decl for _SC_logMachPortStatus not found
+		// decl for _SC_sendMachMessage not found
+		// decl for _SC_sockaddr_to_string not found
+		// decl for _SC_stringIsValidDNSName not found
+		// decl for _SC_string_to_sockaddr not found
+		// decl for _SC_syslog_os_log_mapping not found
+		// decl for _SC_trimDomain not found
+		// decl for __SCDynamicStoreCreatePrivate not found
+		// decl for __SCNetworkConnectionCopyOnDemandInfoWithName not found
+		// decl for __SCNetworkInterfaceCreateCapabilities not found
+		// decl for __SCNetworkInterfaceCreateMediaOptions not found
+		// decl for __SCNetworkInterfaceSetDisableUntilNeededValue not found
+		// decl for __SC_Log not found
+		// decl for _sc_debug not found
+		// decl for _sc_log not found
+		// decl for _sc_verbose not found
+		// decl for _scprefs_observer_cancel not found
+		// decl for _scprefs_observer_watch not found
+		// decl for isa_xpc_bool not found
+		// decl for isa_xpc_connection not found
+		// decl for isa_xpc_dictionary not found
+		// decl for isa_xpc_error not found
+		// decl for snhelper_flow_divert_uuid_policy_add not found
+		// decl for snhelper_flow_divert_uuid_policy_clear not found
+		// decl for snhelper_flow_divert_uuid_policy_remove not found
+		// decl for snhelper_get_uuid_for_app not found
+	};
 }

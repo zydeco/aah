@@ -40,3 +40,6 @@ msdecl -w -I- -I$SDKROOT/usr/include -Iframework_includes $SDKROOT/System/Librar
 
 # Metal
 msdecl -w -I- -I$SDKROOT/usr/include -Iframework_includes $SDKROOT/System/Library/Frameworks/Metal.framework/Metal.tbd framework_includes/Metal/Metal.h
+
+# SC
+msdecl -w -I- -I$SDKROOT/usr/include -Iframework_includes $SDKROOT/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration.tbd framework_includes/SystemConfiguration/SystemConfiguration.h
