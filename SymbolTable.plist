@@ -7628,6 +7628,11 @@
 		"+[NSPredicate predicateWithFormat:]" = "$NSSomethingWithFormat";
 		"+[NSException raise:format:]" = "$NSException_raise_format";
 		"-[* initWithObjectsAndKeys:]" = "$nilTerminatedListOfObjects";
+		"+[* dictionaryWithObjectsAndKeys:]" = "$nilTerminatedListOfObjects";
+		"-[* initWithObjects:]" = "$nilTerminatedListOfObjects";
+		"-[* arrayWithObjects:]" = "$nilTerminatedListOfObjects";
+		"-[* setWithObjects:]" = "$nilTerminatedListOfObjects";
+		"-[* orderedSetWithObjects:]" = "$nilTerminatedListOfObjects";
 		// not actually shims
 		"-[_UIAppearance setTintColor:]" = "v@:@";
 	};
