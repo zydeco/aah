@@ -4,7 +4,8 @@
 #import <pthread.h>
 #import "aah.h"
 
-void *my_Block_copy(const void *arg);
+void *aah_Block_copy(const void *arg);
+void aah_Block_object_assign(void *, const void *, const int);
 extern void AXPushNotificationToSystemForBroadcast(void*);
 
 int aah_pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg) {
@@ -26,7 +27,8 @@ void aah_ax_bug_thing(void* whatever) {};
 
 typedef struct interpose_s { void *new_func; void *orig_func; } interpose_t;
 static const interpose_t interposing_functions[] __attribute__ ((used, section("__DATA, __interpose"))) = {
-    { (void*) my_Block_copy, (void*)_Block_copy},
+    { (void*) aah_Block_copy, (void*)_Block_copy},
+    { (void*) aah_Block_object_assign, (void*)_Block_object_assign},
     { (void*) aah_pthread_create, (void*)pthread_create},
     { (void*) aah_pthread_key_create, (void*)pthread_key_create},
     { (void*) aah_ax_bug_thing, (void*)AXPushNotificationToSystemForBroadcast }
