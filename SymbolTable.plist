@@ -1140,8 +1140,8 @@
 		"dispatch_source_set_timer" = "v^{dispatch_source_s=}QQQ";
 		"dispatch_source_testcancel" = "l^{dispatch_source_s=}";
 		"dispatch_suspend" = "v^?";
-		"dispatch_sync" = "v^{dispatch_queue_s=}^?";
-		"dispatch_sync_f" = "v^{dispatch_queue_s=}^v^?";
+		"dispatch_sync" = "<v^{dispatch_queue_s=}^?>dispatch_block_1";
+		"dispatch_sync_f" = "<v^{dispatch_queue_s=}^v^?>dispatch_async_f";
 		"dispatch_time" = "QQq";
 		// decl for dispatch_tsd_indexes not found
 		"dispatch_walltime" = "Q^{timespec=}q";
