@@ -82,7 +82,7 @@ int EncodeStringFormatArgs(char *fmt, char *type_encoding, int is_nsstring, int 
             break;
         case 'q': // same as ll
             length_mod = ll;
-            break;
+            arg++;
             break;
         case 'j': // (u)intmax_t
             length_mod = j;
