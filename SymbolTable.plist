@@ -16,10 +16,10 @@
 		// decl for cache_get_info_for_keys not found
 		// decl for cache_get_minimum_values_hint not found
 		// decl for cache_get_name not found
-		"cache_hash_byte_string" = "L*L";
+		"cache_hash_byte_string" = "Q*Q";
 		// decl for cache_invoke not found
-		"cache_key_hash_cb_cstring" = "L^v^v";
-		"cache_key_hash_cb_integer" = "L^v^v";
+		"cache_key_hash_cb_cstring" = "Q^v^v";
+		"cache_key_hash_cb_integer" = "Q^v^v";
 		"cache_key_is_equal_cb_cstring" = "B^v^v^v";
 		"cache_key_is_equal_cb_integer" = "B^v^v^v";
 		// decl for cache_print not found
@@ -29,7 +29,7 @@
 		"cache_remove" = "i^{cache_s=}^v";
 		"cache_remove_all" = "i^{cache_s=}";
 		// decl for cache_remove_with_block not found
-		"cache_set_and_retain" = "i^{cache_s=}^v^vL";
+		"cache_set_and_retain" = "i^{cache_s=}^v^vQ";
 		// decl for cache_set_cost_hint not found
 		// decl for cache_set_count_hint not found
 		// decl for cache_set_minimum_values_hint not found
@@ -87,17 +87,17 @@
 		// decl for CCBigNumToDecimalString not found
 		// decl for CCBigNumToHexString not found
 		// decl for CCBigNumZeroLSBCount not found
-		"CCCalibratePBKDF" = "IILLILI";
+		"CCCalibratePBKDF" = "IIQQIQI";
 		// decl for CCCreateBigNum not found
-		"CCCrypt" = "iIII^vL^v^vL^vL^L";
+		"CCCrypt" = "iIII^vQ^v^vQ^vQ^Q";
 		// decl for CCCryptorAddParameter not found
-		"CCCryptorCreate" = "iIII^vL^v^^{_CCCryptor=}";
-		"CCCryptorCreateFromData" = "iIII^vL^v^vL^^{_CCCryptor=}^L";
+		"CCCryptorCreate" = "iIII^vQ^v^^{_CCCryptor=}";
+		"CCCryptorCreateFromData" = "iIII^vQ^v^vQ^^{_CCCryptor=}^Q";
 		// decl for CCCryptorCreateFromDataWithMode not found
-		"CCCryptorCreateWithMode" = "iIIII^v^vL^vLiI^^{_CCCryptor=}";
+		"CCCryptorCreateWithMode" = "iIIII^v^vQ^vQiI^^{_CCCryptor=}";
 		// decl for CCCryptorDecryptDataBlock not found
 		// decl for CCCryptorEncryptDataBlock not found
-		"CCCryptorFinal" = "i^{_CCCryptor=}^vL^L";
+		"CCCryptorFinal" = "i^{_CCCryptor=}^vQ^Q";
 		// decl for CCCryptorGCM not found
 		// decl for CCCryptorGCMAddAAD not found
 		// decl for CCCryptorGCMAddADD not found
@@ -112,12 +112,12 @@
 		// decl for CCCryptorGCMSetIV not found
 		// decl for CCCryptorGCMaddAAD not found
 		// decl for CCCryptorGetIV not found
-		"CCCryptorGetOutputLength" = "L^{_CCCryptor=}LB";
+		"CCCryptorGetOutputLength" = "Q^{_CCCryptor=}QB";
 		// decl for CCCryptorGetParameter not found
 		"CCCryptorRelease" = "i^{_CCCryptor=}";
 		"CCCryptorReset" = "i^{_CCCryptor=}^v";
 		// decl for CCCryptorReset_binary_compatibility not found
-		"CCCryptorUpdate" = "i^{_CCCryptor=}^vL^vL^L";
+		"CCCryptorUpdate" = "i^{_CCCryptor=}^vQ^vQ^Q";
 		// decl for CCDHComputeKey not found
 		// decl for CCDHCreate not found
 		// decl for CCDHGenerateKey not found
@@ -162,18 +162,18 @@
 		// decl for CCECCryptorWrapKey not found
 		// decl for CCECGetKeySize not found
 		// decl for CCECGetKeyType not found
-		"CCHmac" = "vI^vL^vL^v";
+		"CCHmac" = "vI^vQ^vQ^v";
 		// decl for CCHmacClone not found
 		// decl for CCHmacCreate not found
 		// decl for CCHmacDestroy not found
 		"CCHmacFinal" = "v^{?=}^v";
-		"CCHmacInit" = "v^{?=}I^vL";
+		"CCHmacInit" = "v^{?=}I^vQ";
 		// decl for CCHmacOneShot not found
 		// decl for CCHmacOutputSize not found
 		// decl for CCHmacOutputSizeFromRef not found
-		"CCHmacUpdate" = "v^{?=}^vL";
+		"CCHmacUpdate" = "v^{?=}^vQ";
 		// decl for CCKeyDerivationHMac not found
-		"CCKeyDerivationPBKDF" = "iI*L^CLII^CL";
+		"CCKeyDerivationPBKDF" = "iI*Q^CQII^CQ";
 		// decl for CCRNGCreate not found
 		// decl for CCRNGRelease not found
 		// decl for CCRSACryptorCreateFromData not found
@@ -195,10 +195,10 @@
 		// decl for CCRSAGetKeyType not found
 		// decl for CCRandomCopyBytes not found
 		// decl for CCRandomGenerateBytes not found
-		"CCSymmetricKeyUnwrap" = "iI^CL^CL^CL^C^L";
-		"CCSymmetricKeyWrap" = "iI^CL^CL^CL^C^L";
-		"CCSymmetricUnwrappedSize" = "LIL";
-		"CCSymmetricWrappedSize" = "LIL";
+		"CCSymmetricKeyUnwrap" = "iI^CQ^CQ^CQ^C^Q";
+		"CCSymmetricKeyWrap" = "iI^CQ^CQ^CQ^C^Q";
+		"CCSymmetricUnwrappedSize" = "QIQ";
+		"CCSymmetricWrappedSize" = "QIQ";
 		"CC_MD2" = "^C^vI^C";
 		"CC_MD2_Final" = "i^C^{CC_MD2state_st=}";
 		"CC_MD2_Init" = "i^{CC_MD2state_st=}";
@@ -234,7 +234,7 @@
 		"CC_SHA512_Init" = "i^{CC_SHA512state_st=}";
 		"CC_SHA512_Update" = "i^{CC_SHA512state_st=}^vI";
 		// decl for CCrfc3394_iv not found
-		// decl for CCrfc3394_ivLen not found
+		// decl for CCrfc3394_ivQen not found
 		// decl for CNCRC not found
 		// decl for CNCRCDumpTable not found
 		// decl for CNCRCFinal not found
@@ -989,8 +989,8 @@
 		"dispatch_after" = "vQ^{dispatch_queue_s=}^?";
 		"dispatch_after_f" = "vQ^{dispatch_queue_s=}^v^?";
 		// decl for dispatch_allocator_layout not found
-		"dispatch_apply" = "vL^{dispatch_queue_s=}^?";
-		"dispatch_apply_f" = "vL^{dispatch_queue_s=}^v^?";
+		"dispatch_apply" = "vQ^{dispatch_queue_s=}^?";
+		"dispatch_apply_f" = "vQ^{dispatch_queue_s=}^v^?";
 		"dispatch_assert_queue" = "v^{dispatch_queue_s=}";
 		// decl for dispatch_assert_queue$V2 not found
 		"dispatch_assert_queue_barrier" = "v^{dispatch_queue_s=}";
@@ -1013,31 +1013,31 @@
 		// decl for dispatch_benchmark not found
 		// decl for dispatch_benchmark_f not found
 		"dispatch_block_cancel" = "v^?";
-		"dispatch_block_create" = "^?L^?";
-		"dispatch_block_create_with_qos_class" = "^?LIi^?";
+		"dispatch_block_create" = "^?Q^?";
+		"dispatch_block_create_with_qos_class" = "^?QIi^?";
 		// decl for dispatch_block_create_with_voucher not found
 		// decl for dispatch_block_create_with_voucher_and_qos_class not found
 		"dispatch_block_notify" = "v^?^{dispatch_queue_s=}^?";
-		"dispatch_block_perform" = "vL^?";
-		"dispatch_block_testcancel" = "l^?";
-		"dispatch_block_wait" = "l^?Q";
+		"dispatch_block_perform" = "vQ^?";
+		"dispatch_block_testcancel" = "q^?";
+		"dispatch_block_wait" = "q^?Q";
 		"dispatch_data_apply" = "B^{dispatch_data_s=}^?";
 		// decl for dispatch_data_apply_f not found
-		"dispatch_data_copy_region" = "^{dispatch_data_s=}^{dispatch_data_s=}L^L";
-		"dispatch_data_create" = "^{dispatch_data_s=}^vL^{dispatch_queue_s=}^?";
+		"dispatch_data_copy_region" = "^{dispatch_data_s=}^{dispatch_data_s=}Q^Q";
+		"dispatch_data_create" = "^{dispatch_data_s=}^vQ^{dispatch_queue_s=}^?";
 		// decl for dispatch_data_create_alloc not found
 		"dispatch_data_create_concat" = "^{dispatch_data_s=}^{dispatch_data_s=}^{dispatch_data_s=}";
 		// decl for dispatch_data_create_f not found
-		"dispatch_data_create_map" = "^{dispatch_data_s=}^{dispatch_data_s=}^?^L";
-		"dispatch_data_create_subrange" = "^{dispatch_data_s=}^{dispatch_data_s=}LL";
+		"dispatch_data_create_map" = "^{dispatch_data_s=}^{dispatch_data_s=}^?^Q";
+		"dispatch_data_create_subrange" = "^{dispatch_data_s=}^{dispatch_data_s=}QQ";
 		// decl for dispatch_data_create_with_transform not found
-		"dispatch_data_get_size" = "L^{dispatch_data_s=}";
+		"dispatch_data_get_size" = "Q^{dispatch_data_s=}";
 		// decl for dispatch_data_make_memory_entry not found
 		// "dispatch_debug" = "$dispatch_debug"; // v^?*...;
 		// "dispatch_debugv" = "$dispatch_debugv"; // v^?*...;
 		"dispatch_get_context" = "^v^?";
 		"dispatch_get_current_queue" = "^{dispatch_queue_s=}";
-		"dispatch_get_global_queue" = "^{dispatch_queue_s=}lL";
+		"dispatch_get_global_queue" = "^{dispatch_queue_s=}qQ";
 		"dispatch_get_specific" = "^v^v";
 		"dispatch_group_async" = "v^{dispatch_group_s=}^{dispatch_queue_s=}^?";
 		"dispatch_group_async_f" = "v^{dispatch_group_s=}^{dispatch_queue_s=}^v^?";
@@ -1046,22 +1046,22 @@
 		"dispatch_group_leave" = "v^{dispatch_group_s=}";
 		"dispatch_group_notify" = "v^{dispatch_group_s=}^{dispatch_queue_s=}^?";
 		"dispatch_group_notify_f" = "v^{dispatch_group_s=}^{dispatch_queue_s=}^v^?";
-		"dispatch_group_wait" = "l^{dispatch_group_s=}Q";
+		"dispatch_group_wait" = "q^{dispatch_group_s=}Q";
 		"dispatch_io_barrier" = "v^{dispatch_io_s=}^?";
 		// decl for dispatch_io_barrier_f not found
-		"dispatch_io_close" = "v^{dispatch_io_s=}L";
-		"dispatch_io_create" = "^{dispatch_io_s=}Li^{dispatch_queue_s=}^?";
+		"dispatch_io_close" = "v^{dispatch_io_s=}Q";
+		"dispatch_io_create" = "^{dispatch_io_s=}Qi^{dispatch_queue_s=}^?";
 		// decl for dispatch_io_create_f not found
-		"dispatch_io_create_with_io" = "^{dispatch_io_s=}L^{dispatch_io_s=}^{dispatch_queue_s=}^?";
+		"dispatch_io_create_with_io" = "^{dispatch_io_s=}Q^{dispatch_io_s=}^{dispatch_queue_s=}^?";
 		// decl for dispatch_io_create_with_io_f not found
-		"dispatch_io_create_with_path" = "^{dispatch_io_s=}L*iS^{dispatch_queue_s=}^?";
+		"dispatch_io_create_with_path" = "^{dispatch_io_s=}Q*iS^{dispatch_queue_s=}^?";
 		// decl for dispatch_io_create_with_path_f not found
 		"dispatch_io_get_descriptor" = "i^{dispatch_io_s=}";
-		"dispatch_io_read" = "v^{dispatch_io_s=}qL^{dispatch_queue_s=}^?";
+		"dispatch_io_read" = "v^{dispatch_io_s=}qQ^{dispatch_queue_s=}^?";
 		// decl for dispatch_io_read_f not found
-		"dispatch_io_set_high_water" = "v^{dispatch_io_s=}L";
-		"dispatch_io_set_interval" = "v^{dispatch_io_s=}QL";
-		"dispatch_io_set_low_water" = "v^{dispatch_io_s=}L";
+		"dispatch_io_set_high_water" = "v^{dispatch_io_s=}Q";
+		"dispatch_io_set_interval" = "v^{dispatch_io_s=}QQ";
+		"dispatch_io_set_low_water" = "v^{dispatch_io_s=}Q";
 		"dispatch_io_write" = "v^{dispatch_io_s=}q^{dispatch_data_s=}^{dispatch_queue_s=}^?";
 		// decl for dispatch_io_write_f not found
 		// decl for dispatch_mach_cancel not found
@@ -1088,12 +1088,12 @@
 		// decl for dispatch_mach_send_with_result_and_wait_for_reply not found
 		"dispatch_main" = "v";
 		// decl for dispatch_mig_server not found
-		"dispatch_once" = "<v^l^?>dispatch_block_1";
-		"dispatch_once_f" = "<v^l^v^?>dispatch_once_f";
+		"dispatch_once" = "<v^q^?>dispatch_block_1";
+		"dispatch_once_f" = "<v^q^v^?>dispatch_once_f";
 		// decl for dispatch_pthread_root_queue_copy_current not found
 		// decl for dispatch_pthread_root_queue_create not found
 		"dispatch_queue_attr_make_initially_inactive" = "^{dispatch_queue_attr_s=}^{dispatch_queue_attr_s=}";
-		"dispatch_queue_attr_make_with_autorelease_frequency" = "^{dispatch_queue_attr_s=}^{dispatch_queue_attr_s=}L";
+		"dispatch_queue_attr_make_with_autorelease_frequency" = "^{dispatch_queue_attr_s=}^{dispatch_queue_attr_s=}Q";
 		// decl for dispatch_queue_attr_make_with_overcommit not found
 		"dispatch_queue_attr_make_with_qos_class" = "^{dispatch_queue_attr_s=}^{dispatch_queue_attr_s=}Ii";
 		"dispatch_queue_create" = "^{dispatch_queue_s=}*^{dispatch_queue_attr_s=}";
@@ -1107,14 +1107,14 @@
 		// decl for dispatch_queue_set_label_nocopy not found
 		"dispatch_queue_set_specific" = "v^{dispatch_queue_s=}^v^v^?";
 		// decl for dispatch_queue_set_width not found
-		"dispatch_read" = "viL^{dispatch_queue_s=}^?";
+		"dispatch_read" = "viQ^{dispatch_queue_s=}^?";
 		// decl for dispatch_read_f not found
 		"dispatch_release" = "v^?";
 		"dispatch_resume" = "v^?";
 		"dispatch_retain" = "v^?";
-		"dispatch_semaphore_create" = "^{dispatch_semaphore_s=}l";
-		"dispatch_semaphore_signal" = "l^{dispatch_semaphore_s=}";
-		"dispatch_semaphore_wait" = "l^{dispatch_semaphore_s=}Q";
+		"dispatch_semaphore_create" = "^{dispatch_semaphore_s=}q";
+		"dispatch_semaphore_signal" = "q^{dispatch_semaphore_s=}";
+		"dispatch_semaphore_wait" = "q^{dispatch_semaphore_s=}Q";
 		"dispatch_set_context" = "v^?^v";
 		"dispatch_set_finalizer_f" = "v^?^?";
 		// decl for dispatch_set_qos_class not found
@@ -1123,12 +1123,12 @@
 		"dispatch_set_target_queue" = "v^?^{dispatch_queue_s=}";
 		"dispatch_source_cancel" = "v^{dispatch_source_s=}";
 		// decl for dispatch_source_cancel_and_wait not found
-		"dispatch_source_create" = "^{dispatch_source_s=}^{dispatch_source_type_s=}LL^{dispatch_queue_s=}";
-		"dispatch_source_get_data" = "L^{dispatch_source_s=}";
+		"dispatch_source_create" = "^{dispatch_source_s=}^{dispatch_source_type_s=}QQ^{dispatch_queue_s=}";
+		"dispatch_source_get_data" = "Q^{dispatch_source_s=}";
 		// decl for dispatch_source_get_extended_data not found
-		"dispatch_source_get_handle" = "L^{dispatch_source_s=}";
-		"dispatch_source_get_mask" = "L^{dispatch_source_s=}";
-		"dispatch_source_merge_data" = "v^{dispatch_source_s=}L";
+		"dispatch_source_get_handle" = "Q^{dispatch_source_s=}";
+		"dispatch_source_get_mask" = "Q^{dispatch_source_s=}";
+		"dispatch_source_merge_data" = "v^{dispatch_source_s=}Q";
 		"dispatch_source_set_cancel_handler" = "v^{dispatch_source_s=}^?";
 		"dispatch_source_set_cancel_handler_f" = "v^{dispatch_source_s=}^?";
 		"dispatch_source_set_event_handler" = "v^{dispatch_source_s=}^?";
@@ -1138,7 +1138,7 @@
 		"dispatch_source_set_registration_handler" = "v^{dispatch_source_s=}^?";
 		"dispatch_source_set_registration_handler_f" = "v^{dispatch_source_s=}^?";
 		"dispatch_source_set_timer" = "v^{dispatch_source_s=}QQQ";
-		"dispatch_source_testcancel" = "l^{dispatch_source_s=}";
+		"dispatch_source_testcancel" = "q^{dispatch_source_s=}";
 		"dispatch_suspend" = "v^?";
 		"dispatch_sync" = "<v^{dispatch_queue_s=}^?>dispatch_block_1";
 		"dispatch_sync_f" = "<v^{dispatch_queue_s=}^v^?>dispatch_async_f";
@@ -1193,7 +1193,7 @@
 		"_dyld_get_image_name" = "*I";
 		// decl for _dyld_get_image_slide not found
 		// decl for _dyld_get_image_uuid not found
-		"_dyld_get_image_vmaddr_slide" = "lI";
+		"_dyld_get_image_vmaddr_slide" = "qI";
 		// decl for _dyld_get_shared_cache_range not found
 		// decl for _dyld_get_shared_cache_uuid not found
 		"_dyld_image_count" = "I";
@@ -1370,21 +1370,21 @@
 		"NXGetArchInfoFromCpuType" = "^{?=}ii";
 		"NXGetArchInfoFromName" = "^{?=}*";
 		"NXGetLocalArchInfo" = "^{?=}";
-		"get_edata" = "L";
-		"get_end" = "L";
-		"get_etext" = "L";
+		"get_edata" = "Q";
+		"get_end" = "Q";
+		"get_etext" = "Q";
 		"getsectbyname" = "^{section_64=}**";
 		"getsectbynamefromheader" = "^{section=}^{mach_header=}**";
 		"getsectbynamefromheader_64" = "^{section_64=}^{mach_header_64=}**";
 		"getsectbynamefromheaderwithswap" = "^{section=}^{mach_header=}**i";
 		"getsectbynamefromheaderwithswap_64" = "^{section=}^{mach_header_64=}**i";
-		"getsectdata" = "***^L";
-		"getsectdatafromFramework" = "****^L";
+		"getsectdata" = "***^Q";
+		"getsectdatafromFramework" = "****^Q";
 		"getsectdatafromheader" = "*^{mach_header=}**^I";
 		"getsectdatafromheader_64" = "*^{mach_header_64=}**^Q";
-		"getsectiondata" = "^C^{mach_header_64=}**^L";
+		"getsectiondata" = "^C^{mach_header_64=}**^Q";
 		"getsegbyname" = "^{segment_command_64=}*";
-		"getsegmentdata" = "^C^{mach_header_64=}*^L";
+		"getsegmentdata" = "^C^{mach_header_64=}*^Q";
 		"slot_name" = "vii^?^?";
 		"swap_build_tool_version" = "v^{build_tool_version=}Ii";
 		"swap_build_version_command" = "v^{build_version_command=}i";
@@ -1534,7 +1534,7 @@
 		// decl for asl_core_str_to_uint32 not found
 		// decl for asl_core_string_hash not found
 		// decl for asl_core_time_to_str not found
-		"asl_count" = "L^{__asl_object_s=}";
+		"asl_count" = "Q^{__asl_object_s=}";
 		"asl_create_auxiliary_file" = "i^{__asl_object_s=}**^i";
 		"asl_fetch_key_val_op" = "i^{__asl_object_s=}I^?^?^I";
 		// decl for asl_file_close not found
@@ -1565,7 +1565,7 @@
 		"asl_free" = "v^{__asl_object_s=}";
 		"asl_get" = "*^{__asl_object_s=}*";
 		// decl for asl_get_filter not found
-		"asl_get_index" = "^{__asl_object_s=}^{__asl_object_s=}L";
+		"asl_get_index" = "^{__asl_object_s=}^{__asl_object_s=}Q";
 		// decl for asl_get_local_control not found
 		"asl_get_type" = "I^{__asl_object_s=}";
 		// decl for asl_get_value_for_key not found
@@ -1579,7 +1579,7 @@
 		"asl_log_auxiliary_location" = "i^{__asl_object_s=}***";
 		"asl_log_descriptor" = "i^{__asl_object_s=}^{__asl_object_s=}iiI";
 		"asl_log_message" = "$asl_log_message"; // ii*...;
-		"asl_match" = "^{__asl_object_s=}^{__asl_object_s=}^{__asl_object_s=}^LLLIi";
+		"asl_match" = "^{__asl_object_s=}^{__asl_object_s=}^{__asl_object_s=}^QQQIi";
 		// decl for asl_msg_cmp not found
 		// decl for asl_msg_cmp_list not found
 		// decl for asl_msg_copy not found
@@ -1644,7 +1644,7 @@
 		"asl_remove_log_file" = "i^{__asl_object_s=}i";
 		// decl for asl_remove_output not found
 		// decl for asl_remove_output_file not found
-		"asl_reset_iteration" = "v^{__asl_object_s=}L";
+		"asl_reset_iteration" = "v^{__asl_object_s=}Q";
 		"asl_retain" = "^{__asl_object_s=}^{__asl_object_s=}";
 		"asl_search" = "^{__asl_object_s=}^{__asl_object_s=}^{__asl_object_s=}";
 		"asl_send" = "i^{__asl_object_s=}^{__asl_object_s=}";
@@ -1698,7 +1698,7 @@
 		"setlogmask" = "ii";
 		"syslog" = "$syslog"; // vi*...;
 		"vsyslog" = "$vsyslog"; // vi*...;
-		"Block_size" = "L^v";
+		"Block_size" = "Q^v";
 		"_Block_copy" = "^v^v";
 		"_Block_extended_layout" = "*^v";
 		"_Block_has_signature" = "B^v";
@@ -1842,10 +1842,10 @@
 		// decl for __match_D2A not found
 		// decl for __mb_cur_max not found
 		// decl for __mb_sb_limit not found
-		"__memccpy_chk" = "^v^v^viL";
-		"__memcpy_chk" = "^v^v^vL";
-		"__memmove_chk" = "^v^v^vL";
-		"__memset_chk" = "^v^viL";
+		"__memccpy_chk" = "^v^v^viQ";
+		"__memcpy_chk" = "^v^v^vQ";
+		"__memmove_chk" = "^v^v^vQ";
+		"__memset_chk" = "^v^viQ";
 		// decl for __mult_D2A not found
 		// decl for __multadd_D2A not found
 		// decl for __nrv_alloc_D2A not found
@@ -1889,9 +1889,9 @@
 		// decl for __sinit not found
 		// decl for __slbexpand not found
 		// decl for __smakebuf not found
-		"__snprintf_chk" = "$snprintf"; // i*LiL*...;
+		"__snprintf_chk" = "$snprintf"; // i*QiQ*...;
 		// decl for __split_page not found
-		"__sprintf_chk" = "$sprintf"; // i*iL*...;
+		"__sprintf_chk" = "$sprintf"; // i*iQ*...;
 		// decl for __sread not found
 		// decl for __srefill not found
 		"__srget" = "i^{__sFILE=}";
@@ -1902,14 +1902,14 @@
 		// decl for __stdinp not found
 		// decl for __stdoutp not found
 		"__stpcpy_chk" = "***";
-		"__stpncpy_chk" = "***L";
+		"__stpncpy_chk" = "***Q";
 		"__strcat_chk" = "***";
 		// decl for __strcp_D2A not found
 		"__strcpy_chk" = "***";
-		"__strlcat_chk" = "L**L";
-		"__strlcpy_chk" = "L**L";
-		"__strncat_chk" = "***L";
-		"__strncpy_chk" = "***L";
+		"__strlcat_chk" = "Q**Q";
+		"__strlcpy_chk" = "Q**Q";
+		"__strncat_chk" = "***Q";
+		"__strncpy_chk" = "***Q";
 		// decl for __strtodg not found
 		// decl for __strtopdd not found
 		// decl for __sum_D2A not found
@@ -1928,8 +1928,8 @@
 		// decl for __ulp_D2A not found
 		// decl for __ungetc not found
 		// decl for __ungetwc not found
-		"__vsnprintf_chk" = "$vsnprintf"; // i*LiL*...;
-		"__vsprintf_chk" = "$vsprintf"; // i*iL*...;
+		"__vsnprintf_chk" = "$vsnprintf"; // i*QiQ*...;
+		"__vsprintf_chk" = "$vsprintf"; // i*iQ*...;
 		// decl for __wcwidth not found
 		// decl for __wcwidth_l not found
 		// decl for _allocenvstate not found
@@ -1993,7 +1993,7 @@
 		// decl for _time_to_time64 not found
 		// decl for _unsetenvp not found
 		// decl for _utmpxname not found
-		"a64l" = "l*";
+		"a64l" = "q*";
 		"abort" = "v";
 		// decl for abort_report_np not found
 		"abs" = "ii";
@@ -2053,7 +2053,7 @@
 		"alphasort" = "i^?^?";
 		"arc4random" = "I";
 		"arc4random_addrandom" = "v^Ci";
-		"arc4random_buf" = "v^vL";
+		"arc4random_buf" = "v^vQ";
 		"arc4random_stir" = "v";
 		"arc4random_uniform" = "II";
 		"ascii2addr" = "ii*^v";
@@ -2069,8 +2069,8 @@
 		"atof_l" = "d*^{_xlocale=}";
 		"atoi" = "i*";
 		"atoi_l" = "i*^{_xlocale=}";
-		"atol" = "l*";
-		"atol_l" = "l*^{_xlocale=}";
+		"atol" = "q*";
+		"atol_l" = "q*^{_xlocale=}";
 		"atoll" = "q*";
 		"atoll_l" = "q*^{_xlocale=}";
 		"backtrace" = "i^?i";
@@ -2080,38 +2080,38 @@
 		"backtrace_symbols_fd" = "v^?ii";
 		"basename" = "**";
 		"basename_r" = "***";
-		"bcmp" = "i^v^vL";
-		"bcopy" = "v^v^vL";
+		"bcmp" = "i^v^vQ";
+		"bcopy" = "v^v^vQ";
 		"brk" = "^v^v";
 		"bsd_signal" = "^?i^?";
-		"bsearch" = "^v^v^vLL^?";
-		"bsearch_b" = "^v^v^vLL^?";
+		"bsearch" = "^v^v^vQQ^?";
+		"bsearch_b" = "^v^v^vQQ^?";
 		"btowc" = "ii";
 		"btowc_l" = "ii^{_xlocale=}";
-		"bzero" = "v^vL";
+		"bzero" = "v^vQ";
 		"catclose" = "i^{__nl_cat_d=}";
 		"catgets" = "*^{__nl_cat_d=}ii*";
 		"catopen" = "^{__nl_cat_d=}*i";
-		"cfgetispeed" = "L^{termios=}";
-		"cfgetospeed" = "L^{termios=}";
+		"cfgetispeed" = "Q^{termios=}";
+		"cfgetospeed" = "Q^{termios=}";
 		"cfmakeraw" = "v^{termios=}";
-		"cfsetispeed" = "i^{termios=}L";
-		"cfsetospeed" = "i^{termios=}L";
-		"cfsetspeed" = "i^{termios=}L";
+		"cfsetispeed" = "i^{termios=}Q";
+		"cfsetospeed" = "i^{termios=}Q";
+		"cfsetspeed" = "i^{termios=}Q";
 		"cgetcap" = "***i";
 		"cgetclose" = "i";
 		"cgetent" = "i^?^?*";
 		"cgetfirst" = "i^?^?";
 		"cgetmatch" = "i**";
 		"cgetnext" = "i^?^?";
-		"cgetnum" = "i**^l";
+		"cgetnum" = "i**^q";
 		"cgetset" = "i*";
 		"cgetstr" = "i**^?";
 		"cgetustr" = "i**^?";
 		"chmodx_np" = "i*^{_filesec=}";
 		"clearerr" = "v^{__sFILE=}";
 		// decl for clearerr_unlocked not found
-		"clock" = "L";
+		"clock" = "Q";
 		"clock_getres" = "ii^{timespec=}";
 		"clock_gettime" = "ii^{timespec=}";
 		"clock_gettime_nsec_np" = "Qi";
@@ -2120,15 +2120,15 @@
 		"clock_settime" = "ii^{timespec=}";
 		"closedir" = "i^{?=}";
 		// decl for compat_mode not found
-		"confstr" = "Li*L";
+		"confstr" = "Qi*Q";
 		"copy_printf_domain" = "^{_printf_domain=}^{_printf_domain=}";
 		"creat" = "i*S";
 		// decl for creat$NOCANCEL not found
 		"crypt" = "***";
 		"ctermid" = "**";
 		"ctermid_r" = "**";
-		"ctime" = "*^l";
-		"ctime_r" = "*^l*";
+		"ctime" = "*^q";
+		"ctime_r" = "*^q*";
 		"daemon" = "iii";
 		// decl for daylight not found
 		"dbm_clearerr" = "i^{?=}";
@@ -2144,7 +2144,7 @@
 		"dbopen" = "^{__db=}*iii^v";
 		"devname" = "*iS";
 		"devname_r" = "*iS*i";
-		"difftime" = "dll";
+		"difftime" = "dqq";
 		"digittoint" = "ii";
 		"digittoint_l" = "ii^{_xlocale=}";
 		"dirfd" = "i^{?=}";
@@ -2170,7 +2170,7 @@
 		"err_set_file" = "v^v";
 		"errc" = "$errc"; // vii*...;
 		"errx" = "$errx"; // vi*...;
-		"execl" = "$execl"; // i**...;
+		"execl" = "$execq"; // i**...;
 		"execle" = "$execle"; // i**...;
 		"execlp" = "$execlp"; // i**...;
 		"execv" = "i*^?";
@@ -2188,16 +2188,16 @@
 		// decl for feof_unlocked not found
 		"ferror" = "i^{__sFILE=}";
 		// decl for ferror_unlocked not found
-		"fflagstostr" = "*L";
+		"fflagstostr" = "*Q";
 		"fflush" = "i^{__sFILE=}";
 		"fgetc" = "i^{__sFILE=}";
-		"fgetln" = "*^{__sFILE=}^L";
+		"fgetln" = "*^{__sFILE=}^Q";
 		"fgetpos" = "i^{__sFILE=}^q";
 		"fgets" = "**i^{__sFILE=}";
 		"fgetwc" = "i^{__sFILE=}";
 		"fgetwc_l" = "i^{__sFILE=}^{_xlocale=}";
-		"fgetwln" = "^i^{__sFILE=}^L";
-		"fgetwln_l" = "^i^{__sFILE=}^L^{_xlocale=}";
+		"fgetwln" = "^i^{__sFILE=}^Q";
+		"fgetwln_l" = "^i^{__sFILE=}^Q^{_xlocale=}";
 		"fgetws" = "^i^ii^{__sFILE=}";
 		"fgetws_l" = "^i^ii^{__sFILE=}^{_xlocale=}";
 		"fileno" = "i^{__sFILE=}";
@@ -2210,15 +2210,15 @@
 		"filesec_set_property" = "i^{_filesec=}i^v";
 		"filesec_unset_property" = "i^{_filesec=}i";
 		"flockfile" = "v^{__sFILE=}";
-		"fmemopen" = "^{__sFILE=}^vL*";
+		"fmemopen" = "^{__sFILE=}^vQ*";
 		"fmtcheck" = "***";
-		"fmtmsg" = "il*i***";
+		"fmtmsg" = "iq*i***";
 		"fnmatch" = "i**i";
 		"fopen" = "^{__sFILE=}**";
 		// decl for fopen$DARWIN_EXTSN not found
 		"fork" = "i";
 		"forkpty" = "i^i*^{termios=}^{winsize=}";
-		"fparseln" = "*^{__sFILE=}^L^L*i";
+		"fparseln" = "*^{__sFILE=}^Q^Q*i";
 		"fprintf" = "$fprintf"; // i^{__sFILE=}*...;
 		"fprintf_l" = "$fprintf_l"; // i^{__sFILE=}^{_xlocale=}*...;
 		"fpurge" = "i^{__sFILE=}";
@@ -2228,20 +2228,20 @@
 		"fputwc_l" = "ii^{__sFILE=}^{_xlocale=}";
 		"fputws" = "i^i^{__sFILE=}";
 		"fputws_l" = "i^i^{__sFILE=}^{_xlocale=}";
-		"fread" = "L^vLL^{__sFILE=}";
+		"fread" = "Q^vQQ^{__sFILE=}";
 		"free_printf_comp" = "v^{_printf_compiled=}";
 		"free_printf_domain" = "v^{_printf_domain=}";
 		"freelocale" = "i^{_xlocale=}";
 		"freopen" = "^{__sFILE=}**^{__sFILE=}";
 		"fscanf" = "$fscanf"; // i^{__sFILE=}*...;
 		"fscanf_l" = "$fscanf_l"; // i^{__sFILE=}^{_xlocale=}*...;
-		"fseek" = "i^{__sFILE=}li";
+		"fseek" = "i^{__sFILE=}qi";
 		"fseeko" = "i^{__sFILE=}qi";
 		"fsetpos" = "i^{__sFILE=}^q";
 		"fstatvfs" = "ii^{statvfs=}";
 		"fstatx_np" = "ii^{stat=}^{_filesec=}";
 		"fsync_volume_np" = "iii";
-		"ftell" = "l^{__sFILE=}";
+		"ftell" = "q^{__sFILE=}";
 		"ftello" = "q^{__sFILE=}";
 		"ftime" = "i^{timeb=}";
 		"ftok" = "i*i";
@@ -2258,33 +2258,33 @@
 		"fwide" = "i^{__sFILE=}i";
 		"fwprintf" = "$fwprintf"; // i^{__sFILE=}^i...;
 		"fwprintf_l" = "$fwprintf_l"; // i^{__sFILE=}^{_xlocale=}^i...;
-		"fwrite" = "L^vLL^{__sFILE=}";
+		"fwrite" = "Q^vQQ^{__sFILE=}";
 		"fwscanf" = "$fwscanf"; // i^{__sFILE=}^i...;
 		"fwscanf_l" = "$fwscanf_l"; // i^{__sFILE=}^{_xlocale=}^i...;
 		"fxprintf" = "$fxprintf"; // i^{__sFILE=}^{_printf_domain=}^{_xlocale=}*...;
 		"fxprintf_exec" = "$fxprintf_exec"; // i^{__sFILE=}^{_printf_compiled=}...;
 		"gcvt" = "*di*";
-		"getbsize" = "*^i^l";
+		"getbsize" = "*^i^q";
 		"getc" = "i^{__sFILE=}";
 		"getc_unlocked" = "i^{__sFILE=}";
 		"getchar" = "i";
 		"getchar_unlocked" = "i";
-		"getcwd" = "**L";
+		"getcwd" = "**Q";
 		"getdate" = "^{tm=}*";
 		// decl for getdate_err not found
-		"getdelim" = "l^?^Li^{__sFILE=}";
+		"getdelim" = "q^?^Qi^{__sFILE=}";
 		// decl for getdiskbyname not found
 		"getenv" = "**";
 		// decl for getgroups$DARWIN_EXTSN not found
-		"gethostid" = "l";
-		"gethostname" = "i*L";
+		"gethostid" = "q";
+		"gethostname" = "i*Q";
 		"getipv4sourcefilter" = "ii{in_addr=}{in_addr=}^I^I^{in_addr=}";
 		"getlastlogx" = "^{lastlogx=}I^{lastlogx=}";
 		"getlastlogxbyname" = "^{lastlogx=}*^{lastlogx=}";
-		"getline" = "l^?^L^{__sFILE=}";
+		"getline" = "q^?^Q^{__sFILE=}";
 		"getloadavg" = "i^di";
 		"getlogin" = "*";
-		"getlogin_r" = "i*L";
+		"getlogin_r" = "i*Q";
 		"getmntinfo" = "i^?i";
 		"getmntinfo_r_np" = "i^?i";
 		"getmode" = "S^vS";
@@ -2316,8 +2316,8 @@
 		"glob" = "i*i^?^{?=}";
 		"glob_b" = "i*i^?^{?=}";
 		"globfree" = "v^{?=}";
-		"gmtime" = "^{tm=}^l";
-		"gmtime_r" = "^{tm=}^l^{tm=}";
+		"gmtime" = "^{tm=}^q";
+		"gmtime_r" = "^{tm=}^q^{tm=}";
 		"grantpt" = "ii";
 		// decl for hash_create not found
 		// decl for hash_destroy not found
@@ -2325,21 +2325,21 @@
 		// decl for hash_search not found
 		// decl for hash_stats not found
 		// decl for hash_traverse not found
-		"hcreate" = "iL";
+		"hcreate" = "iQ";
 		"hdestroy" = "v";
-		"heapsort" = "i^vLL^?";
-		"heapsort_b" = "i^vLL^?";
+		"heapsort" = "i^vQQ^?";
+		"heapsort_b" = "i^vQQ^?";
 		"hsearch" = "^{entry=}{entry=}i";
-		"imaxabs" = "ll";
-		"imaxdiv" = "{?=}ll";
+		"imaxabs" = "qq";
+		"imaxdiv" = "{?=}qq";
 		"index" = "**i";
 		"inet_addr" = "I*";
 		"inet_aton" = "i*^{in_addr=}";
 		"inet_lnaof" = "I{in_addr=}";
 		"inet_makeaddr" = "{in_addr=}II";
-		"inet_net_ntop" = "*i^vi*L";
-		"inet_net_pton" = "ii*^vL";
-		"inet_neta" = "*I*L";
+		"inet_net_ntop" = "*i^vi*Q";
+		"inet_net_pton" = "ii*^vQ";
+		"inet_neta" = "*I*Q";
 		"inet_netof" = "I{in_addr=}";
 		"inet_network" = "I*";
 		"inet_nsap_addr" = "I*^Ci";
@@ -2349,7 +2349,7 @@
 		// decl for inet_ntop4 not found
 		// decl for inet_ntop6 not found
 		"inet_pton" = "ii*^v";
-		"initstate" = "*I*L";
+		"initstate" = "*I*Q";
 		"insque" = "v^v^v";
 		"isalnum" = "ii";
 		"isalnum_l" = "ii^{_xlocale=}";
@@ -2428,60 +2428,60 @@
 		"iswxdigit_l" = "ii^{_xlocale=}";
 		"isxdigit" = "ii";
 		"isxdigit_l" = "ii^{_xlocale=}";
-		"jrand48" = "l^S";
+		"jrand48" = "q^S";
 		"killpg" = "iii";
-		"l64a" = "*l";
-		"labs" = "ll";
+		"l64a" = "*q";
+		"labs" = "qq";
 		"lchflags" = "i*I";
 		"lchmod" = "i*S";
 		"lcong48" = "v^S";
-		"ldiv" = "{?=}ll";
-		"lfind" = "^v^v^v^LL^?";
+		"ldiv" = "{?=}qq";
+		"lfind" = "^v^v^v^QQ^?";
 		"link_addr" = "v*^{sockaddr_dl=}";
 		"link_ntoa" = "*^{sockaddr_dl=}";
 		"llabs" = "qq";
 		"lldiv" = "{?=}qq";
 		"localeconv" = "^{lconv=}";
 		"localeconv_l" = "^{lconv=}^{_xlocale=}";
-		"localtime" = "^{tm=}^l";
-		"localtime_r" = "^{tm=}^l^{tm=}";
+		"localtime" = "^{tm=}^q";
+		"localtime_r" = "^{tm=}^q^{tm=}";
 		"lockf" = "iiiq";
 		// decl for lockf$NOCANCEL not found
 		"login_tty" = "ii";
 		"logwtmp" = "v***";
-		"lrand48" = "l";
-		"lsearch" = "^v^v^v^LL^?";
+		"lrand48" = "q";
+		"lsearch" = "^v^v^v^QQ^?";
 		"lstatx_np" = "i*^{stat=}^{_filesec=}";
 		"lutimes" = "i*^{timeval=}";
-		"mblen" = "i*L";
-		"mblen_l" = "i*L^{_xlocale=}";
-		"mbrlen" = "L*L^{mbstate_t=}";
-		"mbrlen_l" = "L*L^{mbstate_t=}^{_xlocale=}";
-		"mbrtowc" = "L^i*L^{mbstate_t=}";
-		"mbrtowc_l" = "L^i*L^{mbstate_t=}^{_xlocale=}";
+		"mblen" = "i*Q";
+		"mblen_l" = "i*Q^{_xlocale=}";
+		"mbrlen" = "Q*Q^{mbstate_t=}";
+		"mbrlen_l" = "Q*Q^{mbstate_t=}^{_xlocale=}";
+		"mbrtowc" = "Q^i*Q^{mbstate_t=}";
+		"mbrtowc_l" = "Q^i*Q^{mbstate_t=}^{_xlocale=}";
 		"mbsinit" = "i^{mbstate_t=}";
 		"mbsinit_l" = "i^{mbstate_t=}^{_xlocale=}";
-		"mbsnrtowcs" = "L^i^?LL^{mbstate_t=}";
-		"mbsnrtowcs_l" = "L^i^?LL^{mbstate_t=}^{_xlocale=}";
-		"mbsrtowcs" = "L^i^?L^{mbstate_t=}";
-		"mbsrtowcs_l" = "L^i^?L^{mbstate_t=}^{_xlocale=}";
-		"mbstowcs" = "L^i*L";
-		"mbstowcs_l" = "L^i*L^{_xlocale=}";
-		"mbtowc" = "i^i*L";
-		"mbtowc_l" = "i^i*L^{_xlocale=}";
-		"memccpy" = "^v^v^viL";
-		"memchr" = "^v^viL";
-		"memcmp" = "i^v^vL";
-		"memcpy" = "^v^v^vL";
-		"memmem" = "^v^vL^vL";
-		"memmove" = "^v^v^vL";
-		"memset" = "^v^viL";
-		"memset_pattern16" = "v^v^vL";
-		"memset_pattern4" = "v^v^vL";
-		"memset_pattern8" = "v^v^vL";
-		"memset_s" = "i^vLiL";
-		"mergesort" = "i^vLL^?";
-		"mergesort_b" = "i^vLL^?";
+		"mbsnrtowcs" = "Q^i^?QQ^{mbstate_t=}";
+		"mbsnrtowcs_l" = "Q^i^?QQ^{mbstate_t=}^{_xlocale=}";
+		"mbsrtowcs" = "Q^i^?Q^{mbstate_t=}";
+		"mbsrtowcs_l" = "Q^i^?Q^{mbstate_t=}^{_xlocale=}";
+		"mbstowcs" = "Q^i*Q";
+		"mbstowcs_l" = "Q^i*Q^{_xlocale=}";
+		"mbtowc" = "i^i*Q";
+		"mbtowc_l" = "i^i*Q^{_xlocale=}";
+		"memccpy" = "^v^v^viQ";
+		"memchr" = "^v^viQ";
+		"memcmp" = "i^v^vQ";
+		"memcpy" = "^v^v^vQ";
+		"memmem" = "^v^vQ^vQ";
+		"memmove" = "^v^v^vQ";
+		"memset" = "^v^viQ";
+		"memset_pattern16" = "v^v^vQ";
+		"memset_pattern4" = "v^v^vQ";
+		"memset_pattern8" = "v^v^vQ";
+		"memset_s" = "i^vQiQ";
+		"mergesort" = "i^vQQ^?";
+		"mergesort_b" = "i^vQQ^?";
 		"mkdirx_np" = "i*^{_filesec=}";
 		"mkdtemp" = "**";
 		"mkdtempat_np" = "*i*";
@@ -2496,7 +2496,7 @@
 		"mkstemps" = "i*i";
 		"mkstempsat_np" = "ii*i";
 		"mktemp" = "**";
-		"mktime" = "l^{tm=}";
+		"mktime" = "q^{tm=}";
 		// decl for monaddition not found
 		// decl for moncontrol not found
 		// decl for moncount not found
@@ -2512,7 +2512,7 @@
 		// decl for mpool_open not found
 		// decl for mpool_put not found
 		// decl for mpool_sync not found
-		"mrand48" = "l";
+		"mrand48" = "q";
 		"nanosleep" = "i^{timespec=}^{timespec=}";
 		// decl for nanosleep$NOCANCEL not found
 		"new_printf_comp" = "^{_printf_compiled=}^{_printf_domain=}^{_xlocale=}*";
@@ -2524,11 +2524,11 @@
 		"nice" = "ii";
 		"nl_langinfo" = "*i";
 		"nl_langinfo_l" = "*i^{_xlocale=}";
-		"nrand48" = "l^S";
-		"nvis" = "**Liii";
+		"nrand48" = "q^S";
+		"nvis" = "**Qiii";
 		// decl for offtime not found
-		"open_memstream" = "^{__sFILE=}^?^L";
-		"open_wmemstream" = "^{__sFILE=}^?^L";
+		"open_memstream" = "^{__sFILE=}^?^Q";
+		"open_wmemstream" = "^{__sFILE=}^?^Q";
 		"opendev" = "i*ii^?";
 		"opendir" = "^{?=}*";
 		"openpty" = "i^i^i*^{termios=}^{winsize=}";
@@ -2544,17 +2544,17 @@
 		"perror" = "v*";
 		"popen" = "^{__sFILE=}**";
 		// decl for popen$DARWIN_EXTSN not found
-		"posix2time" = "ll";
+		"posix2time" = "qq";
 		"posix_openpt" = "ii";
 		"posix_spawnp" = "i^i*^^v^^v^?^?";
 		"printf" = "$printf"; // i*...;
 		"printf_l" = "$printf_l"; // i^{_xlocale=}*...;
 		"psignal" = "vI*";
-		"psort" = "v^vLL^?";
-		"psort_b" = "v^vLL^?";
-		"psort_r" = "v^vLL^v^?";
+		"psort" = "v^vQQ^?";
+		"psort_b" = "v^vQQ^?";
+		"psort_r" = "v^vQQ^v^?";
 		"ptsname" = "*i";
-		"ptsname_r" = "ii*L";
+		"ptsname_r" = "ii*Q";
 		"putc" = "ii^{__sFILE=}";
 		"putc_unlocked" = "ii^{__sFILE=}";
 		"putchar" = "ii";
@@ -2567,15 +2567,15 @@
 		"putwc_l" = "ii^{__sFILE=}^{_xlocale=}";
 		"putwchar" = "ii";
 		"putwchar_l" = "ii^{_xlocale=}";
-		"qsort" = "v^vLL^?";
-		"qsort_b" = "v^vLL^?";
-		"qsort_r" = "v^vLL^v^?";
+		"qsort" = "v^vQQ^?";
+		"qsort_b" = "v^vQQ^?";
+		"qsort_r" = "v^vQQ^v^?";
 		"querylocale" = "*i^{_xlocale=}";
 		"radixsort" = "i^?i^CI";
 		"raise" = "ii";
 		"rand" = "i";
 		"rand_r" = "i^I";
-		"random" = "l";
+		"random" = "q";
 		// decl for rb_tree_count not found
 		// decl for rb_tree_find_node not found
 		// decl for rb_tree_find_node_geq not found
@@ -2586,28 +2586,28 @@
 		// decl for rb_tree_remove_node not found
 		"readdir" = "^{dirent=}^{?=}";
 		"readdir_r" = "i^{?=}^{dirent=}^?";
-		"readpassphrase" = "***Li";
-		"reallocf" = "^v^vL";
+		"readpassphrase" = "***Qi";
+		"reallocf" = "^v^vQ";
 		"realpath" = "***";
 		"realpath$DARWIN_EXTSN" = "***";
-		"recv" = "li^vLi";
+		"recv" = "qi^vQi";
 		// decl for recv$NOCANCEL not found
 		"regcomp" = "i^{?=}*i";
 		"regcomp_l" = "i^{?=}*i^{_xlocale=}";
-		"regerror" = "Li^{?=}*L";
-		"regexec" = "i^{?=}*L^{?=}i";
+		"regerror" = "Qi^{?=}*Q";
+		"regexec" = "i^{?=}*Q^{?=}i";
 		"regfree" = "v^{?=}";
 		"register_printf_domain_function" = "i^{_printf_domain=}i^?^?^v";
 		"register_printf_domain_render_std" = "i^{_printf_domain=}*";
-		"regncomp" = "i^{?=}*Li";
-		"regncomp_l" = "i^{?=}*Li^{_xlocale=}";
-		"regnexec" = "i^{?=}*LL^{?=}i";
+		"regncomp" = "i^{?=}*Qi";
+		"regncomp_l" = "i^{?=}*Qi^{_xlocale=}";
+		"regnexec" = "i^{?=}*QQ^{?=}i";
 		"regwcomp" = "i^{?=}^ii";
 		"regwcomp_l" = "i^{?=}^ii^{_xlocale=}";
-		"regwexec" = "i^{?=}^iL^{?=}i";
-		"regwncomp" = "i^{?=}^iLi";
+		"regwexec" = "i^{?=}^iQ^{?=}i";
+		"regwncomp" = "i^{?=}^iQi";
 		// decl for regwncomp_l not found
-		"regwnexec" = "i^{?=}^iLL^{?=}i";
+		"regwnexec" = "i^{?=}^iQQ^{?=}i";
 		"remove" = "i*";
 		"remque" = "v^v";
 		"rewind" = "v^{__sFILE=}";
@@ -2619,13 +2619,13 @@
 		"scanf" = "$scanf"; // i*...;
 		"scanf_l" = "$scanf_l"; // i^{_xlocale=}*...;
 		"seed48" = "^S^S";
-		"seekdir" = "v^{?=}l";
-		"send" = "li^vLi";
+		"seekdir" = "v^{?=}q";
+		"send" = "qi^vQi";
 		// decl for send$NOCANCEL not found
 		"setbuf" = "v^{__sFILE=}*";
 		"setbuffer" = "v^{__sFILE=}*i";
 		"setenv" = "i**i";
-		"sethostid" = "vl";
+		"sethostid" = "vq";
 		"sethostname" = "i*i";
 		"setipv4sourcefilter" = "ii{in_addr=}{in_addr=}II^{in_addr=}";
 		"setkey" = "v*";
@@ -2644,7 +2644,7 @@
 		"setusershell" = "v";
 		"setutxent" = "v";
 		"setutxent_wtmp" = "vi";
-		"setvbuf" = "i^{__sFILE=}*iL";
+		"setvbuf" = "i^{__sFILE=}*iQ";
 		"sigaction" = "ii^{sigaction=}^{sigaction=}";
 		"sigaddset" = "i^Ii";
 		"sigaltstack" = "i^{__darwin_sigaltstack=}^{__darwin_sigaltstack=}";
@@ -2669,15 +2669,15 @@
 		"sl_init" = "^{_stringlist=}";
 		"sleep" = "II";
 		// decl for sleep$NOCANCEL not found
-		"snprintf" = "$snprintf"; // i*L*...;
-		"snprintf_l" = "$snprintf_l"; // i*L^{_xlocale=}*...;
-		"snvis" = "**Liii*";
+		"snprintf" = "$snprintf"; // i*Q*...;
+		"snprintf_l" = "$snprintf_l"; // i*Q^{_xlocale=}*...;
+		"snvis" = "**Qiii*";
 		"sockatmark" = "ii";
 		"sprintf" = "$sprintf"; // i**...;
 		"sprintf_l" = "$sprintf_l"; // i*^{_xlocale=}*...;
 		"sradixsort" = "i^?i^CI";
 		"srand" = "vI";
-		"srand48" = "vl";
+		"srand48" = "vq";
 		"sranddev" = "v";
 		"srandom" = "vI";
 		"srandomdev" = "v";
@@ -2686,7 +2686,7 @@
 		"statvfs" = "i*^{statvfs=}";
 		"statx_np" = "i*^{stat=}^{_filesec=}";
 		"stpcpy" = "***";
-		"stpncpy" = "***L";
+		"stpncpy" = "***Q";
 		"strcasecmp" = "i**";
 		"strcasecmp_l" = "i**^{_xlocale=}";
 		"strcasestr" = "***";
@@ -2697,93 +2697,93 @@
 		"strcoll" = "i**";
 		"strcoll_l" = "i**^{_xlocale=}";
 		"strcpy" = "***";
-		"strcspn" = "L**";
+		"strcspn" = "Q**";
 		"strdup" = "**";
-		"strenvisx" = "i*L*Li^i";
+		"strenvisx" = "i*Q*Qi^i";
 		"strerror" = "*i";
-		"strerror_r" = "ii*L";
-		"strfmon" = "$strfmon"; // l*L*...;
-		"strfmon_l" = "$strfmon_l"; // l*L^{_xlocale=}*...;
-		"strftime" = "L*L*^{tm=}";
-		"strftime_l" = "L*L*^{tm=}^{_xlocale=}";
-		"strlcat" = "L**L";
-		"strlcpy" = "L**L";
-		"strlen" = "L*";
+		"strerror_r" = "ii*Q";
+		"strfmon" = "$strfmon"; // q*Q*...;
+		"strfmon_l" = "$strfmon_l"; // q*Q^{_xlocale=}*...;
+		"strftime" = "Q*Q*^{tm=}";
+		"strftime_l" = "Q*Q*^{tm=}^{_xlocale=}";
+		"strlcat" = "Q**Q";
+		"strlcpy" = "Q**Q";
+		"strlen" = "Q*";
 		"strmode" = "vi*";
-		"strncasecmp" = "i**L";
-		"strncasecmp_l" = "i**L^{_xlocale=}";
-		"strncat" = "***L";
-		"strncmp" = "i**L";
-		"strncpy" = "***L";
-		"strndup" = "**L";
-		"strnlen" = "L*L";
-		"strnstr" = "***L";
-		"strnunvis" = "i*L*";
-		"strnunvisx" = "i*L*i";
-		"strnvis" = "i*L*i";
-		"strnvisx" = "i*L*Li";
+		"strncasecmp" = "i**Q";
+		"strncasecmp_l" = "i**Q^{_xlocale=}";
+		"strncat" = "***Q";
+		"strncmp" = "i**Q";
+		"strncpy" = "***Q";
+		"strndup" = "**Q";
+		"strnlen" = "Q*Q";
+		"strnstr" = "***Q";
+		"strnunvis" = "i*Q*";
+		"strnunvisx" = "i*Q*i";
+		"strnvis" = "i*Q*i";
+		"strnvisx" = "i*Q*Qi";
 		"strpbrk" = "***";
 		"strptime" = "***^{tm=}";
 		"strptime_l" = "***^{tm=}^{_xlocale=}";
 		"strrchr" = "**i";
-		"strsenvisx" = "i*L*Li*^i";
+		"strsenvisx" = "i*Q*Qi*^i";
 		"strsep" = "*^?*";
 		"strsignal" = "*i";
-		"strsnvis" = "i*L*i*";
-		"strsnvisx" = "i*L*Li*";
-		"strspn" = "L**";
+		"strsnvis" = "i*Q*i*";
+		"strsnvisx" = "i*Q*Qi*";
+		"strspn" = "Q**";
 		"strstr" = "***";
 		"strsvis" = "i**i*";
-		"strsvisx" = "i**Li*";
+		"strsvisx" = "i**Qi*";
 		"strtod" = "d*^?";
 		"strtod_l" = "d*^?^{_xlocale=}";
 		"strtof" = "f*^?";
 		"strtof_l" = "f*^?^{_xlocale=}";
-		"strtofflags" = "i^?^L^L";
-		"strtoimax" = "l*^?i";
-		"strtoimax_l" = "l*^?i^{_xlocale=}";
+		"strtofflags" = "i^?^Q^Q";
+		"strtoimax" = "q*^?i";
+		"strtoimax_l" = "q*^?i^{_xlocale=}";
 		"strtok" = "***";
 		"strtok_r" = "***^?";
-		"strtol" = "l*^?i";
-		"strtol_l" = "l*^?i^{_xlocale=}";
+		"strtol" = "q*^?i";
+		"strtol_l" = "q*^?i^{_xlocale=}";
 		"strtold" = "D*^?";
 		"strtold_l" = "D*^?^{_xlocale=}";
 		"strtoll" = "q*^?i";
 		"strtoll_l" = "q*^?i^{_xlocale=}";
 		"strtoq" = "q*^?i";
 		"strtoq_l" = "q*^?i^{_xlocale=}";
-		"strtoul" = "L*^?i";
-		"strtoul_l" = "L*^?i^{_xlocale=}";
+		"strtoul" = "Q*^?i";
+		"strtoul_l" = "Q*^?i^{_xlocale=}";
 		"strtoull" = "Q*^?i";
 		"strtoull_l" = "Q*^?i^{_xlocale=}";
-		"strtoumax" = "L*^?i";
-		"strtoumax_l" = "L*^?i^{_xlocale=}";
+		"strtoumax" = "Q*^?i";
+		"strtoumax_l" = "Q*^?i^{_xlocale=}";
 		"strtouq" = "Q*^?i";
 		"strtouq_l" = "Q*^?i^{_xlocale=}";
 		"strunvis" = "i**";
 		"strunvisx" = "i**i";
 		"strvis" = "i**i";
-		"strvisx" = "i**Li";
-		"strxfrm" = "L**L";
-		"strxfrm_l" = "L**L^{_xlocale=}";
+		"strvisx" = "i**Qi";
+		"strxfrm" = "Q**Q";
+		"strxfrm_l" = "Q**Q^{_xlocale=}";
 		// decl for suboptarg not found
 		"svis" = "**iii*";
-		"swab" = "v^v^vl";
-		"swprintf" = "$swprintf"; // i^iL^i...;
-		"swprintf_l" = "$swprintf_l"; // i^iL^{_xlocale=}^i...;
+		"swab" = "v^v^vq";
+		"swprintf" = "$swprintf"; // i^iQ^i...;
+		"swprintf_l" = "$swprintf_l"; // i^iQ^{_xlocale=}^i...;
 		"swscanf" = "$swscanf"; // i^i^i...;
 		"swscanf_l" = "$swscanf_l"; // i^i^{_xlocale=}^i...;
-		"sxprintf" = "$sxprintf"; // i*L^{_printf_domain=}^{_xlocale=}*...;
-		"sxprintf_exec" = "$sxprintf_exec"; // i*L^{_printf_compiled=}...;
+		"sxprintf" = "$sxprintf"; // i*Q^{_printf_domain=}^{_xlocale=}*...;
+		"sxprintf_exec" = "$sxprintf_exec"; // i*Q^{_printf_compiled=}...;
 		"sync_volume_np" = "i*i";
 		// decl for sys_errlist not found
 		// decl for sys_nerr not found
 		// decl for sys_siglist not found
 		// decl for sys_signame not found
-		"sysconf" = "li";
-		"sysctl" = "i^iI^v^L^vL";
-		"sysctlbyname" = "i*^v^L^vL";
-		"sysctlnametomib" = "i*^i^L";
+		"sysconf" = "qi";
+		"sysctl" = "i^iI^v^Q^vQ";
+		"sysctlbyname" = "i*^v^Q^vQ";
+		"sysctlnametomib" = "i*^i^Q";
 		"system" = "i*";
 		// decl for system$NOCANCEL not found
 		"tcdrain" = "ii";
@@ -2797,18 +2797,18 @@
 		"tcsetattr" = "iii^{termios=}";
 		"tcsetpgrp" = "iii";
 		"tdelete" = "^v^v^?^?";
-		"telldir" = "l^{?=}";
+		"telldir" = "q^{?=}";
 		"tempnam" = "***";
 		"tfind" = "^v^v^?^?";
 		// decl for thread_stack_pcs not found
-		"time" = "l^l";
-		"time2posix" = "ll";
-		"timegm" = "l^{tm=}";
-		"timelocal" = "l^{tm=}";
+		"time" = "q^q";
+		"time2posix" = "qq";
+		"timegm" = "q^{tm=}";
+		"timelocal" = "q^{tm=}";
 		// decl for timeoff not found
 		// decl for times not found
 		// decl for timezone not found
-		"timingsafe_bcmp" = "i^v^vL";
+		"timingsafe_bcmp" = "i^v^vQ";
 		"tmpfile" = "^{__sFILE=}";
 		"tmpnam" = "**";
 		"toascii" = "ii";
@@ -2841,14 +2841,14 @@
 		// decl for tre_tnfa_run_parallel not found
 		"tsearch" = "^v^v^?^?";
 		"ttyname" = "*i";
-		"ttyname_r" = "ii*L";
+		"ttyname_r" = "ii*Q";
 		"ttyslot" = "i";
 		"twalk" = "v^v^?";
 		// decl for tzname not found
 		"tzset" = "v";
 		"tzsetwall" = "v";
 		"ualarm" = "III";
-		"ulimit" = "$ulimit"; // li...;
+		"ulimit" = "$ulimit"; // qi...;
 		"umaskx_np" = "i^{_filesec=}";
 		"uname" = "i^{utsname=}";
 		"ungetc" = "ii^{__sFILE=}";
@@ -2901,18 +2901,18 @@
 		"vprintf_l" = "$vprintf_l"; // i^{_xlocale=}*...;
 		"vscanf" = "$vscanf"; // i*...;
 		"vscanf_l" = "$vscanf_l"; // i^{_xlocale=}*...;
-		"vsnprintf" = "$vsnprintf"; // i*L*...;
-		"vsnprintf_l" = "$vsnprintf_l"; // i*L^{_xlocale=}*...;
+		"vsnprintf" = "$vsnprintf"; // i*Q*...;
+		"vsnprintf_l" = "$vsnprintf_l"; // i*Q^{_xlocale=}*...;
 		"vsprintf" = "$vsprintf"; // i**...;
 		"vsprintf_l" = "$vsprintf_l"; // i*^{_xlocale=}*...;
 		"vsscanf" = "$vsscanf"; // i**...;
 		"vsscanf_l" = "$vsscanf_l"; // i*^{_xlocale=}*...;
-		"vswprintf" = "$vswprintf"; // i^iL^i...;
-		"vswprintf_l" = "$vswprintf_l"; // i^iL^{_xlocale=}^i...;
+		"vswprintf" = "$vswprintf"; // i^iQ^i...;
+		"vswprintf_l" = "$vswprintf_l"; // i^iQ^{_xlocale=}^i...;
 		"vswscanf" = "$vswscanf"; // i^i^i...;
 		"vswscanf_l" = "$vswscanf_l"; // i^i^{_xlocale=}^i...;
-		"vsxprintf" = "$vsxprintf"; // i*L^{_printf_domain=}^{_xlocale=}*...;
-		"vsxprintf_exec" = "$vsxprintf_exec"; // i*L^{_printf_compiled=}...;
+		"vsxprintf" = "$vsxprintf"; // i*Q^{_printf_domain=}^{_xlocale=}*...;
+		"vsxprintf_exec" = "$vsxprintf_exec"; // i*Q^{_printf_compiled=}...;
 		"vwarn" = "$vwarn"; // v*...;
 		"vwarnc" = "$vwarnc"; // vi*...;
 		"vwarnx" = "$vwarnx"; // v*...;
@@ -2931,9 +2931,9 @@
 		"warnc" = "$warnc"; // vi*...;
 		"warnx" = "$warnx"; // v*...;
 		"wcpcpy" = "^i^i^i";
-		"wcpncpy" = "^i^i^iL";
-		"wcrtomb" = "L*i^{mbstate_t=}";
-		"wcrtomb_l" = "L*i^{mbstate_t=}^{_xlocale=}";
+		"wcpncpy" = "^i^i^iQ";
+		"wcrtomb" = "Q*i^{mbstate_t=}";
+		"wcrtomb_l" = "Q*i^{mbstate_t=}^{_xlocale=}";
 		"wcscasecmp" = "i^i^i";
 		"wcscasecmp_l" = "i^i^i^{_xlocale=}";
 		"wcscat" = "^i^i^i";
@@ -2942,52 +2942,52 @@
 		"wcscoll" = "i^i^i";
 		"wcscoll_l" = "i^i^i^{_xlocale=}";
 		"wcscpy" = "^i^i^i";
-		"wcscspn" = "L^i^i";
+		"wcscspn" = "Q^i^i";
 		"wcsdup" = "^i^i";
-		"wcsftime" = "L^iL^i^{tm=}";
-		"wcsftime_l" = "L^iL^i^{tm=}^{_xlocale=}";
-		"wcslcat" = "L^i^iL";
-		"wcslcpy" = "L^i^iL";
-		"wcslen" = "L^i";
-		"wcsncasecmp" = "i^i^iL";
-		"wcsncasecmp_l" = "i^i^iL^{_xlocale=}";
-		"wcsncat" = "^i^i^iL";
-		"wcsncmp" = "i^i^iL";
-		"wcsncpy" = "^i^i^iL";
-		"wcsnlen" = "L^iL";
-		"wcsnrtombs" = "L*^?LL^{mbstate_t=}";
-		"wcsnrtombs_l" = "L*^?LL^{mbstate_t=}^{_xlocale=}";
+		"wcsftime" = "Q^iQ^i^{tm=}";
+		"wcsftime_l" = "Q^iQ^i^{tm=}^{_xlocale=}";
+		"wcslcat" = "Q^i^iQ";
+		"wcslcpy" = "Q^i^iQ";
+		"wcslen" = "Q^i";
+		"wcsncasecmp" = "i^i^iQ";
+		"wcsncasecmp_l" = "i^i^iQ^{_xlocale=}";
+		"wcsncat" = "^i^i^iQ";
+		"wcsncmp" = "i^i^iQ";
+		"wcsncpy" = "^i^i^iQ";
+		"wcsnlen" = "Q^iQ";
+		"wcsnrtombs" = "Q*^?QQ^{mbstate_t=}";
+		"wcsnrtombs_l" = "Q*^?QQ^{mbstate_t=}^{_xlocale=}";
 		"wcspbrk" = "^i^i^i";
 		"wcsrchr" = "^i^ii";
-		"wcsrtombs" = "L*^?L^{mbstate_t=}";
-		"wcsrtombs_l" = "L*^?L^{mbstate_t=}^{_xlocale=}";
-		"wcsspn" = "L^i^i";
+		"wcsrtombs" = "Q*^?Q^{mbstate_t=}";
+		"wcsrtombs_l" = "Q*^?Q^{mbstate_t=}^{_xlocale=}";
+		"wcsspn" = "Q^i^i";
 		"wcsstr" = "^i^i^i";
 		"wcstod" = "d^i^?";
 		"wcstod_l" = "d^i^?^{_xlocale=}";
 		"wcstof" = "f^i^?";
 		"wcstof_l" = "f^i^?^{_xlocale=}";
-		"wcstoimax" = "l^i^?i";
-		"wcstoimax_l" = "l^i^?i^{_xlocale=}";
+		"wcstoimax" = "q^i^?i";
+		"wcstoimax_l" = "q^i^?i^{_xlocale=}";
 		"wcstok" = "^i^i^i^?";
-		"wcstol" = "l^i^?i";
-		"wcstol_l" = "l^i^?i^{_xlocale=}";
+		"wcstol" = "q^i^?i";
+		"wcstol_l" = "q^i^?i^{_xlocale=}";
 		"wcstold" = "D^i^?";
 		"wcstold_l" = "D^i^?^{_xlocale=}";
 		"wcstoll" = "q^i^?i";
 		"wcstoll_l" = "q^i^?i^{_xlocale=}";
-		"wcstombs" = "L*^iL";
-		"wcstombs_l" = "L*^iL^{_xlocale=}";
-		"wcstoul" = "L^i^?i";
-		"wcstoul_l" = "L^i^?i^{_xlocale=}";
+		"wcstombs" = "Q*^iQ";
+		"wcstombs_l" = "Q*^iQ^{_xlocale=}";
+		"wcstoul" = "Q^i^?i";
+		"wcstoul_l" = "Q^i^?i^{_xlocale=}";
 		"wcstoull" = "Q^i^?i";
 		"wcstoull_l" = "Q^i^?i^{_xlocale=}";
-		"wcstoumax" = "L^i^?i";
-		"wcstoumax_l" = "L^i^?i^{_xlocale=}";
-		"wcswidth" = "i^iL";
-		"wcswidth_l" = "i^iL^{_xlocale=}";
-		"wcsxfrm" = "L^i^iL";
-		"wcsxfrm_l" = "L^i^iL^{_xlocale=}";
+		"wcstoumax" = "Q^i^?i";
+		"wcstoumax_l" = "Q^i^?i^{_xlocale=}";
+		"wcswidth" = "i^iQ";
+		"wcswidth_l" = "i^iQ^{_xlocale=}";
+		"wcsxfrm" = "Q^i^iQ";
+		"wcsxfrm_l" = "Q^i^iQ^{_xlocale=}";
 		"wctob" = "ii";
 		"wctob_l" = "ii^{_xlocale=}";
 		"wctomb" = "i*i";
@@ -2998,11 +2998,11 @@
 		"wctype_l" = "I*^{_xlocale=}";
 		"wcwidth" = "ii";
 		"wcwidth_l" = "ii^{_xlocale=}";
-		"wmemchr" = "^i^iiL";
-		"wmemcmp" = "i^i^iL";
-		"wmemcpy" = "^i^i^iL";
-		"wmemmove" = "^i^i^iL";
-		"wmemset" = "^i^iiL";
+		"wmemchr" = "^i^iiQ";
+		"wmemcmp" = "i^i^iQ";
+		"wmemcpy" = "^i^i^iQ";
+		"wmemmove" = "^i^i^iQ";
+		"wmemset" = "^i^iiQ";
 		"wprintf" = "$wprintf"; // i^i...;
 		"wprintf_l" = "$wprintf_l"; // i^{_xlocale=}^i...;
 		"wscanf" = "$wscanf"; // i^i...;
@@ -3393,14 +3393,14 @@
 		"getfsspec" = "^{fstab=}*";
 		"getgrent" = "^{group=}";
 		"getgrgid" = "^{group=}I";
-		"getgrgid_r" = "iI^{group=}*L^?";
+		"getgrgid_r" = "iI^{group=}*Q^?";
 		"getgrnam" = "^{group=}*";
-		"getgrnam_r" = "i*^{group=}*L^?";
+		"getgrnam_r" = "i*^{group=}*Q^?";
 		// decl for getgroupcount not found
 		"getgrouplist" = "i*i^i^i";
 		// decl for getgrouplist_2 not found
 		"getgruuid" = "^{group=}[16C]";
-		"getgruuid_r" = "i[16C]^{group=}*L^?";
+		"getgruuid_r" = "i[16C]^{group=}*Q^?";
 		"gethostbyaddr" = "^{hostent=}^vIi";
 		// decl for gethostbyaddr_async_cancel not found
 		// decl for gethostbyaddr_async_handleReply not found
@@ -3413,7 +3413,7 @@
 		"gethostent" = "^{hostent=}";
 		"getifaddrs" = "i^?";
 		"getifmaddrs" = "i^?";
-		"getipnodebyaddr" = "^{hostent=}^vLi^i";
+		"getipnodebyaddr" = "^{hostent=}^vQi^i";
 		"getipnodebyname" = "^{hostent=}*ii^i";
 		"getnameinfo" = "i^{sockaddr=}I*I*Ii";
 		// decl for getnameinfo_async_cancel not found
@@ -3429,11 +3429,11 @@
 		"getprotoent" = "^{protoent=}";
 		"getpwent" = "^{passwd=}";
 		"getpwnam" = "^{passwd=}*";
-		"getpwnam_r" = "i*^{passwd=}*L^?";
+		"getpwnam_r" = "i*^{passwd=}*Q^?";
 		"getpwuid" = "^{passwd=}I";
-		"getpwuid_r" = "iI^{passwd=}*L^?";
+		"getpwuid_r" = "iI^{passwd=}*Q^?";
 		"getpwuuid" = "^{passwd=}[16C]";
-		"getpwuuid_r" = "i[16C]^{passwd=}*L^?";
+		"getpwuuid_r" = "i[16C]^{passwd=}*Q^?";
 		"getrpcbyname" = "^{rpcent=}*";
 		"getrpcbynumber" = "^{rpcent=}i";
 		"getrpcent" = "^{rpcent=}";
@@ -3481,10 +3481,10 @@
 		"inet6_rthdr_init" = "^{cmsghdr=}^vi";
 		"inet6_rthdr_lasthop" = "i^{cmsghdr=}I";
 		"inet6_rthdr_segments" = "i^{cmsghdr=}";
-		"inet6_rthdr_space" = "Lii";
+		"inet6_rthdr_space" = "Qii";
 		"initgroups" = "i*i";
 		"innetgr" = "i****";
-		"iruserok" = "iLi**";
+		"iruserok" = "iQi**";
 		"iruserok_sa" = "i^vii**";
 		// decl for kvarray_free not found
 		// decl for kvbuf_add_dict not found
@@ -3978,7 +3978,7 @@
 		"_exit" = "vi";
 		// decl for _get_cpu_capabilities not found
 		// decl for _getprivatesystemidentifier not found
-		"_host_page_size" = "iI^L";
+		"_host_page_size" = "iI^Q";
 		// decl for _init_cpu_capabilities not found
 		// decl for _kernelrpc_host_create_mach_voucher not found
 		// decl for _kernelrpc_mach_port_allocate not found
@@ -4063,7 +4063,7 @@
 		"accept" = "ii^{sockaddr=}^I";
 		// decl for accept$NOCANCEL not found
 		"access" = "i*i";
-		"accessx_np" = "i^{accessx_descriptor=}L^iI";
+		"accessx_np" = "i^{accessx_descriptor=}Q^iI";
 		"acct" = "i*";
 		"act_get_state" = "iIi^I^I";
 		"act_set_state" = "iIi^II";
@@ -4072,7 +4072,7 @@
 		"aio_error" = "i^{aiocb=}";
 		"aio_fsync" = "ii^{aiocb=}";
 		"aio_read" = "i^{aiocb=}";
-		"aio_return" = "l^{aiocb=}";
+		"aio_return" = "q^{aiocb=}";
 		"aio_suspend" = "i^?i^{timespec=}";
 		// decl for aio_suspend$NOCANCEL not found
 		"aio_write" = "i^{aiocb=}";
@@ -4112,7 +4112,7 @@
 		// decl for coalition_terminate not found
 		"connect" = "ii^{sockaddr=}I";
 		// decl for connect$NOCANCEL not found
-		"connectx" = "ii^{sa_endpoints=}II^{iovec=}I^L^I";
+		"connectx" = "ii^{sa_endpoints=}II^{iovec=}I^Q^I";
 		// decl for csops not found
 		// decl for csops_audittoken not found
 		// decl for csr_check not found
@@ -4138,31 +4138,31 @@
 		"fchown" = "iiII";
 		"fchownat" = "ii*IIi";
 		"fclonefileat" = "iii*I";
-		"fcntl" = "$fcntl"; // iii...;
+		"fcntl" = "$fcntq"; // iii...;
 		// decl for fcntl$NOCANCEL not found
 		// decl for fdatasync not found
-		"ffsctl" = "iiL^vI";
-		"fgetattrlist" = "ii^v^vLI";
-		"fgetxattr" = "li*^vLIi";
+		"ffsctl" = "iiQ^vI";
+		"fgetattrlist" = "ii^v^vQI";
+		"fgetxattr" = "qi*^vQIi";
 		"fhopen" = "i^{fhandle=}i";
 		// decl for fileport_makefd not found
 		// decl for fileport_makeport not found
-		"flistxattr" = "li*Li";
+		"flistxattr" = "qi*Qi";
 		"flock" = "iii";
 		"fmount" = "i*ii^v";
-		"fpathconf" = "lii";
+		"fpathconf" = "qii";
 		"fremovexattr" = "ii*i";
 		"fs_snapshot_create" = "ii*I";
 		"fs_snapshot_delete" = "ii*I";
-		"fs_snapshot_list" = "ii^{attrlist=}^vLI";
+		"fs_snapshot_list" = "ii^{attrlist=}^vQI";
 		"fs_snapshot_mount" = "ii**I";
 		"fs_snapshot_rename" = "ii**I";
 		"fs_snapshot_revert" = "ii*I";
 		// decl for fs_snapshot_root not found
-		"fsctl" = "i*L^vI";
-		"fsetattrlist" = "ii^v^vLI";
-		"fsetxattr" = "ii*^vLIi";
-		"fsgetpath" = "l*L^{fsid=}Q";
+		"fsctl" = "i*Q^vI";
+		"fsetattrlist" = "ii^v^vQI";
+		"fsetxattr" = "ii*^vQIi";
+		"fsgetpath" = "q*Q^{fsid=}Q";
 		"fstat" = "ii^{stat=}";
 		// decl for fstat64 not found
 		"fstatat" = "ii*^{stat=}i";
@@ -4174,14 +4174,14 @@
 		"ftruncate" = "iiq";
 		"futimens" = "ii^{timespec=}";
 		"futimes" = "ii^{timeval=}";
-		"getattrlist" = "i*^v^vLI";
-		"getattrlistat" = "ii*^v^vLL";
-		"getattrlistbulk" = "ii^v^vLQ";
+		"getattrlist" = "i*^v^vQI";
+		"getattrlistat" = "ii*^v^vQQ";
+		"getattrlistbulk" = "ii^v^vQQ";
 		"getaudit" = "i^{auditinfo=}";
 		"getaudit_addr" = "i^{auditinfo_addr=}i";
 		"getauid" = "i^I";
-		"getdirentries" = "ii*i^l";
-		"getdirentriesattr" = "ii^v^vL^I^I^II";
+		"getdirentries" = "ii*i^q";
+		"getdirentriesattr" = "ii^v^vQ^I^I^II";
 		"getdtablesize" = "i";
 		"getegid" = "I";
 		// decl for getentropy not found
@@ -4208,7 +4208,7 @@
 		"getsockopt" = "iiii^v^I";
 		"getuid" = "I";
 		"getwgroups_np" = "i^i[16C]";
-		"getxattr" = "l**^vLIi";
+		"getxattr" = "q**^vQIi";
 		// decl for grab_pgo_data not found
 		// decl for guarded_close_np not found
 		// decl for guarded_kqueue_np not found
@@ -4233,7 +4233,7 @@
 		"host_info" = "iIi^i^I";
 		"host_kernel_version" = "iI[512c]";
 		"host_lockgroup_info" = "iI^^{lockgroup_info=}^I";
-		"host_page_size" = "iI^L";
+		"host_page_size" = "iI^Q";
 		"host_priv_statistics" = "iIi^i^I";
 		"host_processor_info" = "iIi^I^^i^I";
 		"host_processor_set_priv" = "iII^I";
@@ -4258,7 +4258,7 @@
 		"host_virtual_physical_table_info" = "iI^^{hash_info_bucket=}^I";
 		// decl for important_boost_assertion_token not found
 		// decl for internal_catch_exc_subsystem not found
-		"ioctl" = "$ioctl"; // iiL...;
+		"ioctl" = "$ioctq"; // iiQ...;
 		"issetugid" = "i";
 		// decl for kas_info not found
 		// decl for kdebug_is_enabled not found
@@ -4272,10 +4272,10 @@
 		"kevent64" = "ii^{kevent64_s=}i^{kevent64_s=}iI^{timespec=}";
 		// decl for kevent_id not found
 		// decl for kevent_qos not found
-		"kext_request" = "iIILI^L^I^L^I^i";
+		"kext_request" = "iIIQI^Q^I^Q^I^i";
 		"kill" = "iii";
 		"kmod_control" = "iIii^^v^I";
-		"kmod_create" = "iIL^i";
+		"kmod_create" = "iIQ^i";
 		"kmod_destroy" = "iIi";
 		"kmod_get_info" = "iI^^v^I";
 		// decl for kpersona_alloc not found
@@ -4291,7 +4291,7 @@
 		"linkat" = "ii*i*i";
 		"lio_listio" = "ii^?i^{sigevent=}";
 		"listen" = "iii";
-		"listxattr" = "l**Li";
+		"listxattr" = "q**Qi";
 		"lock_acquire" = "iIi";
 		"lock_handoff" = "iIi";
 		"lock_handoff_accept" = "iIi";
@@ -4320,10 +4320,10 @@
 		// decl for mach_host_special_port_description not found
 		// decl for mach_host_special_port_for_id not found
 		// decl for mach_init not found
-		"mach_make_memory_entry" = "iI^LLi^II";
+		"mach_make_memory_entry" = "iI^QQi^II";
 		"mach_make_memory_entry_64" = "iI^QQi^II";
 		"mach_memory_info" = "iI^^{mach_zone_name=}^I^^{mach_zone_info_data=}^I^^{mach_memory_info=}^I";
-		"mach_memory_object_memory_entry" = "iIiLiI^I";
+		"mach_memory_object_memory_entry" = "iIiQiI^I";
 		"mach_memory_object_memory_entry_64" = "iIiQiI^I";
 		"mach_msg" = "i^{?=}iIIIII";
 		"mach_msg_destroy" = "v^{?=}";
@@ -4344,19 +4344,19 @@
 		"mach_port_allocate_full" = "iIII^{mach_port_qos=}^I";
 		"mach_port_allocate_name" = "iIII";
 		"mach_port_allocate_qos" = "iII^{mach_port_qos=}^I";
-		"mach_port_construct" = "iI^{mach_port_options=}L^I";
+		"mach_port_construct" = "iI^{mach_port_options=}Q^I";
 		"mach_port_deallocate" = "iII";
 		"mach_port_destroy" = "iII";
-		"mach_port_destruct" = "iIIiL";
+		"mach_port_destruct" = "iIIiQ";
 		"mach_port_dnrequest_info" = "iII^I^I";
 		"mach_port_extract_member" = "iIII";
 		"mach_port_extract_right" = "iIII^I^I";
 		"mach_port_get_attributes" = "iIIi^i^I";
-		"mach_port_get_context" = "iII^L";
+		"mach_port_get_context" = "iII^Q";
 		"mach_port_get_refs" = "iIII^I";
 		"mach_port_get_set_status" = "iII^^I^I";
 		"mach_port_get_srights" = "iII^I";
-		"mach_port_guard" = "iIILi";
+		"mach_port_guard" = "iIIQi";
 		"mach_port_insert_member" = "iIII";
 		"mach_port_insert_right" = "iIIII";
 		"mach_port_kernel_object" = "iII^I^I";
@@ -4368,13 +4368,13 @@
 		"mach_port_rename" = "iIII";
 		"mach_port_request_notification" = "iIIiIII^I";
 		"mach_port_set_attributes" = "iIIi^iI";
-		"mach_port_set_context" = "iIIL";
+		"mach_port_set_context" = "iIIQ";
 		"mach_port_set_mscount" = "iIII";
 		"mach_port_set_seqno" = "iIII";
 		"mach_port_space_basic_info" = "iI^{ipc_info_space_basic=}";
 		"mach_port_space_info" = "iI^{ipc_info_space=}^^{ipc_info_name=}^I^^{ipc_info_tree_name=}^I";
 		"mach_port_type" = "iII^I";
-		"mach_port_unguard" = "iIIL";
+		"mach_port_unguard" = "iIIQ";
 		"mach_ports_lookup" = "iI^^I^I";
 		"mach_ports_register" = "iI^II";
 		// decl for mach_reply_port not found
@@ -4434,21 +4434,21 @@
 		"macx_swapoff" = "iQi";
 		"macx_swapon" = "iQiii";
 		"macx_triggers" = "iiiiI";
-		"madvise" = "i^vLi";
+		"madvise" = "i^vQi";
 		// decl for memorystatus_control not found
 		// decl for memorystatus_get_level not found
-		"mig_allocate" = "v^LL";
+		"mig_allocate" = "v^QQ";
 		"mig_dealloc_reply_port" = "vI";
 		// decl for mig_dealloc_special_reply_port not found
-		"mig_deallocate" = "vLL";
+		"mig_deallocate" = "vQQ";
 		"mig_get_reply_port" = "I";
 		// decl for mig_get_special_reply_port not found
 		"mig_put_reply_port" = "vI";
 		"mig_reply_setup" = "v^{?=}^{?=}";
 		"mig_strncpy" = "i**i";
 		"mig_strncpy_zerofill" = "i**i";
-		"mincore" = "i^vL*";
-		"minherit" = "i^vLi";
+		"mincore" = "i^vQ*";
+		"minherit" = "i^vQi";
 		// decl for mk_timer_arm not found
 		// decl for mk_timer_arm_leeway not found
 		// decl for mk_timer_cancel not found
@@ -4458,28 +4458,28 @@
 		"mkdirat" = "ii*S";
 		"mkfifo" = "i*S";
 		"mknod" = "i*Si";
-		"mlock" = "i^vL";
+		"mlock" = "i^vQ";
 		"mlockall" = "ii";
-		"mmap" = "^v^vLiiiq";
+		"mmap" = "^v^vQiiiq";
 		// decl for modwatch not found
 		"mount" = "i**i^v";
-		"mprotect" = "i^vLi";
+		"mprotect" = "i^vQi";
 		// decl for mremap_encrypted not found
 		// decl for msg_receive not found
 		// decl for msg_rpc not found
 		// decl for msg_send not found
 		"msgctl" = "iii^{__msqid_ds_new=}";
 		"msgget" = "iii";
-		"msgrcv" = "li^vLli";
+		"msgrcv" = "qi^vQqi";
 		// decl for msgrcv$NOCANCEL not found
-		"msgsnd" = "ii^vLi";
+		"msgsnd" = "ii^vQi";
 		// decl for msgsnd$NOCANCEL not found
 		"msgsys" = "$msgsys"; // ii...;
-		"msync" = "i^vLi";
+		"msync" = "i^vQi";
 		// decl for msync$NOCANCEL not found
-		"munlock" = "i^vL";
+		"munlock" = "i^vQ";
 		"munlockall" = "i";
-		"munmap" = "i^vL";
+		"munmap" = "i^vQ";
 		// decl for necp_client_action not found
 		// decl for necp_match_policy not found
 		// decl for necp_open not found
@@ -4599,7 +4599,7 @@
 		// decl for os_packet_set_transport_traffic_realtime not found
 		"panic" = "$panic"; // v*...;
 		"panic_init" = "vI";
-		"pathconf" = "l*i";
+		"pathconf" = "q*i";
 		// decl for peeloff not found
 		"pid_for_task" = "iI^i";
 		// decl for pid_hibernate not found
@@ -4615,7 +4615,7 @@
 		"port_obj_init" = "vi";
 		// decl for port_obj_table not found
 		// decl for port_obj_table_size not found
-		"posix_madvise" = "i^vLi";
+		"posix_madvise" = "i^vQi";
 		"posix_spawn" = "i^i*^^v^^v^?^?";
 		"posix_spawn_file_actions_addclose" = "i^^vi";
 		"posix_spawn_file_actions_adddup2" = "i^^vii";
@@ -4626,7 +4626,7 @@
 		"posix_spawnattr_destroy" = "i^^v";
 		// decl for posix_spawnattr_get_darwin_role_np not found
 		// decl for posix_spawnattr_get_qos_clamp_np not found
-		"posix_spawnattr_getbinpref_np" = "i^^vL^i^L";
+		"posix_spawnattr_getbinpref_np" = "i^^vQ^i^Q";
 		// decl for posix_spawnattr_getcpumonitor not found
 		"posix_spawnattr_getflags" = "i^^v^s";
 		// decl for posix_spawnattr_getmacpolicyinfo_np not found
@@ -4646,7 +4646,7 @@
 		// decl for posix_spawnattr_set_qos_clamp_np not found
 		// decl for posix_spawnattr_set_threadlimit_ext not found
 		"posix_spawnattr_setauditsessionport_np" = "i^^vI";
-		"posix_spawnattr_setbinpref_np" = "i^^vL^i^L";
+		"posix_spawnattr_setbinpref_np" = "i^^vQ^i^Q";
 		// decl for posix_spawnattr_setcoalition_np not found
 		// decl for posix_spawnattr_setcpumonitor not found
 		// decl for posix_spawnattr_setcpumonitor_default not found
@@ -4661,7 +4661,7 @@
 		"posix_spawnattr_setsigdefault" = "i^^v^I";
 		"posix_spawnattr_setsigmask" = "i^^v^I";
 		"posix_spawnattr_setspecialport_np" = "i^^vIi";
-		"pread" = "li^vLq";
+		"pread" = "qi^vQq";
 		// decl for pread$NOCANCEL not found
 		// decl for proc_appstate not found
 		// decl for proc_can_use_foreground_hw not found
@@ -4731,7 +4731,7 @@
 		"processor_set_policy_control" = "iIi^iIi";
 		"processor_set_policy_disable" = "iIii";
 		"processor_set_policy_enable" = "iIi";
-		"processor_set_stack_usage" = "iI^I^L^L^L^L";
+		"processor_set_stack_usage" = "iI^I^Q^Q^Q^Q";
 		"processor_set_statistics" = "iIi^i^I";
 		"processor_set_tasks" = "iI^^I^I";
 		"processor_set_threads" = "iI^^I^I";
@@ -4743,20 +4743,20 @@
 		"pthread_getugid_np" = "i^I^I";
 		"pthread_setugid_np" = "iII";
 		// decl for ptrace not found
-		"pwrite" = "li^vLq";
+		"pwrite" = "qi^vQq";
 		// decl for pwrite$NOCANCEL not found
 		"quotactl" = "i*ii*";
-		"read" = "li^vL";
+		"read" = "qi^vQ";
 		// decl for read$NOCANCEL not found
-		"readlink" = "l**L";
-		"readlinkat" = "li**L";
-		"readv" = "li^{iovec=}i";
+		"readlink" = "q**Q";
+		"readlinkat" = "qi**Q";
+		"readv" = "qi^{iovec=}i";
 		// decl for readv$NOCANCEL not found
 		"reboot" = "ii";
 		// decl for reboot_np not found
-		"recvfrom" = "li^vLi^{sockaddr=}^I";
+		"recvfrom" = "qi^vQi^{sockaddr=}^I";
 		// decl for recvfrom$NOCANCEL not found
-		"recvmsg" = "li^{msghdr=}i";
+		"recvmsg" = "qi^{msghdr=}i";
 		// decl for recvmsg$NOCANCEL not found
 		// decl for recvmsg_x not found
 		"removexattr" = "i**i";
@@ -4767,7 +4767,7 @@
 		"renamex_np" = "i**I";
 		"revoke" = "i*";
 		"rmdir" = "i*";
-		"searchfs" = "i*^{fssearchblock=}^LII^{searchstate=}";
+		"searchfs" = "i*^{fssearchblock=}^QII^{searchstate=}";
 		"select" = "ii^{fd_set=}^{fd_set=}^{fd_set=}^{timeval=}";
 		// decl for select$DARWIN_EXTSN not found
 		// decl for select$DARWIN_EXTSN$NOCANCEL not found
@@ -4798,18 +4798,18 @@
 		"semaphore_wait_signal" = "iII";
 		// decl for semaphore_wait_signal_trap not found
 		// decl for semaphore_wait_trap not found
-		"semctl" = "$semctl"; // iiii...;
+		"semctl" = "$semctq"; // iiii...;
 		"semget" = "iiii";
-		"semop" = "ii^{sembuf=}L";
+		"semop" = "ii^{sembuf=}Q";
 		"semsys" = "$semsys"; // ii...;
 		"sendfile" = "iiiq^q^{sf_hdtr=}i";
-		"sendmsg" = "li^{msghdr=}i";
+		"sendmsg" = "qi^{msghdr=}i";
 		// decl for sendmsg$NOCANCEL not found
 		// decl for sendmsg_x not found
-		"sendto" = "li^vLi^{sockaddr=}I";
+		"sendto" = "qi^vQi^{sockaddr=}I";
 		// decl for sendto$NOCANCEL not found
-		"setattrlist" = "i*^v^vLI";
-		"setattrlistat" = "ii*^v^vLI";
+		"setattrlist" = "i*^v^vQI";
+		"setattrlistat" = "ii*^v^vQI";
 		"setaudit" = "i^{auditinfo=}";
 		"setaudit_addr" = "i^{auditinfo_addr=}i";
 		"setauid" = "i^I";
@@ -4830,7 +4830,7 @@
 		"setsockopt" = "iiii^vI";
 		"setuid" = "iI";
 		"setwgroups_np" = "ii[16C]";
-		"setxattr" = "i**^vLIi";
+		"setxattr" = "i**^vQIi";
 		// decl for sfi_get_class_offtime not found
 		// decl for sfi_process_get_flags not found
 		// decl for sfi_process_set_flags not found
@@ -4840,7 +4840,7 @@
 		"shmat" = "^vi^vi";
 		"shmctl" = "iii^{__shmid_ds_new=}";
 		"shmdt" = "i^v";
-		"shmget" = "iiLi";
+		"shmget" = "iiQi";
 		"shmsys" = "$shmsys"; // ii...;
 		"shutdown" = "iii";
 		"sigpending" = "i^I";
@@ -4870,7 +4870,7 @@
 		"symlink" = "i**";
 		"symlinkat" = "i*i*";
 		"sync" = "v";
-		"syscall" = "$syscall"; // ii...;
+		"syscall" = "$syscalq"; // ii...;
 		// decl for syscall_thread_switch not found
 		// decl for system_get_sfi_window not found
 		// decl for system_override not found
@@ -4889,7 +4889,7 @@
 		"task_get_state" = "iIi^I^I";
 		"task_info" = "iII^i^I";
 		"task_inspect" = "iII^i^I";
-		"task_map_corpse_info" = "iII^L^I";
+		"task_map_corpse_info" = "iII^Q^I";
 		"task_map_corpse_info_64" = "iII^Q^Q";
 		"task_name_for_pid" = "iIi^I";
 		"task_policy" = "iIi^iIii";
@@ -4905,7 +4905,7 @@
 		"task_sample" = "iII";
 		// decl for task_self_ not found
 		"task_self_trap" = "I";
-		"task_set_emulation" = "iILi";
+		"task_set_emulation" = "iIQi";
 		"task_set_emulation_vector" = "iIi^QI";
 		"task_set_exception_ports" = "iIIIii";
 		"task_set_info" = "iII^iI";
@@ -4913,7 +4913,7 @@
 		"task_set_phys_footprint_limit" = "iIi^i";
 		"task_set_policy" = "iIIi^iI^iIi";
 		"task_set_port_space" = "iIi";
-		"task_set_ras_pc" = "iILL";
+		"task_set_ras_pc" = "iIQQ";
 		"task_set_special_port" = "iIiI";
 		"task_set_state" = "iIi^II";
 		"task_suspend" = "iI";
@@ -4971,33 +4971,33 @@
 		"utimes" = "i*^{timeval=}";
 		"vfork" = "i";
 		// decl for vfs_purge not found
-		"vm_allocate" = "iI^LLi";
-		"vm_allocate_cpm" = "iII^LLi";
-		"vm_behavior_set" = "iILLi";
-		"vm_copy" = "iILLL";
-		"vm_deallocate" = "iILL";
-		"vm_inherit" = "iILLI";
+		"vm_allocate" = "iI^QQi";
+		"vm_allocate_cpm" = "iII^QQi";
+		"vm_behavior_set" = "iIQQi";
+		"vm_copy" = "iIQQQ";
+		"vm_deallocate" = "iIQQ";
+		"vm_inherit" = "iIQQI";
 		// decl for vm_kernel_page_mask not found
 		// decl for vm_kernel_page_shift not found
 		// decl for vm_kernel_page_size not found
-		"vm_machine_attribute" = "iILLI^i";
-		"vm_map" = "iI^LLLiILiiiI";
-		"vm_map_page_query" = "iIL^i^i";
-		"vm_msync" = "iILLI";
+		"vm_machine_attribute" = "iIQQI^i";
+		"vm_map" = "iI^QQQiIQiiiI";
+		"vm_map_page_query" = "iIQ^i^i";
+		"vm_msync" = "iIQQI";
 		// decl for vm_page_mask not found
 		// decl for vm_page_shift not found
 		// decl for vm_page_size not found
 		// decl for vm_pressure_monitor not found
-		"vm_protect" = "iILLii";
-		"vm_purgable_control" = "iILi^i";
-		"vm_read" = "iILL^L^I";
+		"vm_protect" = "iIQQii";
+		"vm_purgable_control" = "iIQi^i";
+		"vm_read" = "iIQQ^Q^I";
 		"vm_read_list" = "iI[256{vm_read_entry=}]I";
-		"vm_read_overwrite" = "iILLL^L";
-		"vm_region_64" = "iI^L^Li^i^I^I";
-		"vm_region_recurse_64" = "iI^L^L^I^i^I";
-		"vm_remap" = "iI^LLLiILi^i^iI";
-		"vm_wire" = "iIILLi";
-		"vm_write" = "iILLI";
+		"vm_read_overwrite" = "iIQQQ^Q";
+		"vm_region_64" = "iI^Q^Qi^i^I^I";
+		"vm_region_recurse_64" = "iI^Q^Q^I^i^I";
+		"vm_remap" = "iI^QQQiIQi^i^iI";
+		"vm_wire" = "iIIQQi";
+		"vm_write" = "iIQQI";
 		"voucher_mach_msg_adopt" = "^{voucher_mach_msg_state_s=}^{?=}";
 		"voucher_mach_msg_clear" = "v^{?=}";
 		"voucher_mach_msg_revert" = "v^{voucher_mach_msg_state_s=}";
@@ -5031,9 +5031,9 @@
 		// decl for work_interval_leave not found
 		// decl for work_interval_notify not found
 		// decl for work_interval_notify_simple not found
-		"write" = "li^vL";
+		"write" = "qi^vQ";
 		// decl for write$NOCANCEL not found
-		"writev" = "li^{iovec=}i";
+		"writev" = "qi^{iovec=}i";
 		// decl for writev$NOCANCEL not found
 		// decl for _FE_DFL_DISABLE_DENORMS_ENV not found
 		// decl for _FE_DFL_ENV not found
@@ -5374,12 +5374,12 @@
 		"logbl" = "DD";
 		"logf" = "ff";
 		"logl" = "DD";
-		"lrint" = "ld";
-		"lrintf" = "lf";
-		"lrintl" = "lD";
-		"lround" = "ld";
-		"lroundf" = "lf";
-		"lroundl" = "lD";
+		"lrint" = "qd";
+		"lrintf" = "qf";
+		"lrintl" = "qD";
+		"lround" = "qd";
+		"lroundf" = "qf";
+		"lroundl" = "qD";
 		// decl for matrix_identity_double2x2 not found
 		// decl for matrix_identity_double3x3 not found
 		// decl for matrix_identity_double4x4 not found
@@ -5417,9 +5417,9 @@
 		"roundf" = "ff";
 		"roundl" = "DD";
 		"scalb" = "ddd";
-		"scalbln" = "ddl";
-		"scalblnf" = "ffl";
-		"scalblnl" = "DDl";
+		"scalbln" = "ddq";
+		"scalblnf" = "ffq";
+		"scalblnl" = "DDq";
 		"scalbn" = "ddi";
 		"scalbnf" = "ffi";
 		"scalbnl" = "DDi";
@@ -5531,19 +5531,19 @@
 		// decl for bitarray_zap_first_set not found
 		// decl for bitarray_zap_first_set_multiple not found
 		// decl for block_units_by_size_class not found
-		"calloc" = "^vLL";
+		"calloc" = "^vQQ";
 		// decl for first_block_offset_by_size_class not found
 		"free" = "v^v";
 		// decl for is_stack_logging_lite_enabled not found
 		// decl for last_block_offset_by_size_class not found
 		// decl for mag_set_thread_index not found
-		"malloc" = "^vL";
+		"malloc" = "^vQ";
 		// decl for malloc_check_counter not found
 		// decl for malloc_check_each not found
 		// decl for malloc_check_start not found
 		// decl for malloc_claimed_address not found
 		// decl for malloc_create_legacy_default_zone not found
-		"malloc_create_zone" = "^{_malloc_zone_t=}LI";
+		"malloc_create_zone" = "^{_malloc_zone_t=}QI";
 		// decl for malloc_debug not found
 		"malloc_default_purgeable_zone" = "^{_malloc_zone_t=}";
 		"malloc_default_zone" = "^{_malloc_zone_t=}";
@@ -5554,7 +5554,7 @@
 		// decl for malloc_freezedry not found
 		"malloc_get_all_zones" = "iI^?^?^I";
 		"malloc_get_zone_name" = "*^{_malloc_zone_t=}";
-		"malloc_good_size" = "LL";
+		"malloc_good_size" = "QQ";
 		// decl for malloc_jumpstart not found
 		// decl for malloc_logger not found
 		"malloc_make_nonpurgeable" = "i^v";
@@ -5565,10 +5565,10 @@
 		"malloc_printf" = "$malloc_printf"; // v*...;
 		"malloc_set_zone_name" = "v^{_malloc_zone_t=}*";
 		// decl for malloc_singlethreaded not found
-		"malloc_size" = "L^v";
+		"malloc_size" = "Q^v";
 		"malloc_zone_batch_free" = "v^{_malloc_zone_t=}^?I";
-		"malloc_zone_batch_malloc" = "I^{_malloc_zone_t=}L^?I";
-		"malloc_zone_calloc" = "^v^{_malloc_zone_t=}LL";
+		"malloc_zone_batch_malloc" = "I^{_malloc_zone_t=}Q^?I";
+		"malloc_zone_calloc" = "^v^{_malloc_zone_t=}QQ";
 		"malloc_zone_check" = "i^{_malloc_zone_t=}";
 		// decl for malloc_zone_claimed_address not found
 		"malloc_zone_disable_discharge_checking" = "v^{_malloc_zone_t=}";
@@ -5578,22 +5578,22 @@
 		"malloc_zone_free" = "v^{_malloc_zone_t=}^v";
 		"malloc_zone_from_ptr" = "^{_malloc_zone_t=}^v";
 		"malloc_zone_log" = "v^{_malloc_zone_t=}^v";
-		"malloc_zone_malloc" = "^v^{_malloc_zone_t=}L";
-		"malloc_zone_memalign" = "^v^{_malloc_zone_t=}LL";
-		"malloc_zone_pressure_relief" = "L^{_malloc_zone_t=}L";
+		"malloc_zone_malloc" = "^v^{_malloc_zone_t=}Q";
+		"malloc_zone_memalign" = "^v^{_malloc_zone_t=}QQ";
+		"malloc_zone_pressure_relief" = "Q^{_malloc_zone_t=}Q";
 		"malloc_zone_print" = "v^{_malloc_zone_t=}i";
 		"malloc_zone_print_ptr_info" = "v^v";
-		"malloc_zone_realloc" = "^v^{_malloc_zone_t=}^vL";
+		"malloc_zone_realloc" = "^v^{_malloc_zone_t=}^vQ";
 		"malloc_zone_register" = "v^{_malloc_zone_t=}";
 		"malloc_zone_statistics" = "v^{_malloc_zone_t=}^{malloc_statistics_t=}";
 		"malloc_zone_unregister" = "v^{_malloc_zone_t=}";
-		"malloc_zone_valloc" = "^v^{_malloc_zone_t=}L";
+		"malloc_zone_valloc" = "^v^{_malloc_zone_t=}Q";
 		// decl for malloc_zones not found
 		"mstats" = "{mstats=}";
 		// decl for nanov2_allocate_new_region not found
 		// decl for nanov2_madvise_policy not found
 		// decl for nanov2_policy_config not found
-		"posix_memalign" = "i^?LL";
+		"posix_memalign" = "i^?QQ";
 		// decl for ptr_offset_to_size_class not found
 		// decl for radix_tree_count not found
 		// decl for radix_tree_create not found
@@ -5603,7 +5603,7 @@
 		// decl for radix_tree_insert not found
 		// decl for radix_tree_lookup not found
 		// decl for radix_tree_size not found
-		"realloc" = "^v^vL";
+		"realloc" = "^v^vQ";
 		// decl for reallocarray$DARWIN_EXTSN not found
 		// decl for reallocarrayf$DARWIN_EXTSN not found
 		// decl for scalable_zone_info not found
@@ -5622,7 +5622,7 @@
 		// decl for szone_check_start not found
 		// decl for turn_off_stack_logging not found
 		// decl for turn_on_stack_logging not found
-		"valloc" = "^vL";
+		"valloc" = "^vQ";
 		// decl for vfree not found
 		// decl for zeroify_scalable_zone not found
 		// decl for NETCORE_XPC_TYPE_ANY not found
@@ -6440,16 +6440,16 @@
 		"OSAtomicCompareAndSwap64Barrier" = "Bqq^q";
 		"OSAtomicCompareAndSwapInt" = "Bii^i";
 		"OSAtomicCompareAndSwapIntBarrier" = "Bii^i";
-		"OSAtomicCompareAndSwapLong" = "Bll^l";
-		"OSAtomicCompareAndSwapLongBarrier" = "Bll^l";
+		"OSAtomicCompareAndSwapLong" = "Bqq^q";
+		"OSAtomicCompareAndSwapLongBarrier" = "Bqq^q";
 		"OSAtomicCompareAndSwapPtr" = "B^v^v^?";
 		"OSAtomicCompareAndSwapPtrBarrier" = "B^v^v^?";
 		"OSAtomicDecrement32" = "i^i";
 		"OSAtomicDecrement32Barrier" = "i^i";
 		"OSAtomicDecrement64" = "q^q";
 		"OSAtomicDecrement64Barrier" = "q^q";
-		"OSAtomicDequeue" = "^v^{?=}L";
-		"OSAtomicEnqueue" = "v^{?=}^vL";
+		"OSAtomicDequeue" = "^v^{?=}Q";
+		"OSAtomicEnqueue" = "v^{?=}^vQ";
 		"OSAtomicIncrement32" = "i^i";
 		"OSAtomicIncrement32Barrier" = "i^i";
 		"OSAtomicIncrement64" = "q^q";
@@ -6532,10 +6532,10 @@
 		// decl for _spin_lock_try not found
 		// decl for _spin_unlock not found
 		"ffs" = "ii";
-		"ffsl" = "il";
+		"ffsl" = "iq";
 		"ffsll" = "iq";
 		"fls" = "ii";
-		"flsl" = "il";
+		"flsl" = "iq";
 		"flsll" = "iq";
 		// decl for getcontext not found
 		"longjmp" = "$longjmp";
@@ -6583,9 +6583,9 @@
 		// decl for spin_lock_try not found
 		// decl for spin_unlock not found
 		// decl for swapcontext not found
-		"sys_cache_control" = "ii^vL";
-		"sys_dcache_flush" = "v^vL";
-		"sys_icache_invalidate" = "v^vL";
+		"sys_cache_control" = "ii^vQ";
+		"sys_dcache_flush" = "v^vQ";
+		"sys_icache_invalidate" = "v^vQ";
 		// decl for pthread_dependency_fulfill_np$VARIANT$armv81 not found
 		// decl for pthread_dependency_fulfill_np$VARIANT$mp not found
 		// decl for pthread_dependency_wait_np$VARIANT$armv81 not found
@@ -6645,26 +6645,26 @@
 		"pthread_attr_destroy" = "i^{_opaque_pthread_attr_t=}";
 		"pthread_attr_get_qos_class_np" = "i^{_opaque_pthread_attr_t=}^I^i";
 		"pthread_attr_getdetachstate" = "i^{_opaque_pthread_attr_t=}^i";
-		"pthread_attr_getguardsize" = "i^{_opaque_pthread_attr_t=}^L";
+		"pthread_attr_getguardsize" = "i^{_opaque_pthread_attr_t=}^Q";
 		"pthread_attr_getinheritsched" = "i^{_opaque_pthread_attr_t=}^i";
 		"pthread_attr_getschedparam" = "i^{_opaque_pthread_attr_t=}^{sched_param=}";
 		"pthread_attr_getschedpolicy" = "i^{_opaque_pthread_attr_t=}^i";
 		"pthread_attr_getscope" = "i^{_opaque_pthread_attr_t=}^i";
-		"pthread_attr_getstack" = "i^{_opaque_pthread_attr_t=}^?^L";
+		"pthread_attr_getstack" = "i^{_opaque_pthread_attr_t=}^?^Q";
 		"pthread_attr_getstackaddr" = "i^{_opaque_pthread_attr_t=}^?";
-		"pthread_attr_getstacksize" = "i^{_opaque_pthread_attr_t=}^L";
+		"pthread_attr_getstacksize" = "i^{_opaque_pthread_attr_t=}^Q";
 		"pthread_attr_init" = "i^{_opaque_pthread_attr_t=}";
 		"pthread_attr_set_qos_class_np" = "i^{_opaque_pthread_attr_t=}Ii";
 		// decl for pthread_attr_setcpupercent_np not found
 		"pthread_attr_setdetachstate" = "i^{_opaque_pthread_attr_t=}i";
-		"pthread_attr_setguardsize" = "i^{_opaque_pthread_attr_t=}L";
+		"pthread_attr_setguardsize" = "i^{_opaque_pthread_attr_t=}Q";
 		"pthread_attr_setinheritsched" = "i^{_opaque_pthread_attr_t=}i";
 		"pthread_attr_setschedparam" = "i^{_opaque_pthread_attr_t=}^{sched_param=}";
 		"pthread_attr_setschedpolicy" = "i^{_opaque_pthread_attr_t=}i";
 		"pthread_attr_setscope" = "i^{_opaque_pthread_attr_t=}i";
-		"pthread_attr_setstack" = "i^{_opaque_pthread_attr_t=}^vL";
+		"pthread_attr_setstack" = "i^{_opaque_pthread_attr_t=}^vQ";
 		"pthread_attr_setstackaddr" = "i^{_opaque_pthread_attr_t=}^v";
-		"pthread_attr_setstacksize" = "i^{_opaque_pthread_attr_t=}L";
+		"pthread_attr_setstacksize" = "i^{_opaque_pthread_attr_t=}Q";
 		"pthread_cancel" = "i^{_opaque_pthread_t=}";
 		// decl for pthread_chdir_np not found
 		"pthread_cond_broadcast" = "i^{_opaque_pthread_cond_t=}";
@@ -6694,17 +6694,17 @@
 		"pthread_from_mach_thread_np" = "^{_opaque_pthread_t=}I";
 		"pthread_get_qos_class_np" = "i^{_opaque_pthread_t=}^I^i";
 		"pthread_get_stackaddr_np" = "^v^{_opaque_pthread_t=}";
-		"pthread_get_stacksize_np" = "L^{_opaque_pthread_t=}";
+		"pthread_get_stacksize_np" = "Q^{_opaque_pthread_t=}";
 		"pthread_getconcurrency" = "i";
-		"pthread_getname_np" = "i^{_opaque_pthread_t=}*L";
+		"pthread_getname_np" = "i^{_opaque_pthread_t=}*Q";
 		"pthread_getschedparam" = "i^{_opaque_pthread_t=}^i^{sched_param=}";
-		"pthread_getspecific" = "^vL";
+		"pthread_getspecific" = "^vQ";
 		// decl for pthread_introspection_hook_install not found
 		"pthread_is_threaded_np" = "i";
 		"pthread_join" = "i^{_opaque_pthread_t=}^?";
 		// decl for pthread_join$NOCANCEL not found
-		"pthread_key_create" = "i^L^?";
-		"pthread_key_delete" = "iL";
+		"pthread_key_create" = "i^Q^?";
+		"pthread_key_delete" = "iQ";
 		// decl for pthread_key_init_np not found
 		"pthread_kill" = "i^{_opaque_pthread_t=}i";
 		// decl for pthread_layout_offsets not found
@@ -6755,7 +6755,7 @@
 		"pthread_setconcurrency" = "ii";
 		"pthread_setname_np" = "i*";
 		"pthread_setschedparam" = "i^{_opaque_pthread_t=}i^{sched_param=}";
-		"pthread_setspecific" = "iL^v";
+		"pthread_setspecific" = "iQ^v";
 		"pthread_sigmask" = "ii^I^I";
 		// decl for pthread_stack_frame_decode_np not found
 		"pthread_testcancel" = "v";
@@ -6929,7 +6929,7 @@
 		// decl for _os_trace_set_diagnostic_flags not found
 		// decl for _os_trace_strdup not found
 		// decl for _os_trace_sysprefsdir_path not found
-		"_os_trace_with_buffer" = "v^v*C^vL^?";
+		"_os_trace_with_buffer" = "v^v*C^vQ^?";
 		// decl for _os_trace_write not found
 		// decl for _os_trace_writev not found
 		// decl for _os_trace_zalloc not found
@@ -7006,7 +7006,7 @@
 		// decl for __register_frame not found
 		"unw_get_fpreg" = "i^{unw_cursor_t=}i^d";
 		"unw_get_proc_info" = "i^{unw_cursor_t=}^{unw_proc_info_t=}";
-		"unw_get_proc_name" = "i^{unw_cursor_t=}*L^Q";
+		"unw_get_proc_name" = "i^{unw_cursor_t=}*Q^Q";
 		"unw_get_reg" = "i^{unw_cursor_t=}i^Q";
 		"unw_init_local" = "i^{unw_cursor_t=}^{unw_context_t=}";
 		"unw_is_fpreg" = "i^{unw_cursor_t=}i";
@@ -7665,12 +7665,12 @@
 		"NXNextHashState" = "i^{?=}^{?=}^?";
 		"NXNextMapState" = "i^v^v^v^?";
 		"NXNoEffectFree" = "v^v^v";
-		"NXPtrHash" = "L^v^v";
+		"NXPtrHash" = "Q^v^v";
 		"NXPtrIsEqual" = "i^v^v^v";
 		"NXReallyFree" = "v^v^v";
 		"NXResetHashTable" = "v^{?=}";
 		"NXResetMapTable" = "v^v";
-		"NXStrHash" = "L^v^v";
+		"NXStrHash" = "Q^v^v";
 		"NXStrIsEqual" = "i^v^v^v";
 		"__objc_personality_v0" = "iiiQ^?^?";
 		"_class_getIvarMemoryManagement" = "i#^?";
@@ -7705,7 +7705,7 @@
 		"_objc_setBadAllocHandler" = "v^?";
 		"_objc_setClassCopyFixupHandler" = "v^?";
 		"_protocol_getMethodTypeEncoding" = "*@:BB";
-		"class_addIvar" = "B#*LC*";
+		"class_addIvar" = "B#*QC*";
 		"class_addMethod" = "B#:^?*";
 		"class_addMethodsBulk" = "^?#^?^?^?I^?";
 		"class_addProperty" = "B#*^{?=}I";
@@ -7715,13 +7715,13 @@
 		"class_copyMethodList" = "^^{objc_method=}#^I";
 		"class_copyPropertyList" = "^^{objc_property=}#^I";
 		"class_copyProtocolList" = "^?#^I";
-		"class_createInstance" = "@#L";
+		"class_createInstance" = "@#Q";
 		"class_createInstances" = "I#Q^?I";
 		"class_getClassMethod" = "^{objc_method=}#:";
 		"class_getClassVariable" = "^{objc_ivar=}#*";
 		"class_getImageName" = "*#";
 		"class_getInstanceMethod" = "^{objc_method=}#:";
-		"class_getInstanceSize" = "L#";
+		"class_getInstanceSize" = "Q#";
 		"class_getInstanceVariable" = "^{objc_ivar=}#*";
 		"class_getIvarLayout" = "^C#";
 		"class_getMethodImplementation" = "^?#:";
@@ -7748,24 +7748,24 @@
 		"imp_removeBlock" = "B^?";
 		"instrumentObjcMessageSends" = "vB";
 		"ivar_getName" = "*^{objc_ivar=}";
-		"ivar_getOffset" = "l^{objc_ivar=}";
+		"ivar_getOffset" = "q^{objc_ivar=}";
 		"ivar_getTypeEncoding" = "*^{objc_ivar=}";
 		"method_copyArgumentType" = "*^{objc_method=}I";
 		"method_copyReturnType" = "*^{objc_method=}";
 		"method_exchangeImplementations" = "v^{objc_method=}^{objc_method=}";
-		"method_getArgumentType" = "v^{objc_method=}I*L";
+		"method_getArgumentType" = "v^{objc_method=}I*Q";
 		"method_getDescription" = "^{objc_method_description=}^{objc_method=}";
 		"method_getImplementation" = "^?^{objc_method=}";
 		"method_getName" = ":^{objc_method=}";
 		"method_getNumberOfArguments" = "I^{objc_method=}";
-		"method_getReturnType" = "v^{objc_method=}*L";
+		"method_getReturnType" = "v^{objc_method=}*Q";
 		"method_getTypeEncoding" = "*^{objc_method=}";
 		"method_invoke" = "$method_invoke";
 		"method_setImplementation" = "^?^{objc_method=}^?";
 		"objc_alloc" = "@#";
 		"objc_allocWithZone" = "@#";
 		"objc_alloc_init" = "@#"; // clang says it's "v@"?
-		"objc_allocateClassPair" = "##*L";
+		"objc_allocateClassPair" = "##*Q";
 		"objc_allocateProtocol" = "@*";
 		"objc_autorelease" = "@@";
 		"objc_autoreleasePoolPop" = "v^?";
@@ -7807,7 +7807,7 @@
 		"objc_destroyWeak" = "v^?";
 		"objc_destructInstance" = "^v@";
 		"objc_disposeClassPair" = "v#";
-		"objc_duplicateClass" = "##*L";
+		"objc_duplicateClass" = "##*Q";
 		"objc_end_catch" = "v";
 		"objc_enumerationMutation" = "v@";
 		"objc_exception_rethrow" = "v";
@@ -7852,7 +7852,7 @@
 		"objc_retainBlock" = "@@";
 		"objc_retain_autorelease" = "@@";
 		"objc_retainedObject" = "@^v";
-		"objc_setAssociatedObject" = "v@^v@L";
+		"objc_setAssociatedObject" = "v@^v@Q";
 		"objc_setEnumerationMutationHandler" = "v^?";
 		"objc_setExceptionMatcher" = "^?^?";
 		"objc_setExceptionPreprocessor" = "^?^?";
@@ -7875,7 +7875,7 @@
 		"objc_unretainedObject" = "@^v";
 		"objc_unretainedPointer" = "^v@";
 		"objc_unsafeClaimAutoreleasedReturnValue" = "@@";
-		"object_copy" = "@@L";
+		"object_copy" = "@@Q";
 		"object_dispose" = "@@";
 		"object_getClass" = "#@";
 		"object_getClassName" = "*@";
@@ -7916,44 +7916,44 @@
 		"NSAllHashTableObjects" = "^v^v";
 		"NSAllMapTableKeys" = "^v^v";
 		"NSAllMapTableValues" = "^v^v";
-		"NSAllocateCollectable" = "^vLL";
-		"NSAllocateMemoryPages" = "^vL";
-		"NSAllocateObject" = "@#L^v";
+		"NSAllocateCollectable" = "^vQQ";
+		"NSAllocateMemoryPages" = "^vQ";
+		"NSAllocateObject" = "@#Q^v";
 		"NSClassFromString" = "#^v";
 		"NSCompareHashTables" = "B^v^v";
 		"NSCompareMapTables" = "B^v^v";
 		"NSCopyHashTableWithZone" = "^v^v^v";
 		"NSCopyMapTableWithZone" = "^v^v^v";
-		"NSCopyMemoryPages" = "v^v^vL";
-		"NSCopyObject" = "@@L^v";
-		"NSCountHashTable" = "L^v";
-		"NSCountMapTable" = "L^v";
-		"NSCreateHashTable" = "^v{?=}L";
-		"NSCreateHashTableWithZone" = "^v{?=}L^v";
-		"NSCreateMapTable" = "^v{?=}{?=}L";
-		"NSCreateMapTableWithZone" = "^v{?=}{?=}L^v";
-		"NSCreateZone" = "^vLLB";
-		"NSDeallocateMemoryPages" = "v^vL";
+		"NSCopyMemoryPages" = "v^v^vQ";
+		"NSCopyObject" = "@@Q^v";
+		"NSCountHashTable" = "Q^v";
+		"NSCountMapTable" = "Q^v";
+		"NSCreateHashTable" = "^v{?=}Q";
+		"NSCreateHashTableWithZone" = "^v{?=}Q^v";
+		"NSCreateMapTable" = "^v{?=}{?=}Q";
+		"NSCreateMapTableWithZone" = "^v{?=}{?=}Q^v";
+		"NSCreateZone" = "^vQQB";
+		"NSDeallocateMemoryPages" = "v^vQ";
 		"NSDeallocateObject" = "v@";
-		"NSDecimalAdd" = "L^v^v^vL";
+		"NSDecimalAdd" = "Q^v^v^vQ";
 		"NSDecimalCompact" = "v^v";
-		"NSDecimalCompare" = "l^v^v";
+		"NSDecimalCompare" = "q^v^v";
 		"NSDecimalCopy" = "v^v^v";
-		"NSDecimalDivide" = "L^v^v^vL";
-		"NSDecimalMultiply" = "L^v^v^vL";
-		"NSDecimalMultiplyByPowerOf10" = "L^v^vsL";
-		"NSDecimalNormalize" = "L^v^vL";
-		"NSDecimalPower" = "L^v^vLL";
-		"NSDecimalRound" = "v^v^vlL";
+		"NSDecimalDivide" = "Q^v^v^vQ";
+		"NSDecimalMultiply" = "Q^v^v^vQ";
+		"NSDecimalMultiplyByPowerOf10" = "Q^v^vsQ";
+		"NSDecimalNormalize" = "Q^v^vQ";
+		"NSDecimalPower" = "Q^v^vQQ";
+		"NSDecimalRound" = "v^v^vqQ";
 		"NSDecimalString" = "^v^v@";
-		"NSDecimalSubtract" = "L^v^v^vL";
+		"NSDecimalSubtract" = "Q^v^v^vQ";
 		"NSDecrementExtraRefCountWasZero" = "B@";
 		"NSDefaultMallocZone" = "^v";
 		"NSEndHashTableEnumeration" = "v^v";
 		"NSEndMapTableEnumeration" = "v^v";
 		"NSEnumerateHashTable" = "{?=}^v";
 		"NSEnumerateMapTable" = "{?=}^v";
-		"NSExtraRefCount" = "L@";
+		"NSExtraRefCount" = "Q@";
 		"NSFreeHashTable" = "v^v";
 		"NSFreeMapTable" = "v^v";
 		"NSFullUserName" = "^v";
@@ -7967,7 +7967,7 @@
 		"NSHomeDirectoryForUser" = "^v^v";
 		"NSIncrementExtraRefCount" = "v@";
 		"NSIntersectionRange" = "{_NSRange=QQ}{_NSRange=QQ}{_NSRange=QQ}";
-		"NSLogPageSize" = "L";
+		"NSLogPageSize" = "Q";
 		"NSMapGet" = "^v^v^v";
 		"NSMapInsert" = "v^v^v^v";
 		"NSMapInsertIfAbsent" = "^v^v^v^v";
@@ -7977,17 +7977,17 @@
 		"NSNextHashEnumeratorItem" = "^v^v";
 		"NSNextMapEnumeratorPair" = "B^v^?^?";
 		"NSOpenStepRootDirectory" = "^v";
-		"NSPageSize" = "L";
+		"NSPageSize" = "Q";
 		"NSProtocolFromString" = "^v^v";
 		"NSRangeFromString" = "{_NSRange=QQ}^v";
-		"NSRealMemoryAvailable" = "L";
-		"NSReallocateCollectable" = "^v^vLL";
+		"NSRealMemoryAvailable" = "Q";
+		"NSReallocateCollectable" = "^v^vQQ";
 		"NSRecycleZone" = "v^v";
 		"NSResetHashTable" = "v^v";
 		"NSResetMapTable" = "v^v";
-		"NSRoundDownToMultipleOfPageSize" = "LL";
-		"NSRoundUpToMultipleOfPageSize" = "LL";
-		"NSSearchPathForDirectoriesInDomains" = "^vLLB";
+		"NSRoundDownToMultipleOfPageSize" = "QQ";
+		"NSRoundUpToMultipleOfPageSize" = "QQ";
+		"NSSearchPathForDirectoriesInDomains" = "^vQQB";
 		"NSSelectorFromString" = ":^v";
 		"NSSetUncaughtExceptionHandler" = "v^v";
 		"NSSetZoneName" = "v^v^v";
@@ -8001,68 +8001,68 @@
 		"NSTemporaryDirectory" = "^v";
 		"NSUnionRange" = "{_NSRange=QQ}{_NSRange=QQ}{_NSRange=QQ}";
 		"NSUserName" = "^v";
-		"NSZoneCalloc" = "^v^vLL";
+		"NSZoneCalloc" = "^v^vQQ";
 		"NSZoneFree" = "v^v^v";
 		"NSZoneFromPointer" = "^v^v";
-		"NSZoneMalloc" = "^v^vL";
+		"NSZoneMalloc" = "^v^vQ";
 		"NSZoneName" = "^v^v";
-		"NSZoneRealloc" = "^v^v^vL";
+		"NSZoneRealloc" = "^v^v^vQ";
 	};
 	"/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation" = {
 	"CFAbsoluteTimeAddGregorianUnits" = "dd^{__CFTimeZone=}{?=}";
 	"CFAbsoluteTimeGetCurrent" = "d";
 	"CFAbsoluteTimeGetDayOfWeek" = "id^{__CFTimeZone=}";
 	"CFAbsoluteTimeGetDayOfYear" = "id^{__CFTimeZone=}";
-	"CFAbsoluteTimeGetDifferenceAsGregorianUnits" = "{?=}dd^{__CFTimeZone=}L";
+	"CFAbsoluteTimeGetDifferenceAsGregorianUnits" = "{?=}dd^{__CFTimeZone=}Q";
 	"CFAbsoluteTimeGetGregorianDate" = "{?=}d^{__CFTimeZone=}";
 	"CFAbsoluteTimeGetWeekOfYear" = "id^{__CFTimeZone=}";
-	"CFAllocatorAllocate" = "^v^{__CFAllocator=}lL";
+	"CFAllocatorAllocate" = "^v^{__CFAllocator=}qQ";
 	"CFAllocatorCreate" = "^{__CFAllocator=}^{__CFAllocator=}^{?=}";
 	"CFAllocatorDeallocate" = "v^{__CFAllocator=}^v";
 	"CFAllocatorGetContext" = "v^{__CFAllocator=}^{?=}";
 	"CFAllocatorGetDefault" = "^{__CFAllocator=}";
-	"CFAllocatorGetPreferredSizeForSize" = "l^{__CFAllocator=}lL";
-	"CFAllocatorGetTypeID" = "L";
-	"CFAllocatorReallocate" = "^v^{__CFAllocator=}^vlL";
+	"CFAllocatorGetPreferredSizeForSize" = "q^{__CFAllocator=}qQ";
+	"CFAllocatorGetTypeID" = "Q";
+	"CFAllocatorReallocate" = "^v^{__CFAllocator=}^vqQ";
 	"CFAllocatorSetDefault" = "v^{__CFAllocator=}";
 	"CFArrayAppendArray" = "v^{__CFArray=}^{__CFArray=}{?=}";
 	"CFArrayAppendValue" = "v^{__CFArray=}^v";
 	"CFArrayApplyFunction" = "v^{__CFArray=}{?=}^?^v";
-	"CFArrayBSearchValues" = "l^{__CFArray=}{?=}^v^?^v";
+	"CFArrayBSearchValues" = "q^{__CFArray=}{?=}^v^?^v";
 	"CFArrayContainsValue" = "C^{__CFArray=}{?=}^v";
-	"CFArrayCreate" = "^{__CFArray=}^{__CFAllocator=}^?l^{?=}";
+	"CFArrayCreate" = "^{__CFArray=}^{__CFAllocator=}^?q^{?=}";
 	"CFArrayCreateCopy" = "^{__CFArray=}^{__CFAllocator=}^{__CFArray=}";
-	"CFArrayCreateMutable" = "^{__CFArray=}^{__CFAllocator=}l^{?=}";
-	"CFArrayCreateMutableCopy" = "^{__CFArray=}^{__CFAllocator=}l^{__CFArray=}";
-	"CFArrayExchangeValuesAtIndices" = "v^{__CFArray=}ll";
-	"CFArrayGetCount" = "l^{__CFArray=}";
-	"CFArrayGetCountOfValue" = "l^{__CFArray=}{?=}^v";
-	"CFArrayGetFirstIndexOfValue" = "l^{__CFArray=}{?=}^v";
-	"CFArrayGetLastIndexOfValue" = "l^{__CFArray=}{?=}^v";
-	"CFArrayGetTypeID" = "L";
-	"CFArrayGetValueAtIndex" = "^v^{__CFArray=}l";
+	"CFArrayCreateMutable" = "^{__CFArray=}^{__CFAllocator=}q^{?=}";
+	"CFArrayCreateMutableCopy" = "^{__CFArray=}^{__CFAllocator=}q^{__CFArray=}";
+	"CFArrayExchangeValuesAtIndices" = "v^{__CFArray=}qq";
+	"CFArrayGetCount" = "q^{__CFArray=}";
+	"CFArrayGetCountOfValue" = "q^{__CFArray=}{?=}^v";
+	"CFArrayGetFirstIndexOfValue" = "q^{__CFArray=}{?=}^v";
+	"CFArrayGetLastIndexOfValue" = "q^{__CFArray=}{?=}^v";
+	"CFArrayGetTypeID" = "Q";
+	"CFArrayGetValueAtIndex" = "^v^{__CFArray=}q";
 	"CFArrayGetValues" = "v^{__CFArray=}{?=}^?";
-	"CFArrayInsertValueAtIndex" = "v^{__CFArray=}l^v";
+	"CFArrayInsertValueAtIndex" = "v^{__CFArray=}q^v";
 	"CFArrayRemoveAllValues" = "v^{__CFArray=}";
-	"CFArrayRemoveValueAtIndex" = "v^{__CFArray=}l";
-	"CFArrayReplaceValues" = "v^{__CFArray=}{?=}^?l";
-	"CFArraySetValueAtIndex" = "v^{__CFArray=}l^v";
+	"CFArrayRemoveValueAtIndex" = "v^{__CFArray=}q";
+	"CFArrayReplaceValues" = "v^{__CFArray=}{?=}^?q";
+	"CFArraySetValueAtIndex" = "v^{__CFArray=}q^v";
 	"CFArraySortValues" = "v^{__CFArray=}{?=}^?^v";
 	"CFAttributedStringBeginEditing" = "v^{__CFAttributedString=}";
 	"CFAttributedStringCreate" = "^{__CFAttributedString=}^{__CFAllocator=}^{__CFString=}^{__CFDictionary=}";
 	"CFAttributedStringCreateCopy" = "^{__CFAttributedString=}^{__CFAllocator=}^{__CFAttributedString=}";
-	"CFAttributedStringCreateMutable" = "^{__CFAttributedString=}^{__CFAllocator=}l";
-	"CFAttributedStringCreateMutableCopy" = "^{__CFAttributedString=}^{__CFAllocator=}l^{__CFAttributedString=}";
+	"CFAttributedStringCreateMutable" = "^{__CFAttributedString=}^{__CFAllocator=}q";
+	"CFAttributedStringCreateMutableCopy" = "^{__CFAttributedString=}^{__CFAllocator=}q^{__CFAttributedString=}";
 	"CFAttributedStringCreateWithSubstring" = "^{__CFAttributedString=}^{__CFAllocator=}^{__CFAttributedString=}{?=}";
 	"CFAttributedStringEndEditing" = "v^{__CFAttributedString=}";
-	"CFAttributedStringGetAttribute" = "^v^{__CFAttributedString=}l^{__CFString=}^{?=}";
-	"CFAttributedStringGetAttributeAndLongestEffectiveRange" = "^v^{__CFAttributedString=}l^{__CFString=}{?=}^{?=}";
-	"CFAttributedStringGetAttributes" = "^{__CFDictionary=}^{__CFAttributedString=}l^{?=}";
-	"CFAttributedStringGetAttributesAndLongestEffectiveRange" = "^{__CFDictionary=}^{__CFAttributedString=}l{?=}^{?=}";
-	"CFAttributedStringGetLength" = "l^{__CFAttributedString=}";
+	"CFAttributedStringGetAttribute" = "^v^{__CFAttributedString=}q^{__CFString=}^{?=}";
+	"CFAttributedStringGetAttributeAndLongestEffectiveRange" = "^v^{__CFAttributedString=}q^{__CFString=}{?=}^{?=}";
+	"CFAttributedStringGetAttributes" = "^{__CFDictionary=}^{__CFAttributedString=}q^{?=}";
+	"CFAttributedStringGetAttributesAndLongestEffectiveRange" = "^{__CFDictionary=}^{__CFAttributedString=}q{?=}^{?=}";
+	"CFAttributedStringGetLength" = "q^{__CFAttributedString=}";
 	"CFAttributedStringGetMutableString" = "^{__CFString=}^{__CFAttributedString=}";
 	"CFAttributedStringGetString" = "^{__CFString=}^{__CFAttributedString=}";
-	"CFAttributedStringGetTypeID" = "L";
+	"CFAttributedStringGetTypeID" = "Q";
 	"CFAttributedStringRemoveAttribute" = "v^{__CFAttributedString=}{?=}^{__CFString=}";
 	"CFAttributedStringReplaceAttributedString" = "v^{__CFAttributedString=}{?=}^{__CFAttributedString=}";
 	"CFAttributedStringReplaceString" = "v^{__CFAttributedString=}{?=}^{__CFString=}";
@@ -8072,13 +8072,13 @@
 	"CFBagAddValue" = "v^{__CFBag=}^v";
 	"CFBagApplyFunction" = "v^{__CFBag=}^?^v";
 	"CFBagContainsValue" = "C^{__CFBag=}^v";
-	"CFBagCreate" = "^{__CFBag=}^{__CFAllocator=}^?l^{?=}";
+	"CFBagCreate" = "^{__CFBag=}^{__CFAllocator=}^?q^{?=}";
 	"CFBagCreateCopy" = "^{__CFBag=}^{__CFAllocator=}^{__CFBag=}";
-	"CFBagCreateMutable" = "^{__CFBag=}^{__CFAllocator=}l^{?=}";
-	"CFBagCreateMutableCopy" = "^{__CFBag=}^{__CFAllocator=}l^{__CFBag=}";
-	"CFBagGetCount" = "l^{__CFBag=}";
-	"CFBagGetCountOfValue" = "l^{__CFBag=}^v";
-	"CFBagGetTypeID" = "L";
+	"CFBagCreateMutable" = "^{__CFBag=}^{__CFAllocator=}q^{?=}";
+	"CFBagCreateMutableCopy" = "^{__CFBag=}^{__CFAllocator=}q^{__CFBag=}";
+	"CFBagGetCount" = "q^{__CFBag=}";
+	"CFBagGetCountOfValue" = "q^{__CFBag=}^v";
+	"CFBagGetTypeID" = "Q";
 	"CFBagGetValue" = "^v^{__CFBag=}^v";
 	"CFBagGetValueIfPresent" = "C^{__CFBag=}^v^?";
 	"CFBagGetValues" = "v^{__CFBag=}^?";
@@ -8089,61 +8089,61 @@
 	"CFBinaryHeapAddValue" = "v^{__CFBinaryHeap=}^v";
 	"CFBinaryHeapApplyFunction" = "v^{__CFBinaryHeap=}^?^v";
 	"CFBinaryHeapContainsValue" = "C^{__CFBinaryHeap=}^v";
-	"CFBinaryHeapCreate" = "^{__CFBinaryHeap=}^{__CFAllocator=}l^{?=}^{?=}";
-	"CFBinaryHeapCreateCopy" = "^{__CFBinaryHeap=}^{__CFAllocator=}l^{__CFBinaryHeap=}";
-	"CFBinaryHeapGetCount" = "l^{__CFBinaryHeap=}";
-	"CFBinaryHeapGetCountOfValue" = "l^{__CFBinaryHeap=}^v";
+	"CFBinaryHeapCreate" = "^{__CFBinaryHeap=}^{__CFAllocator=}q^{?=}^{?=}";
+	"CFBinaryHeapCreateCopy" = "^{__CFBinaryHeap=}^{__CFAllocator=}q^{__CFBinaryHeap=}";
+	"CFBinaryHeapGetCount" = "q^{__CFBinaryHeap=}";
+	"CFBinaryHeapGetCountOfValue" = "q^{__CFBinaryHeap=}^v";
 	"CFBinaryHeapGetMinimum" = "^v^{__CFBinaryHeap=}";
 	"CFBinaryHeapGetMinimumIfPresent" = "C^{__CFBinaryHeap=}^?";
-	"CFBinaryHeapGetTypeID" = "L";
+	"CFBinaryHeapGetTypeID" = "Q";
 	"CFBinaryHeapGetValues" = "v^{__CFBinaryHeap=}^?";
 	"CFBinaryHeapRemoveAllValues" = "v^{__CFBinaryHeap=}";
 	"CFBinaryHeapRemoveMinimumValue" = "v^{__CFBinaryHeap=}";
 	"CFBitVectorContainsBit" = "C^{__CFBitVector=}{?=}I";
-	"CFBitVectorCreate" = "^{__CFBitVector=}^{__CFAllocator=}^Cl";
+	"CFBitVectorCreate" = "^{__CFBitVector=}^{__CFAllocator=}^Cq";
 	"CFBitVectorCreateCopy" = "^{__CFBitVector=}^{__CFAllocator=}^{__CFBitVector=}";
-	"CFBitVectorCreateMutable" = "^{__CFBitVector=}^{__CFAllocator=}l";
-	"CFBitVectorCreateMutableCopy" = "^{__CFBitVector=}^{__CFAllocator=}l^{__CFBitVector=}";
-	"CFBitVectorFlipBitAtIndex" = "v^{__CFBitVector=}l";
+	"CFBitVectorCreateMutable" = "^{__CFBitVector=}^{__CFAllocator=}q";
+	"CFBitVectorCreateMutableCopy" = "^{__CFBitVector=}^{__CFAllocator=}q^{__CFBitVector=}";
+	"CFBitVectorFlipBitAtIndex" = "v^{__CFBitVector=}q";
 	"CFBitVectorFlipBits" = "v^{__CFBitVector=}{?=}";
-	"CFBitVectorGetBitAtIndex" = "I^{__CFBitVector=}l";
+	"CFBitVectorGetBitAtIndex" = "I^{__CFBitVector=}q";
 	"CFBitVectorGetBits" = "v^{__CFBitVector=}{?=}^C";
-	"CFBitVectorGetCount" = "l^{__CFBitVector=}";
-	"CFBitVectorGetCountOfBit" = "l^{__CFBitVector=}{?=}I";
-	"CFBitVectorGetFirstIndexOfBit" = "l^{__CFBitVector=}{?=}I";
-	"CFBitVectorGetLastIndexOfBit" = "l^{__CFBitVector=}{?=}I";
-	"CFBitVectorGetTypeID" = "L";
+	"CFBitVectorGetCount" = "q^{__CFBitVector=}";
+	"CFBitVectorGetCountOfBit" = "q^{__CFBitVector=}{?=}I";
+	"CFBitVectorGetFirstIndexOfBit" = "q^{__CFBitVector=}{?=}I";
+	"CFBitVectorGetLastIndexOfBit" = "q^{__CFBitVector=}{?=}I";
+	"CFBitVectorGetTypeID" = "Q";
 	"CFBitVectorSetAllBits" = "v^{__CFBitVector=}I";
-	"CFBitVectorSetBitAtIndex" = "v^{__CFBitVector=}lI";
+	"CFBitVectorSetBitAtIndex" = "v^{__CFBitVector=}qI";
 	"CFBitVectorSetBits" = "v^{__CFBitVector=}{?=}I";
-	"CFBitVectorSetCount" = "v^{__CFBitVector=}l";
-	"CFBooleanGetTypeID" = "L";
+	"CFBitVectorSetCount" = "v^{__CFBitVector=}q";
+	"CFBooleanGetTypeID" = "Q";
 	"CFBooleanGetValue" = "C^{__CFBoolean=}";
 	"CFBundleCloseBundleResourceMap" = "v^{__CFBundle=}i";
-	"CFBundleCopyAuxiliaryExecutableURL" = "^{__CFURL=}^{__CFBundle=}^{__CFString=}";
-	"CFBundleCopyBuiltInPlugInsURL" = "^{__CFURL=}^{__CFBundle=}";
+	"CFBundleCopyAuxiliaryExecutableURQ" = "^{__CFURL=}^{__CFBundle=}^{__CFString=}";
+	"CFBundleCopyBuiltInPlugInsURQ" = "^{__CFURL=}^{__CFBundle=}";
 	"CFBundleCopyBundleLocalizations" = "^{__CFArray=}^{__CFBundle=}";
-	"CFBundleCopyBundleURL" = "^{__CFURL=}^{__CFBundle=}";
+	"CFBundleCopyBundleURQ" = "^{__CFURL=}^{__CFBundle=}";
 	"CFBundleCopyExecutableArchitectures" = "^{__CFArray=}^{__CFBundle=}";
-	"CFBundleCopyExecutableArchitecturesForURL" = "^{__CFArray=}^{__CFURL=}";
-	"CFBundleCopyExecutableURL" = "^{__CFURL=}^{__CFBundle=}";
-	"CFBundleCopyInfoDictionaryForURL" = "^{__CFDictionary=}^{__CFURL=}";
+	"CFBundleCopyExecutableArchitecturesForURQ" = "^{__CFArray=}^{__CFURL=}";
+	"CFBundleCopyExecutableURQ" = "^{__CFURL=}^{__CFBundle=}";
+	"CFBundleCopyInfoDictionaryForURQ" = "^{__CFDictionary=}^{__CFURL=}";
 	"CFBundleCopyInfoDictionaryInDirectory" = "^{__CFDictionary=}^{__CFURL=}";
 	"CFBundleCopyLocalizationsForPreferences" = "^{__CFArray=}^{__CFArray=}^{__CFArray=}";
-	"CFBundleCopyLocalizationsForURL" = "^{__CFArray=}^{__CFURL=}";
+	"CFBundleCopyLocalizationsForURQ" = "^{__CFArray=}^{__CFURL=}";
 	"CFBundleCopyLocalizedString" = "^{__CFString=}^{__CFBundle=}^{__CFString=}^{__CFString=}^{__CFString=}";
 	"CFBundleCopyPreferredLocalizationsFromArray" = "^{__CFArray=}^{__CFArray=}";
-	"CFBundleCopyPrivateFrameworksURL" = "^{__CFURL=}^{__CFBundle=}";
-	"CFBundleCopyResourceURL" = "^{__CFURL=}^{__CFBundle=}^{__CFString=}^{__CFString=}^{__CFString=}";
+	"CFBundleCopyPrivateFrameworksURQ" = "^{__CFURL=}^{__CFBundle=}";
+	"CFBundleCopyResourceURQ" = "^{__CFURL=}^{__CFBundle=}^{__CFString=}^{__CFString=}^{__CFString=}";
 	"CFBundleCopyResourceURLForLocalization" = "^{__CFURL=}^{__CFBundle=}^{__CFString=}^{__CFString=}^{__CFString=}^{__CFString=}";
 	"CFBundleCopyResourceURLInDirectory" = "^{__CFURL=}^{__CFURL=}^{__CFString=}^{__CFString=}^{__CFString=}";
 	"CFBundleCopyResourceURLsOfType" = "^{__CFArray=}^{__CFBundle=}^{__CFString=}^{__CFString=}";
 	"CFBundleCopyResourceURLsOfTypeForLocalization" = "^{__CFArray=}^{__CFBundle=}^{__CFString=}^{__CFString=}^{__CFString=}";
 	"CFBundleCopyResourceURLsOfTypeInDirectory" = "^{__CFArray=}^{__CFURL=}^{__CFString=}^{__CFString=}";
-	"CFBundleCopyResourcesDirectoryURL" = "^{__CFURL=}^{__CFBundle=}";
-	"CFBundleCopySharedFrameworksURL" = "^{__CFURL=}^{__CFBundle=}";
-	"CFBundleCopySharedSupportURL" = "^{__CFURL=}^{__CFBundle=}";
-	"CFBundleCopySupportFilesDirectoryURL" = "^{__CFURL=}^{__CFBundle=}";
+	"CFBundleCopyResourcesDirectoryURQ" = "^{__CFURL=}^{__CFBundle=}";
+	"CFBundleCopySharedFrameworksURQ" = "^{__CFURL=}^{__CFBundle=}";
+	"CFBundleCopySharedSupportURQ" = "^{__CFURL=}^{__CFBundle=}";
+	"CFBundleCopySupportFilesDirectoryURQ" = "^{__CFURL=}^{__CFBundle=}";
 	"CFBundleCreate" = "^{__CFBundle=}^{__CFAllocator=}^{__CFURL=}";
 	"CFBundleCreateBundlesFromDirectory" = "^{__CFArray=}^{__CFAllocator=}^{__CFURL=}^{__CFString=}";
 	"CFBundleGetAllBundles" = "^{__CFArray=}";
@@ -8160,7 +8160,7 @@
 	"CFBundleGetPackageInfo" = "v^{__CFBundle=}^I^I";
 	"CFBundleGetPackageInfoInDirectory" = "C^{__CFURL=}^I^I";
 	"CFBundleGetPlugIn" = "^{__CFBundle=}^{__CFBundle=}";
-	"CFBundleGetTypeID" = "L";
+	"CFBundleGetTypeID" = "Q";
 	"CFBundleGetValueForInfoDictionaryKey" = "^v^{__CFBundle=}^{__CFString=}";
 	"CFBundleGetVersionNumber" = "I^{__CFBundle=}";
 	"CFBundleIsExecutableLoaded" = "C^{__CFBundle=}";
@@ -8170,26 +8170,26 @@
 	"CFBundleOpenBundleResourceMap" = "i^{__CFBundle=}";
 	"CFBundlePreflightExecutable" = "C^{__CFBundle=}^^{__CFError=}";
 	"CFBundleUnloadExecutable" = "v^{__CFBundle=}";
-	"CFCalendarAddComponents" = "$CFCalendarAddComponents"; // C^{__CFCalendar=}^dL*...
+	"CFCalendarAddComponents" = "$CFCalendarAddComponents"; // C^{__CFCalendar=}^dQ*...
 	"CFCalendarComposeAbsoluteTime" = "$CFCalendarComposeAbsoluteTime"; // C^{__CFCalendar=}^d*...
 	"CFCalendarCopyCurrent" = "^{__CFCalendar=}";
 	"CFCalendarCopyLocale" = "^{__CFLocale=}^{__CFCalendar=}";
 	"CFCalendarCopyTimeZone" = "^{__CFTimeZone=}^{__CFCalendar=}";
 	"CFCalendarCreateWithIdentifier" = "^{__CFCalendar=}^{__CFAllocator=}^{__CFString=}";
 	"CFCalendarDecomposeAbsoluteTime" = "$CFCalendarDecomposeAbsoluteTime"; // C^{__CFCalendar=}d*...
-	"CFCalendarGetComponentDifference" = "$CFCalendarGetComponentDifference"; // C^{__CFCalendar=}ddL*...
-	"CFCalendarGetFirstWeekday" = "l^{__CFCalendar=}";
+	"CFCalendarGetComponentDifference" = "$CFCalendarGetComponentDifference"; // C^{__CFCalendar=}ddQ*...
+	"CFCalendarGetFirstWeekday" = "q^{__CFCalendar=}";
 	"CFCalendarGetIdentifier" = "^{__CFString=}^{__CFCalendar=}";
-	"CFCalendarGetMaximumRangeOfUnit" = "{?=}^{__CFCalendar=}L";
-	"CFCalendarGetMinimumDaysInFirstWeek" = "l^{__CFCalendar=}";
-	"CFCalendarGetMinimumRangeOfUnit" = "{?=}^{__CFCalendar=}L";
-	"CFCalendarGetOrdinalityOfUnit" = "l^{__CFCalendar=}LLd";
-	"CFCalendarGetRangeOfUnit" = "{?=}^{__CFCalendar=}LLd";
-	"CFCalendarGetTimeRangeOfUnit" = "C^{__CFCalendar=}Ld^d^d";
-	"CFCalendarGetTypeID" = "L";
-	"CFCalendarSetFirstWeekday" = "v^{__CFCalendar=}l";
+	"CFCalendarGetMaximumRangeOfUnit" = "{?=}^{__CFCalendar=}Q";
+	"CFCalendarGetMinimumDaysInFirstWeek" = "q^{__CFCalendar=}";
+	"CFCalendarGetMinimumRangeOfUnit" = "{?=}^{__CFCalendar=}Q";
+	"CFCalendarGetOrdinalityOfUnit" = "q^{__CFCalendar=}QQd";
+	"CFCalendarGetRangeOfUnit" = "{?=}^{__CFCalendar=}QQd";
+	"CFCalendarGetTimeRangeOfUnit" = "C^{__CFCalendar=}Qd^d^d";
+	"CFCalendarGetTypeID" = "Q";
+	"CFCalendarSetFirstWeekday" = "v^{__CFCalendar=}q";
 	"CFCalendarSetLocale" = "v^{__CFCalendar=}^{__CFLocale=}";
-	"CFCalendarSetMinimumDaysInFirstWeek" = "v^{__CFCalendar=}l";
+	"CFCalendarSetMinimumDaysInFirstWeek" = "v^{__CFCalendar=}q";
 	"CFCalendarSetTimeZone" = "v^{__CFCalendar=}^{__CFTimeZone=}";
 	"CFCharacterSetAddCharactersInRange" = "v^{__CFCharacterSet=}{?=}";
 	"CFCharacterSetAddCharactersInString" = "v^{__CFCharacterSet=}^{__CFString=}";
@@ -8201,9 +8201,9 @@
 	"CFCharacterSetCreateWithBitmapRepresentation" = "^{__CFCharacterSet=}^{__CFAllocator=}^{__CFData=}";
 	"CFCharacterSetCreateWithCharactersInRange" = "^{__CFCharacterSet=}^{__CFAllocator=}{?=}";
 	"CFCharacterSetCreateWithCharactersInString" = "^{__CFCharacterSet=}^{__CFAllocator=}^{__CFString=}";
-	"CFCharacterSetGetPredefined" = "^{__CFCharacterSet=}l";
-	"CFCharacterSetGetTypeID" = "L";
-	"CFCharacterSetHasMemberInPlane" = "C^{__CFCharacterSet=}l";
+	"CFCharacterSetGetPredefined" = "^{__CFCharacterSet=}q";
+	"CFCharacterSetGetTypeID" = "Q";
+	"CFCharacterSetHasMemberInPlane" = "C^{__CFCharacterSet=}q";
 	"CFCharacterSetIntersect" = "v^{__CFCharacterSet=}^{__CFCharacterSet=}";
 	"CFCharacterSetInvert" = "v^{__CFCharacterSet=}";
 	"CFCharacterSetIsCharacterMember" = "C^{__CFCharacterSet=}S";
@@ -8213,57 +8213,57 @@
 	"CFCharacterSetRemoveCharactersInString" = "v^{__CFCharacterSet=}^{__CFString=}";
 	"CFCharacterSetUnion" = "v^{__CFCharacterSet=}^{__CFCharacterSet=}";
 	"CFCopyDescription" = "^{__CFString=}^v";
-	"CFCopyHomeDirectoryURL" = "^{__CFURL=}";
-	"CFCopyTypeIDDescription" = "^{__CFString=}L";
-	"CFDataAppendBytes" = "v^{__CFData=}^Cl";
-	"CFDataCreate" = "^{__CFData=}^{__CFAllocator=}^Cl";
+	"CFCopyHomeDirectoryURQ" = "^{__CFURL=}";
+	"CFCopyTypeIDDescription" = "^{__CFString=}Q";
+	"CFDataAppendBytes" = "v^{__CFData=}^Cq";
+	"CFDataCreate" = "^{__CFData=}^{__CFAllocator=}^Cq";
 	"CFDataCreateCopy" = "^{__CFData=}^{__CFAllocator=}^{__CFData=}";
-	"CFDataCreateMutable" = "^{__CFData=}^{__CFAllocator=}l";
-	"CFDataCreateMutableCopy" = "^{__CFData=}^{__CFAllocator=}l^{__CFData=}";
-	"CFDataCreateWithBytesNoCopy" = "^{__CFData=}^{__CFAllocator=}^Cl^{__CFAllocator=}";
+	"CFDataCreateMutable" = "^{__CFData=}^{__CFAllocator=}q";
+	"CFDataCreateMutableCopy" = "^{__CFData=}^{__CFAllocator=}q^{__CFData=}";
+	"CFDataCreateWithBytesNoCopy" = "^{__CFData=}^{__CFAllocator=}^Cq^{__CFAllocator=}";
 	"CFDataDeleteBytes" = "v^{__CFData=}{?=}";
-	"CFDataFind" = "{?=}^{__CFData=}^{__CFData=}{?=}L";
+	"CFDataFind" = "{?=}^{__CFData=}^{__CFData=}{?=}Q";
 	"CFDataGetBytePtr" = "^C^{__CFData=}";
 	"CFDataGetBytes" = "v^{__CFData=}{?=}^C";
-	"CFDataGetLength" = "l^{__CFData=}";
+	"CFDataGetLength" = "q^{__CFData=}";
 	"CFDataGetMutableBytePtr" = "^C^{__CFData=}";
-	"CFDataGetTypeID" = "L";
-	"CFDataIncreaseLength" = "v^{__CFData=}l";
-	"CFDataReplaceBytes" = "v^{__CFData=}{?=}^Cl";
-	"CFDataSetLength" = "v^{__CFData=}l";
-	"CFDateCompare" = "l^{__CFDate=}^{__CFDate=}^v";
+	"CFDataGetTypeID" = "Q";
+	"CFDataIncreaseLength" = "v^{__CFData=}q";
+	"CFDataReplaceBytes" = "v^{__CFData=}{?=}^Cq";
+	"CFDataSetLength" = "v^{__CFData=}q";
+	"CFDateCompare" = "q^{__CFDate=}^{__CFDate=}^v";
 	"CFDateCreate" = "^{__CFDate=}^{__CFAllocator=}d";
 	"CFDateFormatterCopyProperty" = "^v^{__CFDateFormatter=}^{__CFString=}";
-	"CFDateFormatterCreate" = "^{__CFDateFormatter=}^{__CFAllocator=}^{__CFLocale=}ll";
-	"CFDateFormatterCreateDateFormatFromTemplate" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}L^{__CFLocale=}";
+	"CFDateFormatterCreate" = "^{__CFDateFormatter=}^{__CFAllocator=}^{__CFLocale=}qq";
+	"CFDateFormatterCreateDateFormatFromTemplate" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}Q^{__CFLocale=}";
 	"CFDateFormatterCreateDateFromString" = "^{__CFDate=}^{__CFAllocator=}^{__CFDateFormatter=}^{__CFString=}^{?=}";
-	"CFDateFormatterCreateISO8601Formatter" = "^{__CFDateFormatter=}^{__CFAllocator=}L";
+	"CFDateFormatterCreateISO8601Formatter" = "^{__CFDateFormatter=}^{__CFAllocator=}Q";
 	"CFDateFormatterCreateStringWithAbsoluteTime" = "^{__CFString=}^{__CFAllocator=}^{__CFDateFormatter=}d";
 	"CFDateFormatterCreateStringWithDate" = "^{__CFString=}^{__CFAllocator=}^{__CFDateFormatter=}^{__CFDate=}";
 	"CFDateFormatterGetAbsoluteTimeFromString" = "C^{__CFDateFormatter=}^{__CFString=}^{?=}^d";
-	"CFDateFormatterGetDateStyle" = "l^{__CFDateFormatter=}";
+	"CFDateFormatterGetDateStyle" = "q^{__CFDateFormatter=}";
 	"CFDateFormatterGetFormat" = "^{__CFString=}^{__CFDateFormatter=}";
 	"CFDateFormatterGetLocale" = "^{__CFLocale=}^{__CFDateFormatter=}";
-	"CFDateFormatterGetTimeStyle" = "l^{__CFDateFormatter=}";
-	"CFDateFormatterGetTypeID" = "L";
+	"CFDateFormatterGetTimeStyle" = "q^{__CFDateFormatter=}";
+	"CFDateFormatterGetTypeID" = "Q";
 	"CFDateFormatterSetFormat" = "v^{__CFDateFormatter=}^{__CFString=}";
 	"CFDateFormatterSetProperty" = "v^{__CFDateFormatter=}^{__CFString=}^v";
 	"CFDateGetAbsoluteTime" = "d^{__CFDate=}";
 	"CFDateGetTimeIntervalSinceDate" = "d^{__CFDate=}^{__CFDate=}";
-	"CFDateGetTypeID" = "L";
+	"CFDateGetTypeID" = "Q";
 	"CFDictionaryAddValue" = "v^{__CFDictionary=}^v^v";
 	"CFDictionaryApplyFunction" = "v^{__CFDictionary=}^?^v";
 	"CFDictionaryContainsKey" = "C^{__CFDictionary=}^v";
 	"CFDictionaryContainsValue" = "C^{__CFDictionary=}^v";
-	"CFDictionaryCreate" = "^{__CFDictionary=}^{__CFAllocator=}^?^?l^{?=}^{?=}";
+	"CFDictionaryCreate" = "^{__CFDictionary=}^{__CFAllocator=}^?^?q^{?=}^{?=}";
 	"CFDictionaryCreateCopy" = "^{__CFDictionary=}^{__CFAllocator=}^{__CFDictionary=}";
-	"CFDictionaryCreateMutable" = "^{__CFDictionary=}^{__CFAllocator=}l^{?=}^{?=}";
-	"CFDictionaryCreateMutableCopy" = "^{__CFDictionary=}^{__CFAllocator=}l^{__CFDictionary=}";
-	"CFDictionaryGetCount" = "l^{__CFDictionary=}";
-	"CFDictionaryGetCountOfKey" = "l^{__CFDictionary=}^v";
-	"CFDictionaryGetCountOfValue" = "l^{__CFDictionary=}^v";
+	"CFDictionaryCreateMutable" = "^{__CFDictionary=}^{__CFAllocator=}q^{?=}^{?=}";
+	"CFDictionaryCreateMutableCopy" = "^{__CFDictionary=}^{__CFAllocator=}q^{__CFDictionary=}";
+	"CFDictionaryGetCount" = "q^{__CFDictionary=}";
+	"CFDictionaryGetCountOfKey" = "q^{__CFDictionary=}^v";
+	"CFDictionaryGetCountOfValue" = "q^{__CFDictionary=}^v";
 	"CFDictionaryGetKeysAndValues" = "v^{__CFDictionary=}^?^?";
-	"CFDictionaryGetTypeID" = "L";
+	"CFDictionaryGetTypeID" = "Q";
 	"CFDictionaryGetValue" = "^v^{__CFDictionary=}^v";
 	"CFDictionaryGetValueIfPresent" = "C^{__CFDictionary=}^v^?";
 	"CFDictionaryRemoveAllValues" = "v^{__CFDictionary=}";
@@ -8275,21 +8275,21 @@
 	"CFErrorCopyFailureReason" = "^{__CFString=}^{__CFError=}";
 	"CFErrorCopyRecoverySuggestion" = "^{__CFString=}^{__CFError=}";
 	"CFErrorCopyUserInfo" = "^{__CFDictionary=}^{__CFError=}";
-	"CFErrorCreate" = "^{__CFError=}^{__CFAllocator=}^{__CFString=}l^{__CFDictionary=}";
-	"CFErrorCreateWithUserInfoKeysAndValues" = "^{__CFError=}^{__CFAllocator=}^{__CFString=}l^?^?l";
-	"CFErrorGetCode" = "l^{__CFError=}";
+	"CFErrorCreate" = "^{__CFError=}^{__CFAllocator=}^{__CFString=}q^{__CFDictionary=}";
+	"CFErrorCreateWithUserInfoKeysAndValues" = "^{__CFError=}^{__CFAllocator=}^{__CFString=}q^?^?q";
+	"CFErrorGetCode" = "q^{__CFError=}";
 	"CFErrorGetDomain" = "^{__CFString=}^{__CFError=}";
-	"CFErrorGetTypeID" = "L";
+	"CFErrorGetTypeID" = "Q";
 	"CFFileDescriptorCreate" = "^{__CFFileDescriptor=}^{__CFAllocator=}iC^?^{?=}";
-	"CFFileDescriptorCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__CFFileDescriptor=}l";
-	"CFFileDescriptorDisableCallBacks" = "v^{__CFFileDescriptor=}L";
-	"CFFileDescriptorEnableCallBacks" = "v^{__CFFileDescriptor=}L";
+	"CFFileDescriptorCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__CFFileDescriptor=}q";
+	"CFFileDescriptorDisableCallBacks" = "v^{__CFFileDescriptor=}Q";
+	"CFFileDescriptorEnableCallBacks" = "v^{__CFFileDescriptor=}Q";
 	"CFFileDescriptorGetContext" = "v^{__CFFileDescriptor=}^{?=}";
 	"CFFileDescriptorGetNativeDescriptor" = "i^{__CFFileDescriptor=}";
-	"CFFileDescriptorGetTypeID" = "L";
+	"CFFileDescriptorGetTypeID" = "Q";
 	"CFFileDescriptorInvalidate" = "v^{__CFFileDescriptor=}";
 	"CFFileDescriptorIsValid" = "C^{__CFFileDescriptor=}";
-	"CFFileSecurityClearProperties" = "C^{__CFFileSecurity=}L";
+	"CFFileSecurityClearProperties" = "C^{__CFFileSecurity=}Q";
 	"CFFileSecurityCopyAccessControlList" = "C^{__CFFileSecurity=}^^{_acl=}";
 	"CFFileSecurityCopyGroupUUID" = "C^{__CFFileSecurity=}^^{__CFUUID=}";
 	"CFFileSecurityCopyOwnerUUID" = "C^{__CFFileSecurity=}^^{__CFUUID=}";
@@ -8298,7 +8298,7 @@
 	"CFFileSecurityGetGroup" = "C^{__CFFileSecurity=}^I";
 	"CFFileSecurityGetMode" = "C^{__CFFileSecurity=}^S";
 	"CFFileSecurityGetOwner" = "C^{__CFFileSecurity=}^I";
-	"CFFileSecurityGetTypeID" = "L";
+	"CFFileSecurityGetTypeID" = "Q";
 	"CFFileSecuritySetAccessControlList" = "C^{__CFFileSecurity=}^{_acl=}";
 	"CFFileSecuritySetGroup" = "C^{__CFFileSecurity=}I";
 	"CFFileSecuritySetGroupUUID" = "C^{__CFFileSecurity=}^{__CFUUID=}";
@@ -8306,11 +8306,11 @@
 	"CFFileSecuritySetOwner" = "C^{__CFFileSecurity=}I";
 	"CFFileSecuritySetOwnerUUID" = "C^{__CFFileSecurity=}^{__CFUUID=}";
 	"CFGetAllocator" = "^{__CFAllocator=}^v";
-	"CFGetRetainCount" = "l^v";
-	"CFGetTypeID" = "L^v";
+	"CFGetRetainCount" = "q^v";
+	"CFGetTypeID" = "Q^v";
 	"CFGregorianDateGetAbsoluteTime" = "d{?=}^{__CFTimeZone=}";
-	"CFGregorianDateIsValid" = "C{?=}L";
-	"CFHash" = "L^v";
+	"CFGregorianDateIsValid" = "C{?=}Q";
+	"CFHash" = "Q^v";
 	"CFLocaleCopyAvailableLocaleIdentifiers" = "^{__CFArray=}";
 	"CFLocaleCopyCommonISOCurrencyCodes" = "^{__CFArray=}";
 	"CFLocaleCopyCurrent" = "^{__CFLocale=}";
@@ -8328,30 +8328,30 @@
 	"CFLocaleCreateLocaleIdentifierFromComponents" = "^{__CFString=}^{__CFAllocator=}^{__CFDictionary=}";
 	"CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode" = "^{__CFString=}^{__CFAllocator=}I";
 	"CFLocaleGetIdentifier" = "^{__CFString=}^{__CFLocale=}";
-	"CFLocaleGetLanguageCharacterDirection" = "l^{__CFString=}";
-	"CFLocaleGetLanguageLineDirection" = "l^{__CFString=}";
+	"CFLocaleGetLanguageCharacterDirection" = "q^{__CFString=}";
+	"CFLocaleGetLanguageLineDirection" = "q^{__CFString=}";
 	"CFLocaleGetSystem" = "^{__CFLocale=}";
-	"CFLocaleGetTypeID" = "L";
+	"CFLocaleGetTypeID" = "Q";
 	"CFLocaleGetValue" = "^v^{__CFLocale=}^{__CFString=}";
 	"CFLocaleGetWindowsLocaleCodeFromLocaleIdentifier" = "I^{__CFString=}";
 	"CFMachPortCreate" = "^{__CFMachPort=}^{__CFAllocator=}^?^{?=}^C";
-	"CFMachPortCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__CFMachPort=}l";
+	"CFMachPortCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__CFMachPort=}q";
 	"CFMachPortCreateWithPort" = "^{__CFMachPort=}^{__CFAllocator=}I^?^{?=}^C";
 	"CFMachPortGetContext" = "v^{__CFMachPort=}^{?=}";
 	"CFMachPortGetInvalidationCallBack" = "^?^{__CFMachPort=}";
 	"CFMachPortGetPort" = "I^{__CFMachPort=}";
-	"CFMachPortGetTypeID" = "L";
+	"CFMachPortGetTypeID" = "Q";
 	"CFMachPortInvalidate" = "v^{__CFMachPort=}";
 	"CFMachPortIsValid" = "C^{__CFMachPort=}";
 	"CFMachPortSetInvalidationCallBack" = "v^{__CFMachPort=}^?";
 	"CFMakeCollectable" = "^v^v";
 	"CFMessagePortCreateLocal" = "^{__CFMessagePort=}^{__CFAllocator=}^{__CFString=}^?^{?=}^C";
 	"CFMessagePortCreateRemote" = "^{__CFMessagePort=}^{__CFAllocator=}^{__CFString=}";
-	"CFMessagePortCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__CFMessagePort=}l";
+	"CFMessagePortCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__CFMessagePort=}q";
 	"CFMessagePortGetContext" = "v^{__CFMessagePort=}^{?=}";
 	"CFMessagePortGetInvalidationCallBack" = "^?^{__CFMessagePort=}";
 	"CFMessagePortGetName" = "^{__CFString=}^{__CFMessagePort=}";
-	"CFMessagePortGetTypeID" = "L";
+	"CFMessagePortGetTypeID" = "Q";
 	"CFMessagePortInvalidate" = "v^{__CFMessagePort=}";
 	"CFMessagePortIsRemote" = "C^{__CFMessagePort=}";
 	"CFMessagePortIsValid" = "C^{__CFMessagePort=}";
@@ -8359,47 +8359,47 @@
 	"CFMessagePortSetDispatchQueue" = "v^{__CFMessagePort=}^{dispatch_queue_s=}";
 	"CFMessagePortSetInvalidationCallBack" = "v^{__CFMessagePort=}^?";
 	"CFMessagePortSetName" = "C^{__CFMessagePort=}^{__CFString=}";
-	"CFNotificationCenterAddObserver" = "v^{__CFNotificationCenter=}^v^?^{__CFString=}^vl";
+	"CFNotificationCenterAddObserver" = "v^{__CFNotificationCenter=}^v^?^{__CFString=}^vq";
 	"CFNotificationCenterGetDarwinNotifyCenter" = "^{__CFNotificationCenter=}";
 	"CFNotificationCenterGetLocalCenter" = "^{__CFNotificationCenter=}";
-	"CFNotificationCenterGetTypeID" = "L";
+	"CFNotificationCenterGetTypeID" = "Q";
 	"CFNotificationCenterPostNotification" = "v^{__CFNotificationCenter=}^{__CFString=}^v^{__CFDictionary=}C";
-	"CFNotificationCenterPostNotificationWithOptions" = "v^{__CFNotificationCenter=}^{__CFString=}^v^{__CFDictionary=}L";
+	"CFNotificationCenterPostNotificationWithOptions" = "v^{__CFNotificationCenter=}^{__CFString=}^v^{__CFDictionary=}Q";
 	"CFNotificationCenterRemoveEveryObserver" = "v^{__CFNotificationCenter=}^v";
 	"CFNotificationCenterRemoveObserver" = "v^{__CFNotificationCenter=}^v^{__CFString=}^v";
-	"CFNullGetTypeID" = "L";
-	"CFNumberCompare" = "l^{__CFNumber=}^{__CFNumber=}^v";
-	"CFNumberCreate" = "^{__CFNumber=}^{__CFAllocator=}l^v";
+	"CFNullGetTypeID" = "Q";
+	"CFNumberCompare" = "q^{__CFNumber=}^{__CFNumber=}^v";
+	"CFNumberCreate" = "^{__CFNumber=}^{__CFAllocator=}q^v";
 	"CFNumberFormatterCopyProperty" = "^v^{__CFNumberFormatter=}^{__CFString=}";
-	"CFNumberFormatterCreate" = "^{__CFNumberFormatter=}^{__CFAllocator=}^{__CFLocale=}l";
-	"CFNumberFormatterCreateNumberFromString" = "^{__CFNumber=}^{__CFAllocator=}^{__CFNumberFormatter=}^{__CFString=}^{?=}L";
+	"CFNumberFormatterCreate" = "^{__CFNumberFormatter=}^{__CFAllocator=}^{__CFLocale=}q";
+	"CFNumberFormatterCreateNumberFromString" = "^{__CFNumber=}^{__CFAllocator=}^{__CFNumberFormatter=}^{__CFString=}^{?=}Q";
 	"CFNumberFormatterCreateStringWithNumber" = "^{__CFString=}^{__CFAllocator=}^{__CFNumberFormatter=}^{__CFNumber=}";
-	"CFNumberFormatterCreateStringWithValue" = "^{__CFString=}^{__CFAllocator=}^{__CFNumberFormatter=}l^v";
+	"CFNumberFormatterCreateStringWithValue" = "^{__CFString=}^{__CFAllocator=}^{__CFNumberFormatter=}q^v";
 	"CFNumberFormatterGetDecimalInfoForCurrencyCode" = "C^{__CFString=}^i^d";
 	"CFNumberFormatterGetFormat" = "^{__CFString=}^{__CFNumberFormatter=}";
 	"CFNumberFormatterGetLocale" = "^{__CFLocale=}^{__CFNumberFormatter=}";
-	"CFNumberFormatterGetStyle" = "l^{__CFNumberFormatter=}";
-	"CFNumberFormatterGetTypeID" = "L";
-	"CFNumberFormatterGetValueFromString" = "C^{__CFNumberFormatter=}^{__CFString=}^{?=}l^v";
+	"CFNumberFormatterGetStyle" = "q^{__CFNumberFormatter=}";
+	"CFNumberFormatterGetTypeID" = "Q";
+	"CFNumberFormatterGetValueFromString" = "C^{__CFNumberFormatter=}^{__CFString=}^{?=}q^v";
 	"CFNumberFormatterSetFormat" = "v^{__CFNumberFormatter=}^{__CFString=}";
 	"CFNumberFormatterSetProperty" = "v^{__CFNumberFormatter=}^{__CFString=}^v";
-	"CFNumberGetByteSize" = "l^{__CFNumber=}";
-	"CFNumberGetType" = "l^{__CFNumber=}";
-	"CFNumberGetTypeID" = "L";
-	"CFNumberGetValue" = "C^{__CFNumber=}l^v";
+	"CFNumberGetByteSize" = "q^{__CFNumber=}";
+	"CFNumberGetType" = "q^{__CFNumber=}";
+	"CFNumberGetTypeID" = "Q";
+	"CFNumberGetValue" = "C^{__CFNumber=}q^v";
 	"CFNumberIsFloatType" = "C^{__CFNumber=}";
 	"CFPlugInAddInstanceForFactory" = "v^{__CFUUID=}";
 	"CFPlugInCreate" = "^{__CFBundle=}^{__CFAllocator=}^{__CFURL=}";
 	"CFPlugInFindFactoriesForPlugInType" = "^{__CFArray=}^{__CFUUID=}";
 	"CFPlugInFindFactoriesForPlugInTypeInPlugIn" = "^{__CFArray=}^{__CFUUID=}^{__CFBundle=}";
 	"CFPlugInGetBundle" = "^{__CFBundle=}^{__CFBundle=}";
-	"CFPlugInGetTypeID" = "L";
+	"CFPlugInGetTypeID" = "Q";
 	"CFPlugInInstanceCreate" = "^v^{__CFAllocator=}^{__CFUUID=}^{__CFUUID=}";
-	"CFPlugInInstanceCreateWithInstanceDataSize" = "^{__CFPlugInInstance=}^{__CFAllocator=}l^?^{__CFString=}^?";
+	"CFPlugInInstanceCreateWithInstanceDataSize" = "^{__CFPlugInInstance=}^{__CFAllocator=}q^?^{__CFString=}^?";
 	"CFPlugInInstanceGetFactoryName" = "^{__CFString=}^{__CFPlugInInstance=}";
 	"CFPlugInInstanceGetInstanceData" = "^v^{__CFPlugInInstance=}";
 	"CFPlugInInstanceGetInterfaceFunctionTable" = "C^{__CFPlugInInstance=}^{__CFString=}^?";
-	"CFPlugInInstanceGetTypeID" = "L";
+	"CFPlugInInstanceGetTypeID" = "Q";
 	"CFPlugInIsLoadOnDemand" = "C^{__CFBundle=}";
 	"CFPlugInRegisterFactoryFunction" = "C^{__CFUUID=}^?";
 	"CFPlugInRegisterFactoryFunctionByName" = "C^{__CFUUID=}^{__CFBundle=}^{__CFString=}";
@@ -8417,37 +8417,37 @@
 	"CFPreferencesCopyMultiple" = "^{__CFDictionary=}^{__CFArray=}^{__CFString=}^{__CFString=}^{__CFString=}";
 	"CFPreferencesCopyValue" = "^v^{__CFString=}^{__CFString=}^{__CFString=}^{__CFString=}";
 	"CFPreferencesGetAppBooleanValue" = "C^{__CFString=}^{__CFString=}^C";
-	"CFPreferencesGetAppIntegerValue" = "l^{__CFString=}^{__CFString=}^C";
+	"CFPreferencesGetAppIntegerValue" = "q^{__CFString=}^{__CFString=}^C";
 	"CFPreferencesRemoveSuitePreferencesFromApp" = "v^{__CFString=}^{__CFString=}";
 	"CFPreferencesSetAppValue" = "v^{__CFString=}^v^{__CFString=}";
 	"CFPreferencesSetMultiple" = "v^{__CFDictionary=}^{__CFArray=}^{__CFString=}^{__CFString=}^{__CFString=}";
 	"CFPreferencesSetValue" = "v^{__CFString=}^v^{__CFString=}^{__CFString=}^{__CFString=}";
 	"CFPreferencesSynchronize" = "C^{__CFString=}^{__CFString=}^{__CFString=}";
-	"CFPropertyListCreateData" = "^{__CFData=}^{__CFAllocator=}^vlL^^{__CFError=}";
-	"CFPropertyListCreateDeepCopy" = "^v^{__CFAllocator=}^vL";
-	"CFPropertyListCreateFromStream" = "^v^{__CFAllocator=}^{__CFReadStream=}lL^l^^{__CFString=}";
-	"CFPropertyListCreateFromXMLData" = "^v^{__CFAllocator=}^{__CFData=}L^^{__CFString=}";
-	"CFPropertyListCreateWithData" = "^v^{__CFAllocator=}^{__CFData=}L^l^^{__CFError=}";
-	"CFPropertyListCreateWithStream" = "^v^{__CFAllocator=}^{__CFReadStream=}lL^l^^{__CFError=}";
+	"CFPropertyListCreateData" = "^{__CFData=}^{__CFAllocator=}^vqQ^^{__CFError=}";
+	"CFPropertyListCreateDeepCopy" = "^v^{__CFAllocator=}^vQ";
+	"CFPropertyListCreateFromStream" = "^v^{__CFAllocator=}^{__CFReadStream=}qQ^q^^{__CFString=}";
+	"CFPropertyListCreateFromXMLData" = "^v^{__CFAllocator=}^{__CFData=}Q^^{__CFString=}";
+	"CFPropertyListCreateWithData" = "^v^{__CFAllocator=}^{__CFData=}Q^q^^{__CFError=}";
+	"CFPropertyListCreateWithStream" = "^v^{__CFAllocator=}^{__CFReadStream=}qQ^q^^{__CFError=}";
 	"CFPropertyListCreateXMLData" = "^{__CFData=}^{__CFAllocator=}^v";
-	"CFPropertyListIsValid" = "C^vl";
-	"CFPropertyListWrite" = "l^v^{__CFWriteStream=}lL^^{__CFError=}";
-	"CFPropertyListWriteToStream" = "l^v^{__CFWriteStream=}l^^{__CFString=}";
+	"CFPropertyListIsValid" = "C^vq";
+	"CFPropertyListWrite" = "q^v^{__CFWriteStream=}qQ^^{__CFError=}";
+	"CFPropertyListWriteToStream" = "q^v^{__CFWriteStream=}q^^{__CFString=}";
 	"CFReadStreamClose" = "v^{__CFReadStream=}";
 	"CFReadStreamCopyDispatchQueue" = "^{dispatch_queue_s=}^{__CFReadStream=}";
 	"CFReadStreamCopyError" = "^{__CFError=}^{__CFReadStream=}";
 	"CFReadStreamCopyProperty" = "^v^{__CFReadStream=}^{__CFString=}";
-	"CFReadStreamCreateWithBytesNoCopy" = "^{__CFReadStream=}^{__CFAllocator=}^Cl^{__CFAllocator=}";
+	"CFReadStreamCreateWithBytesNoCopy" = "^{__CFReadStream=}^{__CFAllocator=}^Cq^{__CFAllocator=}";
 	"CFReadStreamCreateWithFile" = "^{__CFReadStream=}^{__CFAllocator=}^{__CFURL=}";
-	"CFReadStreamGetBuffer" = "^C^{__CFReadStream=}l^l";
+	"CFReadStreamGetBuffer" = "^C^{__CFReadStream=}q^q";
 	"CFReadStreamGetError" = "{?=}^{__CFReadStream=}";
-	"CFReadStreamGetStatus" = "l^{__CFReadStream=}";
-	"CFReadStreamGetTypeID" = "L";
+	"CFReadStreamGetStatus" = "q^{__CFReadStream=}";
+	"CFReadStreamGetTypeID" = "Q";
 	"CFReadStreamHasBytesAvailable" = "C^{__CFReadStream=}";
 	"CFReadStreamOpen" = "C^{__CFReadStream=}";
-	"CFReadStreamRead" = "l^{__CFReadStream=}^Cl";
+	"CFReadStreamRead" = "q^{__CFReadStream=}^Cq";
 	"CFReadStreamScheduleWithRunLoop" = "v^{__CFReadStream=}^{__CFRunLoop=}^{__CFString=}";
-	"CFReadStreamSetClient" = "C^{__CFReadStream=}L^?^{?=}";
+	"CFReadStreamSetClient" = "C^{__CFReadStream=}Q^?^{?=}";
 	"CFReadStreamSetDispatchQueue" = "v^{__CFReadStream=}^{dispatch_queue_s=}";
 	"CFReadStreamSetProperty" = "C^{__CFReadStream=}^{__CFString=}^v";
 	"CFReadStreamUnscheduleFromRunLoop" = "v^{__CFReadStream=}^{__CFRunLoop=}^{__CFString=}";
@@ -8465,15 +8465,15 @@
 	"CFRunLoopGetCurrent" = "^{__CFRunLoop=}";
 	"CFRunLoopGetMain" = "^{__CFRunLoop=}";
 	"CFRunLoopGetNextTimerFireDate" = "d^{__CFRunLoop=}^{__CFString=}";
-	"CFRunLoopGetTypeID" = "L";
+	"CFRunLoopGetTypeID" = "Q";
 	"CFRunLoopIsWaiting" = "C^{__CFRunLoop=}";
-	"CFRunLoopObserverCreate" = "^{__CFRunLoopObserver=}^{__CFAllocator=}LCl^?^{?=}";
-	"CFRunLoopObserverCreateWithHandler" = "^{__CFRunLoopObserver=}^{__CFAllocator=}LCl^?";
+	"CFRunLoopObserverCreate" = "^{__CFRunLoopObserver=}^{__CFAllocator=}QCq^?^{?=}";
+	"CFRunLoopObserverCreateWithHandler" = "^{__CFRunLoopObserver=}^{__CFAllocator=}QCq^?";
 	"CFRunLoopObserverDoesRepeat" = "C^{__CFRunLoopObserver=}";
-	"CFRunLoopObserverGetActivities" = "L^{__CFRunLoopObserver=}";
+	"CFRunLoopObserverGetActivities" = "Q^{__CFRunLoopObserver=}";
 	"CFRunLoopObserverGetContext" = "v^{__CFRunLoopObserver=}^{?=}";
-	"CFRunLoopObserverGetOrder" = "l^{__CFRunLoopObserver=}";
-	"CFRunLoopObserverGetTypeID" = "L";
+	"CFRunLoopObserverGetOrder" = "q^{__CFRunLoopObserver=}";
+	"CFRunLoopObserverGetTypeID" = "Q";
 	"CFRunLoopObserverInvalidate" = "v^{__CFRunLoopObserver=}";
 	"CFRunLoopObserverIsValid" = "C^{__CFRunLoopObserver=}";
 	"CFRunLoopPerformBlock" = "v^{__CFRunLoop=}^v^?";
@@ -8482,23 +8482,23 @@
 	"CFRunLoopRemoveTimer" = "v^{__CFRunLoop=}^{__CFRunLoopTimer=}^{__CFString=}";
 	"CFRunLoopRun" = "v";
 	"CFRunLoopRunInMode" = "i^{__CFString=}dC";
-	"CFRunLoopSourceCreate" = "^{__CFRunLoopSource=}^{__CFAllocator=}l^{?=}";
+	"CFRunLoopSourceCreate" = "^{__CFRunLoopSource=}^{__CFAllocator=}q^{?=}";
 	"CFRunLoopSourceGetContext" = "v^{__CFRunLoopSource=}^{?=}";
-	"CFRunLoopSourceGetOrder" = "l^{__CFRunLoopSource=}";
-	"CFRunLoopSourceGetTypeID" = "L";
+	"CFRunLoopSourceGetOrder" = "q^{__CFRunLoopSource=}";
+	"CFRunLoopSourceGetTypeID" = "Q";
 	"CFRunLoopSourceInvalidate" = "v^{__CFRunLoopSource=}";
 	"CFRunLoopSourceIsValid" = "C^{__CFRunLoopSource=}";
 	"CFRunLoopSourceSignal" = "v^{__CFRunLoopSource=}";
 	"CFRunLoopStop" = "v^{__CFRunLoop=}";
-	"CFRunLoopTimerCreate" = "^{__CFRunLoopTimer=}^{__CFAllocator=}ddLl^?^{?=}";
-	"CFRunLoopTimerCreateWithHandler" = "^{__CFRunLoopTimer=}^{__CFAllocator=}ddLl^?";
+	"CFRunLoopTimerCreate" = "^{__CFRunLoopTimer=}^{__CFAllocator=}ddQq^?^{?=}";
+	"CFRunLoopTimerCreateWithHandler" = "^{__CFRunLoopTimer=}^{__CFAllocator=}ddQq^?";
 	"CFRunLoopTimerDoesRepeat" = "C^{__CFRunLoopTimer=}";
 	"CFRunLoopTimerGetContext" = "v^{__CFRunLoopTimer=}^{?=}";
 	"CFRunLoopTimerGetInterval" = "d^{__CFRunLoopTimer=}";
 	"CFRunLoopTimerGetNextFireDate" = "d^{__CFRunLoopTimer=}";
-	"CFRunLoopTimerGetOrder" = "l^{__CFRunLoopTimer=}";
+	"CFRunLoopTimerGetOrder" = "q^{__CFRunLoopTimer=}";
 	"CFRunLoopTimerGetTolerance" = "d^{__CFRunLoopTimer=}";
-	"CFRunLoopTimerGetTypeID" = "L";
+	"CFRunLoopTimerGetTypeID" = "Q";
 	"CFRunLoopTimerInvalidate" = "v^{__CFRunLoopTimer=}";
 	"CFRunLoopTimerIsValid" = "C^{__CFRunLoopTimer=}";
 	"CFRunLoopTimerSetNextFireDate" = "v^{__CFRunLoopTimer=}d";
@@ -8507,13 +8507,13 @@
 	"CFSetAddValue" = "v^{__CFSet=}^v";
 	"CFSetApplyFunction" = "v^{__CFSet=}^?^v";
 	"CFSetContainsValue" = "C^{__CFSet=}^v";
-	"CFSetCreate" = "^{__CFSet=}^{__CFAllocator=}^?l^{?=}";
+	"CFSetCreate" = "^{__CFSet=}^{__CFAllocator=}^?q^{?=}";
 	"CFSetCreateCopy" = "^{__CFSet=}^{__CFAllocator=}^{__CFSet=}";
-	"CFSetCreateMutable" = "^{__CFSet=}^{__CFAllocator=}l^{?=}";
-	"CFSetCreateMutableCopy" = "^{__CFSet=}^{__CFAllocator=}l^{__CFSet=}";
-	"CFSetGetCount" = "l^{__CFSet=}";
-	"CFSetGetCountOfValue" = "l^{__CFSet=}^v";
-	"CFSetGetTypeID" = "L";
+	"CFSetCreateMutable" = "^{__CFSet=}^{__CFAllocator=}q^{?=}";
+	"CFSetCreateMutableCopy" = "^{__CFSet=}^{__CFAllocator=}q^{__CFSet=}";
+	"CFSetGetCount" = "q^{__CFSet=}";
+	"CFSetGetCountOfValue" = "q^{__CFSet=}^v";
+	"CFSetGetTypeID" = "Q";
 	"CFSetGetValue" = "^v^{__CFSet=}^v";
 	"CFSetGetValueIfPresent" = "C^{__CFSet=}^v^?";
 	"CFSetGetValues" = "v^{__CFSet=}^?";
@@ -8523,67 +8523,67 @@
 	"CFSetSetValue" = "v^{__CFSet=}^v";
 	"CFShow" = "v^v";
 	"CFShowStr" = "v^{__CFString=}";
-	"CFSocketConnectToAddress" = "l^{__CFSocket=}^{__CFData=}d";
+	"CFSocketConnectToAddress" = "q^{__CFSocket=}^{__CFData=}d";
 	"CFSocketCopyAddress" = "^{__CFData=}^{__CFSocket=}";
 	"CFSocketCopyPeerAddress" = "^{__CFData=}^{__CFSocket=}";
-	"CFSocketCopyRegisteredSocketSignature" = "l^{?=}d^{__CFString=}^{?=}^^{__CFData=}";
-	"CFSocketCopyRegisteredValue" = "l^{?=}d^{__CFString=}^^v^^{__CFData=}";
-	"CFSocketCreate" = "^{__CFSocket=}^{__CFAllocator=}iiiL^?^{?=}";
-	"CFSocketCreateConnectedToSocketSignature" = "^{__CFSocket=}^{__CFAllocator=}^{?=}L^?^{?=}d";
-	"CFSocketCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__CFSocket=}l";
-	"CFSocketCreateWithNative" = "^{__CFSocket=}^{__CFAllocator=}iL^?^{?=}";
-	"CFSocketCreateWithSocketSignature" = "^{__CFSocket=}^{__CFAllocator=}^{?=}L^?^{?=}";
-	"CFSocketDisableCallBacks" = "v^{__CFSocket=}L";
-	"CFSocketEnableCallBacks" = "v^{__CFSocket=}L";
+	"CFSocketCopyRegisteredSocketSignature" = "q^{?=}d^{__CFString=}^{?=}^^{__CFData=}";
+	"CFSocketCopyRegisteredValue" = "q^{?=}d^{__CFString=}^^v^^{__CFData=}";
+	"CFSocketCreate" = "^{__CFSocket=}^{__CFAllocator=}iiiQ^?^{?=}";
+	"CFSocketCreateConnectedToSocketSignature" = "^{__CFSocket=}^{__CFAllocator=}^{?=}Q^?^{?=}d";
+	"CFSocketCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__CFSocket=}q";
+	"CFSocketCreateWithNative" = "^{__CFSocket=}^{__CFAllocator=}iQ^?^{?=}";
+	"CFSocketCreateWithSocketSignature" = "^{__CFSocket=}^{__CFAllocator=}^{?=}Q^?^{?=}";
+	"CFSocketDisableCallBacks" = "v^{__CFSocket=}Q";
+	"CFSocketEnableCallBacks" = "v^{__CFSocket=}Q";
 	"CFSocketGetContext" = "v^{__CFSocket=}^{?=}";
 	"CFSocketGetDefaultNameRegistryPortNumber" = "S";
 	"CFSocketGetNative" = "i^{__CFSocket=}";
-	"CFSocketGetSocketFlags" = "L^{__CFSocket=}";
-	"CFSocketGetTypeID" = "L";
+	"CFSocketGetSocketFlags" = "Q^{__CFSocket=}";
+	"CFSocketGetTypeID" = "Q";
 	"CFSocketInvalidate" = "v^{__CFSocket=}";
 	"CFSocketIsValid" = "C^{__CFSocket=}";
-	"CFSocketRegisterSocketSignature" = "l^{?=}d^{__CFString=}^{?=}";
-	"CFSocketRegisterValue" = "l^{?=}d^{__CFString=}^v";
-	"CFSocketSendData" = "l^{__CFSocket=}^{__CFData=}^{__CFData=}d";
-	"CFSocketSetAddress" = "l^{__CFSocket=}^{__CFData=}";
+	"CFSocketRegisterSocketSignature" = "q^{?=}d^{__CFString=}^{?=}";
+	"CFSocketRegisterValue" = "q^{?=}d^{__CFString=}^v";
+	"CFSocketSendData" = "q^{__CFSocket=}^{__CFData=}^{__CFData=}d";
+	"CFSocketSetAddress" = "q^{__CFSocket=}^{__CFData=}";
 	"CFSocketSetDefaultNameRegistryPortNumber" = "vS";
-	"CFSocketSetSocketFlags" = "v^{__CFSocket=}L";
-	"CFSocketUnregister" = "l^{?=}d^{__CFString=}";
-	"CFStreamCreateBoundPair" = "v^{__CFAllocator=}^^{__CFReadStream=}^^{__CFWriteStream=}l";
+	"CFSocketSetSocketFlags" = "v^{__CFSocket=}Q";
+	"CFSocketUnregister" = "q^{?=}d^{__CFString=}";
+	"CFStreamCreateBoundPair" = "v^{__CFAllocator=}^^{__CFReadStream=}^^{__CFWriteStream=}q";
 	"CFStreamCreatePairWithPeerSocketSignature" = "v^{__CFAllocator=}^{?=}^^{__CFReadStream=}^^{__CFWriteStream=}";
 	"CFStreamCreatePairWithSocket" = "v^{__CFAllocator=}i^^{__CFReadStream=}^^{__CFWriteStream=}";
 	"CFStreamCreatePairWithSocketToHost" = "v^{__CFAllocator=}^{__CFString=}I^^{__CFReadStream=}^^{__CFWriteStream=}";
 	"CFStringAppend" = "v^{__CFString=}^{__CFString=}";
 	"CFStringAppendCString" = "v^{__CFString=}*I";
-	"CFStringAppendCharacters" = "v^{__CFString=}^Sl";
+	"CFStringAppendCharacters" = "v^{__CFString=}^Sq";
 	"CFStringAppendFormat" = "$CFStringAppendFormat"; // v^{__CFString=}^{__CFDictionary=}^{__CFString=}...
 	"CFStringAppendFormatAndArguments" = "$CFStringAppendFormatAndArguments"; // v^{__CFString=}^{__CFDictionary=}^{__CFString=}...
 	"CFStringAppendPascalString" = "v^{__CFString=}^CI";
 	"CFStringCapitalize" = "v^{__CFString=}^{__CFLocale=}";
-	"CFStringCompare" = "l^{__CFString=}^{__CFString=}L";
-	"CFStringCompareWithOptions" = "l^{__CFString=}^{__CFString=}{?=}L";
-	"CFStringCompareWithOptionsAndLocale" = "l^{__CFString=}^{__CFString=}{?=}L^{__CFLocale=}";
+	"CFStringCompare" = "q^{__CFString=}^{__CFString=}Q";
+	"CFStringCompareWithOptions" = "q^{__CFString=}^{__CFString=}{?=}Q";
+	"CFStringCompareWithOptionsAndLocale" = "q^{__CFString=}^{__CFString=}{?=}Q^{__CFLocale=}";
 	"CFStringConvertEncodingToIANACharSetName" = "^{__CFString=}I";
-	"CFStringConvertEncodingToNSStringEncoding" = "LI";
+	"CFStringConvertEncodingToNSStringEncoding" = "QI";
 	"CFStringConvertEncodingToWindowsCodepage" = "II";
 	"CFStringConvertIANACharSetNameToEncoding" = "I^{__CFString=}";
-	"CFStringConvertNSStringEncodingToEncoding" = "IL";
+	"CFStringConvertNSStringEncodingToEncoding" = "IQ";
 	"CFStringConvertWindowsCodepageToEncoding" = "II";
 	"CFStringCreateArrayBySeparatingStrings" = "^{__CFArray=}^{__CFAllocator=}^{__CFString=}^{__CFString=}";
-	"CFStringCreateArrayWithFindResults" = "^{__CFArray=}^{__CFAllocator=}^{__CFString=}^{__CFString=}{?=}L";
+	"CFStringCreateArrayWithFindResults" = "^{__CFArray=}^{__CFAllocator=}^{__CFString=}^{__CFString=}{?=}Q";
 	"CFStringCreateByCombiningStrings" = "^{__CFString=}^{__CFAllocator=}^{__CFArray=}^{__CFString=}";
 	"CFStringCreateCopy" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}";
 	"CFStringCreateExternalRepresentation" = "^{__CFData=}^{__CFAllocator=}^{__CFString=}IC";
 	"CFStringCreateFromExternalRepresentation" = "^{__CFString=}^{__CFAllocator=}^{__CFData=}I";
-	"CFStringCreateMutable" = "^{__CFString=}^{__CFAllocator=}l";
-	"CFStringCreateMutableCopy" = "^{__CFString=}^{__CFAllocator=}l^{__CFString=}";
-	"CFStringCreateMutableWithExternalCharactersNoCopy" = "^{__CFString=}^{__CFAllocator=}^Sll^{__CFAllocator=}";
-	"CFStringCreateWithBytes" = "^{__CFString=}^{__CFAllocator=}^ClIC";
-	"CFStringCreateWithBytesNoCopy" = "^{__CFString=}^{__CFAllocator=}^ClIC^{__CFAllocator=}";
+	"CFStringCreateMutable" = "^{__CFString=}^{__CFAllocator=}q";
+	"CFStringCreateMutableCopy" = "^{__CFString=}^{__CFAllocator=}q^{__CFString=}";
+	"CFStringCreateMutableWithExternalCharactersNoCopy" = "^{__CFString=}^{__CFAllocator=}^Sqq^{__CFAllocator=}";
+	"CFStringCreateWithBytes" = "^{__CFString=}^{__CFAllocator=}^CqIC";
+	"CFStringCreateWithBytesNoCopy" = "^{__CFString=}^{__CFAllocator=}^CqIC^{__CFAllocator=}";
 	"CFStringCreateWithCString" = "^{__CFString=}^{__CFAllocator=}*I";
 	"CFStringCreateWithCStringNoCopy" = "^{__CFString=}^{__CFAllocator=}*I^{__CFAllocator=}";
-	"CFStringCreateWithCharacters" = "^{__CFString=}^{__CFAllocator=}^Sl";
-	"CFStringCreateWithCharactersNoCopy" = "^{__CFString=}^{__CFAllocator=}^Sl^{__CFAllocator=}";
+	"CFStringCreateWithCharacters" = "^{__CFString=}^{__CFAllocator=}^Sq";
+	"CFStringCreateWithCharactersNoCopy" = "^{__CFString=}^{__CFAllocator=}^Sq^{__CFAllocator=}";
 	"CFStringCreateWithFileSystemRepresentation" = "^{__CFString=}^{__CFAllocator=}*";
 	"CFStringCreateWithFormat" = "$CFStringCreateWithFormat"; // ^{__CFString=}^{__CFAllocator=}^{__CFDictionary=}^{__CFString=}...
 	"CFStringCreateWithFormatAndArguments" = "$CFStringCreateWithFormatAndArguments"; // ^{__CFString=}^{__CFAllocator=}^{__CFDictionary=}^{__CFString=}...
@@ -8591,56 +8591,56 @@
 	"CFStringCreateWithPascalStringNoCopy" = "^{__CFString=}^{__CFAllocator=}^CI^{__CFAllocator=}";
 	"CFStringCreateWithSubstring" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}{?=}";
 	"CFStringDelete" = "v^{__CFString=}{?=}";
-	"CFStringFind" = "{?=}^{__CFString=}^{__CFString=}L";
-	"CFStringFindAndReplace" = "l^{__CFString=}^{__CFString=}^{__CFString=}{?=}L";
-	"CFStringFindCharacterFromSet" = "C^{__CFString=}^{__CFCharacterSet=}{?=}L^{?=}";
-	"CFStringFindWithOptions" = "C^{__CFString=}^{__CFString=}{?=}L^{?=}";
-	"CFStringFindWithOptionsAndLocale" = "C^{__CFString=}^{__CFString=}{?=}L^{__CFLocale=}^{?=}";
-	"CFStringFold" = "v^{__CFString=}L^{__CFLocale=}";
-	"CFStringGetBytes" = "l^{__CFString=}{?=}ICC^Cl^l";
-	"CFStringGetCString" = "C^{__CFString=}*lI";
+	"CFStringFind" = "{?=}^{__CFString=}^{__CFString=}Q";
+	"CFStringFindAndReplace" = "q^{__CFString=}^{__CFString=}^{__CFString=}{?=}Q";
+	"CFStringFindCharacterFromSet" = "C^{__CFString=}^{__CFCharacterSet=}{?=}Q^{?=}";
+	"CFStringFindWithOptions" = "C^{__CFString=}^{__CFString=}{?=}Q^{?=}";
+	"CFStringFindWithOptionsAndLocale" = "C^{__CFString=}^{__CFString=}{?=}Q^{__CFLocale=}^{?=}";
+	"CFStringFold" = "v^{__CFString=}Q^{__CFLocale=}";
+	"CFStringGetBytes" = "q^{__CFString=}{?=}ICC^Cq^q";
+	"CFStringGetCString" = "C^{__CFString=}*qI";
 	"CFStringGetCStringPtr" = "*^{__CFString=}I";
-	"CFStringGetCharacterAtIndex" = "S^{__CFString=}l";
+	"CFStringGetCharacterAtIndex" = "S^{__CFString=}q";
 	"CFStringGetCharacters" = "v^{__CFString=}{?=}^S";
 	"CFStringGetCharactersPtr" = "^S^{__CFString=}";
 	"CFStringGetDoubleValue" = "d^{__CFString=}";
 	"CFStringGetFastestEncoding" = "I^{__CFString=}";
-	"CFStringGetFileSystemRepresentation" = "C^{__CFString=}*l";
-	"CFStringGetHyphenationLocationBeforeIndex" = "l^{__CFString=}l{?=}L^{__CFLocale=}^I";
+	"CFStringGetFileSystemRepresentation" = "C^{__CFString=}*q";
+	"CFStringGetHyphenationLocationBeforeIndex" = "q^{__CFString=}q{?=}Q^{__CFLocale=}^I";
 	"CFStringGetIntValue" = "i^{__CFString=}";
-	"CFStringGetLength" = "l^{__CFString=}";
-	"CFStringGetLineBounds" = "v^{__CFString=}{?=}^l^l^l";
+	"CFStringGetLength" = "q^{__CFString=}";
+	"CFStringGetLineBounds" = "v^{__CFString=}{?=}^q^q^q";
 	"CFStringGetListOfAvailableEncodings" = "^I";
-	"CFStringGetMaximumSizeForEncoding" = "llI";
-	"CFStringGetMaximumSizeOfFileSystemRepresentation" = "l^{__CFString=}";
+	"CFStringGetMaximumSizeForEncoding" = "qqI";
+	"CFStringGetMaximumSizeOfFileSystemRepresentation" = "q^{__CFString=}";
 	"CFStringGetMostCompatibleMacStringEncoding" = "II";
 	"CFStringGetNameOfEncoding" = "^{__CFString=}I";
-	"CFStringGetParagraphBounds" = "v^{__CFString=}{?=}^l^l^l";
-	"CFStringGetPascalString" = "C^{__CFString=}^ClI";
+	"CFStringGetParagraphBounds" = "v^{__CFString=}{?=}^q^q^q";
+	"CFStringGetPascalString" = "C^{__CFString=}^CqI";
 	"CFStringGetPascalStringPtr" = "^C^{__CFString=}I";
-	"CFStringGetRangeOfComposedCharactersAtIndex" = "{?=}^{__CFString=}l";
+	"CFStringGetRangeOfComposedCharactersAtIndex" = "{?=}^{__CFString=}q";
 	"CFStringGetSmallestEncoding" = "I^{__CFString=}";
 	"CFStringGetSystemEncoding" = "I";
-	"CFStringGetTypeID" = "L";
+	"CFStringGetTypeID" = "Q";
 	"CFStringHasPrefix" = "C^{__CFString=}^{__CFString=}";
 	"CFStringHasSuffix" = "C^{__CFString=}^{__CFString=}";
-	"CFStringInsert" = "v^{__CFString=}l^{__CFString=}";
+	"CFStringInsert" = "v^{__CFString=}q^{__CFString=}";
 	"CFStringIsEncodingAvailable" = "CI";
 	"CFStringIsHyphenationAvailableForLocale" = "C^{__CFLocale=}";
 	"CFStringLowercase" = "v^{__CFString=}^{__CFLocale=}";
-	"CFStringNormalize" = "v^{__CFString=}l";
-	"CFStringPad" = "v^{__CFString=}^{__CFString=}ll";
+	"CFStringNormalize" = "v^{__CFString=}q";
+	"CFStringPad" = "v^{__CFString=}^{__CFString=}qq";
 	"CFStringReplace" = "v^{__CFString=}{?=}^{__CFString=}";
 	"CFStringReplaceAll" = "v^{__CFString=}^{__CFString=}";
-	"CFStringSetExternalCharactersNoCopy" = "v^{__CFString=}^Sll";
-	"CFStringTokenizerAdvanceToNextToken" = "L^{__CFStringTokenizer=}";
+	"CFStringSetExternalCharactersNoCopy" = "v^{__CFString=}^Sqq";
+	"CFStringTokenizerAdvanceToNextToken" = "Q^{__CFStringTokenizer=}";
 	"CFStringTokenizerCopyBestStringLanguage" = "^{__CFString=}^{__CFString=}{?=}";
-	"CFStringTokenizerCopyCurrentTokenAttribute" = "^v^{__CFStringTokenizer=}L";
-	"CFStringTokenizerCreate" = "^{__CFStringTokenizer=}^{__CFAllocator=}^{__CFString=}{?=}L^{__CFLocale=}";
-	"CFStringTokenizerGetCurrentSubTokens" = "l^{__CFStringTokenizer=}^{?=}l^{__CFArray=}";
+	"CFStringTokenizerCopyCurrentTokenAttribute" = "^v^{__CFStringTokenizer=}Q";
+	"CFStringTokenizerCreate" = "^{__CFStringTokenizer=}^{__CFAllocator=}^{__CFString=}{?=}Q^{__CFLocale=}";
+	"CFStringTokenizerGetCurrentSubTokens" = "q^{__CFStringTokenizer=}^{?=}q^{__CFArray=}";
 	"CFStringTokenizerGetCurrentTokenRange" = "{?=}^{__CFStringTokenizer=}";
-	"CFStringTokenizerGetTypeID" = "L";
-	"CFStringTokenizerGoToTokenAtIndex" = "L^{__CFStringTokenizer=}l";
+	"CFStringTokenizerGetTypeID" = "Q";
+	"CFStringTokenizerGoToTokenAtIndex" = "Q^{__CFStringTokenizer=}q";
 	"CFStringTokenizerSetString" = "v^{__CFStringTokenizer=}^{__CFString=}{?=}";
 	"CFStringTransform" = "C^{__CFString=}^{?=}^{__CFString=}C";
 	"CFStringTrim" = "v^{__CFString=}^{__CFString=}";
@@ -8650,7 +8650,7 @@
 	"CFTimeZoneCopyAbbreviationDictionary" = "^{__CFDictionary=}";
 	"CFTimeZoneCopyDefault" = "^{__CFTimeZone=}";
 	"CFTimeZoneCopyKnownNames" = "^{__CFArray=}";
-	"CFTimeZoneCopyLocalizedName" = "^{__CFString=}^{__CFTimeZone=}l^{__CFLocale=}";
+	"CFTimeZoneCopyLocalizedName" = "^{__CFString=}^{__CFTimeZone=}q^{__CFLocale=}";
 	"CFTimeZoneCopySystem" = "^{__CFTimeZone=}";
 	"CFTimeZoneCreate" = "^{__CFTimeZone=}^{__CFAllocator=}^{__CFString=}^{__CFData=}";
 	"CFTimeZoneCreateWithName" = "^{__CFTimeZone=}^{__CFAllocator=}^{__CFString=}C";
@@ -8660,7 +8660,7 @@
 	"CFTimeZoneGetName" = "^{__CFString=}^{__CFTimeZone=}";
 	"CFTimeZoneGetNextDaylightSavingTimeTransition" = "d^{__CFTimeZone=}d";
 	"CFTimeZoneGetSecondsFromGMT" = "d^{__CFTimeZone=}d";
-	"CFTimeZoneGetTypeID" = "L";
+	"CFTimeZoneGetTypeID" = "Q";
 	"CFTimeZoneIsDaylightSavingTime" = "C^{__CFTimeZone=}d";
 	"CFTimeZoneResetSystem" = "v";
 	"CFTimeZoneSetAbbreviationDictionary" = "v^{__CFDictionary=}";
@@ -8669,14 +8669,14 @@
 	"CFTreeApplyFunctionToChildren" = "v^{__CFTree=}^?^v";
 	"CFTreeCreate" = "^{__CFTree=}^{__CFAllocator=}^{?=}";
 	"CFTreeFindRoot" = "^{__CFTree=}^{__CFTree=}";
-	"CFTreeGetChildAtIndex" = "^{__CFTree=}^{__CFTree=}l";
-	"CFTreeGetChildCount" = "l^{__CFTree=}";
+	"CFTreeGetChildAtIndex" = "^{__CFTree=}^{__CFTree=}q";
+	"CFTreeGetChildCount" = "q^{__CFTree=}";
 	"CFTreeGetChildren" = "v^{__CFTree=}^^{__CFTree=}";
 	"CFTreeGetContext" = "v^{__CFTree=}^{?=}";
 	"CFTreeGetFirstChild" = "^{__CFTree=}^{__CFTree=}";
 	"CFTreeGetNextSibling" = "^{__CFTree=}^{__CFTree=}";
 	"CFTreeGetParent" = "^{__CFTree=}^{__CFTree=}";
-	"CFTreeGetTypeID" = "L";
+	"CFTreeGetTypeID" = "Q";
 	"CFTreeInsertSibling" = "v^{__CFTree=}^{__CFTree=}";
 	"CFTreePrependChild" = "v^{__CFTree=}^{__CFTree=}";
 	"CFTreeRemove" = "v^{__CFTree=}";
@@ -8686,8 +8686,8 @@
 	"CFURLCanBeDecomposed" = "C^{__CFURL=}";
 	"CFURLClearResourcePropertyCache" = "v^{__CFURL=}";
 	"CFURLClearResourcePropertyCacheForKey" = "v^{__CFURL=}^{__CFString=}";
-	"CFURLCopyAbsoluteURL" = "^{__CFURL=}^{__CFURL=}";
-	"CFURLCopyFileSystemPath" = "^{__CFString=}^{__CFURL=}l";
+	"CFURLCopyAbsoluteURQ" = "^{__CFURL=}^{__CFURL=}";
+	"CFURLCopyFileSystemPath" = "^{__CFString=}^{__CFURL=}q";
 	"CFURLCopyFragment" = "^{__CFString=}^{__CFURL=}^{__CFString=}";
 	"CFURLCopyHostName" = "^{__CFString=}^{__CFURL=}";
 	"CFURLCopyLastPathComponent" = "^{__CFString=}^{__CFURL=}";
@@ -8703,56 +8703,56 @@
 	"CFURLCopyScheme" = "^{__CFString=}^{__CFURL=}";
 	"CFURLCopyStrictPath" = "^{__CFString=}^{__CFURL=}^C";
 	"CFURLCopyUserName" = "^{__CFString=}^{__CFURL=}";
-	"CFURLCreateAbsoluteURLWithBytes" = "^{__CFURL=}^{__CFAllocator=}^ClI^{__CFURL=}C";
-	"CFURLCreateBookmarkData" = "^{__CFData=}^{__CFAllocator=}^{__CFURL=}L^{__CFArray=}^{__CFURL=}^^{__CFError=}";
+	"CFURLCreateAbsoluteURLWithBytes" = "^{__CFURL=}^{__CFAllocator=}^CqI^{__CFURL=}C";
+	"CFURLCreateBookmarkData" = "^{__CFData=}^{__CFAllocator=}^{__CFURL=}Q^{__CFArray=}^{__CFURL=}^^{__CFError=}";
 	"CFURLCreateBookmarkDataFromFile" = "^{__CFData=}^{__CFAllocator=}^{__CFURL=}^^{__CFError=}";
-	"CFURLCreateByResolvingBookmarkData" = "^{__CFURL=}^{__CFAllocator=}^{__CFData=}L^{__CFURL=}^{__CFArray=}^C^^{__CFError=}";
+	"CFURLCreateByResolvingBookmarkData" = "^{__CFURL=}^{__CFAllocator=}^{__CFData=}Q^{__CFURL=}^{__CFArray=}^C^^{__CFError=}";
 	"CFURLCreateCopyAppendingPathComponent" = "^{__CFURL=}^{__CFAllocator=}^{__CFURL=}^{__CFString=}C";
 	"CFURLCreateCopyAppendingPathExtension" = "^{__CFURL=}^{__CFAllocator=}^{__CFURL=}^{__CFString=}";
 	"CFURLCreateCopyDeletingLastPathComponent" = "^{__CFURL=}^{__CFAllocator=}^{__CFURL=}";
 	"CFURLCreateCopyDeletingPathExtension" = "^{__CFURL=}^{__CFAllocator=}^{__CFURL=}";
 	"CFURLCreateData" = "^{__CFData=}^{__CFAllocator=}^{__CFURL=}IC";
 	"CFURLCreateDataAndPropertiesFromResource" = "C^{__CFAllocator=}^{__CFURL=}^^{__CFData=}^^{__CFDictionary=}^{__CFArray=}^i";
-	"CFURLCreateFilePathURL" = "^{__CFURL=}^{__CFAllocator=}^{__CFURL=}^^{__CFError=}";
-	"CFURLCreateFileReferenceURL" = "^{__CFURL=}^{__CFAllocator=}^{__CFURL=}^^{__CFError=}";
+	"CFURLCreateFilePathURQ" = "^{__CFURL=}^{__CFAllocator=}^{__CFURL=}^^{__CFError=}";
+	"CFURLCreateFileReferenceURQ" = "^{__CFURL=}^{__CFAllocator=}^{__CFURL=}^^{__CFError=}";
 	"CFURLCreateFromFSRef" = "^{__CFURL=}^{__CFAllocator=}^{FSRef=}";
-	"CFURLCreateFromFileSystemRepresentation" = "^{__CFURL=}^{__CFAllocator=}^ClC";
-	"CFURLCreateFromFileSystemRepresentationRelativeToBase" = "^{__CFURL=}^{__CFAllocator=}^ClC^{__CFURL=}";
+	"CFURLCreateFromFileSystemRepresentation" = "^{__CFURL=}^{__CFAllocator=}^CqC";
+	"CFURLCreateFromFileSystemRepresentationRelativeToBase" = "^{__CFURL=}^{__CFAllocator=}^CqC^{__CFURL=}";
 	"CFURLCreatePropertyFromResource" = "^v^{__CFAllocator=}^{__CFURL=}^{__CFString=}^i";
 	"CFURLCreateResourcePropertiesForKeysFromBookmarkData" = "^{__CFDictionary=}^{__CFAllocator=}^{__CFArray=}^{__CFData=}";
 	"CFURLCreateResourcePropertyForKeyFromBookmarkData" = "^v^{__CFAllocator=}^{__CFString=}^{__CFData=}";
 	"CFURLCreateStringByAddingPercentEscapes" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}^{__CFString=}^{__CFString=}I";
 	"CFURLCreateStringByReplacingPercentEscapes" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}^{__CFString=}";
 	"CFURLCreateStringByReplacingPercentEscapesUsingEncoding" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}^{__CFString=}I";
-	"CFURLCreateWithBytes" = "^{__CFURL=}^{__CFAllocator=}^ClI^{__CFURL=}";
-	"CFURLCreateWithFileSystemPath" = "^{__CFURL=}^{__CFAllocator=}^{__CFString=}lC";
-	"CFURLCreateWithFileSystemPathRelativeToBase" = "^{__CFURL=}^{__CFAllocator=}^{__CFString=}lC^{__CFURL=}";
+	"CFURLCreateWithBytes" = "^{__CFURL=}^{__CFAllocator=}^CqI^{__CFURL=}";
+	"CFURLCreateWithFileSystemPath" = "^{__CFURL=}^{__CFAllocator=}^{__CFString=}qC";
+	"CFURLCreateWithFileSystemPathRelativeToBase" = "^{__CFURL=}^{__CFAllocator=}^{__CFString=}qC^{__CFURL=}";
 	"CFURLCreateWithString" = "^{__CFURL=}^{__CFAllocator=}^{__CFString=}^{__CFURL=}";
 	"CFURLDestroyResource" = "C^{__CFURL=}^i";
-	"CFURLEnumeratorCreateForDirectoryURL" = "^{__CFURLEnumerator=}^{__CFAllocator=}^{__CFURL=}L^{__CFArray=}";
-	"CFURLEnumeratorCreateForMountedVolumes" = "^{__CFURLEnumerator=}^{__CFAllocator=}L^{__CFArray=}";
-	"CFURLEnumeratorGetDescendentLevel" = "l^{__CFURLEnumerator=}";
-	"CFURLEnumeratorGetNextURL" = "l^{__CFURLEnumerator=}^^{__CFURL=}^^{__CFError=}";
+	"CFURLEnumeratorCreateForDirectoryURQ" = "^{__CFURLEnumerator=}^{__CFAllocator=}^{__CFURL=}Q^{__CFArray=}";
+	"CFURLEnumeratorCreateForMountedVolumes" = "^{__CFURLEnumerator=}^{__CFAllocator=}Q^{__CFArray=}";
+	"CFURLEnumeratorGetDescendentLevel" = "q^{__CFURLEnumerator=}";
+	"CFURLEnumeratorGetNextURQ" = "q^{__CFURLEnumerator=}^^{__CFURL=}^^{__CFError=}";
 	"CFURLEnumeratorGetSourceDidChange" = "C^{__CFURLEnumerator=}";
-	"CFURLEnumeratorGetTypeID" = "L";
+	"CFURLEnumeratorGetTypeID" = "Q";
 	"CFURLEnumeratorSkipDescendents" = "v^{__CFURLEnumerator=}";
-	"CFURLGetBaseURL" = "^{__CFURL=}^{__CFURL=}";
-	"CFURLGetByteRangeForComponent" = "{?=}^{__CFURL=}l^{?=}";
-	"CFURLGetBytes" = "l^{__CFURL=}^Cl";
+	"CFURLGetBaseURQ" = "^{__CFURL=}^{__CFURL=}";
+	"CFURLGetByteRangeForComponent" = "{?=}^{__CFURL=}q^{?=}";
+	"CFURLGetBytes" = "q^{__CFURL=}^Cq";
 	"CFURLGetFSRef" = "C^{__CFURL=}^{FSRef=}";
-	"CFURLGetFileSystemRepresentation" = "C^{__CFURL=}C^Cl";
+	"CFURLGetFileSystemRepresentation" = "C^{__CFURL=}C^Cq";
 	"CFURLGetPortNumber" = "i^{__CFURL=}";
 	"CFURLGetString" = "^{__CFString=}^{__CFURL=}";
-	"CFURLGetTypeID" = "L";
+	"CFURLGetTypeID" = "Q";
 	"CFURLHasDirectoryPath" = "C^{__CFURL=}";
-	"CFURLIsFileReferenceURL" = "C^{__CFURL=}";
+	"CFURLIsFileReferenceURQ" = "C^{__CFURL=}";
 	"CFURLResourceIsReachable" = "C^{__CFURL=}^^{__CFError=}";
 	"CFURLSetResourcePropertiesForKeys" = "C^{__CFURL=}^{__CFDictionary=}^^{__CFError=}";
 	"CFURLSetResourcePropertyForKey" = "C^{__CFURL=}^{__CFString=}^v^^{__CFError=}";
 	"CFURLSetTemporaryResourcePropertyForKey" = "v^{__CFURL=}^{__CFString=}^v";
 	"CFURLStartAccessingSecurityScopedResource" = "C^{__CFURL=}";
 	"CFURLStopAccessingSecurityScopedResource" = "v^{__CFURL=}";
-	"CFURLWriteBookmarkDataToFile" = "C^{__CFData=}^{__CFURL=}L^^{__CFError=}";
+	"CFURLWriteBookmarkDataToFile" = "C^{__CFData=}^{__CFURL=}Q^^{__CFError=}";
 	"CFURLWriteDataAndPropertiesToResource" = "C^{__CFURL=}^{__CFData=}^{__CFDictionary=}^i";
 	"CFUUIDCreate" = "^{__CFUUID=}^{__CFAllocator=}";
 	"CFUUIDCreateFromString" = "^{__CFUUID=}^{__CFAllocator=}^{__CFString=}";
@@ -8760,7 +8760,7 @@
 	"CFUUIDCreateString" = "^{__CFString=}^{__CFAllocator=}^{__CFUUID=}";
 	"CFUUIDCreateWithBytes" = "^{__CFUUID=}^{__CFAllocator=}CCCCCCCCCCCCCCCC";
 	"CFUUIDGetConstantUUIDWithBytes" = "^{__CFUUID=}^{__CFAllocator=}CCCCCCCCCCCCCCCC";
-	"CFUUIDGetTypeID" = "L";
+	"CFUUIDGetTypeID" = "Q";
 	"CFUUIDGetUUIDBytes" = "{?=}^{__CFUUID=}";
 	"CFWriteStreamCanAcceptBytes" = "C^{__CFWriteStream=}";
 	"CFWriteStreamClose" = "v^{__CFWriteStream=}";
@@ -8768,19 +8768,19 @@
 	"CFWriteStreamCopyError" = "^{__CFError=}^{__CFWriteStream=}";
 	"CFWriteStreamCopyProperty" = "^v^{__CFWriteStream=}^{__CFString=}";
 	"CFWriteStreamCreateWithAllocatedBuffers" = "^{__CFWriteStream=}^{__CFAllocator=}^{__CFAllocator=}";
-	"CFWriteStreamCreateWithBuffer" = "^{__CFWriteStream=}^{__CFAllocator=}^Cl";
+	"CFWriteStreamCreateWithBuffer" = "^{__CFWriteStream=}^{__CFAllocator=}^Cq";
 	"CFWriteStreamCreateWithFile" = "^{__CFWriteStream=}^{__CFAllocator=}^{__CFURL=}";
 	"CFWriteStreamGetError" = "{?=}^{__CFWriteStream=}";
-	"CFWriteStreamGetStatus" = "l^{__CFWriteStream=}";
-	"CFWriteStreamGetTypeID" = "L";
+	"CFWriteStreamGetStatus" = "q^{__CFWriteStream=}";
+	"CFWriteStreamGetTypeID" = "Q";
 	"CFWriteStreamOpen" = "C^{__CFWriteStream=}";
 	"CFWriteStreamScheduleWithRunLoop" = "v^{__CFWriteStream=}^{__CFRunLoop=}^{__CFString=}";
-	"CFWriteStreamSetClient" = "C^{__CFWriteStream=}L^?^{?=}";
+	"CFWriteStreamSetClient" = "C^{__CFWriteStream=}Q^?^{?=}";
 	"CFWriteStreamSetDispatchQueue" = "v^{__CFWriteStream=}^{dispatch_queue_s=}";
 	"CFWriteStreamSetProperty" = "C^{__CFWriteStream=}^{__CFString=}^v";
 	"CFWriteStreamUnscheduleFromRunLoop" = "v^{__CFWriteStream=}^{__CFRunLoop=}^{__CFString=}";
-	"CFWriteStreamWrite" = "l^{__CFWriteStream=}^Cl";
-	"__CFRangeMake" = "{?=qq}ll";
+	"CFWriteStreamWrite" = "q^{__CFWriteStream=}^Cq";
+	"__CFRangeMake" = "{?=qq}qq";
 	"__CFStringMakeConstantString" = "^{__CFString=}*";
 	};
 	"/usr/lib/libc++abi.dylib" = {
@@ -8817,7 +8817,7 @@
 		"_ZnwmRKSt9nothrow_t" = "^v^?Q^v";
 	};
 	"/usr/lib/system/libsystem_malloc.dylib" = {
-		"default_zone_size" = "L^?^?";
+		"default_zone_size" = "Q^?^?";
 	};
 	"/usr/lib/swift/libswiftCore.dylib" = {
 		"swift_getInitializedObjCClass" = "##";
@@ -8868,11 +8868,11 @@
 		// decl for CGApplicationPropertyGetBoolean not found
 		// decl for CGBitmapAllocateData not found
 		// decl for CGBitmapContextCopyData not found
-		"CGBitmapContextCreate" = "^{CGContext=}^vLLLL^{CGColorSpace=}I";
+		"CGBitmapContextCreate" = "^{CGContext=}^vQQQQ^{CGColorSpace=}I";
 		"CGBitmapContextCreateImage" = "^{CGImage=}^{CGContext=}";
 		// decl for CGBitmapContextCreateWithAlpha not found
 		// decl for CGBitmapContextCreateWithCallbacks not found
-		"CGBitmapContextCreateWithData" = "^{CGContext=}^vLLLL^{CGColorSpace=}I^?^v";
+		"CGBitmapContextCreateWithData" = "^{CGContext=}^vQQQQ^{CGColorSpace=}I^?^v";
 		// decl for CGBitmapContextCreateWithDictionary not found
 		// decl for CGBitmapContextCreateWithPlanarAlpha not found
 		// decl for CGBitmapContextDelegateCreateWithDictionary not found
@@ -8880,13 +8880,13 @@
 		// decl for CGBitmapContextGetAlphaData not found
 		"CGBitmapContextGetAlphaInfo" = "I^{CGContext=}";
 		"CGBitmapContextGetBitmapInfo" = "I^{CGContext=}";
-		"CGBitmapContextGetBitsPerComponent" = "L^{CGContext=}";
-		"CGBitmapContextGetBitsPerPixel" = "L^{CGContext=}";
-		"CGBitmapContextGetBytesPerRow" = "L^{CGContext=}";
+		"CGBitmapContextGetBitsPerComponent" = "Q^{CGContext=}";
+		"CGBitmapContextGetBitsPerPixel" = "Q^{CGContext=}";
+		"CGBitmapContextGetBytesPerRow" = "Q^{CGContext=}";
 		"CGBitmapContextGetColorSpace" = "^{CGColorSpace=}^{CGContext=}";
 		"CGBitmapContextGetData" = "^v^{CGContext=}";
-		"CGBitmapContextGetHeight" = "L^{CGContext=}";
-		"CGBitmapContextGetWidth" = "L^{CGContext=}";
+		"CGBitmapContextGetHeight" = "Q^{CGContext=}";
+		"CGBitmapContextGetWidth" = "Q^{CGContext=}";
 		// decl for CGBitmapContextSetData not found
 		// decl for CGBitmapContextWriteImageToFile not found
 		// decl for CGBitmapFreeData not found
@@ -9022,7 +9022,7 @@
 		"CGColorConversionInfoCreate" = "^{CGColorConversionInfo=}^{CGColorSpace=}^{CGColorSpace=}";
 		"CGColorConversionInfoCreateFromList" = "^{CGColorConversionInfo=}^{__CFDictionary=}^{CGColorSpace=}Ii...";
 		"CGColorConversionInfoCreateFromListWithArguments" = "^{CGColorConversionInfo=}^{__CFDictionary=}^{CGColorSpace=}Ii...";
-		"CGColorConversionInfoGetTypeID" = "L";
+		"CGColorConversionInfoGetTypeID" = "Q";
 		// decl for CGColorConversionInfoIterateColorSpaceFunctionsWithCallbacks not found
 		// decl for CGColorConversionInfoIterateFunctionsWithCallbacks not found
 		// decl for CGColorConverterCreate not found
@@ -9056,10 +9056,10 @@
 		"CGColorGetComponents" = "^d^{CGColor=}";
 		"CGColorGetConstantColor" = "^{CGColor=}^{__CFString=}";
 		// decl for CGColorGetIdentifier not found
-		"CGColorGetNumberOfComponents" = "L^{CGColor=}";
+		"CGColorGetNumberOfComponents" = "Q^{CGColor=}";
 		"CGColorGetPattern" = "^{CGPattern=}^{CGColor=}";
 		// decl for CGColorGetPatternBaseColor not found
-		"CGColorGetTypeID" = "L";
+		"CGColorGetTypeID" = "Q";
 		// decl for CGColorMatrixConcat not found
 		// decl for CGColorMatrixGetMatrix not found
 		// decl for CGColorMatrixGetTypeID not found
@@ -9086,8 +9086,8 @@
 		"CGColorSpaceCreateDeviceGray" = "^{CGColorSpace=}";
 		// decl for CGColorSpaceCreateDeviceN not found
 		"CGColorSpaceCreateDeviceRGB" = "^{CGColorSpace=}";
-		"CGColorSpaceCreateICCBased" = "^{CGColorSpace=}L^d^{CGDataProvider=}^{CGColorSpace=}";
-		"CGColorSpaceCreateIndexed" = "^{CGColorSpace=}^{CGColorSpace=}L^C";
+		"CGColorSpaceCreateICCBased" = "^{CGColorSpace=}Q^d^{CGDataProvider=}^{CGColorSpace=}";
+		"CGColorSpaceCreateIndexed" = "^{CGColorSpace=}^{CGColorSpace=}Q^C";
 		"CGColorSpaceCreateLab" = "^{CGColorSpace=}^d^d^d";
 		// decl for CGColorSpaceCreateLinearized not found
 		"CGColorSpaceCreatePattern" = "^{CGColorSpace=}^{CGColorSpace=}";
@@ -9103,7 +9103,7 @@
 		// decl for CGColorSpaceGetCalibratedGrayData not found
 		// decl for CGColorSpaceGetCalibratedRGBData not found
 		"CGColorSpaceGetColorTable" = "v^{CGColorSpace=}^C";
-		"CGColorSpaceGetColorTableCount" = "L^{CGColorSpace=}";
+		"CGColorSpaceGetColorTableCount" = "Q^{CGColorSpace=}";
 		// decl for CGColorSpaceGetColorants not found
 		// decl for CGColorSpaceGetConversionMatrix not found
 		// decl for CGColorSpaceGetDescriptor not found
@@ -9113,12 +9113,12 @@
 		"CGColorSpaceGetModel" = "i^{CGColorSpace=}";
 		"CGColorSpaceGetName" = "^{__CFString=}^{CGColorSpace=}";
 		// decl for CGColorSpaceGetNames not found
-		"CGColorSpaceGetNumberOfComponents" = "L^{CGColorSpace=}";
+		"CGColorSpaceGetNumberOfComponents" = "Q^{CGColorSpace=}";
 		// decl for CGColorSpaceGetProcessColorModel not found
 		// decl for CGColorSpaceGetRenderingIntent not found
 		// decl for CGColorSpaceGetTintTransform not found
 		// decl for CGColorSpaceGetType not found
-		"CGColorSpaceGetTypeID" = "L";
+		"CGColorSpaceGetTypeID" = "Q";
 		// decl for CGColorSpaceICCGetPlatformProfile not found
 		// decl for CGColorSpaceICCGetRange not found
 		// decl for CGColorSpaceIgnoresIntent not found
@@ -9155,11 +9155,11 @@
 		"CGContextAddCurveToPoint" = "v^{CGContext=}dddddd";
 		"CGContextAddEllipseInRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
 		"CGContextAddLineToPoint" = "v^{CGContext=}dd";
-		"CGContextAddLines" = "v^{CGContext=}^{CGPoint=dd}L";
+		"CGContextAddLines" = "v^{CGContext=}^{CGPoint=dd}Q";
 		"CGContextAddPath" = "v^{CGContext=}^{CGPath=}";
 		"CGContextAddQuadCurveToPoint" = "v^{CGContext=}dddd";
 		"CGContextAddRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
-		"CGContextAddRects" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}L";
+		"CGContextAddRects" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}Q";
 		"CGContextBeginPage" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}";
 		// decl for CGContextBeginPage2 not found
 		"CGContextBeginPath" = "v^{CGContext=}";
@@ -9170,7 +9170,7 @@
 		"CGContextClip" = "v^{CGContext=}";
 		"CGContextClipToMask" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}^{CGImage=}";
 		"CGContextClipToRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
-		"CGContextClipToRects" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}L";
+		"CGContextClipToRects" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}Q";
 		// decl for CGContextClipToTextClipping not found
 		"CGContextClosePath" = "v^{CGContext=}";
 		// decl for CGContextColorIsExtendedRGB not found
@@ -9259,7 +9259,7 @@
 		"CGContextFillEllipseInRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
 		"CGContextFillPath" = "v^{CGContext=}";
 		"CGContextFillRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
-		"CGContextFillRects" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}L";
+		"CGContextFillRects" = "v^{CGContext=}^{CGRect={CGPoint=dd}{CGSize=dd}}Q";
 		"CGContextFlush" = "v^{CGContext=}";
 		// decl for CGContextGetAdjustedLineWidth not found
 		// decl for CGContextGetAllowedFontRenderingStyle not found
@@ -9341,7 +9341,7 @@
 		"CGContextGetTextPosition" = "{CGPoint=dd}^{CGContext=}";
 		// decl for CGContextGetTransferFunctions not found
 		// decl for CGContextGetType not found
-		"CGContextGetTypeID" = "L";
+		"CGContextGetTypeID" = "Q";
 		// decl for CGContextGetUndercolorRemoval not found
 		"CGContextGetUserSpaceToDeviceSpaceTransform" = "{CGAffineTransform=dddddd}^{CGContext=}";
 		// decl for CGContextHandleInvalid not found
@@ -9406,7 +9406,7 @@
 		"CGContextSetInterpolationQuality" = "v^{CGContext=}i";
 		// decl for CGContextSetInterpolationQualityRange not found
 		"CGContextSetLineCap" = "v^{CGContext=}i";
-		"CGContextSetLineDash" = "v^{CGContext=}d^dL";
+		"CGContextSetLineDash" = "v^{CGContext=}d^dQ";
 		"CGContextSetLineJoin" = "v^{CGContext=}i";
 		"CGContextSetLineWidth" = "v^{CGContext=}d";
 		// decl for CGContextSetLineWidthThreshold not found
@@ -9442,15 +9442,15 @@
 		"CGContextSetTextPosition" = "v^{CGContext=}dd";
 		// decl for CGContextSetTransferFunctions not found
 		// decl for CGContextSetUndercolorRemoval not found
-		"CGContextShowGlyphs" = "v^{CGContext=}^SL";
-		"CGContextShowGlyphsAtPoint" = "v^{CGContext=}dd^SL";
-		"CGContextShowGlyphsAtPositions" = "v^{CGContext=}^S^{CGPoint=dd}L";
+		"CGContextShowGlyphs" = "v^{CGContext=}^SQ";
+		"CGContextShowGlyphsAtPoint" = "v^{CGContext=}dd^SQ";
+		"CGContextShowGlyphsAtPositions" = "v^{CGContext=}^S^{CGPoint=dd}Q";
 		// decl for CGContextShowGlyphsAtPositionsWithString not found
-		"CGContextShowGlyphsWithAdvances" = "v^{CGContext=}^S^{CGSize=dd}L";
-		"CGContextShowText" = "v^{CGContext=}*L";
-		"CGContextShowTextAtPoint" = "v^{CGContext=}dd*L";
+		"CGContextShowGlyphsWithAdvances" = "v^{CGContext=}^S^{CGSize=dd}Q";
+		"CGContextShowText" = "v^{CGContext=}*Q";
+		"CGContextShowTextAtPoint" = "v^{CGContext=}dd*Q";
 		"CGContextStrokeEllipseInRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
-		"CGContextStrokeLineSegments" = "v^{CGContext=}^{CGPoint=dd}L";
+		"CGContextStrokeLineSegments" = "v^{CGContext=}^{CGPoint=dd}Q";
 		"CGContextStrokePath" = "v^{CGContext=}";
 		"CGContextStrokeRect" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}";
 		"CGContextStrokeRectWithWidth" = "v^{CGContext=}{CGRect={CGPoint=dd}{CGSize=dd}}d";
@@ -9476,10 +9476,10 @@
 		// decl for CGDataConsumerCreateFlateEncoder not found
 		"CGDataConsumerCreateWithCFData" = "^{CGDataConsumer=}^{__CFData=}";
 		// decl for CGDataConsumerCreateWithFilename not found
-		"CGDataConsumerCreateWithURL" = "^{CGDataConsumer=}^{__CFURL=}";
+		"CGDataConsumerCreateWithURQ" = "^{CGDataConsumer=}^{__CFURL=}";
 		// decl for CGDataConsumerFlush not found
 		// decl for CGDataConsumerGetByteCount not found
-		"CGDataConsumerGetTypeID" = "L";
+		"CGDataConsumerGetTypeID" = "Q";
 		// decl for CGDataConsumerGetURL not found
 		// decl for CGDataConsumerPrintf not found
 		// decl for CGDataConsumerPutBytes not found
@@ -9491,10 +9491,10 @@
 		"CGDataProviderCreateSequential" = "^{CGDataProvider=}^v^{CGDataProviderSequentialCallbacks=I^?^?^?^?}";
 		"CGDataProviderCreateWithCFData" = "^{CGDataProvider=}^{__CFData=}";
 		// decl for CGDataProviderCreateWithCopyOfData not found
-		"CGDataProviderCreateWithData" = "^{CGDataProvider=}^v^vL^?";
+		"CGDataProviderCreateWithData" = "^{CGDataProvider=}^v^vQ^?";
 		"CGDataProviderCreateWithFilename" = "^{CGDataProvider=}*";
 		// decl for CGDataProviderCreateWithSwappedProvider not found
-		"CGDataProviderCreateWithURL" = "^{CGDataProvider=}^{__CFURL=}";
+		"CGDataProviderCreateWithURQ" = "^{CGDataProvider=}^{__CFURL=}";
 		// decl for CGDataProviderGetBytePtr not found
 		// decl for CGDataProviderGetBytes not found
 		// decl for CGDataProviderGetBytesAtPosition not found
@@ -9502,7 +9502,7 @@
 		// decl for CGDataProviderGetSize not found
 		// decl for CGDataProviderGetSize2 not found
 		// decl for CGDataProviderGetSizeOfData not found
-		"CGDataProviderGetTypeID" = "L";
+		"CGDataProviderGetTypeID" = "Q";
 		// decl for CGDataProviderHasDataPtr not found
 		// decl for CGDataProviderLock not found
 		"CGDataProviderRelease" = "v^{CGDataProvider=}";
@@ -9574,7 +9574,7 @@
 		// decl for CGFontCreateGlyphPath not found
 		// decl for CGFontCreateMatchingFont not found
 		"CGFontCreatePostScriptEncoding" = "^{__CFData=}^{CGFont=}^S";
-		"CGFontCreatePostScriptSubset" = "^{__CFData=}^{CGFont=}^{__CFString=}i^SL^S";
+		"CGFontCreatePostScriptSubset" = "^{__CFData=}^{CGFont=}^{__CFString=}i^SQ^S";
 		"CGFontCreateWithDataProvider" = "^{CGFont=}^{CGDataProvider=}";
 		"CGFontCreateWithFontName" = "^{CGFont=}^{__CFString=}";
 		// decl for CGFontCreateWithName not found
@@ -9618,9 +9618,9 @@
 		// decl for CGFontGetDescriptor not found
 		"CGFontGetFontBBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGFont=}";
 		// decl for CGFontGetFontSubsetFormat not found
-		"CGFontGetGlyphAdvances" = "B^{CGFont=}^SL^i";
+		"CGFontGetGlyphAdvances" = "B^{CGFont=}^SQ^i";
 		// decl for CGFontGetGlyphAdvancesForStyle not found
-		"CGFontGetGlyphBBoxes" = "B^{CGFont=}^SL^{CGRect={CGPoint=dd}{CGSize=dd}}";
+		"CGFontGetGlyphBBoxes" = "B^{CGFont=}^SQ^{CGRect={CGPoint=dd}{CGSize=dd}}";
 		// decl for CGFontGetGlyphBBoxesForStyle not found
 		// decl for CGFontGetGlyphForGlyphName not found
 		// decl for CGFontGetGlyphIdentifiers not found
@@ -9638,14 +9638,14 @@
 		"CGFontGetItalicAngle" = "d^{CGFont=}";
 		"CGFontGetLeading" = "i^{CGFont=}";
 		// decl for CGFontGetMaxUnichars not found
-		"CGFontGetNumberOfGlyphs" = "L^{CGFont=}";
+		"CGFontGetNumberOfGlyphs" = "Q^{CGFont=}";
 		// decl for CGFontGetParserFont not found
 		// decl for CGFontGetPostScriptName not found
 		// decl for CGFontGetProperty not found
 		// decl for CGFontGetQuantizationLevelWithStyle not found
 		// decl for CGFontGetRegistryOrderingSupplement not found
 		"CGFontGetStemV" = "d^{CGFont=}";
-		"CGFontGetTypeID" = "L";
+		"CGFontGetTypeID" = "Q";
 		// decl for CGFontGetUnderlinePosition not found
 		// decl for CGFontGetUnderlineThickness not found
 		// decl for CGFontGetUnicharsForGlyph not found
@@ -9695,7 +9695,7 @@
 		"CGFontRetain" = "^{CGFont=}^{CGFont=}";
 		// decl for CGFontURLCreate not found
 		// decl for CGFunctionCopyPDFDescription not found
-		"CGFunctionCreate" = "^{CGFunction=}^vL^dL^d^{CGFunctionCallbacks=I^?^?}";
+		"CGFunctionCreate" = "^{CGFunction=}^vQ^dQ^d^{CGFunctionCallbacks=I^?^?}";
 		// decl for CGFunctionEvaluate not found
 		// decl for CGFunctionEvaluateFloat not found
 		// decl for CGFunctionGetAssociate not found
@@ -9704,7 +9704,7 @@
 		// decl for CGFunctionGetIdentifier not found
 		// decl for CGFunctionGetRange not found
 		// decl for CGFunctionGetRangeDimension not found
-		"CGFunctionGetTypeID" = "L";
+		"CGFunctionGetTypeID" = "Q";
 		// decl for CGFunctionIsIdentity not found
 		"CGFunctionRelease" = "v^{CGFunction=}";
 		"CGFunctionRetain" = "^{CGFunction=}^{CGFunction=}";
@@ -9796,13 +9796,13 @@
 		// decl for CGGlyphLockUnlock not found
 		// decl for CGGradientApply not found
 		// decl for CGGradientApplyWithBlock not found
-		"CGGradientCreateWithColorComponents" = "^{CGGradient=}^{CGColorSpace=}^d^dL";
+		"CGGradientCreateWithColorComponents" = "^{CGGradient=}^{CGColorSpace=}^d^dQ";
 		"CGGradientCreateWithColors" = "^{CGGradient=}^{CGColorSpace=}^{__CFArray=}^d";
 		// decl for CGGradientGetColorSpace not found
 		// decl for CGGradientGetFunction not found
 		// decl for CGGradientGetIdentifier not found
 		// decl for CGGradientGetLocationCount not found
-		"CGGradientGetTypeID" = "L";
+		"CGGradientGetTypeID" = "Q";
 		// decl for CGGradientPrint not found
 		"CGGradientRelease" = "v^{CGGradient=}";
 		"CGGradientRetain" = "^{CGGradient=}^{CGGradient=}";
@@ -9838,7 +9838,7 @@
 		// decl for CGImageBlockSetRetain not found
 		// decl for CGImageBlockSetSetProperty not found
 		// decl for CGImageCopyProperty not found
-		"CGImageCreate" = "^{CGImage=}LLLLL^{CGColorSpace=}I^{CGDataProvider=}^dBi";
+		"CGImageCreate" = "^{CGImage=}QQQQQ^{CGColorSpace=}I^{CGDataProvider=}^dBi";
 		"CGImageCreateCopy" = "^{CGImage=}^{CGImage=}";
 		// decl for CGImageCreateCopyWithClipPath not found
 		"CGImageCreateCopyWithColorSpace" = "^{CGImage=}^{CGImage=}^{CGColorSpace=}";
@@ -9864,10 +9864,10 @@
 		// decl for CGImageEPSRepRetain not found
 		"CGImageGetAlphaInfo" = "I^{CGImage=}";
 		"CGImageGetBitmapInfo" = "I^{CGImage=}";
-		"CGImageGetBitsPerComponent" = "L^{CGImage=}";
-		"CGImageGetBitsPerPixel" = "L^{CGImage=}";
+		"CGImageGetBitsPerComponent" = "Q^{CGImage=}";
+		"CGImageGetBitsPerPixel" = "Q^{CGImage=}";
 		"CGImageGetByteOrderInfo" = "I^{CGImage=}";
-		"CGImageGetBytesPerRow" = "L^{CGImage=}";
+		"CGImageGetBytesPerRow" = "Q^{CGImage=}";
 		// decl for CGImageGetCachingFlags not found
 		// decl for CGImageGetClipPath not found
 		"CGImageGetColorSpace" = "^{CGColorSpace=}^{CGImage=}";
@@ -9875,7 +9875,7 @@
 		"CGImageGetDataProvider" = "^{CGDataProvider=}^{CGImage=}";
 		"CGImageGetDecode" = "^d^{CGImage=}";
 		// decl for CGImageGetEPSRep not found
-		"CGImageGetHeight" = "L^{CGImage=}";
+		"CGImageGetHeight" = "Q^{CGImage=}";
 		// decl for CGImageGetIdentifier not found
 		// decl for CGImageGetImageProvider not found
 		// decl for CGImageGetMask not found
@@ -9885,9 +9885,9 @@
 		// decl for CGImageGetProperty not found
 		"CGImageGetRenderingIntent" = "i^{CGImage=}";
 		"CGImageGetShouldInterpolate" = "B^{CGImage=}";
-		"CGImageGetTypeID" = "L";
+		"CGImageGetTypeID" = "Q";
 		"CGImageGetUTType" = "^{__CFString=}^{CGImage=}";
-		"CGImageGetWidth" = "L^{CGImage=}";
+		"CGImageGetWidth" = "Q^{CGImage=}";
 		// decl for CGImageHasAlpha not found
 		// decl for CGImageIOSurfaceSetCreate not found
 		// decl for CGImageIOSurfaceSetGetColorSpace not found
@@ -9904,7 +9904,7 @@
 		"CGImageIsMask" = "B^{CGImage=}";
 		// decl for CGImageIsOptimizedForSharing not found
 		// decl for CGImageIsSubimage not found
-		"CGImageMaskCreate" = "^{CGImage=}LLLLL^{CGDataProvider=}^dB";
+		"CGImageMaskCreate" = "^{CGImage=}QQQQQ^{CGDataProvider=}^dB";
 		// decl for CGImageNotificationCenter not found
 		// decl for CGImageProviderCopyIOSurface not found
 		// decl for CGImageProviderCopyIOSurfaceSet not found
@@ -9949,7 +9949,7 @@
 		"CGLayerCreateWithContext" = "^{CGLayer=}^{CGContext=}{CGSize=dd}^{__CFDictionary=}";
 		"CGLayerGetContext" = "^{CGContext=}^{CGLayer=}";
 		"CGLayerGetSize" = "{CGSize=dd}^{CGLayer=}";
-		"CGLayerGetTypeID" = "L";
+		"CGLayerGetTypeID" = "Q";
 		"CGLayerRelease" = "v^{CGLayer=}";
 		"CGLayerRetain" = "^{CGLayer=}^{CGLayer=}";
 		// decl for CGNotificationCenterAddCallback not found
@@ -9979,20 +9979,20 @@
 		// decl for CGPDFAnnotationSetIsGhost not found
 		// decl for CGPDFAnnotationSetTag not found
 		"CGPDFArrayApplyBlock" = "v^{CGPDFArray=}^?^v";
-		"CGPDFArrayGetArray" = "B^{CGPDFArray=}L^^{CGPDFArray=}";
-		"CGPDFArrayGetBoolean" = "B^{CGPDFArray=}L^C";
-		"CGPDFArrayGetCount" = "L^{CGPDFArray=}";
-		"CGPDFArrayGetDictionary" = "B^{CGPDFArray=}L^^{CGPDFDictionary=}";
-		"CGPDFArrayGetInteger" = "B^{CGPDFArray=}L^l";
+		"CGPDFArrayGetArray" = "B^{CGPDFArray=}Q^^{CGPDFArray=}";
+		"CGPDFArrayGetBoolean" = "B^{CGPDFArray=}Q^C";
+		"CGPDFArrayGetCount" = "Q^{CGPDFArray=}";
+		"CGPDFArrayGetDictionary" = "B^{CGPDFArray=}Q^^{CGPDFDictionary=}";
+		"CGPDFArrayGetInteger" = "B^{CGPDFArray=}Q^q";
 		// decl for CGPDFArrayGetIntegers not found
-		"CGPDFArrayGetName" = "B^{CGPDFArray=}L^?";
-		"CGPDFArrayGetNull" = "B^{CGPDFArray=}L";
-		"CGPDFArrayGetNumber" = "B^{CGPDFArray=}L^d";
+		"CGPDFArrayGetName" = "B^{CGPDFArray=}Q^?";
+		"CGPDFArrayGetNull" = "B^{CGPDFArray=}Q";
+		"CGPDFArrayGetNumber" = "B^{CGPDFArray=}Q^d";
 		// decl for CGPDFArrayGetNumbers not found
-		"CGPDFArrayGetObject" = "B^{CGPDFArray=}L^^{CGPDFObject=}";
+		"CGPDFArrayGetObject" = "B^{CGPDFArray=}Q^^{CGPDFObject=}";
 		// decl for CGPDFArrayGetOffset not found
-		"CGPDFArrayGetStream" = "B^{CGPDFArray=}L^^{CGPDFStream=}";
-		"CGPDFArrayGetString" = "B^{CGPDFArray=}L^^{CGPDFString=}";
+		"CGPDFArrayGetStream" = "B^{CGPDFArray=}Q^^{CGPDFStream=}";
+		"CGPDFArrayGetString" = "B^{CGPDFArray=}Q^^{CGPDFString=}";
 		// decl for CGPDFArrayGetUnresolvedObject not found
 		// decl for CGPDFArrayPrint not found
 		// decl for CGPDFArrayPrintWithIndent not found
@@ -10027,7 +10027,7 @@
 		"CGPDFContextClose" = "v^{CGContext=}";
 		"CGPDFContextCreate" = "^{CGContext=}^{CGDataConsumer=}^{CGRect={CGPoint=dd}{CGSize=dd}}^{__CFDictionary=}";
 		// decl for CGPDFContextCreateWithFilename not found
-		"CGPDFContextCreateWithURL" = "^{CGContext=}^{__CFURL=}^{CGRect={CGPoint=dd}{CGSize=dd}}^{__CFDictionary=}";
+		"CGPDFContextCreateWithURQ" = "^{CGContext=}^{__CFURL=}^{CGRect={CGPoint=dd}{CGSize=dd}}^{__CFDictionary=}";
 		"CGPDFContextEndPage" = "v^{CGContext=}";
 		// decl for CGPDFContextEndTag not found
 		"CGPDFContextSetDestinationForRect" = "v^{CGContext=}^{__CFString=}{CGRect={CGPoint=dd}{CGSize=dd}}";
@@ -10041,9 +10041,9 @@
 		"CGPDFDictionaryGetArray" = "B^{CGPDFDictionary=}*^^{CGPDFArray=}";
 		"CGPDFDictionaryGetBoolean" = "B^{CGPDFDictionary=}*^C";
 		// decl for CGPDFDictionaryGetBooleans not found
-		"CGPDFDictionaryGetCount" = "L^{CGPDFDictionary=}";
+		"CGPDFDictionaryGetCount" = "Q^{CGPDFDictionary=}";
 		"CGPDFDictionaryGetDictionary" = "B^{CGPDFDictionary=}*^^{CGPDFDictionary=}";
-		"CGPDFDictionaryGetInteger" = "B^{CGPDFDictionary=}*^l";
+		"CGPDFDictionaryGetInteger" = "B^{CGPDFDictionary=}*^q";
 		// decl for CGPDFDictionaryGetIntegers not found
 		// decl for CGPDFDictionaryGetMatrix not found
 		"CGPDFDictionaryGetName" = "B^{CGPDFDictionary=}*^?";
@@ -10073,7 +10073,7 @@
 		// decl for CGPDFDocumentCopyToConsumer not found
 		// decl for CGPDFDocumentCopyToConsumerWithChanges not found
 		"CGPDFDocumentCreateWithProvider" = "^{CGPDFDocument=}^{CGDataProvider=}";
-		"CGPDFDocumentCreateWithURL" = "^{CGPDFDocument=}^{__CFURL=}";
+		"CGPDFDocumentCreateWithURQ" = "^{CGPDFDocument=}^{__CFURL=}";
 		// decl for CGPDFDocumentEnableMRUMode not found
 		// decl for CGPDFDocumentEnableTaggedStructureSerialization not found
 		// decl for CGPDFDocumentExchangePagesAtIndices not found
@@ -10088,10 +10088,10 @@
 		"CGPDFDocumentGetInfo" = "^{CGPDFDictionary=}^{CGPDFDocument=}";
 		"CGPDFDocumentGetMediaBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPDFDocument=}i";
 		// decl for CGPDFDocumentGetNumberOfObjects not found
-		"CGPDFDocumentGetNumberOfPages" = "L^{CGPDFDocument=}";
+		"CGPDFDocumentGetNumberOfPages" = "Q^{CGPDFDocument=}";
 		// decl for CGPDFDocumentGetObject not found
 		"CGPDFDocumentGetOutline" = "^{__CFDictionary=}^{CGPDFDocument=}";
-		"CGPDFDocumentGetPage" = "^{CGPDFPage=}^{CGPDFDocument=}L";
+		"CGPDFDocumentGetPage" = "^{CGPDFPage=}^{CGPDFDocument=}Q";
 		// decl for CGPDFDocumentGetPageDictionary not found
 		// decl for CGPDFDocumentGetPageForPageDictionary not found
 		// decl for CGPDFDocumentGetPageNumberForPageDictionary not found
@@ -10099,7 +10099,7 @@
 		// decl for CGPDFDocumentGetProperty not found
 		"CGPDFDocumentGetRotationAngle" = "i^{CGPDFDocument=}i";
 		"CGPDFDocumentGetTrimBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPDFDocument=}i";
-		"CGPDFDocumentGetTypeID" = "L";
+		"CGPDFDocumentGetTypeID" = "Q";
 		// decl for CGPDFDocumentGetURL not found
 		"CGPDFDocumentGetVersion" = "v^{CGPDFDocument=}^i^i";
 		// decl for CGPDFDocumentInsertPageAtIndex not found
@@ -10202,11 +10202,11 @@
 		"CGPDFPageGetDrawingTransform" = "{CGAffineTransform=dddddd}^{CGPDFPage=}i{CGRect={CGPoint=dd}{CGSize=dd}}iB";
 		// decl for CGPDFPageGetDrawingTransformForRect not found
 		// decl for CGPDFPageGetImages not found
-		"CGPDFPageGetPageNumber" = "L^{CGPDFPage=}";
+		"CGPDFPageGetPageNumber" = "Q^{CGPDFPage=}";
 		// decl for CGPDFPageGetProperty not found
 		"CGPDFPageGetRotationAngle" = "i^{CGPDFPage=}";
 		// decl for CGPDFPageGetThumbnail not found
-		"CGPDFPageGetTypeID" = "L";
+		"CGPDFPageGetTypeID" = "Q";
 		// decl for CGPDFPagePrint not found
 		"CGPDFPageRelease" = "v^{CGPDFPage=}";
 		// decl for CGPDFPageRemoveAnnotation not found
@@ -10222,7 +10222,7 @@
 		"CGPDFScannerPopArray" = "B^{CGPDFScanner=}^^{CGPDFArray=}";
 		"CGPDFScannerPopBoolean" = "B^{CGPDFScanner=}^C";
 		"CGPDFScannerPopDictionary" = "B^{CGPDFScanner=}^^{CGPDFDictionary=}";
-		"CGPDFScannerPopInteger" = "B^{CGPDFScanner=}^l";
+		"CGPDFScannerPopInteger" = "B^{CGPDFScanner=}^q";
 		"CGPDFScannerPopName" = "B^{CGPDFScanner=}^?";
 		"CGPDFScannerPopNumber" = "B^{CGPDFScanner=}^d";
 		"CGPDFScannerPopObject" = "B^{CGPDFScanner=}^^{CGPDFObject=}";
@@ -10255,7 +10255,7 @@
 		"CGPDFStringCopyDate" = "^{__CFDate=}^{CGPDFString=}";
 		"CGPDFStringCopyTextString" = "^{__CFString=}^{CGPDFString=}";
 		"CGPDFStringGetBytePtr" = "^C^{CGPDFString=}";
-		"CGPDFStringGetLength" = "L^{CGPDFString=}";
+		"CGPDFStringGetLength" = "Q^{CGPDFString=}";
 		// decl for CGPDFStringPrint not found
 		// decl for CGPDFStringRelease not found
 		// decl for CGPDFStringRetain not found
@@ -10275,11 +10275,11 @@
 		"CGPathAddCurveToPoint" = "v^{CGPath=}^{CGAffineTransform=dddddd}dddddd";
 		"CGPathAddEllipseInRect" = "v^{CGPath=}^{CGAffineTransform=dddddd}{CGRect={CGPoint=dd}{CGSize=dd}}";
 		"CGPathAddLineToPoint" = "v^{CGPath=}^{CGAffineTransform=dddddd}dd";
-		"CGPathAddLines" = "v^{CGPath=}^{CGAffineTransform=dddddd}^{CGPoint=dd}L";
+		"CGPathAddLines" = "v^{CGPath=}^{CGAffineTransform=dddddd}^{CGPoint=dd}Q";
 		"CGPathAddPath" = "v^{CGPath=}^{CGAffineTransform=dddddd}^{CGPath=}";
 		"CGPathAddQuadCurveToPoint" = "v^{CGPath=}^{CGAffineTransform=dddddd}dddd";
 		"CGPathAddRect" = "v^{CGPath=}^{CGAffineTransform=dddddd}{CGRect={CGPoint=dd}{CGSize=dd}}";
-		"CGPathAddRects" = "v^{CGPath=}^{CGAffineTransform=dddddd}^{CGRect={CGPoint=dd}{CGSize=dd}}L";
+		"CGPathAddRects" = "v^{CGPath=}^{CGAffineTransform=dddddd}^{CGRect={CGPoint=dd}{CGSize=dd}}Q";
 		// decl for CGPathAddRegion not found
 		"CGPathAddRelativeArc" = "v^{CGPath=}^{CGAffineTransform=dddddd}ddddd";
 		"CGPathAddRoundedRect" = "v^{CGPath=}^{CGAffineTransform=dddddd}{CGRect={CGPoint=dd}{CGSize=dd}}dd";
@@ -10293,7 +10293,7 @@
 		"CGPathContainsPoint" = "B^{CGPath=}^{CGAffineTransform=dddddd}{CGPoint=dd}B";
 		// decl for CGPathCreateByNormalizingGlyphPath not found
 		"CGPathCreateCopy" = "^{CGPath=}^{CGPath=}";
-		"CGPathCreateCopyByDashingPath" = "^{CGPath=}^{CGPath=}^{CGAffineTransform=dddddd}d^dL";
+		"CGPathCreateCopyByDashingPath" = "^{CGPath=}^{CGPath=}^{CGAffineTransform=dddddd}d^dQ";
 		"CGPathCreateCopyByStrokingPath" = "^{CGPath=}^{CGPath=}^{CGAffineTransform=dddddd}diid";
 		"CGPathCreateCopyByTransformingPath" = "^{CGPath=}^{CGPath=}^{CGAffineTransform=dddddd}";
 		// decl for CGPathCreateDashedPath not found
@@ -10313,7 +10313,7 @@
 		"CGPathGetCurrentPoint" = "{CGPoint=dd}^{CGPath=}";
 		// decl for CGPathGetGeometricBoundingBox not found
 		"CGPathGetPathBoundingBox" = "{CGRect={CGPoint=dd}{CGSize=dd}}^{CGPath=}";
-		"CGPathGetTypeID" = "L";
+		"CGPathGetTypeID" = "Q";
 		// decl for CGPathIsEllipse not found
 		// decl for CGPathIsEllipse2 not found
 		// decl for CGPathIsEllipseWithTransform not found
@@ -10345,7 +10345,7 @@
 		// decl for CGPatternGetStep not found
 		// decl for CGPatternGetTiling not found
 		// decl for CGPatternGetType not found
-		"CGPatternGetTypeID" = "L";
+		"CGPatternGetTypeID" = "Q";
 		// decl for CGPatternIsColored not found
 		// decl for CGPatternIsOpaque not found
 		// decl for CGPatternNotificationCenter not found
@@ -10475,7 +10475,7 @@
 		// decl for CGShadingGetDescriptor not found
 		// decl for CGShadingGetIdentifier not found
 		// decl for CGShadingGetType not found
-		"CGShadingGetTypeID" = "L";
+		"CGShadingGetTypeID" = "Q";
 		"CGShadingRelease" = "v^{CGShading=}";
 		"CGShadingRetain" = "^{CGShading=}^{CGShading=}";
 		// decl for CGShadingSetAssociate not found
@@ -10618,10 +10618,10 @@
 		"SCDynamicStoreCopyProxies" = "^{__CFDictionary=}^{__SCDynamicStore=}";
 		// decl for SCDynamicStoreCopyProxiesWithOptions not found
 		"SCDynamicStoreCopyValue" = "^v^{__SCDynamicStore=}^{__CFString=}";
-		"SCDynamicStoreCreate" = "^{__SCDynamicStore=}^{__CFAllocator=}^{__CFString=}^?^{?=l^v^?^?^?}";
-		"SCDynamicStoreCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__SCDynamicStore=}l";
-		"SCDynamicStoreCreateWithOptions" = "^{__SCDynamicStore=}^{__CFAllocator=}^{__CFString=}^{__CFDictionary=}^?^{?=l^v^?^?^?}";
-		"SCDynamicStoreGetTypeID" = "L";
+		"SCDynamicStoreCreate" = "^{__SCDynamicStore=}^{__CFAllocator=}^{__CFString=}^?^{?=q^v^?^?^?}";
+		"SCDynamicStoreCreateRunLoopSource" = "^{__CFRunLoopSource=}^{__CFAllocator=}^{__SCDynamicStore=}q";
+		"SCDynamicStoreCreateWithOptions" = "^{__SCDynamicStore=}^{__CFAllocator=}^{__CFString=}^{__CFDictionary=}^?^{?=q^v^?^?^?}";
+		"SCDynamicStoreGetTypeID" = "Q";
 		"SCDynamicStoreKeyCreate" = "^{__CFString=}^{__CFAllocator=}^{__CFString=}...";
 		"SCDynamicStoreKeyCreateComputerName" = "^{__CFString=}^{__CFAllocator=}";
 		"SCDynamicStoreKeyCreateHostNames" = "^{__CFString=}^{__CFAllocator=}";
@@ -10662,14 +10662,14 @@
 		// decl for SCNetworkConnectionCreate not found
 		// decl for SCNetworkConnectionCreateUserPreferences not found
 		// decl for SCNetworkConnectionCreateWithService not found
-		"SCNetworkConnectionCreateWithServiceID" = "^{__SCNetworkConnection=}^{__CFAllocator=}^{__CFString=}^?^{?=l^v^?^?^?}";
+		"SCNetworkConnectionCreateWithServiceID" = "^{__SCNetworkConnection=}^{__CFAllocator=}^{__CFString=}^?^{?=q^v^?^?^?}";
 		// decl for SCNetworkConnectionGetReachabilityInfo not found
 		// decl for SCNetworkConnectionGetService not found
 		// decl for SCNetworkConnectionGetServiceIdentifier not found
 		"SCNetworkConnectionGetStatus" = "i^{__SCNetworkConnection=}";
 		// decl for SCNetworkConnectionGetStatusFromNEStatus not found
 		// decl for SCNetworkConnectionGetType not found
-		"SCNetworkConnectionGetTypeID" = "L";
+		"SCNetworkConnectionGetTypeID" = "Q";
 		// decl for SCNetworkConnectionIsOnDemandSuspended not found
 		// decl for SCNetworkConnectionOnDemandShouldRetryOnFailure not found
 		// decl for SCNetworkConnectionRefreshOnDemandState not found
@@ -10709,7 +10709,7 @@
 		// decl for SCNetworkInterfaceGetQoSMarkingPolicy not found
 		"SCNetworkInterfaceGetSupportedInterfaceTypes" = "^{__CFArray=}^{__SCNetworkInterface=}";
 		"SCNetworkInterfaceGetSupportedProtocolTypes" = "^{__CFArray=}^{__SCNetworkInterface=}";
-		"SCNetworkInterfaceGetTypeID" = "L";
+		"SCNetworkInterfaceGetTypeID" = "Q";
 		// decl for SCNetworkInterfaceProviderCreate not found
 		// decl for SCNetworkInterfaceProviderResume not found
 		// decl for SCNetworkInterfaceProviderSetEventHandler not found
@@ -10727,7 +10727,7 @@
 		"SCNetworkProtocolGetConfiguration" = "^{__CFDictionary=}^{__SCNetworkProtocol=}";
 		"SCNetworkProtocolGetEnabled" = "C^{__SCNetworkProtocol=}";
 		"SCNetworkProtocolGetProtocolType" = "^{__CFString=}^{__SCNetworkProtocol=}";
-		"SCNetworkProtocolGetTypeID" = "L";
+		"SCNetworkProtocolGetTypeID" = "Q";
 		"SCNetworkProtocolSetConfiguration" = "C^{__SCNetworkProtocol=}^{__CFDictionary=}";
 		"SCNetworkProtocolSetEnabled" = "C^{__SCNetworkProtocol=}C";
 		// decl for SCNetworkProxiesCopyMatching not found
@@ -10740,9 +10740,9 @@
 		// decl for SCNetworkReachabilityCreateWithOptions not found
 		"SCNetworkReachabilityGetFlags" = "C^{__SCNetworkReachability=}^I";
 		// decl for SCNetworkReachabilityGetInterfaceIndex not found
-		"SCNetworkReachabilityGetTypeID" = "L";
+		"SCNetworkReachabilityGetTypeID" = "Q";
 		"SCNetworkReachabilityScheduleWithRunLoop" = "C^{__SCNetworkReachability=}^{__CFRunLoop=}^{__CFString=}";
-		"SCNetworkReachabilitySetCallback" = "C^{__SCNetworkReachability=}^?^{?=l^v^?^?^?}";
+		"SCNetworkReachabilitySetCallback" = "C^{__SCNetworkReachability=}^?^{?=q^v^?^?^?}";
 		"SCNetworkReachabilitySetDispatchQueue" = "C^{__SCNetworkReachability=}^{dispatch_queue_s=}";
 		"SCNetworkReachabilityUnscheduleFromRunLoop" = "C^{__SCNetworkReachability=}^{__CFRunLoop=}^{__CFString=}";
 		"SCNetworkServiceAddProtocolType" = "C^{__SCNetworkService=}^{__CFString=}";
@@ -10758,7 +10758,7 @@
 		"SCNetworkServiceGetName" = "^{__CFString=}^{__SCNetworkService=}";
 		// decl for SCNetworkServiceGetPrimaryRank not found
 		"SCNetworkServiceGetServiceID" = "^{__CFString=}^{__SCNetworkService=}";
-		"SCNetworkServiceGetTypeID" = "L";
+		"SCNetworkServiceGetTypeID" = "Q";
 		"SCNetworkServiceRemove" = "C^{__SCNetworkService=}";
 		"SCNetworkServiceRemoveProtocolType" = "C^{__SCNetworkService=}^{__CFString=}";
 		"SCNetworkServiceSetEnabled" = "C^{__SCNetworkService=}C";
@@ -10779,7 +10779,7 @@
 		"SCNetworkSetGetName" = "^{__CFString=}^{__SCNetworkSet=}";
 		"SCNetworkSetGetServiceOrder" = "^{__CFArray=}^{__SCNetworkSet=}";
 		"SCNetworkSetGetSetID" = "^{__CFString=}^{__SCNetworkSet=}";
-		"SCNetworkSetGetTypeID" = "L";
+		"SCNetworkSetGetTypeID" = "Q";
 		"SCNetworkSetRemove" = "C^{__SCNetworkSet=}";
 		"SCNetworkSetRemoveService" = "C^{__SCNetworkSet=}^{__SCNetworkService=}";
 		"SCNetworkSetSetCurrent" = "C^{__SCNetworkSet=}";
@@ -10798,7 +10798,7 @@
 		// decl for SCPreferencesCreateWithOptions not found
 		// decl for SCPreferencesGetHostName not found
 		"SCPreferencesGetSignature" = "^{__CFData=}^{__SCPreferences=}";
-		"SCPreferencesGetTypeID" = "L";
+		"SCPreferencesGetTypeID" = "Q";
 		"SCPreferencesGetValue" = "^v^{__SCPreferences=}^{__CFString=}";
 		"SCPreferencesLock" = "C^{__SCPreferences=}C";
 		"SCPreferencesPathCreateUniqueChild" = "^{__CFString=}^{__SCPreferences=}^{__CFString=}";
@@ -10819,7 +10819,7 @@
 		// decl for SCPreferencesRemoveAllValues not found
 		"SCPreferencesRemoveValue" = "C^{__SCPreferences=}^{__CFString=}";
 		"SCPreferencesScheduleWithRunLoop" = "C^{__SCPreferences=}^{__CFRunLoop=}^{__CFString=}";
-		"SCPreferencesSetCallback" = "C^{__SCPreferences=}^?^{?=l^v^?^?^?}";
+		"SCPreferencesSetCallback" = "C^{__SCPreferences=}^?^{?=q^v^?^?^?}";
 		"SCPreferencesSetComputerName" = "C^{__SCPreferences=}^{__CFString=}I";
 		"SCPreferencesSetDispatchQueue" = "C^{__SCPreferences=}^{dispatch_queue_s=}";
 		// decl for SCPreferencesSetHostName not found
