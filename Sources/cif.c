@@ -205,8 +205,26 @@ next_type_1:
             if (skip_members) {
                 break;
             }
-            fprintf(stderr, "bitfields not supported in method signature: %s", ms-1);
-            abort(); }
+            // parse all the bit fields
+            while (*ms == 'b') {
+                ms++;
+                nbits += strtoul(ms, (char**)&ms, 10);
+            }
+            // TODO: should this always be uint64?
+            if (nbits <= 8) {
+                type = &ffi_type_uint8;
+            } else if (nbits <= 16) {
+                type = &ffi_type_uint16;
+            } else if (nbits <= 32) {
+                type = &ffi_type_uint32;
+            } else if (nbits <= 64) {
+                type = &ffi_type_uint64;
+            } else {
+                fprintf(stderr, "bit field too big (%lu bits)", nbits);
+                abort();
+            }
+            break;
+        }
         case '<':
             P("block pointer");
             type = &ffi_type_pointer;
