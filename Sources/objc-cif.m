@@ -127,12 +127,16 @@ hidden void load_objc_catlist(const struct section_64 *catlist, intptr_t vmaddr_
     }
 }
 
+hidden const struct section_64 *getdatasectfromheader_64(const struct mach_header_64 *mh, const char *sectname) {
+    return getsectbynamefromheader_64(mh, "__DATA_CONST", sectname) ?: getsectbynamefromheader_64(mh, "__DATA", sectname);
+}
+
 hidden void load_objc_entrypoints(const struct mach_header_64 *mh, intptr_t vmaddr_slide) {
     // load classes
-    load_objc_classlist(getsectbynamefromheader_64(mh, "__DATA", "__objc_classlist"), vmaddr_slide);
-    load_objc_classlist(getsectbynamefromheader_64(mh, "__DATA", "__objc_nlclslist"), vmaddr_slide);
+    load_objc_classlist(getdatasectfromheader_64(mh, "__objc_classlist"), vmaddr_slide);
+    load_objc_classlist(getdatasectfromheader_64(mh, "__objc_nlclslist"), vmaddr_slide);
 
     // load categories
-    load_objc_catlist(getsectbynamefromheader_64(mh, "__DATA", "__objc_catlist"), vmaddr_slide);
-    load_objc_catlist(getsectbynamefromheader_64(mh, "__DATA", "__objc_nlcatlist"), vmaddr_slide);
+    load_objc_catlist(getdatasectfromheader_64(mh, "__objc_catlist"), vmaddr_slide);
+    load_objc_catlist(getdatasectfromheader_64(mh, "__objc_nlcatlist"), vmaddr_slide);
 }
