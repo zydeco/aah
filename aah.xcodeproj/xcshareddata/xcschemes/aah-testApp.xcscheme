@@ -47,19 +47,18 @@
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "YES"
+      debugDocumentVersioning = "NO"
       debugXPCServices = "NO"
       debugServiceExtension = "internal"
       enableGPUFrameCaptureMode = "3"
       enableGPUValidationMode = "1"
       allowLocationSimulation = "NO"
-      viewDebuggingEnabled = "No"
       queueDebuggingEnabled = "No"
       GPUProfilerEnabled = "No">
       <PathRunnable
          runnableDebuggingMode = "0"
          BundleIdentifier = "net.namedfork.TestApp"
-         FilePath = "/System/Volumes/Data/Users/zydeco/Library/Developer/Xcode/DerivedData/aah-bmwvlbifhoeqgeexmsbchuswspvk/Build/Products/Debug-iphoneos/TestApp.app">
+         FilePath = "/Users/zydeco/Library/Developer/Xcode/DerivedData/aah-hbudruavvkeucfazinqosjvtjvmt/Build/Products/Debug-iphoneos/TestApp-aah.app">
       </PathRunnable>
       <MacroExpansion>
          <BuildableReference
@@ -94,12 +93,12 @@
          <EnvironmentVariable
             key = "PRINT_DISASSEMBLY"
             value = "1"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "PRINT_REGS"
             value = "1"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>

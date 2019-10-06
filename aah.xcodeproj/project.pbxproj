@@ -21,6 +21,37 @@
 		28054DB12275083500A6881E /* nslog.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DAE2275083500A6881E /* nslog.m */; };
 		28054DB3227A0BC200A6881E /* objc_msgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DB2227A0BC200A6881E /* objc_msgSend.m */; };
 		2815D6A922EE40340021AF41 /* AXRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2815D6A822EE40340021AF41 /* AXRuntime.framework */; };
+		281FCB85234A767E00197002 /* AAPLImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB51234A767B00197002 /* AAPLImageViewController.m */; };
+		281FCB86234A767E00197002 /* AAPLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB53234A767B00197002 /* AAPLAppDelegate.m */; };
+		281FCB87234A767E00197002 /* AAPLDefaultToolbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB54234A767B00197002 /* AAPLDefaultToolbarViewController.m */; };
+		281FCB88234A767E00197002 /* AAPLButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB55234A767B00197002 /* AAPLButtonViewController.m */; };
+		281FCB89234A767F00197002 /* AAPLCustomSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB57234A767B00197002 /* AAPLCustomSearchBarViewController.m */; };
+		281FCB8A234A767F00197002 /* AAPLSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB59234A767B00197002 /* AAPLSwitchViewController.m */; };
+		281FCB8B234A767F00197002 /* AAPLActivityIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB5B234A767C00197002 /* AAPLActivityIndicatorViewController.m */; };
+		281FCB8C234A767F00197002 /* AAPLPageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB5D234A767C00197002 /* AAPLPageControlViewController.m */; };
+		281FCB8D234A767F00197002 /* AAPLTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB5E234A767C00197002 /* AAPLTextViewController.m */; };
+		281FCB8E234A767F00197002 /* AAPLTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB61234A767C00197002 /* AAPLTextFieldViewController.m */; };
+		281FCB8F234A767F00197002 /* AAPLStackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB64234A767C00197002 /* AAPLStackViewController.m */; };
+		281FCB90234A767F00197002 /* AAPLStepperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB66234A767C00197002 /* AAPLStepperViewController.m */; };
+		281FCB91234A767F00197002 /* AAPLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB68234A767C00197002 /* AAPLWebViewController.m */; };
+		281FCB92234A767F00197002 /* AAPLSearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB69234A767C00197002 /* AAPLSearchResultsViewController.m */; };
+		281FCB93234A767F00197002 /* AAPLSegmentedControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB6A234A767D00197002 /* AAPLSegmentedControlViewController.m */; };
+		281FCB94234A767F00197002 /* AAPLDefaultSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB6C234A767D00197002 /* AAPLDefaultSearchBarViewController.m */; };
+		281FCB95234A767F00197002 /* AAPLProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB6F234A767D00197002 /* AAPLProgressViewController.m */; };
+		281FCB96234A767F00197002 /* AAPLSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB70234A767D00197002 /* AAPLSliderViewController.m */; };
+		281FCB97234A767F00197002 /* AAPLAlertControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB76234A767D00197002 /* AAPLAlertControllerViewController.m */; };
+		281FCB98234A767F00197002 /* AAPLDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB77234A767D00197002 /* AAPLDatePickerController.m */; };
+		281FCB99234A767F00197002 /* AAPLSearchPresentOverNavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB78234A767D00197002 /* AAPLSearchPresentOverNavigationBarViewController.m */; };
+		281FCB9A234A767F00197002 /* AAPLSearchShowResultsInSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB79234A767D00197002 /* AAPLSearchShowResultsInSourceViewController.m */; };
+		281FCB9B234A767F00197002 /* AAPLSearchControllerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB7D234A767E00197002 /* AAPLSearchControllerBaseViewController.m */; };
+		281FCB9C234A767F00197002 /* AAPLSearchBarEmbeddedInNavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB7E234A767E00197002 /* AAPLSearchBarEmbeddedInNavigationBarViewController.m */; };
+		281FCB9D234A767F00197002 /* AAPLTintedToolbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB7F234A767E00197002 /* AAPLTintedToolbarViewController.m */; };
+		281FCB9E234A767F00197002 /* AAPLPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB81234A767E00197002 /* AAPLPickerViewController.m */; };
+		281FCB9F234A767F00197002 /* AAPLCustomToolbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCB82234A767E00197002 /* AAPLCustomToolbarViewController.m */; };
+		281FCBA2234A769400197002 /* UIColor+AAPLApplicationSpecific.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCBA1234A769400197002 /* UIColor+AAPLApplicationSpecific.m */; };
+		281FCBA6234A76E400197002 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281FCBA5234A76E400197002 /* Images.xcassets */; };
+		281FCBAB234A77FB00197002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281FCBA7234A77FB00197002 /* Main.storyboard */; };
+		281FCBAC234A77FB00197002 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281FCBA9234A77FB00197002 /* Search.storyboard */; };
 		282236D922D2154800D49B79 /* app.m in Sources */ = {isa = PBXBuildFile; fileRef = 282236D822D2154800D49B79 /* app.m */; };
 		2829AD9D22D6769000EA1177 /* setjmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 2829AD9C22D6769000EA1177 /* setjmp.c */; };
 		282DB9A822D29B2500F04DCD /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = 282DB9A722D29B2500F04DCD /* blocks.c */; };
@@ -38,6 +69,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2868E36623415E3F00EF421B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28054D3D2275004B00A6881E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28FD848822D0B99A0046E0A6;
+			remoteInfo = TestApp;
+		};
 		287A7AE523082E3B00FC1A0B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 28054D3D2275004B00A6881E /* Project object */;
@@ -51,13 +89,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 287A7AE723082FDB00FC1A0B;
 			remoteInfo = unicorn;
-		};
-		28FD84A022D0C11E0046E0A6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 28054D3D2275004B00A6881E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 28FD848822D0B99A0046E0A6;
-			remoteInfo = TestApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -78,6 +109,65 @@
 		28054DAE2275083500A6881E /* nslog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nslog.m; sourceTree = "<group>"; };
 		28054DB2227A0BC200A6881E /* objc_msgSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objc_msgSend.m; sourceTree = "<group>"; };
 		2815D6A822EE40340021AF41 /* AXRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AXRuntime.framework; path = ../../../../../../../System/Library/PrivateFrameworks/AXRuntime.framework; sourceTree = "<group>"; };
+		281FCB4F234A767B00197002 /* AAPLTintedToolbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTintedToolbarViewController.h; sourceTree = "<group>"; };
+		281FCB50234A767B00197002 /* AAPLSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLSliderViewController.h; sourceTree = "<group>"; };
+		281FCB51234A767B00197002 /* AAPLImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLImageViewController.m; sourceTree = "<group>"; };
+		281FCB52234A767B00197002 /* AAPLSegmentedControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLSegmentedControlViewController.h; sourceTree = "<group>"; };
+		281FCB53234A767B00197002 /* AAPLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLAppDelegate.m; sourceTree = "<group>"; };
+		281FCB54234A767B00197002 /* AAPLDefaultToolbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLDefaultToolbarViewController.m; sourceTree = "<group>"; };
+		281FCB55234A767B00197002 /* AAPLButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLButtonViewController.m; sourceTree = "<group>"; };
+		281FCB56234A767B00197002 /* AAPLStepperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLStepperViewController.h; sourceTree = "<group>"; };
+		281FCB57234A767B00197002 /* AAPLCustomSearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCustomSearchBarViewController.m; sourceTree = "<group>"; };
+		281FCB58234A767B00197002 /* AAPLTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTextFieldViewController.h; sourceTree = "<group>"; };
+		281FCB59234A767B00197002 /* AAPLSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLSwitchViewController.m; sourceTree = "<group>"; };
+		281FCB5A234A767C00197002 /* AAPLImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLImageViewController.h; sourceTree = "<group>"; };
+		281FCB5B234A767C00197002 /* AAPLActivityIndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLActivityIndicatorViewController.m; sourceTree = "<group>"; };
+		281FCB5C234A767C00197002 /* AAPLDefaultSearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLDefaultSearchBarViewController.h; sourceTree = "<group>"; };
+		281FCB5D234A767C00197002 /* AAPLPageControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLPageControlViewController.m; sourceTree = "<group>"; };
+		281FCB5E234A767C00197002 /* AAPLTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTextViewController.m; sourceTree = "<group>"; };
+		281FCB5F234A767C00197002 /* AAPLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLWebViewController.h; sourceTree = "<group>"; };
+		281FCB60234A767C00197002 /* AAPLActivityIndicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLActivityIndicatorViewController.h; sourceTree = "<group>"; };
+		281FCB61234A767C00197002 /* AAPLTextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTextFieldViewController.m; sourceTree = "<group>"; };
+		281FCB62234A767C00197002 /* AAPLButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLButtonViewController.h; sourceTree = "<group>"; };
+		281FCB63234A767C00197002 /* AAPLProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLProgressViewController.h; sourceTree = "<group>"; };
+		281FCB64234A767C00197002 /* AAPLStackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLStackViewController.m; sourceTree = "<group>"; };
+		281FCB65234A767C00197002 /* AAPLSearchShowResultsInSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLSearchShowResultsInSourceViewController.h; sourceTree = "<group>"; };
+		281FCB66234A767C00197002 /* AAPLStepperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLStepperViewController.m; sourceTree = "<group>"; };
+		281FCB67234A767C00197002 /* AAPLSearchControllerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLSearchControllerBaseViewController.h; sourceTree = "<group>"; };
+		281FCB68234A767C00197002 /* AAPLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLWebViewController.m; sourceTree = "<group>"; };
+		281FCB69234A767C00197002 /* AAPLSearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLSearchResultsViewController.m; sourceTree = "<group>"; };
+		281FCB6A234A767D00197002 /* AAPLSegmentedControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLSegmentedControlViewController.m; sourceTree = "<group>"; };
+		281FCB6B234A767D00197002 /* AAPLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLAppDelegate.h; sourceTree = "<group>"; };
+		281FCB6C234A767D00197002 /* AAPLDefaultSearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLDefaultSearchBarViewController.m; sourceTree = "<group>"; };
+		281FCB6D234A767D00197002 /* AAPLCustomSearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCustomSearchBarViewController.h; sourceTree = "<group>"; };
+		281FCB6E234A767D00197002 /* AAPLSearchPresentOverNavigationBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLSearchPresentOverNavigationBarViewController.h; sourceTree = "<group>"; };
+		281FCB6F234A767D00197002 /* AAPLProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLProgressViewController.m; sourceTree = "<group>"; };
+		281FCB70234A767D00197002 /* AAPLSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLSliderViewController.m; sourceTree = "<group>"; };
+		281FCB71234A767D00197002 /* AAPLSearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLSearchResultsViewController.h; sourceTree = "<group>"; };
+		281FCB72234A767D00197002 /* AAPLAlertControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLAlertControllerViewController.h; sourceTree = "<group>"; };
+		281FCB73234A767D00197002 /* AAPLCustomToolbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCustomToolbarViewController.h; sourceTree = "<group>"; };
+		281FCB74234A767D00197002 /* AAPLDefaultToolbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLDefaultToolbarViewController.h; sourceTree = "<group>"; };
+		281FCB75234A767D00197002 /* AAPLDatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLDatePickerController.h; sourceTree = "<group>"; };
+		281FCB76234A767D00197002 /* AAPLAlertControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLAlertControllerViewController.m; sourceTree = "<group>"; };
+		281FCB77234A767D00197002 /* AAPLDatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLDatePickerController.m; sourceTree = "<group>"; };
+		281FCB78234A767D00197002 /* AAPLSearchPresentOverNavigationBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLSearchPresentOverNavigationBarViewController.m; sourceTree = "<group>"; };
+		281FCB79234A767D00197002 /* AAPLSearchShowResultsInSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLSearchShowResultsInSourceViewController.m; sourceTree = "<group>"; };
+		281FCB7A234A767D00197002 /* AAPLSearchBarEmbeddedInNavigationBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLSearchBarEmbeddedInNavigationBarViewController.h; sourceTree = "<group>"; };
+		281FCB7B234A767D00197002 /* AAPLSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLSwitchViewController.h; sourceTree = "<group>"; };
+		281FCB7C234A767E00197002 /* AAPLPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLPickerViewController.h; sourceTree = "<group>"; };
+		281FCB7D234A767E00197002 /* AAPLSearchControllerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLSearchControllerBaseViewController.m; sourceTree = "<group>"; };
+		281FCB7E234A767E00197002 /* AAPLSearchBarEmbeddedInNavigationBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLSearchBarEmbeddedInNavigationBarViewController.m; sourceTree = "<group>"; };
+		281FCB7F234A767E00197002 /* AAPLTintedToolbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTintedToolbarViewController.m; sourceTree = "<group>"; };
+		281FCB80234A767E00197002 /* AAPLStackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLStackViewController.h; sourceTree = "<group>"; };
+		281FCB81234A767E00197002 /* AAPLPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLPickerViewController.m; sourceTree = "<group>"; };
+		281FCB82234A767E00197002 /* AAPLCustomToolbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCustomToolbarViewController.m; sourceTree = "<group>"; };
+		281FCB83234A767E00197002 /* AAPLPageControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLPageControlViewController.h; sourceTree = "<group>"; };
+		281FCB84234A767E00197002 /* AAPLTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTextViewController.h; sourceTree = "<group>"; };
+		281FCBA0234A769300197002 /* UIColor+AAPLApplicationSpecific.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AAPLApplicationSpecific.h"; sourceTree = "<group>"; };
+		281FCBA1234A769400197002 /* UIColor+AAPLApplicationSpecific.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AAPLApplicationSpecific.m"; sourceTree = "<group>"; };
+		281FCBA5234A76E400197002 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		281FCBA8234A77FB00197002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		281FCBAA234A77FB00197002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
 		282236D822D2154800D49B79 /* app.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = app.m; sourceTree = "<group>"; };
 		2829AD9C22D6769000EA1177 /* setjmp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = setjmp.c; sourceTree = "<group>"; };
 		282DB9A622D299B400F04DCD /* blocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blocks.h; sourceTree = "<group>"; };
@@ -190,11 +280,78 @@
 			path = shims;
 			sourceTree = "<group>";
 		};
+		281FCBA4234A76A700197002 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				281FCB60234A767C00197002 /* AAPLActivityIndicatorViewController.h */,
+				281FCB5B234A767C00197002 /* AAPLActivityIndicatorViewController.m */,
+				281FCB72234A767D00197002 /* AAPLAlertControllerViewController.h */,
+				281FCB76234A767D00197002 /* AAPLAlertControllerViewController.m */,
+				281FCB62234A767C00197002 /* AAPLButtonViewController.h */,
+				281FCB55234A767B00197002 /* AAPLButtonViewController.m */,
+				281FCB6D234A767D00197002 /* AAPLCustomSearchBarViewController.h */,
+				281FCB57234A767B00197002 /* AAPLCustomSearchBarViewController.m */,
+				281FCB73234A767D00197002 /* AAPLCustomToolbarViewController.h */,
+				281FCB82234A767E00197002 /* AAPLCustomToolbarViewController.m */,
+				281FCB75234A767D00197002 /* AAPLDatePickerController.h */,
+				281FCB77234A767D00197002 /* AAPLDatePickerController.m */,
+				281FCB5C234A767C00197002 /* AAPLDefaultSearchBarViewController.h */,
+				281FCB6C234A767D00197002 /* AAPLDefaultSearchBarViewController.m */,
+				281FCB74234A767D00197002 /* AAPLDefaultToolbarViewController.h */,
+				281FCB54234A767B00197002 /* AAPLDefaultToolbarViewController.m */,
+				281FCB5A234A767C00197002 /* AAPLImageViewController.h */,
+				281FCB51234A767B00197002 /* AAPLImageViewController.m */,
+				281FCB83234A767E00197002 /* AAPLPageControlViewController.h */,
+				281FCB5D234A767C00197002 /* AAPLPageControlViewController.m */,
+				281FCB7C234A767E00197002 /* AAPLPickerViewController.h */,
+				281FCB81234A767E00197002 /* AAPLPickerViewController.m */,
+				281FCB63234A767C00197002 /* AAPLProgressViewController.h */,
+				281FCB6F234A767D00197002 /* AAPLProgressViewController.m */,
+				281FCB7A234A767D00197002 /* AAPLSearchBarEmbeddedInNavigationBarViewController.h */,
+				281FCB7E234A767E00197002 /* AAPLSearchBarEmbeddedInNavigationBarViewController.m */,
+				281FCB67234A767C00197002 /* AAPLSearchControllerBaseViewController.h */,
+				281FCB7D234A767E00197002 /* AAPLSearchControllerBaseViewController.m */,
+				281FCB6E234A767D00197002 /* AAPLSearchPresentOverNavigationBarViewController.h */,
+				281FCB78234A767D00197002 /* AAPLSearchPresentOverNavigationBarViewController.m */,
+				281FCB71234A767D00197002 /* AAPLSearchResultsViewController.h */,
+				281FCB69234A767C00197002 /* AAPLSearchResultsViewController.m */,
+				281FCB65234A767C00197002 /* AAPLSearchShowResultsInSourceViewController.h */,
+				281FCB79234A767D00197002 /* AAPLSearchShowResultsInSourceViewController.m */,
+				281FCB52234A767B00197002 /* AAPLSegmentedControlViewController.h */,
+				281FCB6A234A767D00197002 /* AAPLSegmentedControlViewController.m */,
+				281FCB50234A767B00197002 /* AAPLSliderViewController.h */,
+				281FCB70234A767D00197002 /* AAPLSliderViewController.m */,
+				281FCB80234A767E00197002 /* AAPLStackViewController.h */,
+				281FCB64234A767C00197002 /* AAPLStackViewController.m */,
+				281FCB56234A767B00197002 /* AAPLStepperViewController.h */,
+				281FCB66234A767C00197002 /* AAPLStepperViewController.m */,
+				281FCB7B234A767D00197002 /* AAPLSwitchViewController.h */,
+				281FCB59234A767B00197002 /* AAPLSwitchViewController.m */,
+				281FCB58234A767B00197002 /* AAPLTextFieldViewController.h */,
+				281FCB61234A767C00197002 /* AAPLTextFieldViewController.m */,
+				281FCB84234A767E00197002 /* AAPLTextViewController.h */,
+				281FCB5E234A767C00197002 /* AAPLTextViewController.m */,
+				281FCB4F234A767B00197002 /* AAPLTintedToolbarViewController.h */,
+				281FCB7F234A767E00197002 /* AAPLTintedToolbarViewController.m */,
+				281FCB5F234A767C00197002 /* AAPLWebViewController.h */,
+				281FCB68234A767C00197002 /* AAPLWebViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		28FD848A22D0B99B0046E0A6 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				281FCBA4234A76A700197002 /* View Controllers */,
+				281FCB6B234A767D00197002 /* AAPLAppDelegate.h */,
+				281FCB53234A767B00197002 /* AAPLAppDelegate.m */,
+				281FCBA0234A769300197002 /* UIColor+AAPLApplicationSpecific.h */,
+				281FCBA1234A769400197002 /* UIColor+AAPLApplicationSpecific.m */,
 				28FD849922D0B99C0046E0A6 /* Info.plist */,
 				28FD849A22D0B99C0046E0A6 /* main.m */,
+				281FCBA7234A77FB00197002 /* Main.storyboard */,
+				281FCBA9234A77FB00197002 /* Search.storyboard */,
+				281FCBA5234A76E400197002 /* Images.xcassets */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -255,12 +412,11 @@
 				28054D412275004B00A6881E /* Headers */,
 				28054D422275004B00A6881E /* Sources */,
 				28054D432275004B00A6881E /* Frameworks */,
-				28054DA92275050700A6881E /* Create Test Binary */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				28FD84A122D0C11E0046E0A6 /* PBXTargetDependency */,
+				2868E36723415E3F00EF421B /* PBXTargetDependency */,
 				287A7AE623082E3B00FC1A0B /* PBXTargetDependency */,
 				287A7AEC2308302E00FC1A0B /* PBXTargetDependency */,
 			);
@@ -273,6 +429,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28FD849C22D0B99C0046E0A6 /* Build configuration list for PBXNativeTarget "TestApp" */;
 			buildPhases = (
+				281FCB4E234A73F000197002 /* Remove TestApp-aah.app */,
 				28FD848522D0B99A0046E0A6 /* Sources */,
 				28FD848622D0B99A0046E0A6 /* Frameworks */,
 				28FD848722D0B99A0046E0A6 /* Resources */,
@@ -336,6 +493,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281FCBA6234A76E400197002 /* Images.xcassets in Resources */,
+				281FCBAC234A77FB00197002 /* Search.storyboard in Resources */,
+				281FCBAB234A77FB00197002 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +522,7 @@
 			shellPath = /bin/sh;
 			shellScript = "plutil -convert binary1 \"$SRCROOT/SymbolTable.plist\" -o \"$DERIVED_FILE_DIR/SymbolTable.plist.bin\"\n";
 		};
-		28054DA92275050700A6881E /* Create Test Binary */ = {
+		281FCB4E234A73F000197002 /* Remove TestApp-aah.app */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,37 +530,35 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"/Users/zydeco/Library/Developer/Xcode/DerivedData/AppThing-bzitzwcvwpbwmjfplkfnopxscxca/Build/Products/Debug-iphoneos/AppThing.app/AppThing",
 			);
-			name = "Create Test Binary";
+			name = "Remove TestApp-aah.app";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(TARGET_BUILD_DIR)/TestBinary",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "exit\n\ncp \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\ncodesign --remove-signature \"$SCRIPT_OUTPUT_FILE_0\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# change platform to macOS\nggrep -obUaP \"\\x32\\x00\\x00\\x00\\x20\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x00\" \"$SCRIPT_OUTPUT_FILE_0\" | head -n 1 | cut -d: -f1 | xargs printf \"%08x: 32000000 20000000 06000000 000E0A00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\n\n";
+			shellScript = "rm -rf \"$BUILT_PRODUCTS_DIR/TestApp-aah.app\"\n";
 		};
 		28FD849F22D0B9E70046E0A6 /* Make emulatable */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
+				"$(BUILT_PRODUCTS_DIR)/$(WRAPPER_NAME)",
 			);
 			name = "Make emulatable";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_FOLDER_PATH)/$(EXECUTABLE_NAME)🦄",
+				"$(BUILT_PRODUCTS_DIR)/TestApp-aah.app",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "cp -f \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\ncodesign --remove-signature \"$SCRIPT_OUTPUT_FILE_0\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$SCRIPT_OUTPUT_FILE_0\"\n# change platform to iosMac\nbuild_version_start=\"32 00 00 00 20 00 00 00 02 00 00 00 00\"\nlet pos=`hexdump -v -e '/1 \"%02X \"' \"$SCRIPT_OUTPUT_FILE_0\" | sed \"s/$build_version_start/-/g\" | cut -f1 -d- | wc -c | sed 's/ //g'`/3\nlet pos_hex=`printf \"%04x\" $pos`\necho \"$pos_hex: 32000000 20000000 06000000 00000C00 000E0A00\" | xxd -r -g 4 - \"$SCRIPT_OUTPUT_FILE_0\"\nplutil -replace MinimumOSVersion -string 10.14 \"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\n";
+			shellScript = "cp -r \"$SCRIPT_INPUT_FILE_0\" \"$SCRIPT_OUTPUT_FILE_0\"\nOUTPUT_EXECUTABLE=\"$SCRIPT_OUTPUT_FILE_0/$EXECUTABLE_NAME\"\nOUTPUT_INFO_PLIST=\"$SCRIPT_OUTPUT_FILE_0/Info.plist\"\ncodesign --remove-signature \"$OUTPUT_EXECUTABLE\"\n# make x86_64\necho \"00000004: 0700 0001 0300\" | xxd -r - \"$OUTPUT_EXECUTABLE\"\n# remove PIE\necho \"0000001a: 0100\" | xxd -r - \"$OUTPUT_EXECUTABLE\"\n# add marker in reserved field of header\necho \"0000001c: 0C40 6D45\" | xxd -r - \"$OUTPUT_EXECUTABLE\"\n# change platform to iosMac\nbuild_version_start=\"32 00 00 00 20 00 00 00 02 00 00 00\"\nlet pos=`hexdump -v -n 32768 -e '/1 \"%02X \"' \"$OUTPUT_EXECUTABLE\" | sed \"s/$build_version_start/-/g\" | cut -f1 -d- | wc -c | sed \"s/ //g\"`/3\npos_hex=`printf \"%04x\" $pos`\nif [ $pos -eq 0 ]; then\n  echo \"Could not find LC_BUILD_VERSION in built executable\"\n  exit 1\nelse\n  echo \"Found LC_BUILD_VERSION at 0x$pos_hex ($pos)\"\nfi\necho \"$pos_hex: 32000000 20000000 06000000 00000C00 000E0A00\" | xxd -r -g 4 - \"$OUTPUT_EXECUTABLE\"\nplutil -replace MinimumOSVersion -string 10.15 \"$OUTPUT_INFO_PLIST\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -434,13 +592,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281FCBA2234A769400197002 /* UIColor+AAPLApplicationSpecific.m in Sources */,
+				281FCB85234A767E00197002 /* AAPLImageViewController.m in Sources */,
+				281FCB9E234A767F00197002 /* AAPLPickerViewController.m in Sources */,
+				281FCB91234A767F00197002 /* AAPLWebViewController.m in Sources */,
+				281FCB9A234A767F00197002 /* AAPLSearchShowResultsInSourceViewController.m in Sources */,
+				281FCB8E234A767F00197002 /* AAPLTextFieldViewController.m in Sources */,
+				281FCB86234A767E00197002 /* AAPLAppDelegate.m in Sources */,
+				281FCB99234A767F00197002 /* AAPLSearchPresentOverNavigationBarViewController.m in Sources */,
+				281FCB87234A767E00197002 /* AAPLDefaultToolbarViewController.m in Sources */,
+				281FCB89234A767F00197002 /* AAPLCustomSearchBarViewController.m in Sources */,
+				281FCB9F234A767F00197002 /* AAPLCustomToolbarViewController.m in Sources */,
+				281FCB94234A767F00197002 /* AAPLDefaultSearchBarViewController.m in Sources */,
 				28FD849B22D0B99C0046E0A6 /* main.m in Sources */,
+				281FCB92234A767F00197002 /* AAPLSearchResultsViewController.m in Sources */,
+				281FCB96234A767F00197002 /* AAPLSliderViewController.m in Sources */,
+				281FCB9D234A767F00197002 /* AAPLTintedToolbarViewController.m in Sources */,
+				281FCB95234A767F00197002 /* AAPLProgressViewController.m in Sources */,
+				281FCB88234A767E00197002 /* AAPLButtonViewController.m in Sources */,
+				281FCB93234A767F00197002 /* AAPLSegmentedControlViewController.m in Sources */,
+				281FCB8F234A767F00197002 /* AAPLStackViewController.m in Sources */,
+				281FCB90234A767F00197002 /* AAPLStepperViewController.m in Sources */,
+				281FCB97234A767F00197002 /* AAPLAlertControllerViewController.m in Sources */,
+				281FCB98234A767F00197002 /* AAPLDatePickerController.m in Sources */,
+				281FCB8A234A767F00197002 /* AAPLSwitchViewController.m in Sources */,
+				281FCB8D234A767F00197002 /* AAPLTextViewController.m in Sources */,
+				281FCB9B234A767F00197002 /* AAPLSearchControllerBaseViewController.m in Sources */,
+				281FCB8B234A767F00197002 /* AAPLActivityIndicatorViewController.m in Sources */,
+				281FCB9C234A767F00197002 /* AAPLSearchBarEmbeddedInNavigationBarViewController.m in Sources */,
+				281FCB8C234A767F00197002 /* AAPLPageControlViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2868E36723415E3F00EF421B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28FD848822D0B99A0046E0A6 /* TestApp */;
+			targetProxy = 2868E36623415E3F00EF421B /* PBXContainerItemProxy */;
+		};
 		287A7AE623082E3B00FC1A0B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 287A7ADF23082BB200FC1A0B /* capstone */;
@@ -451,12 +642,26 @@
 			target = 287A7AE723082FDB00FC1A0B /* unicorn */;
 			targetProxy = 287A7AEB2308302E00FC1A0B /* PBXContainerItemProxy */;
 		};
-		28FD84A122D0C11E0046E0A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 28FD848822D0B99A0046E0A6 /* TestApp */;
-			targetProxy = 28FD84A022D0C11E0046E0A6 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		281FCBA7234A77FB00197002 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				281FCBA8234A77FB00197002 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		281FCBA9234A77FB00197002 /* Search.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				281FCBAA234A77FB00197002 /* Base */,
+			);
+			name = Search.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		28054D472275004B00A6881E /* Debug */ = {
@@ -726,7 +931,7 @@
 				DEVELOPMENT_TEAM = UJXNDZ5TNU;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = TestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -751,7 +956,7 @@
 				DEVELOPMENT_TEAM = UJXNDZ5TNU;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = TestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

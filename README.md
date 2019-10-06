@@ -6,6 +6,16 @@ It uses [unicorn](http://www.unicorn-engine.org) and [libffi](https://sourceware
 
 Most things will fail to launch because they need frameworks/symbols that aren't available on macOS.
 
+## Running the sample app
+
+The sample app is an Objective-C version of UIKitCatalog, from the Apple sample code.
+
+1. Build the `TestApp` target. This builds an arm64 iOS app (`TestApp.app`), and makes a copy with the Mach-O header changed to be emulatable (`TestApp-aah.app`, in the same output directory).
+2. Edit the `aah-TestApp` scheme, select the `TestApp-app.app` executable by choosing “Other...” from the Executable drop-down menu (under Run > Info) and selecting it from the filesystem. Otherwise Xcode will complain that the target doesn't match the current platform.
+3. Run the `aah-TestApp` scheme.
+
+Steps 1 and 2 are only necessary before the first run.
+
 ## How it works
 
 1. The architecture field of the binary is changed so macOS will load it.
@@ -32,8 +42,6 @@ The format of the method signature determines how the call is handled:
     * Variadic functions: `printf` or `NSLog` (see `nslog.m`).
     * Overriding functions with custom behaviour: `objc_msgSend`, `setjmp`.
 3. `<` + method signature + `>` + wrapper name: Defines wrapper(s) that will be called after and/or before the native function is called. The wrappers are defined with the `WRAP_EMULATED_TO_NATIVE` and `WRAP_NATIVE_TO_EMULATED` macros, and have arguments `rvalue` and `avalues` that work like those of [`ffi_call`](https://www.chiark.greenend.org.uk/doc/libffi-dev/html/The-Basics.html). See `libdispatch.c` for examples.
-
-
 
 ## Preparing an app
 

@@ -48,7 +48,8 @@
       GPUProfilerEnabled = "No">
       <PathRunnable
          runnableDebuggingMode = "0"
-         FilePath = "/Users/zydeco/Library/Developer/Xcode/DerivedData/aah-bzpwubqemxsqjraztfccfoqdqzik/Build/Products/Debug/TestBinary">
+         BundleIdentifier = "com.example.apple-samplecode.UIKitCatalog"
+         FilePath = "/Users/zydeco/Library/Developer/Xcode/DerivedData/UIKitCatalog-cqtfztezygmtibcdzmsbrkbydfgj/Build/Products/Debug-iphoneos/UIKitCatalog-aah.app">
       </PathRunnable>
       <MacroExpansion>
          <BuildableReference
@@ -88,7 +89,7 @@
          <EnvironmentVariable
             key = "PRINT_DISASSEMBLY"
             value = "1"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "PRINT_REGS"
