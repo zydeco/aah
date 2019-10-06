@@ -3,7 +3,7 @@
 echo "actually this is not a real shell script, some things should be done manually"
 exit
 
-SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk
+SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk
 
 # size_t is Q
 # unsigned long is Q
