@@ -42,5 +42,6 @@ static const interpose_t interposing_functions[] __attribute__ ((used, section("
 -(CGFloat)_bodyLeading { return 0.0; }
 - (id)animatablePropertyKeys { return nil; }
 - (id)isPartOfHigherOrderProperty { return nil; }
+- (BOOL)isSecureTextEntry { return NO; }
 @end
 
