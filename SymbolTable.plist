@@ -10582,7 +10582,7 @@
 		"AudioServicesDisposeSystemSoundID" = "iI";
 		"AudioServicesPlaySystemSound" = "vI";
 	};
-	"/System/iOSSupport/System/Library/Frameworks/UIKit.framework/UIKit" = {
+	"/System/iOSSupport/System/Library/PrivateFrameworks/UIKitCore.framework/Versions/A/UIKitCore" = {
 		"UIApplicationMain" = "i^?^?@@";
 	};
 	"/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration" = {
