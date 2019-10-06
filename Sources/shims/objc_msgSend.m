@@ -10,6 +10,15 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import <dlfcn.h>
+#import <Foundation/Foundation.h>
+
+const char * StringFromNSMethodSignature(NSMethodSignature *methodSignature) {
+    NSMutableString *sig = @(methodSignature.methodReturnType).mutableCopy;
+    for(NSUInteger i=0; i < methodSignature.numberOfArguments; i++) {
+        [sig appendFormat:@"%s", [methodSignature getArgumentTypeAtIndex:i]];
+    }
+    return strdup(sig.UTF8String);
+}
 
 static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_context *ctx, int is_super) {
     id receiver;
@@ -35,8 +44,7 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
     SEL op = (SEL)ctx->arm64_call_context->x[1];
     IMP impl = class_getMethodImplementation(cls, op);
     if (impl == _objc_msgForward || impl == _objc_msgForward_stret) {
-        // TODO: support message forwarding
-        abort();
+        // message forwarding is handled further down
     }
     BOOL meta = class_isMetaClass(cls);
     Dl_info info;
@@ -82,9 +90,14 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
             if (methodSignature == NULL) {
                 methodSignature = method_getTypeEncoding(class_getInstanceMethod(cls, op));
                 if (methodSignature == NULL) {
-                    // CIF is needed for forwarding the call
-                    printf("could not find cif for %s\n", method_name);
-                    // TODO: try to guess it?
+                    // message forwarding
+                    NSMethodSignature *ms = [receiver methodSignatureForSelector:op];
+                    if (ms == nil) {
+                        printf("could not find cif for forwarding %s\n", method_name);
+                    } else {
+                        methodSignature = StringFromNSMethodSignature(ms);
+                        printf("forwarding signature for %s: %s\n", method_name, methodSignature);
+                    }
                 } else {
                     printf("caching cif for %s with type encoding %s\n", method_name, methodSignature);
                 }
