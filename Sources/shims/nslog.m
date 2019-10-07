@@ -57,13 +57,20 @@ uint64_t generic_printf_shim(uc_engine *uc, struct native_call_context *ctx, con
 }
 
 #define PRINTF_SHIM(_name, _format) SHIMDEF(_name) { return generic_printf_shim(uc, ctx, _format); }
+#define VPRINTF_SHIM(_name, _function, _format) SHIMDEF(_name) { \
+    _Static_assert(sizeof(_format) < 10, "vprintf shim should have 8 args or less"); \
+    ctx->pc = (uint64_t)_function; /* call non-va_list function */ \
+    ctx->sp = ctx->arm64_call_context->x[sizeof(_format)-2]; /* va_list is laid out like varargs on stack */ \
+    return generic_printf_shim(uc, ctx, _format); \
+}
 
 // void NSLog(NSString * format, ...);
 PRINTF_SHIM(NSLog, "v@");
 // int snprintf_l(char * restrict str, size_t size, locale_t loc, const char * restrict format, ...);
-PRINTF_SHIM(snprintf_l, "q*L?*");
+PRINTF_SHIM(snprintf_l, "q*L^?*");
 // [something somethingWithFormat:(NSString*)format, ...]
 PRINTF_SHIM(NSSomethingWithFormat, "@@:@");
 // +[NSException raise:(NSString*)name format:(NSString*)format, ...]
 PRINTF_SHIM(NSException_raise_format, "@@:@@");
 
+VPRINTF_SHIM(vsnprintf, snprintf, "i*Q*");
