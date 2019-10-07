@@ -8,7 +8,7 @@ Most things will fail to launch because they need frameworks/symbols that aren't
 
 ## Running the sample app
 
-The sample app is an Objective-C version of UIKitCatalog, from the Apple sample code.
+The sample app is based on UIKitCatalog from the Apple sample code, with an integrated capstone disassembler to inspect functions and methods.
 
 1. Build the `TestApp` target. This builds an arm64 iOS app (`TestApp.app`), and makes a copy with the Mach-O header changed to be emulatable (`TestApp-aah.app`, in the same output directory).
 2. Edit the `aah-TestApp` scheme, select the `TestApp-app.app` executable by choosing “Other...” from the Executable drop-down menu (under Run > Info) and selecting it from the filesystem. Otherwise Xcode will complain that the target doesn't match the current platform.

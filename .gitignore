@@ -1,2 +1,4 @@
 apps
 framework_includes
+lib/libcapstone-aah.a
+lib/libcapstone-ios.a

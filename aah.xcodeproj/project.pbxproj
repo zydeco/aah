@@ -52,11 +52,14 @@
 		281FCBA6234A76E400197002 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281FCBA5234A76E400197002 /* Images.xcassets */; };
 		281FCBAB234A77FB00197002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281FCBA7234A77FB00197002 /* Main.storyboard */; };
 		281FCBAC234A77FB00197002 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281FCBA9234A77FB00197002 /* Search.storyboard */; };
+		281FCBB0234A869600197002 /* libcapstone-aah.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 281FCBAF234A869500197002 /* libcapstone-aah.a */; };
+		281FCBB6234A887B00197002 /* AAHCodeBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCBB5234A887B00197002 /* AAHCodeBrowserViewController.m */; };
+		281FCBBB234A93E600197002 /* AAHCodeBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 281FCBBA234A93E600197002 /* AAHCodeBrowser.m */; };
+		281FCBBC234A9D1400197002 /* libcapstone-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 281FCBB1234A869B00197002 /* libcapstone-ios.a */; };
 		281FCBC0234AA4A500197002 /* stdlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 281FCBBD234A9F7B00197002 /* stdlib.c */; };
 		282236D922D2154800D49B79 /* app.m in Sources */ = {isa = PBXBuildFile; fileRef = 282236D822D2154800D49B79 /* app.m */; };
 		2829AD9D22D6769000EA1177 /* setjmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 2829AD9C22D6769000EA1177 /* setjmp.c */; };
 		282DB9A822D29B2500F04DCD /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = 282DB9A722D29B2500F04DCD /* blocks.c */; };
-		287A7AE423082DE900FC1A0B /* libcapstone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 287A7AE323082DE900FC1A0B /* libcapstone.a */; };
 		287A7AEE2308309400FC1A0B /* libunicorn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 287A7AED2308309400FC1A0B /* libunicorn.a */; };
 		288F826322CD2BDF00BEF175 /* libdispatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 288F826222CD2BDF00BEF175 /* libdispatch.c */; };
 		2891EE3A22DF9CD5004117B5 /* foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2891EE3922DF9CD5004117B5 /* foundation.m */; };
@@ -70,19 +73,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		281FCBB7234A894A00197002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28054D3D2275004B00A6881E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 287A7ADF23082BB200FC1A0B;
+			remoteInfo = capstone;
+		};
 		2868E36623415E3F00EF421B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 28054D3D2275004B00A6881E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 28FD848822D0B99A0046E0A6;
 			remoteInfo = TestApp;
-		};
-		287A7AE523082E3B00FC1A0B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 28054D3D2275004B00A6881E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 287A7ADF23082BB200FC1A0B;
-			remoteInfo = capstone;
 		};
 		287A7AEB2308302E00FC1A0B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -169,12 +172,17 @@
 		281FCBA5234A76E400197002 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		281FCBA8234A77FB00197002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		281FCBAA234A77FB00197002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
+		281FCBAF234A869500197002 /* libcapstone-aah.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcapstone-aah.a"; path = "lib/libcapstone-aah.a"; sourceTree = "<group>"; };
+		281FCBB1234A869B00197002 /* libcapstone-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcapstone-ios.a"; path = "lib/libcapstone-ios.a"; sourceTree = SOURCE_ROOT; };
+		281FCBB4234A887B00197002 /* AAHCodeBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAHCodeBrowserViewController.h; sourceTree = "<group>"; };
+		281FCBB5234A887B00197002 /* AAHCodeBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAHCodeBrowserViewController.m; sourceTree = "<group>"; };
+		281FCBB9234A93E600197002 /* AAHCodeBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAHCodeBrowser.h; sourceTree = "<group>"; };
+		281FCBBA234A93E600197002 /* AAHCodeBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAHCodeBrowser.m; sourceTree = "<group>"; };
 		281FCBBD234A9F7B00197002 /* stdlib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stdlib.c; sourceTree = "<group>"; };
 		282236D822D2154800D49B79 /* app.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = app.m; sourceTree = "<group>"; };
 		2829AD9C22D6769000EA1177 /* setjmp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = setjmp.c; sourceTree = "<group>"; };
 		282DB9A622D299B400F04DCD /* blocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blocks.h; sourceTree = "<group>"; };
 		282DB9A722D29B2500F04DCD /* blocks.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blocks.c; sourceTree = "<group>"; };
-		287A7AE323082DE900FC1A0B /* libcapstone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcapstone.a; path = capstone/libcapstone.a; sourceTree = "<group>"; };
 		287A7AED2308309400FC1A0B /* libunicorn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libunicorn.a; path = unicorn/libunicorn.a; sourceTree = "<group>"; };
 		288F826222CD2BDF00BEF175 /* libdispatch.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libdispatch.c; sourceTree = "<group>"; };
 		2891EE3922DF9CD5004117B5 /* foundation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foundation.m; sourceTree = "<group>"; };
@@ -195,9 +203,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				287A7AEE2308309400FC1A0B /* libunicorn.a in Frameworks */,
+				281FCBB0234A869600197002 /* libcapstone-aah.a in Frameworks */,
 				28A8BEFD2280B3C4006A31F0 /* libobjc.tbd in Frameworks */,
 				28054D9E227501E400A6881E /* libffi.a in Frameworks */,
-				287A7AE423082DE900FC1A0B /* libcapstone.a in Frameworks */,
 				2815D6A922EE40340021AF41 /* AXRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281FCBBC234A9D1400197002 /* libcapstone-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +264,7 @@
 			children = (
 				2815D6A822EE40340021AF41 /* AXRuntime.framework */,
 				28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */,
-				287A7AE323082DE900FC1A0B /* libcapstone.a */,
+				281FCBAF234A869500197002 /* libcapstone-aah.a */,
 				287A7AED2308309400FC1A0B /* libunicorn.a */,
 				28054D972275017E00A6881E /* libffi.a */,
 			);
@@ -342,10 +351,23 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		281FCBB3234A884600197002 /* Code Browser */ = {
+			isa = PBXGroup;
+			children = (
+				281FCBB1234A869B00197002 /* libcapstone-ios.a */,
+				281FCBB9234A93E600197002 /* AAHCodeBrowser.h */,
+				281FCBBA234A93E600197002 /* AAHCodeBrowser.m */,
+				281FCBB4234A887B00197002 /* AAHCodeBrowserViewController.h */,
+				281FCBB5234A887B00197002 /* AAHCodeBrowserViewController.m */,
+			);
+			name = "Code Browser";
+			sourceTree = "<group>";
+		};
 		28FD848A22D0B99B0046E0A6 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
 				281FCBA4234A76A700197002 /* View Controllers */,
+				281FCBB3234A884600197002 /* Code Browser */,
 				281FCB6B234A767D00197002 /* AAPLAppDelegate.h */,
 				281FCB53234A767B00197002 /* AAPLAppDelegate.m */,
 				281FCBA0234A769300197002 /* UIColor+AAPLApplicationSpecific.h */,
@@ -382,7 +404,7 @@
 			buildConfigurationList = 287A7AE023082BB200FC1A0B /* Build configuration list for PBXLegacyTarget "capstone" */;
 			buildPhases = (
 			);
-			buildToolPath = /usr/bin/make;
+			buildToolPath = "$(SRCROOT)/build_capstone.sh";
 			buildWorkingDirectory = "$(SRCROOT)/capstone";
 			dependencies = (
 			);
@@ -420,7 +442,6 @@
 			);
 			dependencies = (
 				2868E36723415E3F00EF421B /* PBXTargetDependency */,
-				287A7AE623082E3B00FC1A0B /* PBXTargetDependency */,
 				287A7AEC2308302E00FC1A0B /* PBXTargetDependency */,
 			);
 			name = aah;
@@ -441,6 +462,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				281FCBB8234A894A00197002 /* PBXTargetDependency */,
 			);
 			name = TestApp;
 			productName = TestApp;
@@ -597,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				281FCBA2234A769400197002 /* UIColor+AAPLApplicationSpecific.m in Sources */,
+				281FCBB6234A887B00197002 /* AAHCodeBrowserViewController.m in Sources */,
 				281FCB85234A767E00197002 /* AAPLImageViewController.m in Sources */,
 				281FCB9E234A767F00197002 /* AAPLPickerViewController.m in Sources */,
 				281FCB91234A767F00197002 /* AAPLWebViewController.m in Sources */,
@@ -625,21 +648,22 @@
 				281FCB8B234A767F00197002 /* AAPLActivityIndicatorViewController.m in Sources */,
 				281FCB9C234A767F00197002 /* AAPLSearchBarEmbeddedInNavigationBarViewController.m in Sources */,
 				281FCB8C234A767F00197002 /* AAPLPageControlViewController.m in Sources */,
+				281FCBBB234A93E600197002 /* AAHCodeBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		281FCBB8234A894A00197002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 287A7ADF23082BB200FC1A0B /* capstone */;
+			targetProxy = 281FCBB7234A894A00197002 /* PBXContainerItemProxy */;
+		};
 		2868E36723415E3F00EF421B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 28FD848822D0B99A0046E0A6 /* TestApp */;
 			targetProxy = 2868E36623415E3F00EF421B /* PBXContainerItemProxy */;
-		};
-		287A7AE623082E3B00FC1A0B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 287A7ADF23082BB200FC1A0B /* capstone */;
-			targetProxy = 287A7AE523082E3B00FC1A0B /* PBXContainerItemProxy */;
 		};
 		287A7AEC2308302E00FC1A0B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -796,8 +820,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/capstone",
 					"$(PROJECT_DIR)/unicorn",
+					"$(PROJECT_DIR)/lib",
 				);
 				OTHER_LDFLAGS = (
 					"-sectcreate",
@@ -832,8 +856,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/capstone",
 					"$(PROJECT_DIR)/unicorn",
+					"$(PROJECT_DIR)/lib",
 				);
 				OTHER_LDFLAGS = (
 					"-sectcreate",
@@ -933,12 +957,18 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJXNDZ5TNU;
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/capstone/include";
 				INFOPLIST_FILE = TestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = net.namedfork.TestApp;
@@ -958,12 +988,18 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJXNDZ5TNU;
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/capstone/include";
 				INFOPLIST_FILE = TestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.namedfork.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
