@@ -52,6 +52,7 @@
 		281FCBA6234A76E400197002 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281FCBA5234A76E400197002 /* Images.xcassets */; };
 		281FCBAB234A77FB00197002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281FCBA7234A77FB00197002 /* Main.storyboard */; };
 		281FCBAC234A77FB00197002 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281FCBA9234A77FB00197002 /* Search.storyboard */; };
+		281FCBC0234AA4A500197002 /* stdlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 281FCBBD234A9F7B00197002 /* stdlib.c */; };
 		282236D922D2154800D49B79 /* app.m in Sources */ = {isa = PBXBuildFile; fileRef = 282236D822D2154800D49B79 /* app.m */; };
 		2829AD9D22D6769000EA1177 /* setjmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 2829AD9C22D6769000EA1177 /* setjmp.c */; };
 		282DB9A822D29B2500F04DCD /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = 282DB9A722D29B2500F04DCD /* blocks.c */; };
@@ -168,6 +169,7 @@
 		281FCBA5234A76E400197002 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		281FCBA8234A77FB00197002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		281FCBAA234A77FB00197002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
+		281FCBBD234A9F7B00197002 /* stdlib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stdlib.c; sourceTree = "<group>"; };
 		282236D822D2154800D49B79 /* app.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = app.m; sourceTree = "<group>"; };
 		2829AD9C22D6769000EA1177 /* setjmp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = setjmp.c; sourceTree = "<group>"; };
 		282DB9A622D299B400F04DCD /* blocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blocks.h; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				2829AD9C22D6769000EA1177 /* setjmp.c */,
 				28FD9FF822E90A4800E47B05 /* DWUWebView.h */,
 				28FD9FF922E90A4800E47B05 /* DWUWebView.m */,
+				281FCBBD234A9F7B00197002 /* stdlib.c */,
 			);
 			path = shims;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				28054DAF2275083500A6881E /* printf.c in Sources */,
 				28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */,
 				28054D572275008F00A6881E /* loader.c in Sources */,
+				281FCBC0234AA4A500197002 /* stdlib.c in Sources */,
 				28A8BF0B22876490006A31F0 /* c++abi.c in Sources */,
 				28054D5A2275008F00A6881E /* memory.c in Sources */,
 				28054DB12275083500A6881E /* nslog.m in Sources */,

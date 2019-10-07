@@ -2567,7 +2567,7 @@
 		"putwc_l" = "ii^{__sFILE=}^{_xlocale=}";
 		"putwchar" = "ii";
 		"putwchar_l" = "ii^{_xlocale=}";
-		"qsort" = "v^vQQ^?";
+		"qsort" = "<v^vQQ^?>sort";
 		"qsort_b" = "v^vQQ^?";
 		"qsort_r" = "v^vQQ^v^?";
 		"querylocale" = "*i^{_xlocale=}";
