@@ -985,6 +985,7 @@
 		// decl for _os_object_retain_internal not found
 		// decl for _os_object_retain_internal_n not found
 		// decl for _os_object_retain_with_resurrect not found
+		"default_zone_size" = "Q^?^?";
 		"dispatch_activate" = "v^?";
 		"dispatch_after" = "vQ^{dispatch_queue_s=}^?";
 		"dispatch_after_f" = "vQ^{dispatch_queue_s=}^v^?";
@@ -7624,7 +7625,7 @@
 		"-[* initWithFormat:]" = "$NSSomethingWithFormat";
 		"+[* stringWithFormat:]" = "$NSSomethingWithFormat";
 		"-[* stringByAppendingFormat:]" = "$NSSomethingWithFormat";
-		"-[NSMutableString appendFormat:]" = "$NSSomethingWithFormat";
+		"-[* appendFormat:]" = "$NSSomethingWithFormat";
 		"+[NSPredicate predicateWithFormat:]" = "$NSSomethingWithFormat";
 		"+[NSException raise:format:]" = "$NSException_raise_format";
 		"-[* initWithObjectsAndKeys:]" = "$nilTerminatedListOfObjects";
@@ -8816,9 +8817,9 @@
 		"_Znwm" = "^vQ"; 
 		"_ZnwmRKSt9nothrow_t" = "^v^?Q^v";
 	};
-	"/usr/lib/system/libsystem_malloc.dylib" = {
-		"default_zone_size" = "Q^?^?";
-	};
+	"/usr/lib/system/libsystem_c.dylib" = "/usr/lib/libSystem.B.dylib";
+	"/usr/lib/system/libsystem_malloc.dylib" = "/usr/lib/libSystem.B.dylib";
+	"/usr/lib/system/libsystem_platform.dylib" = "/usr/lib/libSystem.B.dylib";
 	"/usr/lib/swift/libswiftCore.dylib" = {
 		"swift_getInitializedObjCClass" = "##";
 	};

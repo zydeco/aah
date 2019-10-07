@@ -383,6 +383,10 @@ hidden const char * lookup_method_signature(const char *lib_name, const char *sy
         printf("Library not found in table: %s\n", lib_name);
         return NULL;
     }
+    if (CFGetTypeID(lib_table) == CFStringGetTypeID()) {
+        // library redirect
+        lib_table = CFDictionaryGetValue(cif_sig_table, lib_table);
+    }
     CFStringRef sym_name_cf = CFStringCreateWithCStringNoCopy(kCFAllocatorDefault, sym_name, kCFStringEncodingUTF8, kCFAllocatorNull);
     CFStringRef signature = CFDictionaryGetValue(lib_table, sym_name_cf);
     CFRelease(sym_name_cf);
