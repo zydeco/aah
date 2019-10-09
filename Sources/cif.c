@@ -340,6 +340,10 @@ hidden void cif_cache_add(void *address, const char *method_signature, const cha
         wrapper->emulated_to_native = dlsym(RTLD_SELF, shim_name);
         snprintf(shim_name, 128, "aah_Wn2e_%s", wrapper_name);
         wrapper->native_to_emulated = dlsym(RTLD_SELF, shim_name);
+        if (wrapper->native_to_emulated == NULL && wrapper->emulated_to_native == NULL) {
+            printf("Could not find wrapper symbols for %s (%s)\n", name, wrapper_name);
+            abort();
+        }
         if (prep_cifs(cif_native, cif_arm64, method_signature+1, -1)) {
             wrapper->cif_native = cif_native;
             wrapper->cif_arm64 = cif_arm64;
