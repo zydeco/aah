@@ -2086,7 +2086,7 @@
 		"brk" = "^v^v";
 		"bsd_signal" = "^?i^?";
 		"bsearch" = "^v^v^vQQ^?";
-		"bsearch_b" = "^v^v^vQQ^?";
+		"bsearch_b" = "<^v^v^vQQ^?>bsearch_b";
 		"btowc" = "ii";
 		"btowc_l" = "ii^{_xlocale=}";
 		"bzero" = "v^vQ";

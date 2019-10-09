@@ -9,10 +9,10 @@
 #include "aah.h"
 #include "blocks.h"
 
-void cif_cache_block(const void *arg) {
+void cif_cache_block(const void *arg, const char *name) {
     struct Block_layout *block = (struct Block_layout*)arg;
     if (block) {
-        cif_cache_add(block->invoke, _Block_has_signature(block) ? _Block_signature(block) : "v^?", "(block)");
+        cif_cache_add(block->invoke, _Block_has_signature(block) ? _Block_signature(block) : "v^?", name ?: "(block)");
         if (block->descriptor) {
             if (block->descriptor->copy) {
                 cif_cache_add(block->descriptor->copy, "v^?^?", "(block copy helper)");
@@ -25,7 +25,7 @@ void cif_cache_block(const void *arg) {
 }
 
 void *aah_Block_copy(const void *arg) {
-    cif_cache_block(arg);
+    cif_cache_block(arg, "(copied block)");
     return _Block_copy(arg);
 }
 
@@ -40,7 +40,7 @@ enum {
 
 void aah_Block_object_assign(void * destAddr, const void * object, const int flags) {
     if ((flags & BLOCK_FIELD_IS_BLOCK) == BLOCK_FIELD_IS_BLOCK) {
-        cif_cache_block(object);
+        cif_cache_block(object, "(assigned block)");
     }
     _Block_object_assign(destAddr, object, flags);
 }
