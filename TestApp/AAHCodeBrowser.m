@@ -7,10 +7,10 @@
 //
 
 #import "AAHCodeBrowser.h"
+#import "AAHDisassembler.h"
 #import <dlfcn.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
-#import <capstone/capstone.h>
 
 @implementation AAHCodeBrowser
 
@@ -40,44 +40,7 @@
     return NULL;
 }
 
-- (NSString*)disassembleCode:(NSData*)code address:(uint64_t)address architecture:(cs_arch)arch mode:(cs_mode)mode skippedBytes:(size_t*)skippedBytesPtr {
-    csh capstone;
-    cs_err err;
-    err = cs_open(arch, mode, &capstone);
-    cs_option(capstone, CS_OPT_SKIPDATA, CS_OPT_ON);
-    cs_insn *insn = NULL;
-    
-    size_t count = cs_disasm(capstone, code.bytes, code.length, address, 0, &insn);
-    cs_close(&capstone);
-    
-    size_t skippedBytes = 0, skippedBlock = 0;
-    if (count) {
-        NSMutableString *disassembly = [NSMutableString new];
-        for(size_t i=0; i < count; i++) {
-            [disassembly appendFormat:@"0x%llx:\t%-12s%s\n", insn[i].address, insn[i].mnemonic, insn[i].op_str];
-            if (insn[i].id == 0) {
-                // skipped data
-                skippedBytes += insn[i].size;
-                skippedBlock += insn[i].size;
-                if (i == count-1) {
-                    // don't count trailing skip
-                    skippedBlock -= skippedBlock;
-                }
-            } else {
-                skippedBlock = 0;
-            }
-        }
-        cs_free(insn, count);
-        if (skippedBytesPtr) {
-            *skippedBytesPtr = skippedBytes;
-        }
-        return disassembly;
-    }
-    
-    return nil;
-}
-
-- (NSString*)disassembleMethod:(void*)startAddress cpuType:(cpu_type_t)cpuType{
+- (NSString*)disassembleMethod:(void*)startAddress cpuType:(cpu_type_t)cpuType score:(NSInteger*)score {
     uint64_t endAddress = (uint64_t)[self nextSymbol:startAddress];
     if (endAddress == 0) {
         return @"Could not find end address";
@@ -86,13 +49,12 @@
     uint64_t codeSize = endAddress - address;
     NSData *code = [NSData dataWithBytesNoCopy:startAddress length:codeSize freeWhenDone:NO];
     
-    if (cpuType == CPU_TYPE_X86_64) {
-        return [self disassembleCode:code address:address architecture:CS_ARCH_X86 mode:CS_MODE_64 skippedBytes:NULL];
-    } else if (cpuType == CPU_TYPE_ARM64) {
-        return [self disassembleCode:code address:address architecture:CS_ARCH_ARM64 mode:CS_MODE_LITTLE_ENDIAN skippedBytes:NULL];
-    } else {
-        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Unsupported CPU type" userInfo:@{@"cpuType": @(cpuType)}];
+    AAHDisassembler *disassembler = [[AAHDisassembler alloc] initWithCode:code address:address cpuType:cpuType];
+    [disassembler run];
+    if (score) {
+        *score = disassembler.score;
     }
+    return disassembler.stringValue;
 }
 
 @end

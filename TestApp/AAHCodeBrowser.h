@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AAHCodeBrowser : NSObject
 
 - (void*)findMethodWithName:(NSString*)methodName;
-- (NSString*)disassembleMethod:(void*)startAddress cpuType:(cpu_type_t)cpuType;
+- (NSString*)disassembleMethod:(void*)startAddress cpuType:(cpu_type_t)cpuType score:(NSInteger*)score;
 
 @end
 

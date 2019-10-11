@@ -66,6 +66,7 @@
 		28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BEFA2280B2C1006A31F0 /* objc-cif.m */; };
 		28A8BEFD2280B3C4006A31F0 /* libobjc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */; };
 		28A8BF0B22876490006A31F0 /* c++abi.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BF0A22876490006A31F0 /* c++abi.c */; };
+		28E91C33234E733E00788110 /* AAHDisassembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E91C32234E733E00788110 /* AAHDisassembler.m */; };
 		28FD849B22D0B99C0046E0A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD849A22D0B99C0046E0A6 /* main.m */; };
 		28FD84A322D0C7D30046E0A6 /* marzipan_glue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD84A222D0C7D30046E0A6 /* marzipan_glue.m */; };
 		28FD9FFA22E90A4800E47B05 /* DWUWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 28FD9FF822E90A4800E47B05 /* DWUWebView.h */; };
@@ -189,6 +190,8 @@
 		28A8BEFA2280B2C1006A31F0 /* objc-cif.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "objc-cif.m"; sourceTree = "<group>"; };
 		28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
 		28A8BF0A22876490006A31F0 /* c++abi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "c++abi.c"; sourceTree = "<group>"; };
+		28E91C31234E733E00788110 /* AAHDisassembler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAHDisassembler.h; sourceTree = "<group>"; };
+		28E91C32234E733E00788110 /* AAHDisassembler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAHDisassembler.m; sourceTree = "<group>"; };
 		28FD848922D0B99A0046E0A6 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FD849922D0B99C0046E0A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28FD849A22D0B99C0046E0A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -357,6 +360,8 @@
 				281FCBB1234A869B00197002 /* libcapstone-ios.a */,
 				281FCBB9234A93E600197002 /* AAHCodeBrowser.h */,
 				281FCBBA234A93E600197002 /* AAHCodeBrowser.m */,
+				28E91C31234E733E00788110 /* AAHDisassembler.h */,
+				28E91C32234E733E00788110 /* AAHDisassembler.m */,
 				281FCBB4234A887B00197002 /* AAHCodeBrowserViewController.h */,
 				281FCBB5234A887B00197002 /* AAHCodeBrowserViewController.m */,
 			);
@@ -638,6 +643,7 @@
 				281FCB95234A767F00197002 /* AAPLProgressViewController.m in Sources */,
 				281FCB88234A767E00197002 /* AAPLButtonViewController.m in Sources */,
 				281FCB93234A767F00197002 /* AAPLSegmentedControlViewController.m in Sources */,
+				28E91C33234E733E00788110 /* AAHDisassembler.m in Sources */,
 				281FCB8F234A767F00197002 /* AAPLStackViewController.m in Sources */,
 				281FCB90234A767F00197002 /* AAPLStepperViewController.m in Sources */,
 				281FCB97234A767F00197002 /* AAPLAlertControllerViewController.m in Sources */,

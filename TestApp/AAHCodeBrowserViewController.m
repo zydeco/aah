@@ -31,6 +31,7 @@
         @"+[UIColor purpleColor]",
         @"+[UIColor aapl_applicationPurpleColor]"
     ];
+    [self configureSearchBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -45,6 +46,11 @@
         destination.tableView.dataSource = self;
     }
 }
+
+- (void)configureSearchBar {
+    self.searchBar.searchTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+}
+
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -62,13 +68,35 @@
         return NO;
     }
     
-    results = @[
-        methodName,
-        [codeBrowser disassembleMethod:addr cpuType:CPU_TYPE_ARM64],
-        [codeBrowser disassembleMethod:addr cpuType:CPU_TYPE_X86_64]
-    ];
-    [self changeArchitecture:self];
+    self.textView.text = @"Disassembling...";
+    [self performSelectorInBackground:@selector(disassembleMethod:) withObject:@((uint64_t)addr)];
+    results = @[methodName, @"", @""];
     return YES;
+}
+
+- (void)disassembleMethod:(NSNumber*)address {
+    NSInteger armScore = 0;
+    NSInteger x86Score = 0;
+    void *addr = (void*)address.unsignedLongLongValue;
+    results = @[
+        results[0],
+        [codeBrowser disassembleMethod:addr cpuType:CPU_TYPE_ARM64 score:&armScore],
+        [codeBrowser disassembleMethod:addr cpuType:CPU_TYPE_X86_64 score:&x86Score]
+    ];
+    
+    NSInteger index = (armScore > x86Score) ? 0 : 1;
+    [self performSelectorOnMainThread:@selector(selectArchitecture:) withObject:@(index) waitUntilDone:NO];
+}
+
+- (void)selectArchitecture:(NSNumber*)index {
+    if (index.integerValue == 0 && self.architecturePicker.selectedSegmentIndex != 0) {
+        // Segment won't update when changed programmatically to 0 in catalyst
+        [self.architecturePicker removeAllSegments];
+        [self.architecturePicker insertSegmentWithTitle:@"arm64" atIndex:0 animated:NO];
+        [self.architecturePicker insertSegmentWithTitle:@"x86_64" atIndex:1 animated:NO];
+    }
+    self.architecturePicker.selectedSegmentIndex = index.integerValue;
+    [self.architecturePicker sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 - (void)changeArchitecture:(id)sender {
