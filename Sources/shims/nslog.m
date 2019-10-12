@@ -7,6 +7,7 @@
 // also the format must be modified if it uses long doubles, since they're smaller on arm64
 uint64_t generic_printf_shim(uc_engine *uc, struct native_call_context *ctx, const char *encoding) {
     // last element of encoding is format arg
+    // format should only contain single-character encodings (eg no ^v)
     int format_arg = (int)strlen(encoding) - 2;
     char format_encoding = encoding[format_arg+1];
     int is_objc = (format_encoding == '@');
@@ -67,7 +68,7 @@ uint64_t generic_printf_shim(uc_engine *uc, struct native_call_context *ctx, con
 // void NSLog(NSString * format, ...);
 PRINTF_SHIM(NSLog, "v@");
 // int snprintf_l(char * restrict str, size_t size, locale_t loc, const char * restrict format, ...);
-PRINTF_SHIM(snprintf_l, "q*L^?*");
+PRINTF_SHIM(snprintf_l, "q*L**");
 // [something somethingWithFormat:(NSString*)format, ...]
 PRINTF_SHIM(NSSomethingWithFormat, "@@:@");
 // +[NSException raise:(NSString*)name format:(NSString*)format, ...]
