@@ -7634,6 +7634,7 @@
 		"-[* arrayWithObjects:]" = "$nilTerminatedListOfObjects";
 		"-[* setWithObjects:]" = "$nilTerminatedListOfObjects";
 		"-[* orderedSetWithObjects:]" = "$nilTerminatedListOfObjects";
+		"-[UIActionSheet initWithTitle:delegate:cancelButtonTitle:destructiveButtonTitle:otherButtonTitles:]" = "$nilTerminatedListOfObjects";
 		// not actually shims
 		"-[_UIAppearance setTintColor:]" = "v@:@";
 	};
