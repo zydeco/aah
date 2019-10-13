@@ -383,6 +383,12 @@ hidden const char * lookup_method_signature(const char *lib_name, const char *sy
     CFStringRef lib_name_cf = CFStringCreateWithCStringNoCopy(kCFAllocatorDefault, lib_name, kCFStringEncodingUTF8, kCFAllocatorNull);
     CFDictionaryRef lib_table = CFDictionaryGetValue(cif_sig_table, lib_name_cf);
     CFRelease(lib_name_cf);
+    if (lib_table == NULL && strrchr(lib_name, '/')) {
+        // try basename
+        lib_name_cf = CFStringCreateWithCStringNoCopy(kCFAllocatorDefault, strrchr(lib_name, '/')+1, kCFStringEncodingUTF8, kCFAllocatorNull);
+        lib_table = CFDictionaryGetValue(cif_sig_table, lib_name_cf);
+        CFRelease(lib_name_cf);
+    }
     if (lib_table == NULL) {
         printf("Library not found in table: %s\n", lib_name);
         return NULL;
