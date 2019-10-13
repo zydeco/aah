@@ -91,3 +91,5 @@ extern const char *CIF_LIB_OBJC_SHIMS;
 #define SHIMDEF(name) __attribute__((visibility("default"))) uint64_t aah_shim_ ## name (uc_engine *uc, struct native_call_context *ctx)
 #define WRAP_EMULATED_TO_NATIVE(name) __attribute__((visibility("default"))) void aah_We2n_ ## name WRAPPER_ARGS
 #define WRAP_NATIVE_TO_EMULATED(name) __attribute__((visibility("default"))) void aah_Wn2e_ ## name WRAPPER_ARGS
+
+void didInitCtx(struct emulator_ctx *ctx);

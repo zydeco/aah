@@ -134,6 +134,10 @@ hidden struct emulator_ctx* init_emulator_ctx() {
     // closure for interworking
     ctx->closure = ffi_closure_alloc(sizeof(ffi_closure), &ctx->closure_code);
     // TODO: check reentrancy thoroughly, seems ok so far
+    
+    // app-specific initialization
+    didInitCtx(ctx);
+    
     return ctx;
 }
 

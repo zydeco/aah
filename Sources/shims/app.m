@@ -10,4 +10,8 @@
 #import "blocks.h"
 #import <Foundation/Foundation.h>
 
-// hooks and stuff for current app...
+hidden void didInitCtx(struct emulator_ctx *ctx) {
+    // this is called on each thread after the context is initialized, before it runs
+    // add hooks here
+}
+
