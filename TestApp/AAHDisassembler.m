@@ -12,14 +12,6 @@
 #import <mach-o/dyld.h>
 #import <dlfcn.h>
 
-@implementation NSNumber (PointerValue)
-
-- (NSString*)pointerValue {
-    return [NSString stringWithFormat:@"0x%x", self.unsignedLongLongValue];
-}
-
-@end
-
 static bool isJump(csh capstone, cs_insn *ins, cs_arch arch) {
     bool jump = (cs_insn_group(capstone, ins, CS_GRP_JUMP) ||
                  cs_insn_group(capstone, ins, CS_GRP_BRANCH_RELATIVE)) &&

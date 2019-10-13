@@ -47,7 +47,7 @@
     }
     uint64_t address = (uint64_t)startAddress;
     uint64_t codeSize = endAddress - address;
-    NSData *code = [NSData dataWithBytesNoCopy:startAddress length:codeSize freeWhenDone:NO];
+    NSData *code = [NSData dataWithBytes:startAddress length:codeSize];
     
     AAHDisassembler *disassembler = [[AAHDisassembler alloc] initWithCode:code address:address cpuType:cpuType];
     [disassembler run];
