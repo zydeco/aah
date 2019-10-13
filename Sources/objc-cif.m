@@ -44,7 +44,7 @@ struct method_list {
     struct method methods[];
 };
 
-struct class_info {
+struct class_ro {
     uint32_t flags;
     uint32_t instanceStart;
     uint32_t instanceSize;
@@ -58,12 +58,33 @@ struct class_info {
     void * baseProperties; // property_list_t
 };
 
+struct class_flags {
+    uint32_t flags;
+    uint32_t reserved[3];
+};
+
+struct class_rw {
+    uint32_t flags;
+    uint32_t version;
+    struct class_ro *ro;
+    struct method_list *methods;
+    void *properties; // property_array_t
+    void *protocols; // protocol_array_t
+    void *firstSubclass; // Class
+    void *nextSiblingClass; // Class
+    char *demangledName;
+};
+
 struct classref {
     uint64_t isa;
     uint64_t superclass;
     uint64_t cache;
     uint64_t vtable;
-    struct class_info *data;
+    union {
+        struct class_ro *ro;
+        struct class_rw *rw;
+        struct class_flags *flags;
+    } data;
 };
 
 struct cat_info {
@@ -76,6 +97,7 @@ struct cat_info {
 };
 
 #define RO_META 1
+#define RW_COPIED_RO (1 << 27)
 
 hidden void load_objc_methods(struct method_list *methods, bool meta, const char *name) {
     if (methods == NULL) {
@@ -95,6 +117,14 @@ hidden void load_objc_methods(struct method_list *methods, bool meta, const char
     }
 }
 
+static inline struct class_ro* get_class_ro(struct classref *class) {
+    if (class->data.flags->flags & RW_COPIED_RO) {
+        return class->data.rw->ro;
+    } else {
+        return class->data.ro;
+    }
+}
+
 hidden void load_objc_classlist(const struct section_64 *classlist, intptr_t vmaddr_slide) {
     if (classlist) {
         uint64_t numClasses = classlist->size / 8;
@@ -102,14 +132,18 @@ hidden void load_objc_classlist(const struct section_64 *classlist, intptr_t vma
         struct classref **classes = (struct classref**)(classlist->addr + vmaddr_slide);
         for(uint64_t i = 0; i < numClasses; i++) {
             struct classref *class = classes[i];
-            bool is_metaclass = class->data->flags & RO_META;
-            printf("loading class %p(%p): %s\n", class, class->data, class->data->name);
-            load_objc_methods(class->data->baseMethodList, is_metaclass, class->data->name);
+            struct class_ro *data = get_class_ro(class);
+            bool is_metaclass = data->flags & RO_META;
+            
+            printf("loading class %p(%p): %s\n", class, data, data->name);
+            printf("flags: %08x\n", data->flags);
+            load_objc_methods(data->baseMethodList, is_metaclass, data->name);
             // superclass methods
             struct classref *isa = (struct classref*)class->isa;
             if (isa && isa != class) {
-                printf("super class %p(%p): %s\n", isa, isa->data, isa->data->name);
-                load_objc_methods(isa->data->baseMethodList, isa->data->flags & RO_META, isa->data->name);
+                struct class_ro *isa_ro = get_class_ro(isa);
+                printf("super class %p(%p): %s\n", isa, isa_ro, isa_ro->name);
+                load_objc_methods(isa_ro->baseMethodList, isa_ro->flags & RO_META, isa_ro->name);
             }
         }
     }
