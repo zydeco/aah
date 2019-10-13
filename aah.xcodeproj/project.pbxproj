@@ -15,7 +15,6 @@
 		28054D5A2275008F00A6881E /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 28054D542275008F00A6881E /* memory.c */; };
 		28054D5B2275008F00A6881E /* cif.c in Sources */ = {isa = PBXBuildFile; fileRef = 28054D552275008F00A6881E /* cif.c */; };
 		28054D5C2275008F00A6881E /* ffi_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054D562275008F00A6881E /* ffi_arm64.h */; };
-		28054D9E227501E400A6881E /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28054D972275017E00A6881E /* libffi.a */; };
 		28054DAF2275083500A6881E /* printf.c in Sources */ = {isa = PBXBuildFile; fileRef = 28054DAC2275083500A6881E /* printf.c */; };
 		28054DB02275083500A6881E /* printf.h in Headers */ = {isa = PBXBuildFile; fileRef = 28054DAD2275083500A6881E /* printf.h */; };
 		28054DB12275083500A6881E /* nslog.m in Sources */ = {isa = PBXBuildFile; fileRef = 28054DAE2275083500A6881E /* nslog.m */; };
@@ -66,6 +65,7 @@
 		28A8BEFB2280B2C1006A31F0 /* objc-cif.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BEFA2280B2C1006A31F0 /* objc-cif.m */; };
 		28A8BEFD2280B3C4006A31F0 /* libobjc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */; };
 		28A8BF0B22876490006A31F0 /* c++abi.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A8BF0A22876490006A31F0 /* c++abi.c */; };
+		28BC5F8B2353BA5B001DB25C /* libffi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC5F8A2353BA40001DB25C /* libffi.tbd */; };
 		28E91C33234E733E00788110 /* AAHDisassembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E91C32234E733E00788110 /* AAHDisassembler.m */; };
 		28FD849B22D0B99C0046E0A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD849A22D0B99C0046E0A6 /* main.m */; };
 		28FD84A322D0C7D30046E0A6 /* marzipan_glue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD84A222D0C7D30046E0A6 /* marzipan_glue.m */; };
@@ -108,7 +108,6 @@
 		28054D552275008F00A6881E /* cif.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cif.c; sourceTree = "<group>"; };
 		28054D562275008F00A6881E /* ffi_arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_arm64.h; sourceTree = "<group>"; };
 		28054D5D227500CA00A6881E /* SymbolTable.plist */ = {isa = PBXFileReference; explicitFileType = text.xml; path = SymbolTable.plist; sourceTree = "<group>"; };
-		28054D972275017E00A6881E /* libffi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libffi.a; sourceTree = "<group>"; };
 		28054DAC2275083500A6881E /* printf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = printf.c; sourceTree = "<group>"; };
 		28054DAD2275083500A6881E /* printf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = printf.h; sourceTree = "<group>"; };
 		28054DAE2275083500A6881E /* nslog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nslog.m; sourceTree = "<group>"; };
@@ -190,6 +189,7 @@
 		28A8BEFA2280B2C1006A31F0 /* objc-cif.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "objc-cif.m"; sourceTree = "<group>"; };
 		28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
 		28A8BF0A22876490006A31F0 /* c++abi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "c++abi.c"; sourceTree = "<group>"; };
+		28BC5F8A2353BA40001DB25C /* libffi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libffi.tbd; path = usr/lib/libffi.tbd; sourceTree = SDKROOT; };
 		28E91C31234E733E00788110 /* AAHDisassembler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAHDisassembler.h; sourceTree = "<group>"; };
 		28E91C32234E733E00788110 /* AAHDisassembler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAHDisassembler.m; sourceTree = "<group>"; };
 		28FD848922D0B99A0046E0A6 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,9 +206,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				287A7AEE2308309400FC1A0B /* libunicorn.a in Frameworks */,
+				28BC5F8B2353BA5B001DB25C /* libffi.tbd in Frameworks */,
 				281FCBB0234A869600197002 /* libcapstone-aah.a in Frameworks */,
 				28A8BEFD2280B3C4006A31F0 /* libobjc.tbd in Frameworks */,
-				28054D9E227501E400A6881E /* libffi.a in Frameworks */,
 				2815D6A922EE40340021AF41 /* AXRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,11 +265,11 @@
 		28054D9C227501E200A6881E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28BC5F8A2353BA40001DB25C /* libffi.tbd */,
 				2815D6A822EE40340021AF41 /* AXRuntime.framework */,
 				28A8BEFC2280B3C4006A31F0 /* libobjc.tbd */,
 				281FCBAF234A869500197002 /* libcapstone-aah.a */,
 				287A7AED2308309400FC1A0B /* libunicorn.a */,
-				28054D972275017E00A6881E /* libffi.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
