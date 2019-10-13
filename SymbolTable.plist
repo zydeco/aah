@@ -10586,6 +10586,8 @@
 	};
 	"/System/iOSSupport/System/Library/PrivateFrameworks/UIKitCore.framework/Versions/A/UIKitCore" = {
 		"UIApplicationMain" = "i^?^?@@";
+		"UIGraphicsGetCurrentContext" = "^v";
+		"UIRectFill" = "v{CGRect={CGPoint=dd}{CGSize=dd}}";
 	};
 	"/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration" = {
 		// decl for CNCopyCurrentNetworkInfo not found
