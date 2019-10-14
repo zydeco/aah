@@ -47,7 +47,6 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
         // message forwarding is handled further down
     }
     BOOL meta = class_isMetaClass(cls);
-    Dl_info info;
     char method_name[256];
     snprintf(method_name, sizeof(method_name), "%c[%s %s]", (meta ? '+' : '-'), class_getName(cls), sel_getName(op));
     const char *shimMethodSignature = lookup_method_signature(CIF_LIB_OBJC_SHIMS, method_name);
@@ -67,7 +66,7 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
                 // shim
                 shim_ptr shim = (shim_ptr)cif_arm64;
                 // shim should return pc to run the method
-                printf("calling shim for emulated method %s at %p\n", info.dli_sname ?: method_name, impl);
+                printf("calling shim for emulated method %s at %p\n", method_name, impl);
                 return shim(uc, ctx);
             } else {
                 // wrapper
@@ -75,12 +74,12 @@ static uint64_t shim_objc_msgSendCommon(uc_engine *uc, struct native_call_contex
                 abort();
             }
         } else {
-            printf("calling emulated method %s at %p\n", info.dli_sname ?: method_name, impl);
+            printf("calling emulated method %s at %p\n", method_name, impl);
         }
         return (uint64_t)impl;
     } else {
         // calling native method
-        printf("calling native method %s at %p\n", info.dli_sname ?: method_name, impl);
+        printf("calling native method %s at %p\n", method_name, impl);
         ffi_cif *cif_native = cif_cache_get_native(impl);
         ffi_cif_arm64 *cif_arm64 = cif_cache_get_arm64(impl);
         if (cif_native == NULL && cif_arm64 == NULL) {
