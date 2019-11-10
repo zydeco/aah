@@ -6,6 +6,12 @@ It uses [unicorn](http://www.unicorn-engine.org) and [libffi](https://sourceware
 
 Most things will fail to launch because they need frameworks/symbols that aren't available on macOS.
 
+## Requirements
+
+* macOS 10.15
+
+To run iOS apps, aah relies on the Mac Catalyst frameworks that are present on macOS 10.15.
+
 ## Running the sample app
 
 The sample app is based on UIKitCatalog from the Apple sample code, with an integrated capstone disassembler to inspect functions and methods.
