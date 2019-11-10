@@ -593,7 +593,6 @@ hidden uint64_t call_native(uc_engine *uc, uint64_t pc) {
         Dl_info info = {.dli_sname = "(unknown)"};
         dladdr((void*)pc, &info);
         printf("missing cif for %p (%s+0x%llx:%s)\n", (void*)pc, info.dli_fname, pc - (uint64_t)info.dli_fbase, info.dli_sname);
-        if (ctx.cif_native) goto dbg_find_cif;
         abort();
     }
 }
