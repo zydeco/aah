@@ -43,3 +43,6 @@ msdecl -w -I- -I$SDKROOT/usr/include -Iframework_includes $SDKROOT/System/Librar
 
 # SC
 msdecl -w -I- -I$SDKROOT/usr/include -Iframework_includes $SDKROOT/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration.tbd framework_includes/SystemConfiguration/SystemConfiguration.h
+
+# Security
+msdecl -w -I- -I$SDKROOT/usr/include -Iframework_includes $SDKROOT/System/Library/Frameworks/Security.framework/Security.tbd framework_includes/Security/Security.h framework_includes/Security/SecureTransport.h framework_includes/Security/SecProtocolObject.h
