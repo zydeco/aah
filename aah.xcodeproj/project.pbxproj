@@ -69,8 +69,6 @@
 		28E91C33234E733E00788110 /* AAHDisassembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E91C32234E733E00788110 /* AAHDisassembler.m */; };
 		28FD849B22D0B99C0046E0A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD849A22D0B99C0046E0A6 /* main.m */; };
 		28FD84A322D0C7D30046E0A6 /* marzipan_glue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD84A222D0C7D30046E0A6 /* marzipan_glue.m */; };
-		28FD9FFA22E90A4800E47B05 /* DWUWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 28FD9FF822E90A4800E47B05 /* DWUWebView.h */; };
-		28FD9FFB22E90A4800E47B05 /* DWUWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD9FF922E90A4800E47B05 /* DWUWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,8 +194,6 @@
 		28FD849922D0B99C0046E0A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28FD849A22D0B99C0046E0A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		28FD84A222D0C7D30046E0A6 /* marzipan_glue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = marzipan_glue.m; sourceTree = "<group>"; };
-		28FD9FF822E90A4800E47B05 /* DWUWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWUWebView.h; sourceTree = "<group>"; };
-		28FD9FF922E90A4800E47B05 /* DWUWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWUWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,8 +284,6 @@
 				282DB9A622D299B400F04DCD /* blocks.h */,
 				282DB9A722D29B2500F04DCD /* blocks.c */,
 				2829AD9C22D6769000EA1177 /* setjmp.c */,
-				28FD9FF822E90A4800E47B05 /* DWUWebView.h */,
-				28FD9FF922E90A4800E47B05 /* DWUWebView.m */,
 				281FCBBD234A9F7B00197002 /* stdlib.c */,
 			);
 			path = shims;
@@ -395,7 +389,6 @@
 			files = (
 				28054D4F2275007C00A6881E /* aah.h in Headers */,
 				28054DB02275083500A6881E /* printf.h in Headers */,
-				28FD9FFA22E90A4800E47B05 /* DWUWebView.h in Headers */,
 				28054D5C2275008F00A6881E /* ffi_arm64.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,7 +590,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28FD9FFB22E90A4800E47B05 /* DWUWebView.m in Sources */,
 				28054DB3227A0BC200A6881E /* objc_msgSend.m in Sources */,
 				288F826322CD2BDF00BEF175 /* libdispatch.c in Sources */,
 				28054D5B2275008F00A6881E /* cif.c in Sources */,
