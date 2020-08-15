@@ -98,6 +98,7 @@ struct cat_info {
 
 #define RO_META 1
 #define RW_COPIED_RO (1 << 27)
+#define RW_REALIZING (1 << 19)
 
 hidden void load_objc_methods(struct method_list *methods, bool meta, const char *name) {
     if (methods == NULL) {
@@ -118,7 +119,7 @@ hidden void load_objc_methods(struct method_list *methods, bool meta, const char
 }
 
 static inline struct class_ro* get_class_ro(struct classref *class) {
-    if (class->data.flags->flags & RW_COPIED_RO) {
+    if (class->data.flags->flags & (RW_COPIED_RO | RW_REALIZING)) {
         return class->data.rw->ro;
     } else {
         return class->data.ro;
