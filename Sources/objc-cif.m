@@ -101,7 +101,7 @@ struct cat_info {
 #define RW_REALIZING (1 << 19)
 
 hidden void load_objc_methods(struct method_list *methods, bool meta, const char *name) {
-    if (methods == NULL) {
+    if (methods == NULL || (vm_offset_t)methods > VM_MAX_USER_PAGE_ADDRESS) {
         return;
     }
     for(uint32_t i = 0; i < methods->count; i++) {
